@@ -55,7 +55,7 @@ jobs:
               printf '#!/bin/sh\nexec "$(dirname "$(readlink -f "$0")")/usr/bin/finalist-node" "$@"\n' > $A/AppRun
               chmod +x $A/AppRun $A/usr/bin/finalist-node
               printf '[Desktop Entry]\nType=Application\nName=Finalist Node\nComment=Patient and Examiner Claude for Finalist, on this computer\nExec=finalist-node\nIcon=finalist-node\nTerminal=false\nCategories=Education;\n' > $A/finalist-node.desktop
-              printf '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="56" fill="#1c1812"/><text x="128" y="182" text-anchor="middle" font-family="Georgia,serif" font-size="150" fill="#f2ecdd">F</text></svg>\n' > $A/finalist-node.svg
+              cp assets/finalist-node.png $A/finalist-node.png && cp assets/finalist-node.png $A/.DirIcon   # appimagetool wants a PNG
               curl -fsSL -o appimagetool https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
               chmod +x appimagetool
               ARCH=x86_64 APPIMAGE_EXTRACT_AND_RUN=1 ./appimagetool $A "out/${{ matrix.name }}"
