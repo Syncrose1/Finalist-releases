@@ -412,11 +412,43 @@ def station_terms(sid):
     return out[:40]
 
 
+def has_speech(pcm, secs=0.25):
+    """At least `secs` of speech by Silero, across the whole utterance."""
+    v, n, need = Vad(), 0, int(secs * 16000 / 512)
+    for i in range(0, len(pcm) - 511, 512):
+        if v(pcm[i:i + 512].astype(np.float32) / 32768) > 0.5:
+            n += 1
+            if n >= need:
+                return True
+    return False
+
+
+def echoed(text, prompt):
+    """Qwen3-ASR, given silence or hiss with a context prompt, returns the prompt itself (31 Oct 2026: a
+    whole station's turns arrived as "A medical conversation... Terms: Pain through to the back; ...").
+    Any of the prompt's own phrases in the transcript means it's an echo."""
+    if not prompt or not text:
+        return False
+    t = text.lower()
+    if "medical conversation" in t or "scientific terminology" in t:
+        return True
+    terms = [x.strip().lower() for x in prompt.split("Terms:", 1)[-1].split(";") if len(x.strip()) > 3]
+    return sum(1 for x in terms if x.rstrip(".") in t) >= 3
+
+
 def hear(pcm, cb, prompt=None):
-    """Transcribes off the socket's thread; cb({"text"}) when done."""
+    """Transcribes off the socket's thread; cb({"text"}) when done. Nothing that isn't speech reaches the
+    ear (with a prompt, Qwen3 turns silence into the prompt), and an echo of the prompt is dropped."""
     def go():
         try:
-            cb({"text": ENGINE.hear(pcm, prompt)})
+            if not has_speech(pcm):
+                return cb({"text": "", "why": "no speech"})
+            text = ENGINE.hear(pcm, prompt)
+            if echoed(text, prompt):
+                log("dropped an echo of the ear's prompt")
+                text = ENGINE.hear(pcm, None)
+                text = "" if echoed(text, prompt) else text
+            cb({"text": text})
         except Exception as e:
             log("hearing failed:", e)
             cb({"text": ""})
