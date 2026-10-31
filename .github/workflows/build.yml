@@ -13,9 +13,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { os: ubuntu-22.04, name: finalist-node-linux-x64 }
-          - { os: macos-14,     name: finalist-node-macos-arm64 }
-          - { os: macos-15-intel, name: finalist-node-macos-intel }
+          - { os: ubuntu-22.04, name: finalist-node-linux-x64.tar.gz }
+          - { os: macos-14,     name: finalist-node-macos-arm64.zip }
+          - { os: macos-15-intel, name: finalist-node-macos-intel.zip }
           - { os: windows-2022, name: finalist-node-windows-x64.exe }
     runs-on: ${{ matrix.os }}
     defaults:
@@ -51,8 +51,16 @@ jobs:
           "$exe" --voice --help > voice-help.txt && grep -q -- "--engine" voice-help.txt
       - name: Name it
         run: |
-          mkdir out
-          if [ -f node/dist/finalist-node.exe ]; then cp node/dist/finalist-node.exe "out/${{ matrix.name }}"; else cp node/dist/finalist-node "out/${{ matrix.name }}"; chmod +x "out/${{ matrix.name }}"; fi
+          # Portable, nothing installed (Raahat). A downloaded bare file loses its permission to run, so on
+          # Linux and Mac the one file, "Finalist Node", travels in an archive that keeps it: extract, then
+          # double-click. Windows needs no such thing.
+          mkdir out pkg
+          case "${{ matrix.name }}" in
+            *.exe) cp node/dist/finalist-node.exe "out/${{ matrix.name }}" ;;
+            *.tar.gz) cp node/dist/finalist-node "pkg/Finalist Node"; chmod +x "pkg/Finalist Node"; tar -czf "out/${{ matrix.name }}" -C pkg "Finalist Node" ;;
+            *.zip) cp node/dist/finalist-node "pkg/Finalist Node"; chmod +x "pkg/Finalist Node"; (cd pkg && zip -q "../out/${{ matrix.name }}" "Finalist Node") ;;
+          esac
+          ls -l out
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.name }}

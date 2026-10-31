@@ -9,24 +9,26 @@ Finalist's cards, clock and recall drills work without it; the node adds the sta
 1. **Claude Code**, signed in. Install it once, then run `claude` and sign in:
    - macOS / Linux: `curl -fsSL https://claude.ai/install.sh | bash`
    - Windows (PowerShell): `irm https://claude.ai/install.ps1 | iex`
-2. **The node**:
-   - **Linux or Mac:** in a terminal, run
-     ```
-     curl -fsSL https://raw.githubusercontent.com/Syncrose1/Finalist-releases/main/install.sh | sh
-     ```
-     It downloads the right build, adds **Finalist Node** to your apps (Linux) or Desktop (Mac), and starts it.
-     Run it again to update.
-   - **Windows:** from [Releases](../../releases/latest), download `finalist-node-windows-x64.exe`. It's one file:
-     keep it wherever you like and double-click it.
-   - Or download any build from [Releases](../../releases/latest) yourself (on Linux and Mac, `chmod +x` it first:
-     a downloaded file isn't allowed to run until it's marked).
+2. **The node**: from [Releases](../../releases/latest), download the one for your computer. Nothing is installed:
+   it's one file you keep wherever you like (a USB stick works too).
+
+   | Computer | Download | Then |
+   |---|---|---|
+   | Windows | `finalist-node-windows-x64.exe` | double-click it |
+   | Mac with Apple silicon (M1 or later) | `finalist-node-macos-arm64.zip` | double-click to extract, then double-click **Finalist Node** |
+   | Older Intel Mac | `finalist-node-macos-intel.zip` | the same |
+   | Linux | `finalist-node-linux-x64.tar.gz` | extract it, then double-click **Finalist Node** |
+
+   (The Linux and Mac builds come in an archive because a downloaded file isn't allowed to run until it's marked
+   executable; the archive keeps that mark.)
 
 ## Start it
 
-Open it. A small window shows its log, and the node's own screen opens in your browser. The first time, that screen shows
+Open **Finalist Node**. Its own screen opens in your browser (on Windows and Mac a small window also shows its log). The first time, that screen shows
 a pairing code: in Finalist, signed in, go to **Settings → Practise with Claude** and enter it. The node is then yours.
 
-It runs while that window is open. To stop it, use **Stop the node** on its screen, close the window, or press Ctrl+C.
+To stop it, press **Stop the node** on its screen (or close its window, where there is one). Closing the browser tab
+doesn't stop it.
 It never installs itself as a background service.
 
 ### The first time on a Mac or Windows
@@ -34,14 +36,10 @@ It never installs itself as a background service.
 These builds aren't signed, so your computer asks once whether to trust them:
 
 - **Windows**: "Windows protected your PC" → **More info** → **Run anyway**.
-- **macOS**: double-clicking says it can't be opened. Instead, in Terminal:
-  ```
-  chmod +x ~/Downloads/finalist-node-macos-*
-  xattr -d com.apple.quarantine ~/Downloads/finalist-node-macos-*
-  ~/Downloads/finalist-node-macos-arm64     # or -intel
-  ```
-  (Or: System Settings → Privacy & Security → **Open Anyway**, after the first try.)
-- **Linux**: the installer above does it all; by hand, `chmod +x finalist-node-linux-x64 && ./finalist-node-linux-x64`
+- **macOS**: the first double-click says it can't be opened. Go to System Settings → Privacy & Security and press
+  **Open Anyway** (once). Or in Terminal: `xattr -d com.apple.quarantine ~/Downloads/"Finalist Node"`.
+- **Linux**: nothing to confirm. If your file manager opens it as text instead of running it, allow it to run
+  executables (or run `./"Finalist Node"` in a terminal from its folder).
 
 ## From your other devices
 
