@@ -12,7 +12,7 @@
   circuit           the private ranking and past-finals record: only on a PC with the Revision
                     System; elsewhere there is none (and no Ace the OSCEs (elevated) from that node)
   origins           pages allowed to call the node from a browser
-  voice_python, ear_python, voice_port
+  voice_python, voice_port
                     the voice; absent means typed stations only
   public_port       the tailnet (and, while shared, the internet's) HTTPS port
   model             Claude model alias for stations (follows the newest Sonnet)
@@ -43,8 +43,7 @@ DEFAULTS = {
     "school": str(HOME / "FinalYearReady"),
     "school_index": str(HOME / "RevisionSystem/web/binder-content.json"),
     "origins": ["https://raahat.sh", "http://127.0.0.1:47613", "http://localhost:47613", "http://localhost:3000"],
-    "voice_python": str(HOME / "miniconda3/envs/ming/bin/python"),
-    "ear_python": str(HOME / "POLARIS/services/ear/.venv/bin/python"),
+    "voice_python": "",          # from source: a Python with numpy, websockets and onnxruntime (else this one)
     "voice_port": 47615,
     "public_port": 8443,
     "model": "sonnet",

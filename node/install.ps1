@@ -1,6 +1,7 @@
 # Installs the Finalist Node on Windows (plan phase 4, 31 Oct 2026). Untested on real Windows yet.
 #   Right-click > Run with PowerShell, or:  powershell -ExecutionPolicy Bypass -File install.ps1
-# The node is plain Python (3.10+) plus Claude Code. Stations are typed on Windows (no voice yet).
+# The node is plain Python (3.10+) plus Claude Code. The voice is set up from the node's own screen;
+# from source it also needs numpy, websockets and onnxruntime (pip install them), or use the downloaded executable.
 $ErrorActionPreference = 'Stop'
 $Node = Split-Path -Parent $MyInvocation.MyCommand.Path
 function Say($t) { Write-Host "`n$t" -ForegroundColor White }

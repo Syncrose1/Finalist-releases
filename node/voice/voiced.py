@@ -1,66 +1,74 @@
 """The voice of Patient and Examiner Claude: hears the candidate and speaks the replies.
-
-One WebSocket per station, on 127.0.0.1 only (revise.py passes /voice through to it, after its
-own sign-in checks, so the tailnet and a friend's link both reach it at the page's own address).
-
+One WebSocket per station, on 127.0.0.1 only (the node passes /v1/voice through to it, after its own
+sign-in checks).
   in   binary   the microphone: 16 kHz mono int16, any frame size
        json     {"type": "hello", "patient": {"sex", "age"}}   picks the voices, answered with "ready"
                 {"type": "speak", "id": n, "text": "...", "role": "patient"|"examiner"}
                 {"type": "stop"}                                stop talking now (the candidate cut in)
   out  json     {"type": "loading"|"ready"|"speech_start"|"heard"|"spoken"|"error", ...}
-       binary   4-byte little-endian speak id, then 24 kHz mono int16 audio
+                "ready" carries "rate", the sample rate of the audio that follows (default 24000)
+       binary   4-byte little-endian speak id, then mono int16 audio at that rate
 
-The ear is Silero VAD (here, per connection) and Parakeet Redux (ear_worker.py, its own process and
-Python). The mouth is Ming-3.0-tts 0.5B on the GPU: its flow head compiled (RTF 1.1 -> 0.44 on an
-RTX 3060, first audio ~220 ms), every voice cloned from a fixed reference clip (a voice described
-afresh, or even a named built-in, comes out a different person each time), 10 flow steps (3 drifts
-underwater over a sentence). Measurements: RevisionSystem CLAUDE.md, 28 Oct 2026.
-
+One engine for every machine (Raahat, 31 Oct 2026: "I would prefer one backend"): audio.cpp's
+server, started here and stopped with this process. It speaks with Ming 3.0 (a GPU: Vulkan, or Metal
+on a Mac) or Pocket TTS (a CPU), every voice cloned from the same fixed clips, and hears with Parakeet
+TDT. Measured on an RTX 3060 over Vulkan: Ming streams its first audio in 0.3 s at 0.78x real time,
+Pocket in 0.04 s; Parakeet transcribes 6.6 s in 0.08 s. On a Ryzen 5600G's CPU: Pocket 0.52x,
+Parakeet ~10x real time. Turn-taking keeps Silero VAD per 32 ms frame (its ONNX model, no PyTorch).
+The Python Ming this replaced (PyTorch, CUDA only) is in git history: 7d294b8.
 Exits after --idle seconds with no station connected, so the GPU is only held while it's in use.
 """
 import argparse
 import asyncio
-import base64
+import atexit
 import collections
+import http.client
+import io
 import json
 import os
 import queue
 import re
+import signal
 import struct
 import subprocess
 import sys
 import threading
 import time
 import traceback
+import uuid
+import wave
 from pathlib import Path
 
 import numpy as np
-import torch
-import torchaudio
+import onnxruntime as ort
 import websockets
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-from speakable import speakable                     # our English normaliser; Ming's mangles English
+from speakable import speakable                     # our English normaliser (Ming's mangles English)
 ap = argparse.ArgumentParser()
 ap.add_argument("--port", type=int, default=47615)
-ap.add_argument("--ming", default=str(Path.home() / "Ming-3.0-tts"))
-ap.add_argument("--model", default=str(Path.home() / "models/Ming-3.0-tts-0.5b"))
-ap.add_argument("--voices", default=str(Path.home() / ".local/share/revise/voices"))
-ap.add_argument("--ear-python", default=str(Path.home() / "POLARIS/services/ear/.venv/bin/python"))
+ap.add_argument("--engine-port", type=int, default=47616)
+ap.add_argument("--engine", required=True, help="folder holding audio.cpp's audiocpp_server")
+ap.add_argument("--models", required=True, help="folder holding the GGUF models")
+ap.add_argument("--voices", required=True, help="the station voices: voices.json, the clips, pocket/*.safetensors")
+ap.add_argument("--mouth", choices=["ming", "pocket"], default="pocket")
+ap.add_argument("--backend", default="cpu", help="vulkan, metal or cpu")
+ap.add_argument("--device", type=int, default=0)
+ap.add_argument("--threads", type=int, default=max(2, min(4, (os.cpu_count() or 4) // 2)))
 ap.add_argument("--idle", type=int, default=600)
-ap.add_argument("--steps", type=int, default=10)
-ARGS = ap.parse_args()
+ARGS, _ = ap.parse_known_args()
 
-OUT_RATE = 24000
-FIRST, EVERY = 6, 6                 # decode after 6 tokens (~0.5 s of speech), then every 6
-HOLD = int(0.12 * OUT_RATE)         # the newest audio waits for the next decode, which can still revise it
-SOUND_TAGS = {"[Sigh]", "[Cough]", "[Breathing]", "[Uhm]", "[Laughter]", "[Surprise-ah]", "[Surprise-oh]",
-              "[Dissatisfaction-hnn]", "[Confirmation-en]", "[Question-ei]", "[Question-ah]", "[Question-en]",
-              "[Question-oh]", "[Question-huh]"}
-# 28 Oct 2026: with a sound tag in the line, Ming 0.5B often doesn't stop when the words end (same line,
-# ten voices: no tag, 3.9-4.8 s every time; a [Sigh] at the start or middle, runaways to 20 s that turn
-# into a rising tone or a sub-bass rumble). So tags are stripped, and every reply goes through `runaway`.
+MODELS = {
+    "ming": {"family": "ming3_tts", "file": "ming-3.0-tts-0.5b-q8_0.gguf", "rate": 44100},
+    "pocket": {"family": "pocket_tts", "file": "PocketTTS-GGUF/english/pocket-tts-english-q8_0.gguf", "rate": 24000},
+    "ear": {"family": "parakeet_tdt", "file": "Parakeet-TDT-0.6B-v3-GGUF/parakeet-tdt-0.6b-v3-q8_0.gguf"},
+}
+RATE = MODELS[ARGS.mouth]["rate"]
+HOLD = int(0.12 * RATE)             # the newest audio waits for the next look, which can still cut it
+SOUND_TAGS = {"[Sigh]", "[Cough]", "[Breathing]", "[Uhm]", "[Laughter]"}
+# 28 Oct 2026: with a sound tag in the line, Ming 0.5B often doesn't stop when the words end. So tags
+# are stripped, and every reply goes through `runaway`.
 ALLOW_TAGS = False
 LEXICON = json.loads((HERE / "lexicon.json").read_text()) if (HERE / "lexicon.json").exists() else {}
 
@@ -71,46 +79,112 @@ def log(*a):
     print(time.strftime("%H:%M:%S"), *a, file=sys.stderr, flush=True)
 
 
-# ---- the mouth ----------------------------------------------------------------------------------
+# ---- the engine -----------------------------------------------------------------------------------
 
-sys.path.insert(0, ARGS.ming)
-os.environ.setdefault("TQDM_DISABLE", "1")          # Ming draws a progress bar per sentence
-try:
-    from loguru import logger as _ming_log          # and logs every prompt at INFO
-    _ming_log.remove()
-    _ming_log.add(sys.stderr, level="WARNING")
-except ImportError:
-    pass
-TTS = MODEL = None
-VOICES = {}
+class Engine:
+    """audio.cpp's server, configured for the station voices; it lives and dies with this process."""
+
+    def __init__(self):
+        vs = json.loads((Path(ARGS.voices) / "voices.json").read_text())
+        self.voices = {v["id"]: v for v in vs}
+        mouth = MODELS[ARGS.mouth]
+        if ARGS.mouth == "ming":
+            presets = {v["id"]: {"voice_ref": str(Path(ARGS.voices) / v["file"]), "reference_text": v["text"]} for v in vs}
+        else:
+            presets = {v["id"]: {"options": {"voice_embedding_file": str(Path(ARGS.voices) / "pocket" / f"{v['id']}.safetensors")}} for v in vs}
+        cfg = {"host": "127.0.0.1", "port": ARGS.engine_port, "backend": ARGS.backend, "device": ARGS.device, "threads": ARGS.threads,
+               "lazy_load": False, "max_loaded_models": 0, "models": [
+                   {"id": "mouth", "family": mouth["family"], "path": str(Path(ARGS.models) / mouth["file"]), "task": "tts",
+                    "mode": "streaming", "voice_presets": presets,
+                    **({"load_options": {"language": "english"}} if ARGS.mouth == "pocket" else {})},
+                   {"id": "ear", "family": "parakeet_tdt", "path": str(Path(ARGS.models) / MODELS["ear"]["file"]),
+                    "task": "asr", "mode": "offline"}]}
+        conf = Path(ARGS.models) / "engine.json"
+        conf.write_text(json.dumps(cfg, indent=1))
+        exe = Path(ARGS.engine) / ("audiocpp_server.exe" if os.name == "nt" else "audiocpp_server")
+        env = {**os.environ, "LD_LIBRARY_PATH": str(Path(ARGS.engine)) + os.pathsep + os.environ.get("LD_LIBRARY_PATH", "")}
+        self.p = subprocess.Popen([str(exe), "--config", str(conf)], cwd=str(ARGS.engine), env=env, stdin=subprocess.DEVNULL,
+                                  stdout=subprocess.DEVNULL, stderr=open(Path(ARGS.models) / "engine.log", "w"))
+        atexit.register(self.close)
+        end = time.time() + 300                 # first load: models from disk, Vulkan's shaders
+        while time.time() < end:
+            if self.p.poll() is not None:
+                raise RuntimeError(f"the voice engine stopped (see {Path(ARGS.models) / 'engine.log'})")
+            try:
+                if json.loads(self._get("/health")).get("status") == "ok":
+                    return
+            except (OSError, ValueError):
+                pass
+            time.sleep(0.5)
+        raise RuntimeError("the voice engine didn't start in 5 minutes")
+
+    def close(self):
+        if self.p.poll() is None:
+            self.p.terminate()
+            try:
+                self.p.wait(5)
+            except subprocess.TimeoutExpired:
+                self.p.kill()
+
+    def _conn(self, timeout=120):
+        return http.client.HTTPConnection("127.0.0.1", ARGS.engine_port, timeout=timeout)
+
+    def _get(self, path):
+        c = self._conn(2)
+        c.request("GET", path)
+        return c.getresponse().read()
+
+    def speak(self, voice, text):
+        """Streams one fragment: yields int16 numpy chunks; closing the generator stops the render."""
+        c = self._conn()
+        c.request("POST", "/v1/audio/speech", json.dumps({"model": "mouth", "input": text, "voice": voice,
+                                                          "response_format": "pcm", "stream_format": "audio"}),
+                  {"Content-Type": "application/json"})
+        r = c.getresponse()
+        if r.status != 200:
+            raise RuntimeError(f"the voice engine said {r.status}: {r.read()[:200]!r}")
+        odd = b""
+        try:
+            while True:
+                b = r.read1(16384) if hasattr(r, "read1") else r.read(16384)
+                if not b:
+                    break
+                b, odd = odd + b, b""
+                if len(b) % 2:
+                    b, odd = b[:-1], b[-1:]
+                if b:
+                    yield np.frombuffer(b, dtype="<i2")
+        finally:
+            c.close()
+
+    def hear(self, pcm16, prompt=None):
+        buf = io.BytesIO()
+        with wave.open(buf, "wb") as w:
+            w.setnchannels(1)
+            w.setsampwidth(2)
+            w.setframerate(16000)
+            w.writeframes(pcm16.tobytes())
+        bnd = uuid.uuid4().hex
+        parts = [("model", b"ear")] + ([("prompt", prompt.encode())] if prompt else [])
+        body = b"".join(f'--{bnd}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n'.encode() + v + b"\r\n" for k, v in parts)
+        body += f'--{bnd}\r\nContent-Disposition: form-data; name="file"; filename="u.wav"\r\nContent-Type: audio/wav\r\n\r\n'.encode()
+        body += buf.getvalue() + f"\r\n--{bnd}--\r\n".encode()
+        c = self._conn(60)
+        c.request("POST", "/v1/audio/transcriptions", body, {"Content-Type": f"multipart/form-data; boundary={bnd}"})
+        r = c.getresponse()
+        out = json.loads(r.read() or b"{}")
+        c.close()
+        return (out.get("text") or "").strip()
 
 
-def load_mouth():
-    global TTS, MODEL
-    import fm.flowloss as FL
-    from ming_tts import MingTTS
-    steps = ARGS.steps
-    orig = FL.FlowLoss.sample
-    FL.FlowLoss.sample = lambda self, z, lh, *a, **kw: orig(self, z, lh, *a, **{**kw, "steps": steps})
-    t = time.perf_counter()
-    TTS = MingTTS(ARGS.model, device="cuda:0")
-    TTS.text_normalization = False                  # speakable() does it ("There's" became "T here is")
-    MODEL = TTS.model
-    dit = MODEL.flowloss.cfm.model
-    dit.forward = torch.compile(dit.forward, mode="reduce-overhead", dynamic=False)
-    lib = json.loads((Path(ARGS.voices) / "voices.json").read_text())
-    for v in lib:
-        latent, spk = TTS.prepare_prompt(str(Path(ARGS.voices) / v["file"]), True)
-        VOICES[v["id"]] = {**v, "path": str(Path(ARGS.voices) / v["file"]), "latent": latent, "spk": spk}
-    # compiling and warming cost ~15 s once; nobody should wait for it mid-station
-    for v in list(VOICES.values())[:1]:
-        synth(v, "Thank you. Please take a seat.", lambda *_: None, lambda: False)
-    log(f"mouth ready in {time.perf_counter() - t:.1f}s with {len(VOICES)} voices")
+ENGINE = None
 
+
+# ---- what to say, and checks on what came out -----------------------------------------------------
 
 def clean(text):
-    """What a person would actually say: no *actions* or (stage directions), only sound tags Ming performs,
-    and hard words respelt the way they're said."""
+    """What a person would actually say: no *actions* or (stage directions), and hard words respelt the
+    way they're said."""
     text = re.sub(r"\*[^*]*\*", " ", text)
     text = re.sub(r"\([^)]*\)", " ", text)
     text = re.sub(r"\[[^\]]*\]", lambda m: m.group(0) if ALLOW_TAGS and m.group(0) in SOUND_TAGS else " ", text)
@@ -119,15 +193,37 @@ def clean(text):
     return speakable(re.sub(r"\s+", " ", text).strip())
 
 
+def fragments(text, most=180):
+    """Sentences, and long ones at a comma: each is one render (a failed one is retried on its own)."""
+    out = []
+    for s in re.split(r"(?<=[.!?…])\s+", text):
+        while len(s) > most:
+            cut = max(s.rfind(", ", 0, most), s.rfind("; ", 0, most))
+            if cut < 40:
+                break
+            out.append(s[:cut + 1])
+            s = s[cut + 2:]
+        if s.strip():
+            out.append(s.strip())
+    return out
+
+
+def spectrum(w, sr, n, hop):
+    """|STFT| like torch.stft(center=True) with a Hann window: (bins, frames)."""
+    x = w.astype(np.float32) / 32768 if w.dtype != np.float32 else w
+    x = np.pad(x, n // 2, mode="reflect")
+    frames = np.lib.stride_tricks.sliding_window_view(x, n)[::hop]
+    return np.abs(np.fft.rfft(frames * np.hanning(n + 1)[:-1].astype(np.float32), axis=1)).T
+
+
 def runaway(w, sr):
     """Where generated speech has gone wrong, in samples, or None: 1.1 s of nothing after the words (the
     model failing to stop: silence, rumble, the start of a tone), or a tone held a second at levels speech
-    never reaches. Calibrated on 48 clips (28 Oct): every runaway cut just after its last word, every
-    clean clip left alone."""
+    never reaches. Calibrated on 48 Ming clips (28 Oct)."""
     n, hop = 2048, sr // 100
     if len(w) < n * 2:
         return None
-    S = torch.stft(torch.as_tensor(w, dtype=torch.float32).cpu(), n, hop, window=torch.hann_window(n), return_complex=True).abs().numpy()
+    S = spectrum(w, sr, n, hop)
     f = np.fft.rfftfreq(n, 1 / sr)
     band = S[(f > 150) & (f < 4000)]
     tone = band.max(0) / (np.median(band, 0) + 1e-9)
@@ -144,31 +240,24 @@ def runaway(w, sr):
     return None
 
 
-class Retry(Exception):
-    """A render that failed from its first moments: thrown away before anything was played."""
-
-
-def speech_secs(w, sr):
-    """Seconds of actual voice in a render (frames at speech level in the voice band)."""
+def voiced_secs(w, sr):
+    """Seconds at speech level in the voice band."""
     n = 2048
     if len(w) < n:
         return 0.0
-    S = torch.stft(torch.as_tensor(w, dtype=torch.float32).cpu(), n, sr // 20, window=torch.hann_window(n), return_complex=True).abs().numpy()
+    S = spectrum(w, sr, n, sr // 20)
     f = np.fft.rfftfreq(n, 1 / sr)
     return float((20 * np.log10(S[(f > 300) & (f < 3500)].sum(0) + 1e-9) > 0).sum()) * 0.05
 
 
 def starts_as_speech(w, sr):
-    """Good renders reach speech level within ~0.2 s. Failed ones (about 2 in 5 on hard medical words,
-    28 Oct, at random: the same text usually works next time) sit at a noise floor for a second or two,
-    then swell into a hum and never become speech."""
-    n = 2048
-    if len(w) < n:
-        return False
-    S = torch.stft(torch.as_tensor(w, dtype=torch.float32).cpu(), n, sr // 20, window=torch.hann_window(n), return_complex=True).abs().numpy()
-    f = np.fft.rfftfreq(n, 1 / sr)
-    lvl = 20 * np.log10(S[(f > 300) & (f < 3500)].sum(0) + 1e-9)
-    return int((lvl > 0).sum()) >= 3     # 0.15 s of voice: clean renders peak at 50-60 early, failures sit at about -14
+    """Good renders reach speech level within ~0.2 s; failed ones (Ming, on hard medical words) sit at a
+    noise floor, then swell into a hum and never become speech."""
+    return voiced_secs(w, sr) >= 0.15
+
+
+class Retry(Exception):
+    """A render that failed from its first moments: thrown away before anything was played."""
 
 
 def synth(v, text, emit, cancelled):
@@ -176,10 +265,11 @@ def synth(v, text, emit, cancelled):
     text = clean(text)
     if not re.sub(r"\[[^\]]*\]", "", text).strip():
         return
-    for frag in TTS.prepare_text(text, "TTS", "English", 24):
+    frags = fragments(text)
+    for k, frag in enumerate(frags):
         for attempt in range(3):
             try:
-                speak_fragment(v, frag, emit, cancelled, last_try=attempt == 2)
+                speak_fragment(v, frag, emit, cancelled, last_try=attempt == 2, last_frag=k == len(frags) - 1)
                 break
             except Retry:
                 log(f"retrying a failed render ({attempt + 1}): {frag[:60]!r}")
@@ -187,77 +277,79 @@ def synth(v, text, emit, cancelled):
             return
 
 
-def speak_fragment(v, frag, emit, cancelled, last_try):
-    """One fragment, streamed; raises Retry if it fails from the start (nothing has been played yet)."""
-    import tts_tasks
-    from ming_tts import trim_trailing_silence
-    req = tts_tasks.build_task_generation_kwargs("TTS", text=frag, language_id="English", prompt_wav_path=v["path"],
-                                                 prompt_text=v["text"], use_spk_emb=True)
-    toks, sent = [], 0
-
-    def out(final):
-        """Decodes what's generated so far and sends the new part; True when it has run away (stop)."""
-        nonlocal sent
-        sp = MODEL.audio.decode(torch.cat(toks, dim=1), past_key_values=None, use_cache=False, last_chunk=True)[0]
-        return finish(sp.float().reshape(1, -1), final)
-
-    @torch.autocast(device_type="cuda", enabled=False)     # the filters need float32, outside Ming's bf16
-    def finish(sp, final):
-        nonlocal sent
-        w0 = sp[0].cpu().numpy()
-        words = len(re.findall(r"[A-Za-z']+", frag))
-        if sent == 0 and not last_try and not starts_as_speech(w0[: int(0.5 * TTS.sample_rate)], TTS.sample_rate):
-            raise Retry()
-        # the whole line, when it's done: too little voice for its words means it went quiet partway
-        # (round 6, 28 Oct: lines that started with a click, then silence, got through a start-only check)
-        if final and speech_secs(w0, TTS.sample_rate) < 0.15 * words:
-            if not last_try:
-                raise Retry()
-            log(f"gave up on a render after 3 tries: {frag[:60]!r}")
-            return True
-        cut = runaway(sp[0].cpu().numpy(), TTS.sample_rate)
-        if cut is not None:
-            sp, final = sp[:, :cut], True
-            log(f"runaway cut at {cut / TTS.sample_rate:.1f}s: {frag[:60]!r}")
-        if final:
-            sp = trim_trailing_silence(sp.cpu(), TTS.sample_rate).to(sp.device)
-        sp = torchaudio.functional.highpass_biquad(sp, TTS.sample_rate, 70.0)    # no sub-bass pressure
-        pcm = torchaudio.functional.resample(sp, TTS.sample_rate, OUT_RATE)[0]
-        if final and pcm.shape[-1] > sent:
-            k = min(int(0.03 * OUT_RATE), pcm.shape[-1] - sent)
-            pcm[-k:] *= torch.linspace(1, 0, k, device=pcm.device)
-        upto = pcm.shape[-1] if final else max(0, pcm.shape[-1] - HOLD)
-        if upto > sent:
-            emit((pcm[sent:upto].clamp(-1, 1) * 32767).short().cpu().numpy(), final)
-            sent = upto
-        return cut is not None
-    with torch.inference_mode(), torch.autocast(device_type="cuda", dtype=torch.bfloat16):
-        for tok, _ in MODEL.sample(prompt=req["prompt"], text=frag, spk_emb=[e.clone() for e in v["spk"]],
-                                   instruction=req["instruction"], prompt_latent=v["latent"], prompt_text=v["text"],
-                                   max_decode_steps=min(600, int((1.0 + 0.45 * len(frag.split())) / 0.08)),   # ~0.45 s a word, +1 s
-                                   cfg=req["cfg"], sigma=req["sigma"], temperature=req["temperature"],
-                                   use_zero_spk_emb=False):
+def speak_fragment(v, frag, emit, cancelled, last_try, last_frag):
+    words = len(re.findall(r"[A-Za-z']+", frag))
+    got, sent, looked, lead = np.zeros(0, dtype=np.int16), 0, 0, True
+    check = ARGS.mouth == "ming"            # Ming's way of failing (a hum from the start, or going quiet partway)
+    stream = ENGINE.speak(v["id"], frag)
+    try:
+        for chunk in stream:
             if cancelled():
                 return
-            toks.append(tok)
-            n = len(toks)
-            if n >= FIRST and (n - FIRST) % EVERY == 0 and out(False):
-                break
+            if lead:                                        # leading quiet (Pocket opens with ~0.4 s) is dropped
+                loud = np.nonzero(np.abs(chunk.astype(np.int32)) > 300)[0]
+                if not len(loud) and len(got) + len(chunk) < int(0.6 * RATE):
+                    got = np.concatenate([got, chunk])
+                    continue
+                start = max(0, len(got) + (loud[0] if len(loud) else 0) - int(0.03 * RATE))
+                chunk, got, lead = np.concatenate([got, chunk])[start:], np.zeros(0, dtype=np.int16), False
+            got = np.concatenate([got, chunk])
+            if check and sent == 0 and len(got) < int(0.5 * RATE):
+                continue                                    # the first half second decides whether it started
+            if check and sent == 0 and not last_try and not starts_as_speech(got[: int(0.5 * RATE)], RATE):
+                raise Retry()
+            if len(got) - looked >= RATE // 2:              # a look for a runaway every half second of audio
+                looked = len(got)
+                cut = runaway(got, RATE)
+                if cut is not None:
+                    log(f"runaway cut at {cut / RATE:.1f}s: {frag[:60]!r}")
+                    got = got[:cut]
+                    break
+            upto = max(0, len(got) - HOLD)
+            if upto > sent:
+                emit(got[sent:upto].copy(), False)
+                sent = upto
         else:
-            if toks and not cancelled():
-                out(True)
+            cut = runaway(got, RATE)
+            if cut is not None and cut >= sent:
+                got = got[:cut]
+    finally:
+        stream.close()
+    if cancelled():
+        return
+    if check and sent == 0 and voiced_secs(got, RATE) < 0.15 * words:
+        if not last_try:
+            raise Retry()
+        log(f"gave up on a render after 3 tries: {frag[:60]!r}")
+        return
+    loud = np.nonzero(np.abs(got[sent:].astype(np.int32)) > 300)[0]
+    end = sent + (loud[-1] + int(0.08 * RATE) if len(loud) else 0)     # trailing silence trimmed
+    tail = got[sent:min(len(got), end)].astype(np.float32)
+    if len(tail):
+        k = min(int(0.03 * RATE), len(tail))
+        tail[-k:] *= np.linspace(1, 0, k, dtype=np.float32)
+    if not last_frag:                                                    # a breath between sentences
+        tail = np.concatenate([tail, np.zeros(int(0.12 * RATE), dtype=np.float32)])
+    emit(tail.astype(np.int16), True)
+
 
 JOBS = queue.Queue()
+MOUTH_READY = threading.Event()
 
 
 def mouth_worker():
-    """Everything on the GPU happens on this one thread: compiled CUDA graphs belong to the thread
-    that recorded them, so loading, warming and every reply share it."""
+    """One reply at a time, in order."""
+    global ENGINE
     try:
-        load_mouth()
+        t = time.perf_counter()
+        ENGINE = Engine()
+        first = next(iter(ENGINE.voices.values()))
+        synth(first, "Thank you. Please take a seat.", lambda *_: None, lambda: False)    # warm: nobody waits mid-station
+        ENGINE.hear(np.zeros(16000, dtype=np.int16))
+        log(f"voice ready in {time.perf_counter() - t:.1f}s: {ARGS.mouth} on {ARGS.backend}, {len(ENGINE.voices)} voices")
         MOUTH_READY.set()
     except Exception as e:
-        log("mouth failed:", traceback.format_exc())
+        log("the voice failed to start:", traceback.format_exc())
         STATE["error"] = f"The voice couldn't start: {e}"
         return
     while True:
@@ -271,43 +363,40 @@ def mouth_worker():
         job["done"](None)
 
 
-MOUTH_READY = threading.Event()
-
-
 # ---- the ear --------------------------------------------------------------------------------------
 
-class Ear:
+class Vad:
+    """Silero VAD from its ONNX file, the way silero_vad's own OnnxWrapper runs it: 512 samples at
+    16 kHz with 64 samples of context, and its recurrent state carried between frames."""
+    SESSION = None
+
     def __init__(self):
-        self.p = subprocess.Popen([ARGS.ear_python, str(HERE / "ear_worker.py")], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                  stderr=subprocess.DEVNULL, text=True, bufsize=1)
-        self.waiting, self.n, self.lock = {}, 0, threading.Lock()
-        self.ready = threading.Event()
-        threading.Thread(target=self._read, daemon=True).start()
+        if Vad.SESSION is None:
+            o = ort.SessionOptions()
+            o.inter_op_num_threads = o.intra_op_num_threads = 1
+            Vad.SESSION = ort.InferenceSession(str(HERE / "silero_vad.onnx"), sess_options=o, providers=["CPUExecutionProvider"])
+        self.reset_states()
 
-    def _read(self):
-        for line in self.p.stdout:
-            try:
-                d = json.loads(line)
-            except ValueError:
-                continue
-            if d.get("ready"):
-                self.ready.set()
-                continue
-            with self.lock:
-                cb = self.waiting.pop(d.get("id"), None)
-            if cb:
-                cb(d)
+    def reset_states(self):
+        self.state = np.zeros((2, 1, 128), dtype=np.float32)
+        self.context = np.zeros((1, 64), dtype=np.float32)
 
-    def hear(self, pcm16, cb):
-        with self.lock:
-            self.n += 1
-            self.waiting[self.n] = cb
-            n = self.n
-        self.p.stdin.write(json.dumps({"id": n, "pcm": base64.b64encode(pcm16.tobytes()).decode()}) + "\n")
-        self.p.stdin.flush()
+    def __call__(self, frame):
+        x = np.concatenate([self.context, frame.reshape(1, -1)], axis=1)
+        out, self.state = Vad.SESSION.run(None, {"input": x, "state": self.state, "sr": np.array(16000, dtype=np.int64)})
+        self.context = x[:, -64:]
+        return float(out[0][0])
 
 
-EAR = None
+def hear(pcm, cb):
+    """Transcribes off the socket's thread; cb({"text"}) when done."""
+    def go():
+        try:
+            cb({"text": ENGINE.hear(pcm)})
+        except Exception as e:
+            log("hearing failed:", e)
+            cb({"text": ""})
+    threading.Thread(target=go, daemon=True).start()
 
 
 # ---- one station ----------------------------------------------------------------------------------
@@ -327,9 +416,8 @@ class Conn:
     PEEK_MS = 250       # a first look at the words after this much quiet: a finished sentence ends the turn there
 
     def __init__(self, ws, loop):
-        from silero_vad import load_silero_vad
         self.ws, self.loop = ws, loop
-        self.vad = load_silero_vad()
+        self.vad = Vad()
         self.rest = np.zeros(0, dtype=np.int16)
         self.pre = collections.deque(maxlen=10)             # 320 ms before the speech was noticed
         self.buf, self.speaking, self.run, self.quiet = [], False, 0, 0
@@ -357,7 +445,7 @@ class Conn:
         self.rest = a[n * 512:]
         for i in range(n):
             f = a[i * 512:(i + 1) * 512]
-            p = self.vad(torch.from_numpy(f.astype(np.float32) / 32768), 16000).item()
+            p = self.vad(f.astype(np.float32) / 32768)
             ours = time.monotonic() < self.talking_until
             if not self.speaking:
                 self.pre.append(f)
@@ -382,7 +470,7 @@ class Conn:
     def peek(self):
         """Transcribes what's been said so far, while the quiet continues. If it reads as a finished
         sentence and nothing more has been said by the time it's back, that's the turn: 200-300 ms
-        sooner than waiting out the whole silence (the biggest cost in the loop, POLARIS measured)."""
+        sooner than waiting out the whole silence."""
         self.peeked, self.since_peek = True, 0
         self.peek_n += 1
         n, utt, pcm, t = self.peek_n, self.utt, np.concatenate(self.buf), time.perf_counter()
@@ -391,14 +479,12 @@ class Conn:
             text = (d.get("text") or "").strip()
             with self.lock:
                 if self.utt != utt or self.peek_n != n or not self.speaking or self.since_peek or not finished(text):
-                    if os.environ.get("VOICE_DEBUG"):
-                        log(f"peek declined: utt {self.utt != utt}, speaking {self.speaking}, since {self.since_peek}, finished {finished(text)}: {text!r}")
                     return
                 self.speaking, self.buf, self.run = False, [], 0
                 self.utt += 1
                 self.vad.reset_states()
             self.send({"type": "heard", "text": text, "ms": round(1000 * (time.perf_counter() - t)), "early": True})
-        EAR.hear(pcm, back)
+        hear(pcm, back)
 
     def end(self):
         pcm = np.concatenate(self.buf)
@@ -410,29 +496,31 @@ class Conn:
             self.send({"type": "heard", "text": ""})
             return
         t = time.perf_counter()
-        EAR.hear(pcm, lambda d: self.send({"type": "heard", "text": d.get("text", ""), "ms": round(1000 * (time.perf_counter() - t))}))
+        hear(pcm, lambda d: self.send({"type": "heard", "text": d.get("text", ""), "ms": round(1000 * (time.perf_counter() - t))}))
 
     def speak(self, m):
-        v = VOICES.get(self.voices.get(m.get("role", "patient")))
+        v = ENGINE.voices.get(self.voices.get(m.get("role", "patient")))
         if not v:
             return self.send({"type": "error", "text": "no voice for " + str(m.get("role"))})
         sid = int(m.get("id") or 0)
 
         def emit(pcm, final):
             now = time.monotonic()
-            self.talking_until = max(self.talking_until, now) + len(pcm) / OUT_RATE
-            self.send(struct.pack("<I", sid) + pcm.tobytes())
+            self.talking_until = max(self.talking_until, now) + len(pcm) / RATE
+            if len(pcm):
+                self.send(struct.pack("<I", sid) + pcm.tobytes())
         JOBS.put({"voice": v, "text": m.get("text") or "", "emit": emit, "conn": self, "at": time.monotonic(),
                   "done": lambda err: self.send({"type": "spoken", "id": sid, **({"error": err} if err else {})})})
 
     def pick(self, patient):
-        """A patient voice of the right sex, at random, so stations don't all sound alike (age barely shows in
-        these voices: the user, 28 Oct); the examiner's own steady voice, never used for a patient."""
+        """A patient voice of the right sex, at random, so stations don't all sound alike; the examiner's
+        own steady voice, never used for a patient."""
         import random
         sex = (patient or {}).get("sex")
-        pats = [v for v in VOICES.values() if v.get("role") == "patient"] or list(VOICES.values())
+        vs = ENGINE.voices.values()
+        pats = [v for v in vs if v.get("role") == "patient"] or list(vs)
         p = random.choice([v for v in pats if v.get("sex") == sex] or pats)
-        ex = next((v for v in VOICES.values() if v.get("role") == "examiner"), p)
+        ex = next((v for v in vs if v.get("role") == "examiner"), p)
         self.voices = {"patient": p["id"], "examiner": ex["id"]}
         return self.voices
 
@@ -460,7 +548,7 @@ async def handle(ws):
                 if "hang" in m:
                     c.HANG_MS = max(250, min(1500, int(m["hang"])))
                 c.ptt = m.get("mode") == "ptt"
-                await ws.send(json.dumps({"type": "ready", "voices": c.pick(m.get("patient"))}))
+                await ws.send(json.dumps({"type": "ready", "rate": RATE, "voices": c.pick(m.get("patient"))}))
             elif m.get("type") == "speak":
                 c.speak(m)
             elif m.get("type") == "ptt_start":
@@ -486,19 +574,21 @@ async def handle(ws):
 
 
 def boot():
-    global EAR
     try:
-        EAR = Ear()
         while not MOUTH_READY.wait(1):
             if STATE["error"]:
                 return
-        if not EAR.ready.wait(120):
-            raise RuntimeError("the ear didn't start")
         STATE["ready"] = True
         log("ready")
     except Exception as e:
         STATE["error"] = f"The voice couldn't start: {e}"
         log(STATE["error"])
+
+
+def quit_(*_):
+    if ENGINE:
+        ENGINE.close()
+    os._exit(0)
 
 
 async def main():
@@ -510,9 +600,10 @@ async def main():
             await asyncio.sleep(30)
             if STATE["conns"] == 0 and time.time() - STATE["last"] > ARGS.idle:
                 log("idle; exiting")
-                os._exit(0)
+                quit_()
 
 
 if __name__ == "__main__":
-    torch.set_num_threads(max(1, (os.cpu_count() or 4) // 2))
+    for s in (signal.SIGINT, signal.SIGTERM):
+        signal.signal(s, quit_)
     asyncio.run(main())

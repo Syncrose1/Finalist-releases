@@ -5,8 +5,9 @@
 #   ./install.sh --yes      takes every default (for scripts)
 #
 # The node is plain Python (3.10+, standard library only) plus Claude Code, so it runs anywhere those
-# do. Typed stations need nothing more. The voice needs an NVIDIA GPU and two big Python environments;
-# on this machine without them, stations are typed and the node says so.
+# do. Typed stations need nothing more. The voice is set up from the node's own screen (it downloads
+# audio.cpp and its models); from source it also needs a Python with numpy, websockets and onnxruntime,
+# which step 6 offers to make.
 set -euo pipefail
 NODE="$(cd "$(dirname "$(readlink -f "$0" 2>/dev/null || echo "$0")")" && pwd)"
 YES=0; [[ "${1:-}" == "--yes" ]] && YES=1
@@ -90,13 +91,27 @@ else
 fi
 
 say "6. The voice"
-if [[ -x "$HOME/miniconda3/envs/ming/bin/python" ]]; then
-  ok "voice found: stations can be spoken"
-elif command -v nvidia-smi >/dev/null; then
-  no "NVIDIA GPU found, but the voice isn't set up yet: stations are typed for now (voice setup: node/README.md)."
+VENV="$HOME/.local/share/finalist-node/voice-python"
+if [[ -x "$VENV/bin/python" ]] && "$VENV/bin/python" -c "import numpy, websockets, onnxruntime" 2>/dev/null; then
+  ok "the voice's Python is ready ($VENV)"
+elif ask "Make a small Python environment for the voice (numpy, websockets, onnxruntime; ~60 MB)?"; then
+  "$PY" -m venv "$VENV" && "$VENV/bin/pip" -q install numpy websockets onnxruntime && ok "made $VENV" || no "couldn't make it: stations stay typed"
 else
-  no "No NVIDIA GPU: stations are typed (the voice needs one, for now)."
+  no "skipped: stations are typed until the voice has its Python"
 fi
+if [[ -x "$VENV/bin/python" ]]; then
+  "$PY" - "$VENV/bin/python" <<'PYCFG'
+import json, sys
+from pathlib import Path
+f = Path.home() / ".config/finalist-node/config.json"
+d = json.loads(f.read_text()) if f.exists() else {}
+d["voice_python"] = sys.argv[1]
+f.parent.mkdir(parents=True, exist_ok=True)
+f.write_text(json.dumps(d, indent=1))
+PYCFG
+fi
+ok "then, on the node's screen, Set up the voice: it downloads the voice engine and models, and picks Ming
+     on a graphics card that can run it, Pocket otherwise"
 
 say "Done. Start it:"
 if [[ "$OS" == Darwin ]]; then echo "  double-click Finalist Node.command on the Desktop"; else echo "  finalist-node"; fi

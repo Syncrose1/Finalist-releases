@@ -117,6 +117,15 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
 .btn:disabled { opacity: .45; cursor: default; transform: none; }
 .foot { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 .foot p { flex: 1 1 260px; margin: 0; font-size: 12.5px; color: var(--ink-3); }
+
+/* the voice row: set up from here, with its progress in place */
+#voice { border-top: 1px solid var(--line); }
+.bar2 { height: 6px; margin-top: 8px; border-radius: 999px; background: var(--paper-2); border: 1px solid var(--line); overflow: hidden; }
+.bar2 i { display: block; height: 100%; width: 0; background: var(--go); border-radius: 999px; transition: width .6s ease; }
+.bar2.busy i { width: 35% !important; animation: slidebar 1.4s ease-in-out infinite; }
+@keyframes slidebar { from { transform: translateX(-100%); } to { transform: translateX(290%); } }
+.note { margin-top: 6px; padding: 6px 10px; border-radius: 10px; font-size: 12.5px; background: color-mix(in srgb, var(--amber) 11%, transparent); color: var(--ink-2); }
+#voice .btn { margin-top: 10px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 </style>
 </head>
@@ -140,7 +149,7 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
   <section class="s r r3" aria-labelledby="t1">
     <h2 id="t1">This computer</h2>
     <p>What the node has to work with.</p>
-    <div class="card rows" id="rows"></div>
+    <div class="card rows"><div id="rows"></div><div class="row" id="voice"></div></div>
   </section>
 
   <section class="s r r4" id="ctlsec" hidden aria-labelledby="t2">
@@ -244,10 +253,10 @@ function render(s) {
   const rows = [
     ["claude", "Claude Code", s.claude ? "Patient and Examiner Claude use your Claude plan" : `Not installed: run the line above in ${win ? "PowerShell" : "a terminal"}`, s.claude ? ["ok", "Ready"] : ["bad", "Missing"]],
     ["user", "Account", s.paired ? `Works for ${esc(s.owner || "its owner")}` : "Not paired yet", s.paired ? ["ok", "Paired"] : ["warn", "To do"]],
-    ["voice", "Voice", s.voice ? "Spoken stations, or typed" : "Typed stations: no voice on this computer yet", s.voice ? ["ok", "Spoken"] : ["", "Typed"]],
   ];
   set($("#rows"), rows.map(([i, k, v, [c, t]]) => `<div class="row">${svg(i)}<div><div class="k">${k}</div><div class="v">${v}</div></div><span class="tag ${c}">${t}</span></div>`).join(""), "rows");
 
+  voiceRow(s.voice || {});
   controls(s);
 
   const feed = $("#feed"), news = s.activity.filter((a) => a.at > seen);
@@ -259,6 +268,40 @@ function render(s) {
   if (news.length) seen = news[news.length - 1].at;
   while (feed.children.length > 8) feed.lastChild.remove();
   feed.classList.toggle("long", feed.children.length > 5);
+}
+
+
+// The voice: set up from here (it downloads the engine and models, then times Ming on a graphics card)
+const GB = (b) => (b / 1e9).toFixed(b >= 1e9 ? 1 : 2) + " GB";
+function voiceRow(v) {
+  const el = $("#voice"), st = v.setup || {}, inst = v.installed, busy = st.phase === "downloading" || st.phase === "checking";
+  const mode = inst ? "ready:" + inst.mouth + inst.gpu + (inst.experimental || "") : busy ? "busy" : st.phase === "failed" ? "failed:" + st.error : v.builds ? "none" : "unsupported";
+  if (last.voice !== mode) {
+    last.voice = mode;
+    let body, tag;
+    if (inst) {
+      const where = inst.mouth === "ming" ? `Ming, on ${esc(inst.gpu)}` : inst.backend === "cpu" ? "Pocket, on this computer's processor" : `Pocket, on ${esc(inst.gpu)}`;
+      body = `<div class="v">Spoken stations: ${where}</div>${inst.experimental ? `<div class="note">${esc(inst.experimental)}</div>` : ""}`;
+      tag = ["ok", "Spoken"];
+    } else if (busy) {
+      body = `<div class="v" id="vstep"></div><div class="bar2" id="vbar"><i></i></div>`; tag = ["warn", "Setting up"];
+    } else if (st.phase === "failed") {
+      body = `<div class="v">${esc(st.error)}</div><button class="btn ghost" id="vgo" type="button">Try again</button>`; tag = ["bad", "Failed"];
+    } else if (v.builds) {
+      body = `<div class="v">Typed stations until it's set up. It downloads the voice engine and its models: about 1.2 GB, and 1.7 GB more for the richer voice if this computer has a graphics card that can run it.</div>
+        <button class="btn" id="vgo" type="button">Set up the voice</button>`; tag = ["", "Typed"];
+    } else {
+      body = `<div class="v">Typed stations: there's no voice engine for this computer yet.</div>`; tag = ["", "Typed"];
+    }
+    el.innerHTML = `${svg("voice")}<div><div class="k">Voice</div>${body}</div><span class="tag ${tag[0]}">${tag[1]}</span>`;
+    el.classList.remove("swap"); void el.offsetWidth; el.classList.add("swap");
+    const go = $("#vgo"); if (go) go.onclick = async () => { go.disabled = true; await post("/v1/local/voice/setup").catch(() => {}); last.voice = ""; tick(); };
+  }
+  if (busy) {
+    const pct = st.total ? Math.min(100, Math.round(100 * st.done / st.total)) : null;
+    $("#vstep").textContent = (st.step || "Setting up") + (pct !== null ? ` · ${GB(st.done)} of ${GB(st.total)}` : "…");
+    const b = $("#vbar"); b.classList.toggle("busy", pct === null); b.firstChild.style.width = (pct ?? 0) + "%";
+  }
 }
 
 async function post(path, body) {

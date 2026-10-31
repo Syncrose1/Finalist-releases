@@ -29,6 +29,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from . import auth, config
+from . import voice_setup
 from . import stations as sim
 
 CFG = config.load()
@@ -37,6 +38,7 @@ VERSION = 1
 KINDS = sim.KINDS
 LOCK = threading.Lock()
 VOICE_LOCK = threading.Lock()
+VOICE = {"proc": None}      # the voice this node started, stopped with it
 
 
 ACTIVITY = []          # the last lines of the log, for the node's own screen
@@ -284,7 +286,7 @@ def local_status():
     return {"state": state, "now": now, "port": CFG["port"],
             "claude": bool(claude), "paired": bool(CFG["owner_id"]), "owner": CFG.get("owner_email"),
             "code": pair_code() if not CFG["owner_id"] else None,
-            "voice": Path(CFG["voice_python"]).expanduser().exists(), "ranking": circuit() is not None,
+            "voice": voice_setup.status(CFG), "ranking": circuit() is not None,
             "tailnet": public_url(), "public": public_on(),
             "share": share_view(LocalOwner()) if s.get("email") and now < s.get("until", 0) + FINISH else None,
             "friends": friends(), "live": live, "activity": ACTIVITY[-12:]}
@@ -303,9 +305,23 @@ def share_reaper():
                 log(f"the share with {s['email']} has ended")
 
 
-def voice_up(wait=20):
-    """The voice server on demand (it exits by itself after ten idle minutes, freeing the GPU). The
-    Revision System starts the same script on the same port, so there is only ever one."""
+def voice_cmd():
+    """How to start the voice: the executable runs it itself (`--voice`); from source, a Python with
+    numpy, websockets and onnxruntime (voice_python if set, else this one)."""
+    v = voice_setup.installed(CFG)
+    if not v:
+        return None
+    r = voice_setup.root(CFG)
+    args = ["--port", str(CFG["voice_port"]), "--engine", v["engine"], "--models", str(r / "models"),
+            "--voices", str(r / "voices"), "--mouth", v["mouth"], "--backend", v["backend"], "--device", str(v.get("device", 0))]
+    if getattr(sys, "frozen", False):
+        return [sys.executable, "--voice", *args]
+    py = Path(CFG.get("voice_python") or "").expanduser()
+    return [str(py if py.is_file() else sys.executable), str(NODE / "voice" / "voiced.py"), *args]
+
+
+def voice_up(wait=60):
+    """The voice on demand (it exits by itself after ten idle minutes, freeing the graphics card)."""
     def listening():
         try:
             socket.create_connection(("127.0.0.1", CFG["voice_port"]), 0.3).close()
@@ -316,22 +332,31 @@ def voice_up(wait=20):
         return True
     with VOICE_LOCK:
         if not listening():
-            py = Path(CFG["voice_python"]).expanduser()
-            if not py.exists():
+            cmd = voice_cmd()
+            if not cmd:
                 return False
-            data = shared()
-            log("starting the voice (about 20 s the first time)")
+            log("starting the voice (a few seconds; longer the very first time)")
             # In this terminal's process group, printing here: Ctrl+C on the node stops it too
             # (Raahat, 30 Oct: a script they can see and kill, not a background service).
-            subprocess.Popen([str(py), str(NODE / "voice" / "voiced.py"), "--port", str(CFG["voice_port"]),
-                              "--voices", str(data / "voices"), "--ear-python", str(Path(CFG["ear_python"]).expanduser())],
-                             stdin=subprocess.DEVNULL)
+            VOICE["proc"] = subprocess.Popen(cmd, stdin=subprocess.DEVNULL)
         end = time.time() + wait
         while time.time() < end:
             if listening():
                 return True
+            if VOICE["proc"] and VOICE["proc"].poll() is not None:
+                return False
             time.sleep(0.25)
     return False
+
+
+def voice_down():
+    p = VOICE["proc"]
+    if p and p.poll() is None:
+        p.terminate()                   # it stops its engine on the way out
+        try:
+            p.wait(8)
+        except subprocess.TimeoutExpired:
+            p.kill()
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -416,7 +441,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(200, local_status())
         if path == "/v1/hello":
             return self.send_json(200, {"node": VERSION, "supabase_url": CFG["supabase_url"], "supabase_anon_key": CFG["supabase_anon_key"],
-                                        "voice": Path(CFG["voice_python"]).expanduser().exists(), "paired": bool(CFG["owner_id"]), "public": public_on(),
+                                        "voice": bool(voice_setup.installed(CFG)), "paired": bool(CFG["owner_id"]), "public": public_on(),
                                         "ranking": circuit() is not None})
         w = self.who()
         if not w:
@@ -470,6 +495,7 @@ class Handler(BaseHTTPRequestHandler):
             if path == "/v1/local/stop":
                 self.send_json(200, {"stopping": True})
                 log("stopping (from the node's screen)")
+                voice_down()
                 threading.Thread(target=lambda: (time.sleep(0.4), os._exit(0)), daemon=True).start()
                 return
             b = self.body()
@@ -480,6 +506,9 @@ class Handler(BaseHTTPRequestHandler):
             me = LocalOwner()
             if path == "/v1/local/public":
                 return self.set_reach(b, me)
+            if path == "/v1/local/voice/setup":
+                voice_setup.start(CFG, log)
+                return self.send_json(200, {"voice": voice_setup.status(CFG)})
             if path == "/v1/local/friends/forget":
                 friends_save([x for x in friends() if x != str(b.get("email") or "").lower()])
                 return self.send_json(200, {"friends": friends()})
@@ -753,8 +782,8 @@ def main():
         log("then run  claude  once to sign in, and start this again.", screen=False)
     if not CFG["owner_id"]:
         log(f"not paired yet: in Finalist's settings (signed in), enter the code  {pair_code()}", screen=False)
-    if not Path(CFG["voice_python"]).expanduser().exists():
-        log("no voice on this machine: stations are typed (the voice needs an NVIDIA GPU for now)", screen=False)
+    if not voice_setup.installed(CFG):
+        log("the voice isn't set up: stations are typed until you set it up on the node's screen", screen=False)
     s = node_share()
     if s.get("email"):
         log(f"still shared with {s['email']} for {max(0, int((s['until'] - time.time()) / 60))} more minutes", screen=False)
@@ -768,6 +797,7 @@ def main():
     try:
         srv.serve_forever()
     except KeyboardInterrupt:
+        voice_down()
         log("stopped")
 
 
