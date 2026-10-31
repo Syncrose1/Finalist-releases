@@ -12,7 +12,7 @@
    single screen but beautifully animated: we want normal users to use it", then "it bares little
    resemblance to Finalist itself". So this is a Finalist page: its "Clinical Almanac" tokens, brand
    block, cards and section heads, copied from src/app/globals.css and the account page. The living
-   part is a heartbeat trace across the status card: its pace is the node's state. Light only, like
+   part is a heart monitor across the status card: its pace is the node's state, and the page reacts to each beat. Light only, like
    Finalist; still under reduced motion. Served to this PC's own browser only. */
 :root {
   --paper: #f2ecdd; --paper-2: #f8f3e7; --card: #fbf7ee; --ink: #1c1812; --ink-2: #574f41; --ink-3: #8a8072;
@@ -52,10 +52,30 @@ body { margin: 0; min-height: 100vh; color: var(--ink); font: 15px/1.55 "Hanken 
 .hero .txt { padding: 22px 22px 6px; }
 h1 { margin: 8px 0 6px; font: 600 clamp(28px, 5vw, 38px)/1.08 var(--display); letter-spacing: -.02em; }
 .lede { margin: 0; max-width: 54ch; color: var(--ink-2); }
-.trace { display: block; width: 100%; height: 74px; }
-.trace path { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
-.trace .base { stroke: var(--line); stroke-width: 1.5; }
-.trace .beat { stroke: var(--tone); stroke-width: 2.2; transition: stroke .6s; }
+/* the monitor: a sweep that writes the trace with a glowing head, and everything reacts to the R wave */
+.monitor { position: relative; height: 96px; margin-top: 6px; }
+.monitor canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.ripple { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; pointer-events: none;
+  border: 2px solid var(--tone); animation: ripple .75s cubic-bezier(.2,.7,.3,1) forwards; }
+.ripple.b { border-width: 1px; animation-duration: 1.1s; animation-delay: .04s; }
+@keyframes ripple { from { transform: scale(.4); opacity: .9; } to { transform: scale(7); opacity: 0; } }
+.hero { transform-origin: 50% 70%; transition: border-color .4s, box-shadow .4s; }
+.hero.thump { animation: thump .52s var(--spring); }
+@keyframes thump {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.013) translateY(-1px); box-shadow: 0 0 0 1px color-mix(in srgb, var(--tone) 40%, transparent), 0 18px 46px -18px color-mix(in srgb, var(--tone) 55%, transparent); }
+  42% { transform: scale(.997); }
+  100% { transform: scale(1); }
+}
+.hero.thump h1 { animation: kick .45s var(--spring); }
+@keyframes kick { 18% { letter-spacing: -.012em; transform: translateY(-1px); } }
+.aura { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0;
+  background: radial-gradient(60vmax 40vmax at 50% 18%, color-mix(in srgb, var(--tone) 16%, transparent), transparent 70%); }
+.aura.on { animation: aura .9s ease-out; }
+@keyframes aura { 0% { opacity: 0; } 12% { opacity: 1; } 100% { opacity: 0; } }
+.pill i { animation: none !important; }
+.pill.beat i { animation: pip .5s var(--spring) !important; }
+@keyframes pip { 0% { transform: scale(1); } 20% { transform: scale(1.9); box-shadow: 0 0 0 6px color-mix(in srgb, currentColor 18%, transparent); } 100% { transform: scale(1); } }
 .code { display: flex; gap: 6px; flex-wrap: wrap; margin: 16px 0 4px; }
 .code span { display: grid; place-items: center; width: 40px; height: 50px; border-radius: 10px; background: var(--paper-2); border: 1px solid var(--line-2);
   font: 500 24px var(--mono); animation: tile .55s var(--spring) both; }
@@ -130,6 +150,7 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
 </style>
 </head>
 <body>
+<div class="aura" id="aura" aria-hidden="true"></div>
 <div class="wrap">
   <header class="bar r">
     <a class="brand" href="https://raahat.sh/finalist" target="_blank" rel="noopener"><b>F</b><span><strong>Finalist</strong><span class="eyebrow">Node · this computer</span></span></a>
@@ -143,7 +164,7 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
       <p class="lede" id="sub">One moment.</p>
       <div id="focus" hidden></div>
     </div>
-    <svg class="trace" viewBox="0 0 600 74" preserveAspectRatio="none" aria-hidden="true"><path class="base" d="M0 44H600"/><path class="beat" id="beat" d="M0 44H600"/></svg>
+    <div class="monitor" id="monitor" aria-hidden="true"><canvas id="ecg"></canvas></div>
   </div>
 
   <section class="s r r3" aria-labelledby="t1">
@@ -190,30 +211,96 @@ function set(el, html, key) {                 // swap with a spring, only when i
   el.classList.remove("swap"); void el.offsetWidth; el.classList.add("swap");
 }
 
-/* The heartbeat: a PQRST complex per beat, scrolling across. Resting when ready, quick during a
-   station, slow while waiting to pair, and it fizzles to a flat line when the node stops. */
-const beat = $("#beat"), W = 600, Y = 44, GAP = W / 3.2;
-let bpm = 60, amp = 1, x0 = 0, tPrev = performance.now();
-function complex(x, a) {
-  const k = (dx, dy) => `L${(x + dx).toFixed(1)} ${(Y - dy * a).toFixed(1)}`;
-  return [k(0, 0), k(8, 3), k(16, 0), k(26, 0), k(30, -4), k(36, 30), k(42, -9), k(48, 0), k(62, 0), k(74, 7), k(88, 0)].join("");
+/* The heartbeat (Raahat, 31 Oct: "you want to FEEL the animation... the interface should REACT to each
+   beat"). A monitor sweep: the head writes the trace left to right at a steady speed, the old trace
+   fades behind it, and a gap runs ahead of it. The rhythm sets the waveform: a P wave, the QRS spike,
+   the T wave. On each R wave: the head flares, a ripple bursts from it, the card thumps, the pill's dot
+   pips and a glow breathes behind the page. Quicker during a station, slow while waiting to pair, and
+   it fizzles to a flat line when the node stops. Still under reduced motion: one beat, drawn once. */
+const cv = $("#ecg"), cx = cv.getContext("2d"), hero = $(".hero"), pill = $(".pill"), aura = $("#aura"), mon = $("#monitor");
+const SPEED = 150, GAPPX = 26, TRAIL = 0.92;      // px a second; blank ahead of the head; how much of the width stays lit
+let bpm = 60, amp = 1, W = 0, H = 0, dpr = 1, ys = [], head = 0, clock = 0, lastPhase = 0, flare = 0, tPrev = performance.now();
+const tone = () => getComputedStyle(document.documentElement).getPropertyValue("--tone").trim() || "#0f7355";
+const bump = (x, c, w) => Math.exp(-((x - c) ** 2) / (2 * w * w));
+function wave(ph) {          // one beat, phase 0..1: P, Q, R, S, T (R at 0.38)
+  return 0.11 * bump(ph, 0.18, 0.028) - 0.14 * bump(ph, 0.355, 0.007) + 1.0 * bump(ph, 0.38, 0.0075)
+       - 0.30 * bump(ph, 0.402, 0.009) + 0.24 * bump(ph, 0.63, 0.048);
 }
-function path() {
-  let d = `M0 ${Y}`;
-  for (let x = x0 - GAP; x < W; x += GAP) if (x > -90) d += complex(x, amp);
-  return d + `L${W} ${Y}`;
+function size() {
+  dpr = window.devicePixelRatio || 1;
+  const r = mon.getBoundingClientRect();
+  W = Math.max(1, Math.round(r.width)); H = Math.round(r.height);
+  cv.width = W * dpr; cv.height = H * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ys = new Array(W).fill(null); head = 0;
+}
+const yOf = (v) => H * 0.66 - v * H * 0.5;
+function beatNow() {          // the R wave: everything reacts
+  flare = 1;
+  const x = head, y = yOf(ys[Math.min(W - 1, Math.round(head))] ?? 0);
+  for (const cls of ["", " b"]) {
+    const r = document.createElement("span");
+    r.className = "ripple" + cls; r.style.left = x + "px"; r.style.top = y + "px";
+    mon.appendChild(r); setTimeout(() => r.remove(), 1300);
+  }
+  for (const el of [hero, pill]) { el.classList.remove(el === hero ? "thump" : "beat"); void el.offsetWidth; el.classList.add(el === hero ? "thump" : "beat"); }
+  aura.classList.remove("on"); void aura.offsetWidth; aura.classList.add("on");
 }
 function draw(now) {
-  const dt = Math.min(64, now - tPrev); tPrev = now;
-  x0 = (x0 + GAP * bpm / 60000 * dt) % GAP;   // one complex passes per beat
-  beat.setAttribute("d", path());
+  const dt = Math.min(0.05, (now - tPrev) / 1000); tPrev = now;
+  if (!W) size();
+  const period = 60 / bpm, from = head;
+  head += SPEED * dt; clock += dt;
+  const ph = (clock % period) / period;
+  if (amp > 0.3 && lastPhase < 0.38 && ph >= 0.38) beatNow();
+  lastPhase = ph;
+  for (let x = Math.floor(from); x < Math.floor(head); x++) {               // write the new columns
+    const t = clock - (head - x) / SPEED, p = ((t % period) + period) % period / period;
+    ys[x % W] = amp * wave(p) + (Math.random() - 0.5) * 0.012;
+  }
+  if (head >= W) head -= W;
+  for (let g = 1; g <= GAPPX; g++) ys[Math.floor(head + g) % W] = null;   // the gap ahead
+  flare *= Math.exp(-dt * 7);
+  cx.clearRect(0, 0, W, H);
+  const c = tone();
+  cx.lineWidth = 1; cx.strokeStyle = "rgba(138,128,114,.18)";             // the baseline, faint
+  cx.beginPath(); cx.moveTo(0, yOf(0) + .5); cx.lineTo(W, yOf(0) + .5); cx.stroke();
+  cx.lineJoin = cx.lineCap = "round"; cx.strokeStyle = c;
+  const BANDS = 14;
+  for (let b = BANDS - 1; b >= 0; b--) {                                    // oldest band first, newest (brightest) last
+    const a0 = b / BANDS, a1 = (b + 1) / BANDS;
+    cx.globalAlpha = Math.pow(1 - a0, 1.6);
+    cx.lineWidth = b === 0 ? 2.6 + flare * 1.4 : 2.2;
+    cx.shadowColor = c; cx.shadowBlur = b === 0 ? 10 + flare * 18 : 0;
+    cx.beginPath(); let pen = false;
+    for (let k = Math.floor(a0 * W * TRAIL); k <= Math.ceil(a1 * W * TRAIL); k++) {
+      const x = ((Math.floor(head) - k) % W + W) % W, v = ys[x];
+      if (v === null) { pen = false; continue; }
+      const y = yOf(v);
+      if (!pen) { cx.moveTo(x, y); pen = true; } else cx.lineTo(x, y);
+      if (x === 0) pen = false;
+    }
+    cx.stroke();
+  }
+  cx.globalAlpha = 1; cx.shadowBlur = 0;
+  const hy = yOf(ys[Math.floor(head) % W] ?? 0), R = 3.2 + flare * 4;    // the head
+  const g = cx.createRadialGradient(head, hy, 0, head, hy, R * 4.5);
+  g.addColorStop(0, c); g.addColorStop(0.25, c); g.addColorStop(1, "transparent");
+  cx.globalAlpha = .35 + flare * .5; cx.fillStyle = g; cx.beginPath(); cx.arc(head, hy, R * 4.5, 0, 7); cx.fill();
+  cx.globalAlpha = 1; cx.fillStyle = "#fff"; cx.beginPath(); cx.arc(head, hy, R * .55, 0, 7); cx.fill();
   requestAnimationFrame(draw);
 }
-if (reduced) { x0 = 40; beat.setAttribute("d", path()); } else requestAnimationFrame(draw);
+function still() {             // reduced motion: one beat, drawn once
+  size(); const period = 1;
+  for (let x = 0; x < W; x++) ys[x] = amp * wave(((x / W) * 2.4) % period);
+  cx.clearRect(0, 0, W, H); cx.strokeStyle = tone(); cx.lineWidth = 2.2; cx.beginPath();
+  ys.forEach((v, x) => (x ? cx.lineTo(x, yOf(v)) : cx.moveTo(x, yOf(v)))); cx.stroke();
+}
+addEventListener("resize", () => (reduced ? still() : size()));
+if (reduced) requestAnimationFrame(still); else requestAnimationFrame(draw);
 function rhythm(target, a) {                    // ease into a new pace rather than jump
   const from = bpm, fa = amp, t0 = performance.now();
   const step = (t) => { const k = Math.min(1, (t - t0) / 900); bpm = from + (target - from) * k; amp = fa + (a - fa) * k;
-    if (reduced) beat.setAttribute("d", path()); if (k < 1) requestAnimationFrame(step); };
+    if (reduced) still(); if (k < 1) requestAnimationFrame(step); };
   requestAnimationFrame(step);
 }
 
