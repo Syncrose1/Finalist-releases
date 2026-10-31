@@ -29,9 +29,10 @@ jobs:
       - name: Build
         working-directory: node
         run: |
-          pip install pyinstaller==6.*
+          # the voice (voice/voiced.py, run by the executable with --voice) needs these three
+          pip install pyinstaller==6.* numpy websockets onnxruntime || pip install pyinstaller==6.* numpy websockets "onnxruntime<1.20"
           sep=$(python -c "import os; print(os.pathsep)")   # ; on Windows, : elsewhere
-          pyinstaller --onefile --console --name finalist-node \
+          pyinstaller --onefile --console --name finalist-node --collect-submodules websockets \
             --add-data "data${sep}data" --add-data "voice${sep}voice" finalist-node.py
           ls -l dist
       - name: Starts and answers
@@ -45,6 +46,8 @@ jobs:
           echo; cat "$RUNNER_TEMP/node.log"
           curl -sf http://127.0.0.1:47699/v1/hello | grep -q '"node"'
           curl -sf http://127.0.0.1:47699/ | grep -q "Finalist Node"
+          # the voice's own Python parts are inside (its engine and models download on the machine)
+          "$exe" --voice --help | grep -q -- "--engine"
       - name: Name it
         run: |
           mkdir out
