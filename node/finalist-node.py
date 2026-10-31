@@ -16,6 +16,12 @@ if getattr(sys, "frozen", False):
         else:
             os.environ.pop(var, None)
 
+# Opened from a file manager or as a Mac .app there's no terminal: print into nothing rather than fail.
+if sys.stdout is None:
+    sys.stdout = open(os.devnull, "w")
+if sys.stderr is None:
+    sys.stderr = open(os.devnull, "w")
+
 if "--voice" in sys.argv:
     sys.argv.remove("--voice")
     import runpy
