@@ -13,10 +13,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { os: ubuntu-22.04, name: finalist-node-linux-x64.tar.gz }
-          - { os: macos-14,     name: finalist-node-macos-arm64.zip }
+          - { os: ubuntu-22.04,   name: finalist-node-linux-x64.AppImage }
+          - { os: macos-14,       name: finalist-node-macos-arm64.zip }
           - { os: macos-15-intel, name: finalist-node-macos-intel.zip }
-          - { os: windows-2022, name: finalist-node-windows-x64.exe }
+          - { os: windows-2022,   name: finalist-node-windows-x64.exe }
     runs-on: ${{ matrix.os }}
     defaults:
       run:
@@ -32,35 +32,51 @@ jobs:
           # the voice (voice/voiced.py, run by the executable with --voice) needs these three
           pip install pyinstaller==6.* numpy websockets onnxruntime || pip install pyinstaller==6.* numpy websockets "onnxruntime<1.20"
           sep=$(python -c "import os; print(os.pathsep)")   # ; on Windows, : elsewhere
-          pyinstaller --onefile --console --name finalist-node --collect-submodules websockets \
-            --add-data "data${sep}data" --add-data "voice${sep}voice" finalist-node.py
+          common=(--collect-submodules websockets --add-data "data${sep}data" --add-data "voice${sep}voice")
+          if [ "$RUNNER_OS" = macOS ]; then
+            # a Mac's own portable form: an .app, no Terminal window
+            pyinstaller --windowed --onedir --name "Finalist Node" --osx-bundle-identifier sh.raahat.finalist-node "${common[@]}" finalist-node.py
+            echo "EXE=dist/Finalist Node.app/Contents/MacOS/Finalist Node" >> "$GITHUB_ENV"
+          else
+            pyinstaller --onefile --console --name finalist-node "${common[@]}" finalist-node.py
+            [ -f dist/finalist-node.exe ] && echo "EXE=dist/finalist-node.exe" >> "$GITHUB_ENV" || echo "EXE=dist/finalist-node" >> "$GITHUB_ENV"
+          fi
           ls -l dist
-      - name: Starts and answers
-        working-directory: node
+      - name: Package
         run: |
-          exe=dist/finalist-node; [ -f dist/finalist-node.exe ] && exe=dist/finalist-node.exe
+          # Portable, nothing installed (Raahat): an AppImage on Linux, an .app on a Mac, the .exe on Windows
+          mkdir out
+          case "${{ matrix.name }}" in
+            *.exe) cp node/dist/finalist-node.exe "out/${{ matrix.name }}" ;;
+            *.zip) ditto -c -k --keepParent "node/dist/Finalist Node.app" "out/${{ matrix.name }}" ;;
+            *.AppImage)
+              A=AppDir; mkdir -p $A/usr/bin
+              cp node/dist/finalist-node $A/usr/bin/finalist-node
+              printf '#!/bin/sh\nexec "$(dirname "$(readlink -f "$0")")/usr/bin/finalist-node" "$@"\n' > $A/AppRun
+              chmod +x $A/AppRun $A/usr/bin/finalist-node
+              printf '[Desktop Entry]\nType=Application\nName=Finalist Node\nComment=Patient and Examiner Claude for Finalist, on this computer\nExec=finalist-node\nIcon=finalist-node\nTerminal=false\nCategories=Education;\n' > $A/finalist-node.desktop
+              printf '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" rx="56" fill="#1c1812"/><text x="128" y="182" text-anchor="middle" font-family="Georgia,serif" font-size="150" fill="#f2ecdd">F</text></svg>\n' > $A/finalist-node.svg
+              curl -fsSL -o appimagetool https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
+              chmod +x appimagetool
+              ARCH=x86_64 APPIMAGE_EXTRACT_AND_RUN=1 ./appimagetool $A "out/${{ matrix.name }}"
+              echo "PKG=out/${{ matrix.name }}" >> "$GITHUB_ENV" ;;
+          esac
+          ls -l out
+      - name: Starts and answers
+        run: |
+          # the packaged thing itself where it differs (the AppImage); the .app's own executable; the .exe
+          exe="node/$EXE"
+          [ -n "${PKG:-}" ] && exe="$PKG" && export APPIMAGE_EXTRACT_AND_RUN=1
           cfg="$RUNNER_TEMP/node.json"; data="$RUNNER_TEMP/node-data"
           python -c "import json,sys; json.dump({'port': 47699, 'data': sys.argv[2], 'open_window': False}, open(sys.argv[1], 'w'))" "$cfg" "$data"
           FINALIST_NODE_CONFIG="$cfg" "$exe" --no-window > "$RUNNER_TEMP/node.log" 2>&1 &
-          for i in $(seq 1 40); do curl -sf http://127.0.0.1:47699/v1/hello && break; sleep 1; done
-          echo; cat "$RUNNER_TEMP/node.log"
+          for i in $(seq 1 60); do curl -sf http://127.0.0.1:47699/v1/hello -o /dev/null && break; sleep 1; done
+          cat "$RUNNER_TEMP/node.log"
           # to files first: grep -q stops reading early and curl then fails with 23 (31 Oct, on the Macs)
           curl -sf http://127.0.0.1:47699/v1/hello -o hello.json && grep -q '"node"' hello.json
           curl -sf http://127.0.0.1:47699/ -o screen.html && grep -q "Finalist Node" screen.html
           # the voice's own Python parts are inside (its engine and models download on the machine)
           "$exe" --voice --help > voice-help.txt && grep -q -- "--engine" voice-help.txt
-      - name: Name it
-        run: |
-          # Portable, nothing installed (Raahat). A downloaded bare file loses its permission to run, so on
-          # Linux and Mac the one file, "Finalist Node", travels in an archive that keeps it: extract, then
-          # double-click. Windows needs no such thing.
-          mkdir out pkg
-          case "${{ matrix.name }}" in
-            *.exe) cp node/dist/finalist-node.exe "out/${{ matrix.name }}" ;;
-            *.tar.gz) cp node/dist/finalist-node "pkg/Finalist Node"; chmod +x "pkg/Finalist Node"; tar -czf "out/${{ matrix.name }}" -C pkg "Finalist Node" ;;
-            *.zip) cp node/dist/finalist-node "pkg/Finalist Node"; chmod +x "pkg/Finalist Node"; (cd pkg && zip -q "../out/${{ matrix.name }}" "Finalist Node") ;;
-          esac
-          ls -l out
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.name }}

@@ -10,17 +10,14 @@ Finalist's cards, clock and recall drills work without it; the node adds the sta
    - macOS / Linux: `curl -fsSL https://claude.ai/install.sh | bash`
    - Windows (PowerShell): `irm https://claude.ai/install.ps1 | iex`
 2. **The node**: from [Releases](../../releases/latest), download the one for your computer. Nothing is installed:
-   it's one file you keep wherever you like (a USB stick works too).
+   it's one file (or one app) you keep wherever you like.
 
    | Computer | Download | Then |
    |---|---|---|
    | Windows | `finalist-node-windows-x64.exe` | double-click it |
-   | Mac with Apple silicon (M1 or later) | `finalist-node-macos-arm64.zip` | double-click to extract, then double-click **Finalist Node** |
+   | Mac with Apple silicon (M1 or later) | `finalist-node-macos-arm64.zip` | double-click it to unzip, then open **Finalist Node** |
    | Older Intel Mac | `finalist-node-macos-intel.zip` | the same |
-   | Linux | `finalist-node-linux-x64.tar.gz` | extract it, then double-click **Finalist Node** |
-
-   (The Linux and Mac builds come in an archive because a downloaded file isn't allowed to run until it's marked
-   executable; the archive keeps that mark.)
+   | Linux | `finalist-node-linux-x64.AppImage` | mark it as executable (right-click → Properties → Permissions → allow it to run as a program), then double-click it |
 
 ## Start it
 
@@ -37,9 +34,9 @@ These builds aren't signed, so your computer asks once whether to trust them:
 
 - **Windows**: "Windows protected your PC" → **More info** → **Run anyway**.
 - **macOS**: the first double-click says it can't be opened. Go to System Settings → Privacy & Security and press
-  **Open Anyway** (once). Or in Terminal: `xattr -d com.apple.quarantine ~/Downloads/"Finalist Node"`.
-- **Linux**: nothing to confirm. If your file manager opens it as text instead of running it, allow it to run
-  executables (or run `./"Finalist Node"` in a terminal from its folder).
+  **Open Anyway** (once). Or in Terminal: `xattr -dr com.apple.quarantine ~/Downloads/"Finalist Node.app"`.
+- **Linux**: mark the AppImage as executable first (above). In a terminal that's
+  `chmod +x finalist-node-linux-x64.AppImage`.
 
 ## From your other devices
 
