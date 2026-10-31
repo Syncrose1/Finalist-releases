@@ -44,10 +44,11 @@ jobs:
           FINALIST_NODE_CONFIG="$cfg" "$exe" --no-window > "$RUNNER_TEMP/node.log" 2>&1 &
           for i in $(seq 1 40); do curl -sf http://127.0.0.1:47699/v1/hello && break; sleep 1; done
           echo; cat "$RUNNER_TEMP/node.log"
-          curl -sf http://127.0.0.1:47699/v1/hello | grep -q '"node"'
-          curl -sf http://127.0.0.1:47699/ | grep -q "Finalist Node"
+          # to files first: grep -q stops reading early and curl then fails with 23 (31 Oct, on the Macs)
+          curl -sf http://127.0.0.1:47699/v1/hello -o hello.json && grep -q '"node"' hello.json
+          curl -sf http://127.0.0.1:47699/ -o screen.html && grep -q "Finalist Node" screen.html
           # the voice's own Python parts are inside (its engine and models download on the machine)
-          "$exe" --voice --help | grep -q -- "--engine"
+          "$exe" --voice --help > voice-help.txt && grep -q -- "--engine" voice-help.txt
       - name: Name it
         run: |
           mkdir out
