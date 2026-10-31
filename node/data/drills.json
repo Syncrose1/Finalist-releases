@@ -1,0 +1,5305 @@
+{
+"chest-pain-hx": {
+"groups": [
+{
+"name": "ACS",
+"items": [
+{
+"answer": "Crushing or heavy pain",
+"aliases": [
+"crushing",
+"heavy",
+"chest heaviness",
+"tight chest",
+"chest tightness",
+"pressure",
+"squeezing"
+]
+},
+{
+"answer": "Radiation to jaw or arm",
+"aliases": [
+"jaw pain",
+"arm pain",
+"spreading to arm",
+"radiates to jaw",
+"left arm",
+"neck pain",
+"spreads to ar"
+]
+},
+{
+"answer": "Sweating",
+"aliases": [
+"diaphoresis",
+"sweaty",
+"clammy"
+]
+},
+{
+"answer": "Nausea or vomiting",
+"aliases": [
+"feeling sick",
+"being sick",
+"vomited",
+"nausea",
+"n&v",
+"vomitinbg"
+]
+},
+{
+"answer": "Worse on exertion",
+"aliases": [
+"exertional",
+"on exertion",
+"worse with exercise",
+"comes on walking",
+"angina",
+"externonal pain"
+]
+}
+],
+"standard": true
+},
+{
+"name": "PE",
+"items": [
+{
+"answer": "Sudden breathlessness",
+"aliases": [
+"sudden shortness of breath",
+"sudden onset breathlessness",
+"acutely breathless",
+"sudden sob",
+"sob",
+"dyspneoa"
+]
+},
+{
+"answer": "Pleuritic pain",
+"aliases": [
+"sharp pain breathing in",
+"pain on inspiration",
+"worse on deep breath",
+"pleuritic chest pain",
+"hurts to breathe in",
+"pleuritic pain",
+"pleuritic"
+]
+},
+{
+"answer": "Haemoptysis",
+"aliases": [
+"coughing blood",
+"coughed up blood",
+"blood in sputum",
+"blood in phlegm",
+"haemptosis"
+]
+},
+{
+"answer": "Calf swelling",
+"aliases": [
+"swollen calf",
+"calf pain",
+"leg swelling",
+"one leg swollen",
+"dvt symptoms",
+"swellen leg"
+]
+},
+{
+"answer": "Long-haul travel",
+"aliases": [
+"long journey",
+"long flight",
+"recent flight",
+"recent travel",
+"long car journey"
+]
+},
+{
+"answer": "Recent surgery or immobility",
+"aliases": [
+"recent surgery",
+"post-op",
+"immobile",
+"bed bound",
+"immobilisation",
+"plaster cast"
+]
+},
+{
+"answer": "Combined pill or HRT",
+"aliases": [
+"cocp",
+"the pill",
+"contraceptive pill",
+"oestrogen",
+"hrt"
+]
+},
+{
+"answer": "Active cancer",
+"aliases": [
+"cancer",
+"malignancy",
+"chemotherapy"
+]
+},
+{
+"answer": "Previous VTE",
+"aliases": [
+"clot before",
+"previous dvt",
+"previous pe",
+"history of clots",
+"previous clot"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Aortic dissection screen",
+"items": [
+{
+"answer": "Sudden onset",
+"aliases": [
+"abrupt onset",
+"came on suddenly",
+"came on all of a sudden"
+]
+},
+{
+"answer": "Tearing pain",
+"aliases": [
+"ripping pain",
+"tearing character"
+]
+},
+{
+"answer": "Radiation to back",
+"aliases": [
+"through to back",
+"interscapular pain"
+]
+}
+]
+},
+{
+"name": "Pneumothorax",
+"items": [
+{
+"answer": "Sudden one-sided sharp pain",
+"aliases": [
+"sudden unilateral pain",
+"sharp pain one side",
+"one sided pleuritic pain",
+"sudden sharp chest pain",
+"unilateral pleuritic pain"
+]
+},
+{
+"answer": "Tall, thin build",
+"aliases": [
+"tall and thin",
+"tall thin",
+"slim young man",
+"marfan",
+"tall"
+]
+},
+{
+"answer": "Asthma or COPD",
+"aliases": [
+"lung disease",
+"copd",
+"asthma",
+"emphysema",
+"known lung disease"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Oesophageal rupture",
+"items": [
+{
+"answer": "Onset after forceful vomiting",
+"aliases": [
+"after retching",
+"post-vomiting pain",
+"Boerhaave"
+]
+}
+]
+},
+{
+"name": "Associated symptoms",
+"items": [
+{
+"answer": "Palpitations",
+"aliases": [
+"racing heart",
+"heart pounding"
+]
+},
+{
+"answer": "Syncope/presyncope",
+"aliases": [
+"faint",
+"blackout",
+"dizzy",
+"light headedness",
+"stokes"
+]
+},
+{
+"answer": "Cough",
+"aliases": [
+"coughing"
+]
+}
+]
+},
+{
+"name": "Risk factors/PMHx/DHx/FHx/SHx",
+"items": [
+{
+"answer": "Smoking history",
+"aliases": [
+"pack-years",
+"smoker"
+]
+},
+{
+"answer": "Diabetes",
+"aliases": [
+"DM"
+]
+},
+{
+"answer": "Hypertension",
+"aliases": [
+"high BP",
+"hypertensino",
+"high blood presure"
+]
+},
+{
+"answer": "Hypercholesterolaemia",
+"aliases": [
+"high cholesterol"
+]
+},
+{
+"answer": "Family history of heart disease",
+"aliases": [
+"FH MI under 60",
+"sudden cardiac death in family",
+"family history",
+"family history of cardiac disease",
+"family history of cardiac"
+]
+},
+{
+"answer": "Previous MI/angina/stents",
+"aliases": [
+"cardiac history",
+"past MI",
+"PCI",
+"recent MI",
+"recent ACS"
+]
+},
+{
+"answer": "GTN/antiplatelets use",
+"aliases": [
+"aspirin",
+"clopidogrel",
+"nitrate spray",
+"gtn"
+]
+},
+{
+"answer": "Malignancy history",
+"aliases": [
+"cancer history"
+]
+}
+]
+}
+]
+},
+"resp-hx": {
+"groups": [
+{
+"name": "Heart failure",
+"items": [
+{
+"answer": "Orthopnoea",
+"aliases": [
+"pillows",
+"how many pillows",
+"sleeping propped up",
+"breathless lying flat",
+"can't lie flat",
+"cant lie flat"
+]
+},
+{
+"answer": "PND",
+"aliases": [
+"waking breathless",
+"paroxysmal nocturnal dyspnoea",
+"gasping at night",
+"waking up gasping"
+]
+},
+{
+"answer": "Ankle swelling",
+"aliases": [
+"swollen ankles",
+"peripheral oedema",
+"ankles swell by evening",
+"leg oedema"
+]
+}
+],
+"standard": true
+},
+{
+"name": "PE",
+"items": [
+{
+"answer": "Sudden breathlessness",
+"aliases": [
+"sudden shortness of breath",
+"sudden onset breathlessness",
+"acutely breathless",
+"sudden sob"
+]
+},
+{
+"answer": "Pleuritic pain",
+"aliases": [
+"sharp pain breathing in",
+"pain on inspiration",
+"worse on deep breath",
+"pleuritic chest pain",
+"hurts to breathe in",
+"pleuritic pain"
+]
+},
+{
+"answer": "Haemoptysis",
+"aliases": [
+"coughing blood",
+"coughed up blood",
+"blood in sputum",
+"blood in phlegm"
+]
+},
+{
+"answer": "Calf swelling",
+"aliases": [
+"swollen calf",
+"calf pain",
+"leg swelling",
+"one leg swollen",
+"dvt symptoms"
+]
+},
+{
+"answer": "Long-haul travel",
+"aliases": [
+"long journey",
+"long flight",
+"recent flight",
+"recent travel",
+"long car journey",
+"recent long car journey"
+]
+},
+{
+"answer": "Recent surgery or immobility",
+"aliases": [
+"recent surgery",
+"post-op",
+"immobile",
+"bed bound",
+"immobilisation",
+"plaster cast"
+]
+},
+{
+"answer": "Combined pill or HRT",
+"aliases": [
+"cocp",
+"the pill",
+"contraceptive pill",
+"oestrogen",
+"hrt"
+]
+},
+{
+"answer": "Active cancer",
+"aliases": [
+"cancer",
+"malignancy",
+"chemotherapy"
+]
+},
+{
+"answer": "Previous VTE",
+"aliases": [
+"clot before",
+"previous dvt",
+"previous pe",
+"history of clots",
+"previous clot",
+"recent DVT"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Pneumothorax",
+"items": [
+{
+"answer": "Sudden one-sided sharp pain",
+"aliases": [
+"sudden unilateral pain",
+"sharp pain one side",
+"one sided pleuritic pain",
+"sudden sharp chest pain",
+"unilateral pleuritic pain"
+]
+},
+{
+"answer": "Tall, thin build",
+"aliases": [
+"tall and thin",
+"tall thin",
+"slim young man",
+"marfan",
+"tall"
+]
+},
+{
+"answer": "Asthma or COPD",
+"aliases": [
+"lung disease",
+"copd",
+"asthma",
+"emphysema",
+"known lung disease"
+]
+}
+],
+"standard": true
+},
+{
+"name": "ACS",
+"items": [
+{
+"answer": "Crushing or heavy pain",
+"aliases": [
+"crushing",
+"heavy",
+"chest heaviness",
+"tight chest",
+"chest tightness",
+"pressure",
+"squeezing"
+]
+},
+{
+"answer": "Radiation to jaw or arm",
+"aliases": [
+"jaw pain",
+"arm pain",
+"spreading to arm",
+"radiates to jaw",
+"left arm",
+"neck pain"
+]
+},
+{
+"answer": "Sweating",
+"aliases": [
+"diaphoresis",
+"sweaty",
+"clammy"
+]
+},
+{
+"answer": "Nausea or vomiting",
+"aliases": [
+"feeling sick",
+"being sick",
+"vomited",
+"nausea"
+]
+},
+{
+"answer": "Worse on exertion",
+"aliases": [
+"exertional",
+"on exertion",
+"worse with exercise",
+"comes on walking",
+"angina"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Severe asthma/anaphylaxis",
+"items": [
+{
+"answer": "Unable to complete sentences",
+"aliases": [
+"can't finish a sentence",
+"speech-limiting breathlessness",
+"incomplete sentences"
+]
+},
+{
+"answer": "Wheeze",
+"aliases": [
+"wheezing",
+"audible wheeze"
+]
+},
+{
+"answer": "Lip/tongue swelling",
+"aliases": [
+"angioedema",
+"swollen lips or tongue"
+]
+},
+{
+"answer": "New allergen exposure",
+"aliases": [
+"new food or drug",
+"allergy trigger",
+"allergic reaction",
+"allergen"
+]
+}
+]
+},
+{
+"name": "Lung cancer",
+"items": [
+{
+"answer": "Haemoptysis",
+"aliases": [
+"coughing blood",
+"coughed up blood",
+"blood in sputum"
+]
+},
+{
+"answer": "Weight loss",
+"aliases": [
+"losing weight",
+"unintentional weight loss",
+"clothes looser",
+"weight lodd"
+]
+},
+{
+"answer": "Hoarse voice",
+"aliases": [
+"hoarseness",
+"voice change",
+"croaky voice"
+]
+},
+{
+"answer": "Smoking history",
+"aliases": [
+"smoker",
+"do you smoke",
+"pack-years",
+"ex-smoker",
+"smoking"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Associated/Risk factors",
+"items": [
+{
+"answer": "Cough character",
+"aliases": [
+"dry or productive",
+"wet cough",
+"dry cough"
+]
+},
+{
+"answer": "Sputum",
+"aliases": [
+"colour and amount",
+"phlegm"
+]
+},
+{
+"answer": "Fever",
+"aliases": [
+"feeling feverish",
+"temperature"
+]
+},
+{
+"answer": "PMH asthma/COPD/heart disease",
+"aliases": [
+"past medical history",
+"known lung or heart disease",
+"asthma copd"
+]
+},
+{
+"answer": "Inhaler technique",
+"aliases": [
+"using inhalers correctly",
+"compliance with inhalers"
+]
+},
+{
+"answer": "ACE inhibitor cough",
+"aliases": [
+"ACEi side effect",
+"ramipril cough"
+]
+},
+{
+"answer": "Occupational exposure",
+"aliases": [
+"dust or asbestos",
+"occupation history",
+"environmental pollutant"
+]
+}
+]
+}
+]
+},
+"gi-hx": {
+"groups": [
+{
+"name": "AAA",
+"items": [
+{
+"answer": "Pain through to the back",
+"aliases": [
+"back pain",
+"radiating to the back",
+"pain to the back",
+"tearing pain to back"
+]
+},
+{
+"answer": "Collapse or faint",
+"aliases": [
+"collapse",
+"fainted",
+"syncope",
+"passed out",
+"blackout",
+"haemodynamic instability"
+]
+},
+{
+"answer": "Pulsatile abdominal mass",
+"aliases": [
+"pulsatile mass",
+"pulsing in the tummy",
+"throbbing in abdomen",
+"pulsating lump",
+"pouluititls mass",
+"mass"
+]
+},
+{
+"answer": "Over 65",
+"aliases": [
+"age over 65",
+"older",
+"over sixty five",
+"old man"
+]
+},
+{
+"answer": "Smoking history",
+"aliases": [
+"smoker",
+"do you smoke",
+"pack-years",
+"smoking"
+]
+},
+{
+"answer": "Known aneurysm",
+"aliases": [
+"aneurysm",
+"known aaa",
+"aaa screening"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Ectopic pregnancy",
+"items": [
+{
+"answer": "Could be pregnant",
+"aliases": [
+"possible pregnancy",
+"chance of pregnancy",
+"pregnancy test",
+"pregnant",
+"pregnancy",
+"sexually active"
+]
+},
+{
+"answer": "LMP",
+"aliases": [
+"last period",
+"last menstrual period",
+"missed period",
+"when was your last period",
+"amenorrheoa"
+]
+},
+{
+"answer": "PV bleeding",
+"aliases": [
+"vaginal bleeding",
+"bleeding",
+"spotting"
+]
+},
+{
+"answer": "One-sided pelvic pain",
+"aliases": [
+"unilateral pain",
+"lower abdominal pain",
+"iliac fossa pain",
+"pelvic pain",
+"one sided pain"
+]
+},
+{
+"answer": "Shoulder-tip pain",
+"aliases": [
+"shoulder pain",
+"shoulder tip"
+]
+},
+{
+"answer": "Dizziness or collapse",
+"aliases": [
+"feeling faint",
+"fainting",
+"dizzy",
+"syncope",
+"collapse"
+]
+},
+{
+"answer": "Ectopic risk factors",
+"aliases": [
+"previous ectopic",
+"pid",
+"coil",
+"iud",
+"tubal surgery",
+"ivf"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Perforation/peritonitis screen",
+"items": [
+{
+"answer": "Worse on movement or coughing",
+"aliases": [
+"pain on coughing",
+"pain on movement",
+"peritonism"
+]
+},
+{
+"answer": "Lying still",
+"aliases": [
+"avoids moving",
+"still and quiet",
+"won't move"
+]
+}
+]
+},
+{
+"name": "Bowel obstruction",
+"items": [
+{
+"answer": "Vomiting",
+"aliases": [
+"being sick",
+"throwing up",
+"bilious vomiting"
+]
+},
+{
+"answer": "Absolute constipation",
+"aliases": [
+"not passing wind",
+"not opened bowels",
+"can't pass stool or wind",
+"no flatus",
+"absouilte coniisptroons"
+]
+},
+{
+"answer": "Abdominal distension",
+"aliases": [
+"bloating",
+"swollen tummy",
+"distended"
+]
+},
+{
+"answer": "Colicky pain",
+"aliases": [
+"cramping pain",
+"colicky",
+"comes in waves"
+]
+},
+{
+"answer": "Previous surgery or hernia",
+"aliases": [
+"adhesions",
+"hernia",
+"previous operations",
+"abdominal surgery"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Upper GI bleed",
+"items": [
+{
+"answer": "Haematemesis",
+"aliases": [
+"vomiting blood",
+"coffee ground vomit",
+"blood in vomit",
+"haeptmeasis"
+]
+},
+{
+"answer": "Melaena",
+"aliases": [
+"black stools",
+"tarry stool",
+"black poo"
+]
+},
+{
+"answer": "NSAIDs, steroids or anticoagulants",
+"aliases": [
+"nsaids",
+"ibuprofen",
+"aspirin",
+"blood thinners",
+"anticoagulants",
+"steroids"
+]
+},
+{
+"answer": "Alcohol or liver disease",
+"aliases": [
+"heavy drinking",
+"alcohol",
+"cirrhosis",
+"varices",
+"liver disease"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Mesenteric ischaemia",
+"items": [
+{
+"answer": "Pain out of proportion to signs",
+"aliases": [
+"pain worse than it looks",
+"disproportionate pain"
+]
+},
+{
+"answer": "AF history",
+"aliases": [
+"atrial fibrillation",
+"irregular heartbeat",
+"known AF"
+]
+}
+]
+},
+{
+"name": "Associated symptoms",
+"items": [
+{
+"answer": "Nausea/vomiting",
+"aliases": [
+"feeling sick",
+"vomited",
+"N&V"
+]
+},
+{
+"answer": "Bowel habit change",
+"aliases": [
+"diarrhoea or constipation",
+"change in stool pattern"
+]
+},
+{
+"answer": "Jaundice",
+"aliases": [
+"yellow skin",
+"yellowing of eyes",
+"icterus"
+]
+},
+{
+"answer": "Fever",
+"aliases": [
+"temperature",
+"felt feverish",
+"rigors"
+]
+},
+{
+"answer": "Urinary symptoms",
+"aliases": [
+"dysuria",
+"frequency",
+"haematuria",
+"blood in urine"
+]
+},
+{
+"answer": "Weight loss/appetite change",
+"aliases": [
+"appetite loss",
+"unintentional weight loss",
+"anorexia"
+]
+}
+]
+},
+{
+"name": "Risk factors & Drugs",
+"items": [
+{
+"answer": "Gallstones",
+"aliases": [
+"known gallstones",
+"biliary colic history"
+]
+},
+{
+"answer": "NSAID or steroid use",
+"aliases": [
+"NSAIDs",
+"taking steroids",
+"ulcer risk drugs"
+]
+},
+{
+"answer": "Alcohol intake",
+"aliases": [
+"alcohol history",
+"units per week",
+"heavy drinking",
+"alcohol"
+]
+},
+{
+"answer": "Family history bowel/IBD",
+"aliases": [
+"FH bowel cancer",
+"family history IBD",
+"FHx colorectal cancer"
+]
+}
+]
+}
+]
+},
+"low-mood-hx": {
+"groups": [
+{
+"name": "Suicide risk",
+"items": [
+{
+"answer": "Suicidal ideation",
+"aliases": [
+"life not worth living",
+"thoughts of ending it",
+"wish to die",
+"SI"
+]
+},
+{
+"answer": "Suicide plan/preparations",
+"aliases": [
+"plans to end life",
+"method planned",
+"preparations made",
+"hoarding tablets"
+]
+},
+{
+"answer": "Intent",
+"aliases": [
+"intent to act",
+"how likely to act",
+"timeline for acting"
+]
+},
+{
+"answer": "Protective factors",
+"aliases": [
+"what stops you",
+"reasons to live",
+"things that hold you back"
+]
+}
+]
+},
+{
+"name": "Risk to others/safeguarding",
+"items": [
+{
+"answer": "Dependents at home",
+"aliases": [
+"children at home",
+"who depends on you",
+"carer responsibilities"
+]
+},
+{
+"answer": "Thoughts of harming others",
+"aliases": [
+"harm to others",
+"violent thoughts",
+"risk to others"
+]
+}
+]
+},
+{
+"name": "Psychosis screen",
+"items": [
+{
+"answer": "Hallucinations",
+"aliases": [
+"hearing voices",
+"seeing things others don't",
+"auditory/visual hallucinations"
+]
+},
+{
+"answer": "Paranoia/delusions",
+"aliases": [
+"feeling watched",
+"feeling controlled",
+"persecutory beliefs"
+]
+}
+]
+},
+{
+"name": "Bipolar screen",
+"items": [
+{
+"answer": "Manic/hypomanic episodes",
+"aliases": [
+"ever felt high",
+"needing little sleep",
+"elevated mood episodes",
+"hypomania"
+]
+}
+]
+},
+{
+"name": "Self-neglect",
+"items": [
+{
+"answer": "Eating and drinking adequately",
+"aliases": [
+"food/fluid intake",
+"not eating or drinking"
+]
+},
+{
+"answer": "Self-care",
+"aliases": [
+"personal hygiene",
+"looking after self",
+"neglecting appearance"
+]
+}
+]
+},
+{
+"name": "Associated biological/cognitive",
+"items": [
+{
+"answer": "Early-morning waking",
+"aliases": [
+"sleep disturbance",
+"insomnia",
+"EMW"
+]
+},
+{
+"answer": "Appetite/weight change",
+"aliases": [
+"change in appetite",
+"weight loss/gain"
+]
+},
+{
+"answer": "Poor concentration",
+"aliases": [
+"difficulty concentrating",
+"forgetfulness"
+]
+},
+{
+"answer": "Reduced libido",
+"aliases": [
+"loss of libido",
+"sex drive change"
+]
+},
+{
+"answer": "Diurnal mood variation",
+"aliases": [
+"worse in morning",
+"mood pattern through day"
+]
+},
+{
+"answer": "Guilt",
+"aliases": [
+"feelings of guilt",
+"excessive guilt"
+]
+},
+{
+"answer": "Worthlessness",
+"aliases": [
+"feeling worthless",
+"low self-esteem"
+]
+},
+{
+"answer": "Hopelessness",
+"aliases": [
+"feeling hopeless",
+"no future"
+]
+}
+]
+},
+{
+"name": "PDFS and other screening",
+"items": [
+{
+"answer": "Previous depressive episodes",
+"aliases": [
+"past episodes of low mood",
+"PMHx depression"
+]
+},
+{
+"answer": "Thyroid disease",
+"aliases": [
+"hypothyroidism",
+"thyroid symptoms",
+"TFT history"
+]
+},
+{
+"answer": "Medication causes",
+"aliases": [
+"steroids",
+"isotretinoin",
+"beta-blockers",
+"drug-induced depression"
+]
+},
+{
+"answer": "Family history of mental illness",
+"aliases": [
+"FHx depression",
+"FHx bipolar",
+"FHx suicide"
+]
+},
+{
+"answer": "Alcohol and drug use",
+"aliases": [
+"substance use",
+"alcohol intake",
+"recreational drugs"
+]
+},
+{
+"answer": "Psychosocial stressors",
+"aliases": [
+"work and money",
+"relationships",
+"support network",
+"who's at home"
+]
+}
+]
+}
+]
+},
+"neuro-hx": {
+"groups": [
+{
+"name": "Subarachnoid haemorrhage",
+"items": [
+{
+"answer": "Thunderclap onset",
+"aliases": [
+"sudden onset",
+"worst headache ever",
+"like being hit",
+"instant onset"
+]
+},
+{
+"answer": "Peak within a minute",
+"aliases": [
+"full strength within a minute",
+"maximal immediately",
+"seconds to peak"
+]
+},
+{
+"answer": "Collapse",
+"aliases": [
+"loss of consciousness",
+"witness account",
+"before during after collapse",
+"syncope"
+]
+}
+]
+},
+{
+"name": "Meningitis",
+"items": [
+{
+"answer": "Fever",
+"aliases": [
+"temperature",
+"high temperature",
+"pyrexia",
+"feverish"
+]
+},
+{
+"answer": "Neck stiffness",
+"aliases": [
+"stiff neck",
+"meningism"
+]
+},
+{
+"answer": "Photophobia",
+"aliases": [
+"light hurts eyes",
+"light sensitivity",
+"sensitive to light"
+]
+},
+{
+"answer": "Non-blanching rash",
+"aliases": [
+"rash",
+"purpuric rash",
+"glass test",
+"petechiae"
+]
+},
+{
+"answer": "Drowsy or confused",
+"aliases": [
+"drowsy",
+"confused",
+"altered consciousness",
+"hard to wake"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Raised intracranial pressure",
+"items": [
+{
+"answer": "Worse lying down",
+"aliases": [
+"worse supine",
+"worse when flat"
+]
+},
+{
+"answer": "Worse coughing/straining",
+"aliases": [
+"valsalva worsens",
+"worse bending over",
+"straining headache"
+]
+},
+{
+"answer": "Morning vomiting",
+"aliases": [
+"vomiting on waking",
+"morning headache with vomiting",
+"early morning vomit"
+]
+},
+{
+"answer": "Focal weakness",
+"aliases": [
+"limb weakness",
+"one-sided weakness",
+"hemiparesis"
+]
+},
+{
+"answer": "Seizure",
+"aliases": [
+"fit",
+"convulsion",
+"collapse with jerking"
+]
+}
+]
+},
+{
+"name": "Giant cell arteritis",
+"items": [
+{
+"answer": "Over 50",
+"aliases": [
+"age over 50",
+"older than 50",
+"over fifty"
+]
+},
+{
+"answer": "New headache",
+"aliases": [
+"temporal headache",
+"headache",
+"new onset headache"
+]
+},
+{
+"answer": "Scalp tenderness",
+"aliases": [
+"tender scalp",
+"sore scalp",
+"pain combing hair"
+]
+},
+{
+"answer": "Jaw claudication",
+"aliases": [
+"jaw pain chewing",
+"jaw ache eating",
+"jaw pain when eating"
+]
+},
+{
+"answer": "Visual disturbance",
+"aliases": [
+"visual loss",
+"blurred vision",
+"double vision",
+"amaurosis",
+"vision change"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Other dangerous causes",
+"items": [
+{
+"answer": "Others affected at home",
+"aliases": [
+"household members unwell too",
+"family also has headache",
+"carbon monoxide exposure"
+]
+},
+{
+"answer": "Better away from home",
+"aliases": [
+"improves outside house",
+"resolves at work",
+"CO headache pattern"
+]
+},
+{
+"answer": "Red painful eye",
+"aliases": [
+"eye redness and pain",
+"painful red eye"
+]
+},
+{
+"answer": "Haloes round lights",
+"aliases": [
+"halos around lights",
+"coloured rings around lights",
+"acute glaucoma symptom"
+]
+}
+]
+},
+{
+"name": "Associated features",
+"items": [
+{
+"answer": "Aura",
+"aliases": [
+"visual aura",
+"warning before headache",
+"flashing lights before"
+]
+},
+{
+"answer": "Nausea/vomiting",
+"aliases": [
+"sick with it",
+"nausea and vomiting",
+"feeling nauseated"
+]
+},
+{
+"answer": "Autonomic features",
+"answer2": "",
+"aliases": [
+"watering eye",
+"red eye and tearing",
+"nasal congestion one side",
+"cluster headache features"
+]
+},
+{
+"answer": "Triggers",
+"aliases": [
+"food/stress/screen triggers",
+"what brings it on",
+"precipitants"
+]
+},
+{
+"answer": "Analgesic overuse",
+"aliases": [
+"days per month on painkillers",
+"overusing painkillers",
+"medication overuse headache"
+]
+}
+]
+},
+{
+"name": "PMH/Drug/Family/Social",
+"items": [
+{
+"answer": "Head injury",
+"aliases": [
+"recent trauma to head",
+"bump to head"
+]
+},
+{
+"answer": "Immunosuppression",
+"aliases": [
+"on immunosuppressants",
+"HIV status",
+"steroid use"
+]
+},
+{
+"answer": "Anticoagulants",
+"aliases": [
+"on blood thinners",
+"warfarin/DOAC"
+]
+},
+{
+"answer": "Combined pill with aura",
+"aliases": [
+"COCP and migraine with aura",
+"oestrogen pill contraindication"
+]
+},
+{
+"answer": "Family history",
+"aliases": [
+"migraine in family",
+"aneurysms in family"
+]
+},
+{
+"answer": "Driving",
+"aliases": [
+"DVLA implications",
+"still driving",
+"safe to drive"
+]
+}
+]
+}
+]
+},
+"palp-hx": {
+"groups": [
+{
+"name": "Ventricular arrhythmia",
+"items": [
+{
+"answer": "Syncope",
+"aliases": [
+"fainted",
+"blackout",
+"LOC"
+]
+},
+{
+"answer": "Pre-syncope",
+"aliases": [
+"near fainted",
+"felt about to pass out",
+"dizzy/lightheaded"
+]
+},
+{
+"answer": "Chest pain with episode",
+"aliases": [
+"chest pain during palpitations",
+"chest tightness"
+]
+},
+{
+"answer": "Breathless with episode",
+"aliases": [
+"SOB with palpitations",
+"dyspnoea during episode"
+]
+},
+{
+"answer": "Known heart disease",
+"aliases": [
+"IHD history",
+"previous MI",
+"known cardiac condition"
+]
+}
+]
+},
+{
+"name": "Inherited heart disease",
+"items": [
+{
+"answer": "Sudden death under 40",
+"aliases": [
+"FH sudden death",
+"relative died young",
+"unexplained death in family"
+]
+},
+{
+"answer": "Cardiomyopathy",
+"aliases": [
+"FH cardiomyopathy",
+"HOCM in family"
+]
+}
+]
+},
+{
+"name": "AF and stroke",
+"items": [
+{
+"answer": "Irregular rhythm",
+"aliases": [
+"irregularly irregular",
+"is it irregular"
+]
+},
+{
+"answer": "Limb weakness",
+"aliases": [
+"arm/leg weakness",
+"one-sided weakness"
+]
+},
+{
+"answer": "Numbness",
+"aliases": [
+"sensory loss",
+"pins and needles"
+]
+},
+{
+"answer": "Speech disturbance",
+"aliases": [
+"slurred speech",
+"dysarthria",
+"trouble speaking"
+]
+}
+]
+},
+{
+"name": "Thyrotoxicosis",
+"items": [
+{
+"answer": "Weight loss",
+"aliases": [
+"losing weight unintentionally"
+]
+},
+{
+"answer": "Heat intolerance",
+"aliases": [
+"can't tolerate heat",
+"always too hot"
+]
+},
+{
+"answer": "Tremor",
+"aliases": [
+"shaky hands",
+"hand tremor"
+]
+}
+]
+},
+{
+"name": "Drugs/stimulants",
+"items": [
+{
+"answer": "Caffeine intake",
+"aliases": [
+"coffee/tea intake",
+"energy drinks"
+]
+},
+{
+"answer": "Alcohol intake",
+"aliases": [
+"units per week",
+"binge drinking"
+]
+},
+{
+"answer": "Recreational stimulants",
+"aliases": [
+"cocaine",
+"amphetamines",
+"illicit drugs"
+]
+},
+{
+"answer": "QT-prolonging medication",
+"aliases": [
+"drugs that prolong QT",
+"antipsychotics/macrolides"
+]
+}
+]
+},
+{
+"name": "Other causes",
+"items": [
+{
+"answer": "Anaemia symptoms",
+"aliases": [
+"tired, pale, breathless",
+"fatigue and pallor"
+]
+},
+{
+"answer": "Anxiety/panic symptoms",
+"aliases": [
+"feeling anxious",
+"panic attacks"
+]
+},
+{
+"answer": "Salbutamol use",
+"aliases": [
+"inhaler use",
+"beta-agonist"
+]
+}
+]
+},
+{
+"name": "Risk factors/background",
+"items": [
+{
+"answer": "PMH cardiac/thyroid/anaemia",
+"aliases": [
+"past medical history"
+]
+},
+{
+"answer": "Driving status",
+"aliases": [
+"do you drive",
+"occupation driving"
+]
+},
+{
+"answer": "Thyroxine use",
+"aliases": [
+"on levothyroxine"
+]
+},
+{
+"answer": "Allergies",
+"aliases": [
+"drug allergies",
+"NKDA"
+]
+}
+]
+}
+]
+},
+"falls-hx": {
+"groups": [
+{
+"name": "Cardiac syncope",
+"items": [
+{
+"answer": "Exertional syncope",
+"aliases": [
+"on exertion",
+"collapsed exercising",
+"with exertion"
+]
+},
+{
+"answer": "Palpitations before",
+"aliases": [
+"heart racing first",
+"palpitations preceding",
+"pounding heart"
+]
+},
+{
+"answer": "Chest pain before",
+"aliases": [
+"chest pain first",
+"pain before collapse"
+]
+},
+{
+"answer": "No warning",
+"aliases": [
+"sudden onset",
+"no prodrome",
+"collapsed without warning"
+]
+},
+{
+"answer": "Family history sudden death",
+"aliases": [
+"sudden death young",
+"FH sudden cardiac death",
+"relative died suddenly"
+]
+}
+]
+},
+{
+"name": "Seizure",
+"items": [
+{
+"answer": "Tongue biting",
+"aliases": [
+"bit tongue",
+"lateral tongue bite"
+]
+},
+{
+"answer": "Urinary incontinence",
+"aliases": [
+"wet himself",
+"wet herself",
+"lost bladder control"
+]
+},
+{
+"answer": "Jerking movements",
+"aliases": [
+"limb jerking",
+"convulsion",
+"shaking"
+]
+},
+{
+"answer": "Postictal confusion",
+"aliases": [
+"confused afterwards",
+"post-ictal",
+"drowsy after"
+]
+},
+{
+"answer": "Aura",
+"aliases": [
+"warning before seizure",
+"funny feeling before",
+"epileptic aura"
+]
+}
+]
+},
+{
+"name": "Head injury on anticoagulant",
+"items": [
+{
+"answer": "Head strike",
+"aliases": [
+"hit head",
+"head injury",
+"banged head"
+]
+},
+{
+"answer": "Anticoagulant use",
+"aliases": [
+"blood thinner",
+"on warfarin",
+"on DOAC",
+"apixaban/rivaroxaban"
+]
+}
+]
+},
+{
+"name": "Long lie and hip fracture",
+"items": [
+{
+"answer": "Unable to get up",
+"aliases": [
+"couldn't get up",
+"stuck on floor"
+]
+},
+{
+"answer": "Long lie duration",
+"aliases": [
+"how long on floor",
+"time on ground"
+]
+},
+{
+"answer": "Unable to weight bear",
+"aliases": [
+"can't weight bear",
+"can't walk on leg"
+]
+}
+]
+},
+{
+"name": "Stroke or TIA",
+"items": [
+{
+"answer": "Limb weakness",
+"aliases": [
+"arm/leg weakness",
+"one-sided weakness"
+]
+},
+{
+"answer": "Sensory loss",
+"aliases": [
+"numbness",
+"pins and needles"
+]
+},
+{
+"answer": "Dysarthria",
+"aliases": [
+"slurred speech",
+"trouble speaking"
+]
+},
+{
+"answer": "Facial droop",
+"aliases": [
+"face drooping",
+"facial weakness"
+]
+}
+]
+},
+{
+"name": "Upper GI bleed",
+"items": [
+{
+"answer": "Haematemesis",
+"aliases": [
+"vomiting blood",
+"coffee ground vomit",
+"blood in vomit"
+]
+},
+{
+"answer": "Melaena",
+"aliases": [
+"black stools",
+"tarry stool",
+"black poo"
+]
+},
+{
+"answer": "NSAIDs, steroids or anticoagulants",
+"aliases": [
+"nsaids",
+"ibuprofen",
+"aspirin",
+"blood thinners",
+"anticoagulants",
+"steroids"
+]
+},
+{
+"answer": "Alcohol or liver disease",
+"aliases": [
+"heavy drinking",
+"alcohol",
+"cirrhosis",
+"varices",
+"liver disease"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Hypoglycaemia",
+"items": [
+{
+"answer": "Insulin or sulfonylurea use",
+"aliases": [
+"diabetic on insulin",
+"on gliclazide",
+"diabetes meds"
+]
+}
+]
+},
+{
+"name": "Risk factors",
+"items": [
+{
+"answer": "Previous falls",
+"aliases": [
+"falls before",
+"history of falls"
+]
+},
+{
+"answer": "Polypharmacy",
+"aliases": [
+"many medications",
+"count the drugs",
+"multiple meds"
+]
+},
+{
+"answer": "Antihypertensive use",
+"aliases": [
+"blood pressure tablets",
+"on antihypertensives"
+]
+},
+{
+"answer": "Sedative use",
+"aliases": [
+"sleeping tablets",
+"on benzodiazepines"
+]
+},
+{
+"answer": "Visual impairment",
+"aliases": [
+"poor eyesight",
+"vision problems"
+]
+},
+{
+"answer": "Home hazards",
+"aliases": [
+"rugs/stairs at home",
+"trip hazards"
+]
+},
+{
+"answer": "Alcohol intake",
+"aliases": [
+"drinks alcohol",
+"alcohol history"
+]
+}
+]
+}
+]
+},
+"uro-hx": {
+"groups": [
+{
+"name": "Retention",
+"items": [
+{
+"answer": "Inability to void",
+"aliases": [
+"can't pass urine",
+"can't wee at all",
+"unable to pass urine",
+"urinary retention"
+]
+},
+{
+"answer": "Suprapubic pain",
+"aliases": [
+"lower tummy pain",
+"painful bladder",
+"suprapubic tenderness"
+]
+},
+{
+"answer": "Palpable bladder",
+"aliases": [
+"swollen lower tummy",
+"distended bladder",
+"bladder swelling"
+]
+}
+]
+},
+{
+"name": "Cancer (bladder/prostate)",
+"items": [
+{
+"answer": "Painless haematuria",
+"aliases": [
+"blood in urine",
+"painless blood in wee",
+"visible haematuria"
+]
+},
+{
+"answer": "Timing of haematuria in stream",
+"aliases": [
+"start/end of stream blood",
+"initial vs terminal haematuria",
+"when blood appears"
+]
+},
+{
+"answer": "Bone pain",
+"aliases": [
+"bony ache",
+"back/hip pain from mets",
+"skeletal pain"
+]
+},
+{
+"answer": "Weight loss",
+"aliases": [
+"unintentional weight loss",
+"losing weight",
+"appetite loss"
+]
+}
+]
+},
+{
+"name": "Cauda equina",
+"items": [
+{
+"answer": "Saddle anaesthesia",
+"aliases": [
+"numb between the legs",
+"perianal numbness",
+"numb bottom",
+"saddle numbness"
+]
+},
+{
+"answer": "Bladder dysfunction",
+"aliases": [
+"retention",
+"urinary incontinence",
+"can't pass urine",
+"bladder problems",
+"bladder change"
+]
+},
+{
+"answer": "Bowel dysfunction",
+"aliases": [
+"faecal incontinence",
+"loss of bowel control",
+"bowel change",
+"bowel problems"
+]
+},
+{
+"answer": "Sexual dysfunction",
+"aliases": [
+"erectile dysfunction",
+"sexual problems",
+"numb genitals"
+]
+},
+{
+"answer": "Both legs affected",
+"aliases": [
+"bilateral sciatica",
+"both legs",
+"bilateral leg weakness",
+"leg weakness",
+"both legs numb"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Urosepsis",
+"items": [
+{
+"answer": "Fever",
+"aliases": [
+"temperature",
+"feeling hot",
+"pyrexia"
+]
+},
+{
+"answer": "Rigors",
+"aliases": [
+"shivering",
+"shaking chills",
+"shivers"
+]
+},
+{
+"answer": "Loin pain",
+"aliases": [
+"flank pain",
+"side/back pain",
+"kidney pain"
+]
+}
+]
+},
+{
+"name": "Risk factors/PMH/DH/FH/SH",
+"items": [
+{
+"answer": "Diabetes",
+"aliases": [
+"DM",
+"diabetic",
+"known diabetes"
+]
+},
+{
+"answer": "Prostate disease",
+"aliases": [
+"BPH",
+"known prostate problems",
+"enlarged prostate"
+]
+},
+{
+"answer": "Renal stones",
+"aliases": [
+"kidney stones",
+"previous stones",
+"urolithiasis"
+]
+},
+{
+"answer": "Neurological disease",
+"aliases": [
+"MS",
+"Parkinson's",
+"neuro conditions affecting bladder"
+]
+},
+{
+"answer": "Previous catheterisation",
+"aliases": [
+"had a catheter before",
+"catheter history"
+]
+},
+{
+"answer": "Diuretics/anticholinergics/NSAIDs",
+"aliases": [
+"water tablets",
+"meds causing retention",
+"NSAID use"
+]
+},
+{
+"answer": "FH prostate cancer",
+"aliases": [
+"family history prostate cancer",
+"dad with prostate cancer"
+]
+},
+{
+"answer": "Smoking and occupational exposure",
+"aliases": [
+"smoking history",
+"dye/rubber work",
+"ketamine use",
+"caffeine/fluid intake"
+]
+}
+]
+}
+]
+},
+"bowel-hx": {
+"groups": [
+{
+"name": "Colorectal cancer screen",
+"items": [
+{
+"answer": "Blood mixed in stool",
+"aliases": [
+"blood in the mixed stool",
+"dark blood mixed",
+"blood not on paper"
+]
+},
+{
+"answer": "Weight loss",
+"aliases": [
+"losing weight",
+"unintentional weight loss"
+]
+},
+{
+"answer": "Fatigue",
+"aliases": [
+"tiredness",
+"lethargy",
+"low energy"
+]
+},
+{
+"answer": "Family history bowel cancer",
+"aliases": [
+"FH colorectal cancer",
+"FH bowel ca",
+"family history of cancer"
+]
+},
+{
+"answer": "Age over 50",
+"aliases": [
+"over 50",
+"age >50"
+]
+}
+]
+},
+{
+"name": "Bowel obstruction",
+"items": [
+{
+"answer": "Vomiting",
+"aliases": [
+"being sick",
+"throwing up",
+"bilious vomiting"
+]
+},
+{
+"answer": "Absolute constipation",
+"aliases": [
+"not passing wind",
+"not opened bowels",
+"can't pass stool or wind",
+"no flatus"
+]
+},
+{
+"answer": "Abdominal distension",
+"aliases": [
+"bloating",
+"swollen tummy",
+"distended"
+]
+},
+{
+"answer": "Colicky pain",
+"aliases": [
+"cramping pain",
+"colicky",
+"comes in waves"
+]
+},
+{
+"answer": "Previous surgery or hernia",
+"aliases": [
+"adhesions",
+"hernia",
+"previous operations",
+"abdominal surgery"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Severe colitis screen",
+"items": [
+{
+"answer": "Stool frequency per day",
+"aliases": [
+"how many times a day",
+"bowel motions per day",
+"number of stools"
+]
+},
+{
+"answer": "Nocturnal diarrhoea",
+"aliases": [
+"at night",
+"waking at night to open bowels",
+"nocturnal symptoms"
+]
+},
+{
+"answer": "Fever",
+"aliases": [
+"high temperature",
+"feeling feverish"
+]
+},
+{
+"answer": "Abdominal pain",
+"aliases": [
+"tummy pain",
+"stomach pain",
+"belly pain"
+]
+}
+]
+},
+{
+"name": "Dehydration/AKI screen",
+"items": [
+{
+"answer": "Fluid intake",
+"aliases": [
+"keeping fluids down",
+"drinking enough",
+"oral intake"
+]
+},
+{
+"answer": "Urine output",
+"aliases": [
+"passing urine",
+"peeing normally",
+"reduced urine"
+]
+},
+{
+"answer": "Postural dizziness",
+"aliases": [
+"dizzy on standing",
+"lightheaded standing up",
+"orthostatic dizziness"
+]
+}
+]
+},
+{
+"name": "C. difficile screen",
+"items": [
+{
+"answer": "Recent antibiotics",
+"aliases": [
+"antibiotics recently",
+"course of antibiotics"
+]
+},
+{
+"answer": "Recent hospital stay",
+"aliases": [
+"hospital admission",
+"inpatient recently",
+"been in hospital"
+]
+}
+]
+},
+{
+"name": "Associated/Red flags",
+"items": [
+{
+"answer": "Blood on paper",
+"aliases": [
+"bright red blood wiping",
+"blood when wiping"
+]
+},
+{
+"answer": "Iron-deficiency anaemia symptoms",
+"aliases": [
+"breathlessness anaemia",
+"pallor",
+"anaemia symptoms"
+]
+},
+{
+"answer": "Abdominal mass",
+"aliases": [
+"lump felt in tummy",
+"palpable mass"
+]
+},
+{
+"answer": "Thyroid symptoms",
+"aliases": [
+"hyperthyroid/hypothyroid symptoms",
+"weight/heat/cold intolerance"
+]
+}
+]
+},
+{
+"name": "PDFSH/Context",
+"items": [
+{
+"answer": "IBD history",
+"aliases": [
+"Crohn's or UC",
+"inflammatory bowel disease"
+]
+},
+{
+"answer": "Coeliac history",
+"aliases": [
+"known coeliac disease"
+]
+},
+{
+"answer": "Laxative use",
+"aliases": [
+"taking laxatives"
+]
+},
+{
+"answer": "Recent travel",
+"aliases": [
+"travel abroad",
+"foreign travel"
+]
+},
+{
+"answer": "Sick contacts",
+"aliases": [
+"unwell contacts",
+"others ill around them"
+]
+},
+{
+"answer": "Alcohol intake",
+"aliases": [
+"drinking alcohol",
+"units per week"
+]
+}
+]
+}
+]
+},
+"cough-hx": {
+"groups": [
+{
+"name": "Lung cancer",
+"items": [
+{
+"answer": "Haemoptysis",
+"aliases": [
+"coughing blood",
+"coughed up blood",
+"blood in sputum"
+]
+},
+{
+"answer": "Weight loss",
+"aliases": [
+"losing weight",
+"unintentional weight loss",
+"clothes looser"
+]
+},
+{
+"answer": "Hoarse voice",
+"aliases": [
+"hoarseness",
+"voice change",
+"croaky voice"
+]
+},
+{
+"answer": "Smoking history",
+"aliases": [
+"smoker",
+"do you smoke",
+"pack-years",
+"ex-smoker",
+"smoking"
+]
+}
+],
+"standard": true
+},
+{
+"name": "TB screen",
+"items": [
+{
+"answer": "Night sweats",
+"aliases": [
+"sweating at night",
+"drenching sweats"
+]
+},
+{
+"answer": "TB contact",
+"aliases": [
+"contact with TB",
+"known TB exposure"
+]
+},
+{
+"answer": "Travel to high-TB area",
+"aliases": [
+"travel history",
+"time abroad",
+"endemic country"
+]
+}
+]
+},
+{
+"name": "PE",
+"items": [
+{
+"answer": "Sudden breathlessness",
+"aliases": [
+"sudden shortness of breath",
+"sudden onset breathlessness",
+"acutely breathless",
+"sudden sob"
+]
+},
+{
+"answer": "Pleuritic pain",
+"aliases": [
+"sharp pain breathing in",
+"pain on inspiration",
+"worse on deep breath",
+"pleuritic chest pain",
+"hurts to breathe in"
+]
+},
+{
+"answer": "Haemoptysis",
+"aliases": [
+"coughing blood",
+"coughed up blood",
+"blood in sputum",
+"blood in phlegm"
+]
+},
+{
+"answer": "Calf swelling",
+"aliases": [
+"swollen calf",
+"calf pain",
+"leg swelling",
+"one leg swollen",
+"dvt symptoms"
+]
+},
+{
+"answer": "Long-haul travel",
+"aliases": [
+"long journey",
+"long flight",
+"recent flight",
+"recent travel",
+"long car journey"
+]
+},
+{
+"answer": "Recent surgery or immobility",
+"aliases": [
+"recent surgery",
+"post-op",
+"immobile",
+"bed bound",
+"immobilisation",
+"plaster cast"
+]
+},
+{
+"answer": "Combined pill or HRT",
+"aliases": [
+"cocp",
+"the pill",
+"contraceptive pill",
+"oestrogen",
+"hrt"
+]
+},
+{
+"answer": "Active cancer",
+"aliases": [
+"cancer",
+"malignancy",
+"chemotherapy"
+]
+},
+{
+"answer": "Previous VTE",
+"aliases": [
+"clot before",
+"previous dvt",
+"previous pe",
+"history of clots",
+"previous clot"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Pneumonia/sepsis screen",
+"items": [
+{
+"answer": "Fever",
+"aliases": [
+"temperature",
+"feeling hot"
+]
+},
+{
+"answer": "Rigors",
+"aliases": [
+"shivering",
+"shivers",
+"chills"
+]
+},
+{
+"answer": "Confusion",
+"aliases": [
+"acute confusion",
+"delirium"
+]
+},
+{
+"answer": "Breathless at rest",
+"aliases": [
+"dyspnoea at rest",
+"SOB at rest"
+]
+}
+]
+},
+{
+"name": "Heart failure",
+"items": [
+{
+"answer": "Orthopnoea",
+"aliases": [
+"pillows",
+"how many pillows",
+"sleeping propped up",
+"breathless lying flat",
+"can't lie flat"
+]
+},
+{
+"answer": "PND",
+"aliases": [
+"waking breathless",
+"paroxysmal nocturnal dyspnoea",
+"gasping at night",
+"waking up gasping"
+]
+},
+{
+"answer": "Ankle swelling",
+"aliases": [
+"swollen ankles",
+"peripheral oedema",
+"ankles swell by evening",
+"leg oedema"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Associated symptoms",
+"items": [
+{
+"answer": "Breathlessness",
+"aliases": [
+"SOB",
+"dyspnoea"
+]
+},
+{
+"answer": "Wheeze",
+"aliases": [
+"wheezing"
+]
+},
+{
+"answer": "Chest pain",
+"aliases": [
+"chest discomfort"
+]
+},
+{
+"answer": "Reflux",
+"aliases": [
+"heartburn",
+"GORD symptoms"
+]
+},
+{
+"answer": "Postnasal drip",
+"aliases": [
+"blocked nose",
+"runny nose down throat",
+"nasal congestion"
+]
+}
+]
+},
+{
+"name": "Risk factors/drugs",
+"items": [
+{
+"answer": "ACE inhibitor use",
+"aliases": [
+"on an ACE inhibitor",
+"ramipril",
+"lisinopril"
+]
+},
+{
+"answer": "Inhaler use",
+"aliases": [
+"inhalers",
+"asthma/COPD meds"
+]
+},
+{
+"answer": "Occupational exposure",
+"aliases": [
+"asbestos",
+"dust exposure",
+"job history"
+]
+},
+{
+"answer": "Pet/bird exposure",
+"aliases": [
+"pets at home",
+"birds",
+"animal exposure"
+]
+},
+{
+"answer": "Past respiratory illness",
+"aliases": [
+"asthma, COPD, TB before",
+"previous lung disease"
+]
+}
+]
+}
+]
+},
+"back-hx": {
+"groups": [
+{
+"name": "Cauda equina",
+"items": [
+{
+"answer": "Saddle anaesthesia",
+"aliases": [
+"numb between the legs",
+"perianal numbness",
+"numb bottom",
+"saddle numbness"
+]
+},
+{
+"answer": "Bladder dysfunction",
+"aliases": [
+"retention",
+"urinary incontinence",
+"can't pass urine",
+"bladder problems",
+"bladder change"
+]
+},
+{
+"answer": "Bowel dysfunction",
+"aliases": [
+"faecal incontinence",
+"loss of bowel control",
+"bowel change",
+"bowel problems"
+]
+},
+{
+"answer": "Sexual dysfunction",
+"aliases": [
+"erectile dysfunction",
+"sexual problems",
+"numb genitals"
+]
+},
+{
+"answer": "Both legs affected",
+"aliases": [
+"bilateral sciatica",
+"both legs",
+"bilateral leg weakness",
+"leg weakness",
+"both legs numb"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Spinal metastases",
+"items": [
+{
+"answer": "History of cancer",
+"aliases": [
+"ever had cancer",
+"previous malignancy",
+"cancer history"
+]
+},
+{
+"answer": "Weight loss",
+"aliases": [
+"unintentional weight loss",
+"losing weight"
+]
+},
+{
+"answer": "Night/rest pain",
+"aliases": [
+"pain at night",
+"pain at rest",
+"wakes at night with pain"
+]
+},
+{
+"answer": "Age over 50",
+"aliases": [
+"age >50",
+"older patient"
+]
+}
+]
+},
+{
+"name": "Spinal infection",
+"items": [
+{
+"answer": "Fever",
+"aliases": [
+"pyrexia",
+"feeling feverish",
+"temperature"
+]
+},
+{
+"answer": "IV drug use",
+"aliases": [
+"injecting drugs",
+"IVDU",
+"intravenous drug use"
+]
+},
+{
+"answer": "Immunosuppression",
+"aliases": [
+"immunocompromised",
+"on immunosuppressants"
+]
+},
+{
+"answer": "Recent procedure",
+"aliases": [
+"recent infection",
+"recent surgery",
+"recent spinal procedure"
+]
+}
+]
+},
+{
+"name": "Fracture",
+"items": [
+{
+"answer": "Trauma/fall",
+"aliases": [
+"injury",
+"fall",
+"recent trauma"
+]
+},
+{
+"answer": "Osteoporosis",
+"aliases": [
+"known osteoporosis",
+"brittle bones"
+]
+},
+{
+"answer": "Long-term steroid use",
+"aliases": [
+"chronic steroids",
+"on steroids",
+"steroid use"
+]
+}
+]
+},
+{
+"name": "AAA",
+"items": [
+{
+"answer": "Pain through to the back",
+"aliases": [
+"back pain",
+"radiating to the back",
+"pain to the back",
+"tearing pain to back"
+]
+},
+{
+"answer": "Collapse or faint",
+"aliases": [
+"collapse",
+"fainted",
+"syncope",
+"passed out",
+"blackout"
+]
+},
+{
+"answer": "Pulsatile abdominal mass",
+"aliases": [
+"pulsatile mass",
+"pulsing in the tummy",
+"throbbing in abdomen",
+"pulsating lump"
+]
+},
+{
+"answer": "Over 65",
+"aliases": [
+"age over 65",
+"older",
+"over sixty five"
+]
+},
+{
+"answer": "Smoking history",
+"aliases": [
+"smoker",
+"do you smoke",
+"pack-years",
+"smoking"
+]
+},
+{
+"answer": "Known aneurysm",
+"aliases": [
+"aneurysm",
+"known aaa",
+"aaa screening"
+]
+}
+],
+"standard": true
+},
+{
+"name": "PDFS",
+"items": [
+{
+"answer": "Drug history",
+"aliases": [
+"painkillers so far",
+"steroids",
+"anticoagulants",
+"current medications"
+]
+},
+{
+"answer": "Allergies",
+"aliases": [
+"drug allergies"
+]
+},
+{
+"answer": "Family history of ankylosing spondylitis/psoriasis",
+"aliases": [
+"FH of AS",
+"FH psoriasis"
+]
+},
+{
+"answer": "Occupation and lifting",
+"aliases": [
+"job",
+"manual work",
+"heavy lifting at work"
+]
+}
+]
+},
+{
+"name": "Function & context",
+"items": [
+{
+"answer": "Impact on function/work",
+"aliases": [
+"effect on daily activities",
+"time off work"
+]
+},
+{
+"answer": "Mood/yellow flags",
+"aliases": [
+"psychosocial factors",
+"low mood",
+"fear avoidance"
+]
+},
+{
+"answer": "Prior episodes",
+"aliases": [
+"previous similar pain",
+"past episodes of back pain"
+]
+}
+]
+}
+]
+},
+"gynae-hx": {
+"groups": [
+{
+"name": "Ectopic pregnancy",
+"items": [
+{
+"answer": "Could be pregnant",
+"aliases": [
+"possible pregnancy",
+"chance of pregnancy",
+"pregnancy test",
+"pregnant"
+]
+},
+{
+"answer": "LMP",
+"aliases": [
+"last period",
+"last menstrual period",
+"missed period",
+"when was your last period"
+]
+},
+{
+"answer": "PV bleeding",
+"aliases": [
+"vaginal bleeding",
+"bleeding",
+"spotting"
+]
+},
+{
+"answer": "One-sided pelvic pain",
+"aliases": [
+"unilateral pain",
+"lower abdominal pain",
+"iliac fossa pain",
+"pelvic pain",
+"one sided pain"
+]
+},
+{
+"answer": "Shoulder-tip pain",
+"aliases": [
+"shoulder pain",
+"shoulder tip"
+]
+},
+{
+"answer": "Dizziness or collapse",
+"aliases": [
+"feeling faint",
+"fainting",
+"dizzy",
+"syncope",
+"collapse"
+]
+},
+{
+"answer": "Ectopic risk factors",
+"aliases": [
+"previous ectopic",
+"pid",
+"coil",
+"iud",
+"tubal surgery",
+"ivf"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Heavy loss and shock",
+"items": [
+{
+"answer": "Pad/hour count",
+"aliases": [
+"how many pads",
+"pads per hour",
+"soaking through"
+]
+},
+{
+"answer": "Flooding",
+"aliases": [
+"gushing bleed",
+"sudden heavy loss"
+]
+},
+{
+"answer": "Clots",
+"aliases": [
+"passing clots",
+"clotted blood"
+]
+},
+{
+"answer": "Dizzy or faint",
+"aliases": [
+"feeling faint",
+"light-headed",
+"near syncope"
+]
+}
+]
+},
+{
+"name": "Cancer",
+"items": [
+{
+"answer": "Postmenopausal bleeding",
+"aliases": [
+"bleeding after menopause",
+"PMB"
+]
+},
+{
+"answer": "Postcoital bleeding",
+"aliases": [
+"bleeding after sex",
+"PCB"
+]
+},
+{
+"answer": "Intermenstrual bleeding",
+"aliases": [
+"bleeding between periods",
+"IMB"
+]
+},
+{
+"answer": "Smear history",
+"aliases": [
+"last smear",
+"cervical screening date",
+"pap smear"
+]
+}
+]
+},
+{
+"name": "Miscarriage with infection",
+"items": [
+{
+"answer": "Fever",
+"aliases": [
+"temperature",
+"feeling feverish"
+]
+},
+{
+"answer": "Offensive discharge",
+"aliases": [
+"smelly discharge",
+"foul-smelling loss"
+]
+},
+{
+"answer": "Pelvic pain with fever",
+"aliases": [
+"painful and febrile",
+"infected miscarriage signs"
+]
+}
+]
+},
+{
+"name": "Reproductive context",
+"items": [
+{
+"answer": "Menarche",
+"aliases": [
+"age periods started",
+"first period"
+]
+},
+{
+"answer": "Parity",
+"aliases": [
+"number of children",
+"gravidity and parity",
+"G and P"
+]
+},
+{
+"answer": "Contraception",
+"aliases": [
+"current contraception",
+"on the pill"
+]
+},
+{
+"answer": "HRT use",
+"aliases": [
+"hormone replacement therapy",
+"on HRT"
+]
+}
+]
+},
+{
+"name": "PDFS",
+"items": [
+{
+"answer": "Fibroids/PCOS history",
+"aliases": [
+"known fibroids",
+"PCOS diagnosis"
+]
+},
+{
+"answer": "Bleeding disorder",
+"aliases": [
+"clotting disorder",
+"easy bruising history"
+]
+},
+{
+"answer": "Tamoxifen/anticoagulants",
+"aliases": [
+"tamoxifen use",
+"on blood thinners"
+]
+},
+{
+"answer": "Family history gynae cancer",
+"aliases": [
+"FH ovarian/endometrial cancer",
+"family cancer history"
+]
+},
+{
+"answer": "Sexual history/STI risk",
+"aliases": [
+"new partners",
+"STI risk",
+"unprotected sex"
+]
+}
+]
+},
+{
+"name": "Systems/Anaemia",
+"items": [
+{
+"answer": "Fatigue",
+"aliases": [
+"tiredness",
+"feeling tired"
+]
+},
+{
+"answer": "Breathlessness",
+"aliases": [
+"SOB",
+"shortness of breath"
+]
+},
+{
+"answer": "Urinary symptoms",
+"aliases": [
+"urinary frequency",
+"dysuria"
+]
+},
+{
+"answer": "Bowel symptoms",
+"aliases": [
+"change in bowel habit",
+"bowel symptoms"
+]
+}
+]
+}
+]
+},
+"paeds-hx": {
+"groups": [
+{
+"name": "Sepsis/meningitis",
+"items": [
+{
+"answer": "Fever",
+"aliases": [
+"temperature",
+"hot",
+"febrile"
+]
+},
+{
+"answer": "Floppy or unresponsive",
+"aliases": [
+"hard to wake",
+"hypotonic",
+"lethargic",
+"unrousable"
+]
+},
+{
+"answer": "Non-blanching rash",
+"aliases": [
+"glass test",
+"rash doesn't fade",
+"petechiae",
+"purpura"
+]
+},
+{
+"answer": "Poor feeding",
+"aliases": [
+"not feeding",
+"refusing feeds",
+"off feeds"
+]
+}
+]
+},
+{
+"name": "Dehydration",
+"items": [
+{
+"answer": "Wet nappies today",
+"aliases": [
+"nappy count",
+"how many wet nappies",
+"dry nappies"
+]
+},
+{
+"answer": "Reduced oral intake",
+"aliases": [
+"not drinking",
+"poor fluid intake",
+"refusing fluids"
+]
+},
+{
+"answer": "Sunken eyes",
+"aliases": [
+"sunken fontanelle",
+"eyes look sunken"
+]
+},
+{
+"answer": "No tears",
+"aliases": [
+"crying without tears",
+"dry crying"
+]
+}
+]
+},
+{
+"name": "Bilious vomiting",
+"items": [
+{
+"answer": "Green vomit",
+"aliases": [
+"bilious vomiting",
+"bile-stained vomit",
+"yellow-green vomit"
+]
+},
+{
+"answer": "Abdominal distension",
+"aliases": [
+"bloated tummy",
+"swollen abdomen"
+]
+}
+]
+},
+{
+"name": "Developmental regression",
+"items": [
+{
+"answer": "Loss of skills",
+"aliases": [
+"lost skills",
+"regression",
+"used to be able to"
+]
+},
+{
+"answer": "Delayed milestones",
+"aliases": [
+"developmental delay",
+"not meeting milestones"
+]
+}
+]
+},
+{
+"name": "Safeguarding",
+"items": [
+{
+"answer": "Main carers",
+"aliases": [
+"who looks after them",
+"who lives at home with child"
+]
+},
+{
+"answer": "Unexplained injuries",
+"aliases": [
+"bruising",
+"how did injury happen",
+"inconsistent story"
+]
+},
+{
+"answer": "Delay seeking help",
+"aliases": [
+"delay presenting",
+"late to come in"
+]
+},
+{
+"answer": "Social worker involvement",
+"aliases": [
+"known to social services",
+"child protection plan"
+]
+}
+]
+},
+{
+"name": "Background (birth, growth, Hx)",
+"items": [
+{
+"answer": "Gestation at birth",
+"aliases": [
+"weeks born",
+"premature",
+"term"
+]
+},
+{
+"answer": "Mode of delivery",
+"aliases": [
+"normal delivery",
+"C-section",
+"forceps"
+]
+},
+{
+"answer": "Birth weight",
+"aliases": [
+"weight at birth"
+]
+},
+{
+"answer": "Neonatal unit stay",
+"aliases": [
+"NICU",
+"special care baby unit",
+"SCBU"
+]
+},
+{
+"answer": "Red book growth",
+"aliases": [
+"growth chart",
+"centiles",
+"percentile"
+]
+},
+{
+"answer": "Immunisations up to date",
+"aliases": [
+"vaccines",
+"jabs"
+]
+},
+{
+"answer": "Past illnesses and medicines",
+"aliases": [
+"PMHx",
+"current medications",
+"allergies"
+]
+},
+{
+"answer": "Consanguinity",
+"aliases": [
+"family related",
+"cousin marriage",
+"parents related"
+]
+}
+]
+},
+{
+"name": "Social",
+"items": [
+{
+"answer": "Household composition",
+"aliases": [
+"who lives at home",
+"family at home"
+]
+},
+{
+"answer": "Nursery or school",
+"aliases": [
+"childcare",
+"attends nursery"
+]
+},
+{
+"answer": "Smoking at home",
+"aliases": [
+"passive smoking",
+"smokers in household"
+]
+}
+]
+}
+]
+},
+"sexual-hx": {
+"groups": [
+{
+"name": "Safeguarding and exploitation",
+"items": [
+{
+"answer": "Partner's age",
+"aliases": [
+"How old are your partners",
+"age gap",
+"age of partners"
+]
+},
+{
+"answer": "Under 16",
+"aliases": [
+"underage partner",
+"age of consent",
+"Gillick"
+]
+},
+{
+"answer": "Coercion",
+"aliases": [
+"pressured into sex",
+"forced sex",
+"felt pressured"
+]
+},
+{
+"answer": "Non-consensual sex",
+"aliases": [
+"sex you didn't want",
+"unwanted sex",
+"assault"
+]
+}
+]
+},
+{
+"name": "Ectopic pregnancy",
+"items": [
+{
+"answer": "Could be pregnant",
+"aliases": [
+"possible pregnancy",
+"chance of pregnancy",
+"pregnancy test",
+"pregnant"
+]
+},
+{
+"answer": "LMP",
+"aliases": [
+"last period",
+"last menstrual period",
+"missed period",
+"when was your last period"
+]
+},
+{
+"answer": "PV bleeding",
+"aliases": [
+"vaginal bleeding",
+"bleeding",
+"spotting"
+]
+},
+{
+"answer": "One-sided pelvic pain",
+"aliases": [
+"unilateral pain",
+"lower abdominal pain",
+"iliac fossa pain",
+"pelvic pain",
+"one sided pain"
+]
+},
+{
+"answer": "Shoulder-tip pain",
+"aliases": [
+"shoulder pain",
+"shoulder tip"
+]
+},
+{
+"answer": "Dizziness or collapse",
+"aliases": [
+"feeling faint",
+"fainting",
+"dizzy",
+"syncope",
+"collapse"
+]
+},
+{
+"answer": "Ectopic risk factors",
+"aliases": [
+"previous ectopic",
+"pid",
+"coil",
+"iud",
+"tubal surgery",
+"ivf"
+]
+}
+],
+"standard": true
+},
+{
+"name": "PEP window",
+"items": [
+{
+"answer": "Unprotected sex in 72 hours",
+"aliases": [
+"UPSI last 72h",
+"recent unprotected intercourse",
+"PEP window"
+]
+}
+]
+},
+{
+"name": "PID",
+"items": [
+{
+"answer": "Fever",
+"aliases": [
+"pyrexia",
+"temperature"
+]
+},
+{
+"answer": "Dyspareunia",
+"aliases": [
+"pain during sex",
+"pain with intercourse"
+]
+},
+{
+"answer": "Pelvic tenderness",
+"aliases": [
+"pelvic pain",
+"lower abdo tenderness"
+]
+}
+]
+},
+{
+"name": "HIV seroconversion",
+"items": [
+{
+"answer": "Flu-like illness",
+"aliases": [
+"seroconversion illness",
+"fever and malaise weeks after risk"
+]
+},
+{
+"answer": "Rash",
+"aliases": [
+"seroconversion rash",
+"skin rash weeks after risk"
+]
+}
+]
+},
+{
+"name": "Partners",
+"items": [
+{
+"answer": "Time since last sex",
+"aliases": [
+"last sexual intercourse",
+"LSI"
+]
+},
+{
+"answer": "Partner's gender",
+"aliases": [
+"sex of partner",
+"MSM/MSW/WSW"
+]
+},
+{
+"answer": "Regular or casual partner",
+"aliases": [
+"new partner",
+"casual encounter"
+]
+},
+{
+"answer": "Number of partners in 3 months",
+"aliases": [
+"partner count",
+"how many partners recently"
+]
+},
+{
+"answer": "Type of sex",
+"aliases": [
+"oral vaginal anal",
+"sexual practices"
+]
+},
+{
+"answer": "Condom use",
+"aliases": [
+"protection used",
+"barrier contraception"
+]
+},
+{
+"answer": "Partner's symptoms",
+"aliases": [
+"partner unwell",
+"partner discharge"
+]
+},
+{
+"answer": "Partner from high-prevalence country",
+"aliases": [
+"partner's travel history",
+"high-risk country partner"
+]
+}
+]
+},
+{
+"name": "Background",
+"items": [
+{
+"answer": "Previous STIs",
+"aliases": [
+"past STI history",
+"prior infections"
+]
+},
+{
+"answer": "HIV and hepatitis status",
+"aliases": [
+"last HIV test",
+"hep B/C test"
+]
+},
+{
+"answer": "Vaccination status",
+"aliases": [
+"HPV vaccine",
+"hep B vaccine"
+]
+},
+{
+"answer": "Contraception",
+"aliases": [
+"method of contraception",
+"COCP, implant etc"
+]
+},
+{
+"answer": "Sex work",
+"aliases": [
+"selling or paying for sex",
+"transactional sex"
+]
+},
+{
+"answer": "Injecting drug use",
+"aliases": [
+"IVDU",
+"needle sharing"
+]
+},
+{
+"answer": "Chemsex",
+"aliases": [
+"drug use during sex",
+"party drugs and sex"
+]
+}
+]
+}
+]
+},
+"msk-hx": {
+"groups": [
+{
+"name": "Septic arthritis",
+"items": [
+{
+"answer": "Hot swollen joint",
+"aliases": [
+"red hot joint",
+"single hot joint",
+"acutely inflamed joint"
+]
+},
+{
+"answer": "Fever",
+"aliases": [
+"rigors",
+"chills",
+"temperature"
+]
+},
+{
+"answer": "Unable to move joint",
+"aliases": [
+"can't weight-bear",
+"severe restriction of movement",
+"barely move joint"
+]
+},
+{
+"answer": "Prosthetic joint",
+"aliases": [
+"joint replacement",
+"previous arthroplasty",
+"metalwork"
+]
+}
+]
+},
+{
+"name": "Compartment syndrome",
+"items": [
+{
+"answer": "Recent injury or cast",
+"aliases": [
+"post-fracture",
+"after cast",
+"recent trauma"
+]
+},
+{
+"answer": "Pain out of proportion",
+"aliases": [
+"disproportionate pain",
+"pain not settling with analgesia"
+]
+},
+{
+"answer": "Pain on passive stretch",
+"aliases": [
+"worse on stretching",
+"pain stretching toes/fingers"
+]
+},
+{
+"answer": "Tense/tight limb",
+"aliases": [
+"tight swelling",
+"woody hard limb",
+"tense compartment"
+]
+}
+]
+},
+{
+"name": "Malignancy",
+"items": [
+{
+"answer": "Night/rest pain",
+"aliases": [
+"pain at rest",
+"wakes at night with pain",
+"nocturnal pain"
+]
+},
+{
+"answer": "Weight loss",
+"aliases": [
+"unintentional weight loss",
+"losing weight"
+]
+},
+{
+"answer": "Past cancer history",
+"aliases": [
+"previous malignancy",
+"Hx of cancer",
+"PMHx cancer"
+]
+}
+]
+},
+{
+"name": "Giant cell arteritis",
+"items": [
+{
+"answer": "Over 50",
+"aliases": [
+"age over 50",
+"older than 50",
+"over fifty"
+]
+},
+{
+"answer": "New headache",
+"aliases": [
+"temporal headache",
+"headache",
+"new onset headache"
+]
+},
+{
+"answer": "Scalp tenderness",
+"aliases": [
+"tender scalp",
+"sore scalp",
+"pain combing hair"
+]
+},
+{
+"answer": "Jaw claudication",
+"aliases": [
+"jaw pain chewing",
+"jaw ache eating",
+"jaw pain when eating"
+]
+},
+{
+"answer": "Visual disturbance",
+"aliases": [
+"visual loss",
+"blurred vision",
+"double vision",
+"amaurosis",
+"vision change"
+]
+}
+],
+"standard": true
+},
+{
+"name": "PMR",
+"items": [
+{
+"answer": "Proximal muscle stiffness",
+"aliases": [
+"shoulder/hip girdle stiffness",
+"PMR symptoms"
+]
+}
+]
+},
+{
+"name": "Associated systemic",
+"items": [
+{
+"answer": "Rash",
+"aliases": [
+"skin rash",
+"psoriatic plaques"
+]
+},
+{
+"answer": "Eye symptoms",
+"aliases": [
+"red eye",
+"uveitis",
+"conjunctivitis"
+]
+},
+{
+"answer": "Bowel symptoms",
+"aliases": [
+"diarrhoea",
+"bloody stool",
+"IBD symptoms"
+]
+},
+{
+"answer": "Urethral discharge",
+"aliases": [
+"dysuria",
+"urethritis",
+"STI symptoms"
+]
+},
+{
+"answer": "Recent infection",
+"aliases": [
+"recent GI/GU infection",
+"reactive arthritis trigger"
+]
+}
+]
+},
+{
+"name": "Risk factors and drugs",
+"items": [
+{
+"answer": "Psoriasis history",
+"aliases": [
+"personal/FHx psoriasis",
+"skin condition"
+]
+},
+{
+"answer": "IBD history",
+"aliases": [
+"Crohn's/UC",
+"bowel disease history"
+]
+},
+{
+"answer": "Gout history",
+"aliases": [
+"previous gout attacks",
+"tophi"
+]
+},
+{
+"answer": "Diuretic use",
+"aliases": [
+"thiazide/loop diuretics",
+"water tablets"
+]
+},
+{
+"answer": "DMARD/steroid use",
+"aliases": [
+"immunosuppressants",
+"methotrexate",
+"steroid treatment"
+]
+},
+{
+"answer": "Family history inflammatory arthritis",
+"aliases": [
+"FHx RA/psoriatic arthritis",
+"genetic arthritis link"
+]
+}
+]
+},
+{
+"name": "Function and injury",
+"items": [
+{
+"answer": "Mechanism of injury",
+"aliases": [
+"how it happened",
+"trauma mechanism"
+]
+},
+{
+"answer": "Weight-bearing status",
+"aliases": [
+"Ottawa rules",
+"able to walk on it"
+]
+},
+{
+"answer": "Numbness or weakness",
+"aliases": [
+"neurovascular symptoms",
+"sensory/motor loss"
+]
+},
+{
+"answer": "Functional impact",
+"aliases": [
+"dressing/stairs difficulty",
+"effect on work/hobbies",
+"grip strength issues"
+]
+}
+]
+}
+]
+},
+"vasc-hx": {
+"groups": [
+{
+"name": "Acute limb ischaemia",
+"items": [
+{
+"answer": "Sudden cold leg",
+"aliases": [
+"leg suddenly cold",
+"perishing cold",
+"cold limb"
+]
+},
+{
+"answer": "Pallor",
+"aliases": [
+"pale leg",
+"leg went white",
+"pale"
+]
+},
+{
+"answer": "Sudden severe pain",
+"aliases": [
+"sudden onset pain",
+"acute pain leg"
+]
+},
+{
+"answer": "Numbness",
+"aliases": [
+"paraesthesia",
+"pins and needles",
+"numb leg"
+]
+},
+{
+"answer": "Weakness",
+"aliases": [
+"leg weak",
+"paralysis",
+"can't move leg"
+]
+},
+{
+"answer": "Palpitations/AF",
+"aliases": [
+"irregular heartbeat",
+"irregular pulse",
+"atrial fibrillation"
+]
+}
+]
+},
+{
+"name": "Chronic limb-threatening ischaemia",
+"items": [
+{
+"answer": "Rest pain",
+"aliases": [
+"pain at rest",
+"pain even at rest"
+]
+},
+{
+"answer": "Night pain",
+"aliases": [
+"pain worse at night",
+"wakes at night with pain"
+]
+},
+{
+"answer": "Hanging leg out of bed",
+"aliases": [
+"dangling leg",
+"leg over side of bed",
+"relieved by hanging leg"
+]
+},
+{
+"answer": "Ulcers",
+"aliases": [
+"leg ulcers",
+"non-healing sores",
+"wounds that won't heal"
+]
+},
+{
+"answer": "Black toes",
+"aliases": [
+"gangrene",
+"necrosis",
+"dead toes"
+]
+}
+]
+},
+{
+"name": "AAA",
+"items": [
+{
+"answer": "Pain through to the back",
+"aliases": [
+"back pain",
+"radiating to the back",
+"pain to the back",
+"tearing pain to back"
+]
+},
+{
+"answer": "Collapse or faint",
+"aliases": [
+"collapse",
+"fainted",
+"syncope",
+"passed out",
+"blackout"
+]
+},
+{
+"answer": "Pulsatile abdominal mass",
+"aliases": [
+"pulsatile mass",
+"pulsing in the tummy",
+"throbbing in abdomen",
+"pulsating lump"
+]
+},
+{
+"answer": "Over 65",
+"aliases": [
+"age over 65",
+"older",
+"over sixty five"
+]
+},
+{
+"answer": "Smoking history",
+"aliases": [
+"smoker",
+"do you smoke",
+"pack-years",
+"smoking"
+]
+},
+{
+"answer": "Known aneurysm",
+"aliases": [
+"aneurysm",
+"known aaa",
+"aaa screening"
+]
+}
+],
+"standard": true
+},
+{
+"name": "Infected diabetic foot",
+"items": [
+{
+"answer": "Fever",
+"aliases": [
+"feeling feverish",
+"temperature",
+"chills"
+]
+},
+{
+"answer": "Spreading redness",
+"aliases": [
+"cellulitis",
+"red streaking",
+"expanding erythema"
+]
+},
+{
+"answer": "Malodorous wound",
+"aliases": [
+"smell from wound",
+"offensive smell",
+"foul smelling discharge"
+]
+},
+{
+"answer": "Non-healing wound",
+"aliases": [
+"wound won't heal",
+"chronic ulcer diabetic foot"
+]
+}
+]
+},
+{
+"name": "Associated",
+"items": [
+{
+"answer": "Erectile dysfunction",
+"aliases": [
+"impotence",
+"ED",
+"difficulty with erections"
+]
+},
+{
+"answer": "Relief on bending forward",
+"aliases": [
+"spinal stenosis symptoms",
+"eased by leaning forward",
+"better stooping"
+]
+}
+]
+},
+{
+"name": "Risk factors",
+"items": [
+{
+"answer": "Smoking pack-years",
+"aliases": [
+"how many cigarettes",
+"smoking history",
+"pack years"
+]
+},
+{
+"answer": "Diabetes",
+"aliases": [
+"high blood sugar",
+"diabetic"
+]
+},
+{
+"answer": "Hypertension",
+"aliases": [
+"high blood pressure"
+]
+},
+{
+"answer": "Hypercholesterolaemia",
+"aliases": [
+"high cholesterol",
+"raised cholesterol"
+]
+},
+{
+"answer": "Family history of vascular disease",
+"aliases": [
+"FH vascular disease",
+"family history PVD"
+]
+},
+{
+"answer": "Other vascular disease",
+"aliases": [
+"previous MI",
+"stroke history",
+"heart attack or stroke"
+]
+}
+]
+},
+{
+"name": "Drugs",
+"items": [
+{
+"answer": "Antiplatelets",
+"aliases": [
+"aspirin",
+"clopidogrel"
+]
+},
+{
+"answer": "Statins",
+"aliases": [
+"cholesterol medication"
+]
+},
+{
+"answer": "Beta-blockers",
+"aliases": [
+"bisoprolol",
+"beta blocker"
+]
+},
+{
+"answer": "Allergies",
+"aliases": [
+"drug allergies",
+"any allergies"
+]
+}
+]
+}
+]
+},
+"breast-hx": {
+"groups": [
+{
+"name": "Breast cancer",
+"items": [
+{
+"answer": "Hard fixed lump",
+"aliases": [
+"hard and fixed",
+"firm immobile lump",
+"fixed to chest wall"
+]
+},
+{
+"answer": "Growing lump",
+"aliases": [
+"increasing in size",
+"getting bigger",
+"enlarging"
+]
+},
+{
+"answer": "Skin dimpling",
+"aliases": [
+"tethering",
+"puckering",
+"skin changes"
+]
+},
+{
+"answer": "Nipple inversion",
+"aliases": [
+"nipple retraction",
+"nipple pulled in",
+"inverted nipple"
+]
+},
+{
+"answer": "Bloody nipple discharge",
+"aliases": [
+"blood from nipple",
+"bloodstained discharge",
+"single duct discharge"
+]
+},
+{
+"answer": "Axillary lump",
+"aliases": [
+"lump in armpit",
+"armpit swelling",
+"lymph node"
+]
+}
+]
+},
+{
+"name": "Inflammatory breast cancer",
+"items": [
+{
+"answer": "Redness",
+"aliases": [
+"erythema",
+"red breast"
+]
+},
+{
+"answer": "Swelling",
+"aliases": [
+"swollen breast",
+"breast enlargement"
+]
+},
+{
+"answer": "Peau d'orange",
+"aliases": [
+"orange peel skin",
+"orange-peel appearance"
+]
+},
+{
+"answer": "Afebrile",
+"aliases": [
+"no fever",
+"without fever",
+"not systemically unwell"
+]
+}
+]
+},
+{
+"name": "Abscess",
+"items": [
+{
+"answer": "Hot tender lump",
+"aliases": [
+"hot red painful lump",
+"tender swelling"
+]
+},
+{
+"answer": "Fever",
+"aliases": [
+"febrile",
+"temperature",
+"feeling feverish"
+]
+},
+{
+"answer": "Breastfeeding",
+"aliases": [
+"lactating",
+"nursing",
+"breastfeeding currently"
+]
+}
+]
+},
+{
+"name": "Spread",
+"items": [
+{
+"answer": "Bone pain",
+"aliases": [
+"bony pain",
+"aching bones"
+]
+},
+{
+"answer": "Breathlessness",
+"aliases": [
+"SOB",
+"dyspnoea",
+"shortness of breath"
+]
+},
+{
+"answer": "Headaches",
+"aliases": [
+"headache",
+"head pain"
+]
+},
+{
+"answer": "Weight loss",
+"aliases": [
+"unintentional weight loss",
+"losing weight"
+]
+}
+]
+},
+{
+"name": "Risk factors",
+"items": [
+{
+"answer": "Age",
+"aliases": [
+"patient's age",
+"how old"
+]
+},
+{
+"answer": "Family history",
+"aliases": [
+"FH breast/ovarian cancer",
+"BRCA",
+"relatives with breast cancer",
+"age at diagnosis in relatives"
+]
+},
+{
+"answer": "Previous breast disease",
+"aliases": [
+"prior benign breast disease",
+"past breast lumps"
+]
+},
+{
+"answer": "Chest radiation",
+"aliases": [
+"radiotherapy to chest",
+"previous chest radiotherapy"
+]
+},
+{
+"answer": "Nulliparity",
+"aliases": [
+"never had children",
+"early menarche/late menopause",
+"reproductive history"
+]
+}
+]
+},
+{
+"name": "Drugs",
+"items": [
+{
+"answer": "HRT",
+"aliases": [
+"hormone replacement therapy"
+]
+},
+{
+"answer": "COCP",
+"aliases": [
+"the pill",
+"combined oral contraceptive"
+]
+}
+]
+}
+]
+},
+"thyroid-hx": {
+"groups": [
+{
+"name": "Airway compression",
+"items": [
+{
+"answer": "Dyspnoea",
+"aliases": [
+"trouble breathing",
+"breathless",
+"SOB",
+"hard to breathe"
+]
+},
+{
+"answer": "Dysphagia",
+"aliases": [
+"trouble swallowing",
+"food sticking",
+"swallowing difficulty"
+]
+},
+{
+"answer": "Stridor",
+"aliases": [
+"noisy breathing",
+"wheeze-like noise on breathing in"
+]
+},
+{
+"answer": "Worse lying flat",
+"aliases": [
+"positional breathing difficulty",
+"worse supine",
+"lying down breathless"
+]
+}
+]
+},
+{
+"name": "Thyroid cancer",
+"items": [
+{
+"answer": "Rapid lump growth",
+"aliases": [
+"growing fast",
+"quickly enlarging lump",
+"rapid enlargement"
+]
+},
+{
+"answer": "Hoarse voice",
+"aliases": [
+"voice change",
+"raspy voice",
+"voice hoarseness"
+]
+},
+{
+"answer": "Neck radiation history",
+"aliases": [
+"radiotherapy to neck",
+"prior neck irradiation",
+"radiation exposure"
+]
+}
+]
+},
+{
+"name": "Agranulocytosis on carbimazole",
+"items": [
+{
+"answer": "Sore throat",
+"aliases": [
+"throat pain",
+"pharyngitis on carbimazole"
+]
+},
+{
+"answer": "Mouth ulcers",
+"aliases": [
+"oral ulcers",
+"ulcers in mouth"
+]
+},
+{
+"answer": "Fever",
+"aliases": [
+"high temperature",
+"pyrexia",
+"feeling feverish"
+]
+}
+]
+},
+{
+"name": "Sight-threatening eye disease",
+"items": [
+{
+"answer": "Blurred vision",
+"aliases": [
+"vision blurry",
+"can't see clearly"
+]
+},
+{
+"answer": "Colour desaturation",
+"aliases": [
+"washed out colours",
+"colours look faded",
+"dyschromatopsia"
+]
+},
+{
+"answer": "Diplopia",
+"aliases": [
+"double vision",
+"seeing double"
+]
+}
+]
+},
+{
+"name": "Thyroid storm",
+"items": [
+{
+"answer": "Tachycardia",
+"aliases": [
+"racing heart",
+"fast heartbeat",
+"heart racing"
+]
+},
+{
+"answer": "Agitation or confusion",
+"aliases": [
+"confused",
+"restless",
+"altered mental state",
+"delirium"
+]
+}
+]
+},
+{
+"name": "Associated (menstrual, skin, eyes)",
+"items": [
+{
+"answer": "Light periods",
+"aliases": [
+"oligomenorrhoea",
+"scant periods"
+]
+},
+{
+"answer": "Heavy periods",
+"aliases": [
+"menorrhagia",
+"heavy menstrual bleeding"
+]
+},
+{
+"answer": "Dry skin",
+"aliases": [
+"skin dryness"
+]
+},
+{
+"answer": "Hair loss",
+"aliases": [
+"thinning hair",
+"alopecia"
+]
+},
+{
+"answer": "Eye grittiness",
+"aliases": [
+"gritty eyes",
+"sandy feeling eyes"
+]
+},
+{
+"answer": "Eye protrusion",
+"aliases": [
+"bulging eyes",
+"exophthalmos",
+"proptosis"
+]
+}
+]
+},
+{
+"name": "PDSFH and drugs",
+"items": [
+{
+"answer": "Autoimmune disease history",
+"aliases": [
+"other autoimmune conditions",
+"personal autoimmune history"
+]
+},
+{
+"answer": "Recent pregnancy",
+"aliases": [
+"postpartum",
+"recent delivery"
+]
+},
+{
+"answer": "Recent viral illness",
+"aliases": [
+"recent infection",
+"De Quervain's trigger",
+"flu-like illness before"
+]
+},
+{
+"answer": "Amiodarone use",
+"aliases": [
+"on amiodarone"
+]
+},
+{
+"answer": "Lithium use",
+"aliases": [
+"on lithium"
+]
+},
+{
+"answer": "Levothyroxine or carbimazole use",
+"aliases": [
+"current thyroid medication",
+"on thyroxine or carbimazole"
+]
+},
+{
+"answer": "Iodine or kelp exposure",
+"aliases": [
+"iodine supplements",
+"kelp supplements",
+"contrast dye exposure"
+]
+},
+{
+"answer": "Family history of thyroid disease",
+"aliases": [
+"FH thyroid",
+"relatives with thyroid problems"
+]
+},
+{
+"answer": "Smoking status",
+"aliases": [
+"smoker",
+"tobacco use"
+]
+}
+]
+}
+]
+},
+"obstetric-hx": {
+"groups": [
+{
+"name": "Placental abruption",
+"items": [
+{
+"answer": "Painful bleeding",
+"aliases": [
+"pain with the bleeding",
+"abdominal pain",
+"tummy pain",
+"is it painful"
+]
+},
+{
+"answer": "Tense or woody uterus",
+"aliases": [
+"hard tummy",
+"tender uterus",
+"rigid abdomen",
+"uterine tenderness",
+"woody"
+]
+},
+{
+"answer": "Trauma or a fall",
+"aliases": [
+"a knock",
+"fall",
+"abdominal trauma",
+"road traffic accident",
+"been hit"
+]
+},
+{
+"answer": "Domestic abuse",
+"aliases": [
+"domestic violence",
+"safe at home",
+"anyone hurting you",
+"DV"
+]
+},
+{
+"answer": "Smoking",
+"aliases": [
+"smoker",
+"do you smoke"
+]
+},
+{
+"answer": "Cocaine or drugs",
+"aliases": [
+"cocaine",
+"recreational drugs",
+"drug use",
+"amphetamines"
+]
+},
+{
+"answer": "Previous abruption",
+"aliases": [
+"abruption before",
+"history of abruption"
+]
+}
+]
+},
+{
+"name": "Placenta praevia",
+"items": [
+{
+"answer": "Painless bleeding",
+"aliases": [
+"painless",
+"no pain with the bleeding",
+"bright red painless"
+]
+},
+{
+"answer": "Placenta site on the 20-week scan",
+"aliases": [
+"low lying placenta",
+"where is the placenta",
+"anomaly scan",
+"20 week scan",
+"placental location"
+]
+},
+{
+"answer": "Previous caesarean section",
+"aliases": [
+"previous caesarean",
+"c-section",
+"previous CS",
+"LSCS",
+"caesareans"
+]
+},
+{
+"answer": "Assisted conception",
+"aliases": [
+"IVF",
+"fertility treatment",
+"assisted reproduction"
+]
+},
+{
+"answer": "Multiple pregnancy",
+"aliases": [
+"twins",
+"multiple pregnancy",
+"more than one baby"
+]
+}
+]
+},
+{
+"name": "Major haemorrhage and shock",
+"items": [
+{
+"answer": "How much blood",
+"aliases": [
+"amount of bleeding",
+"how many pads",
+"soaking pads",
+"volume of blood"
+]
+},
+{
+"answer": "Clots",
+"aliases": [
+"passing clots",
+"clotted blood"
+]
+},
+{
+"answer": "Still bleeding",
+"aliases": [
+"ongoing bleeding",
+"has it stopped",
+"still bleeding now"
+]
+},
+{
+"answer": "Dizzy or faint",
+"aliases": [
+"feeling faint",
+"light-headed",
+"collapse",
+"dizzy"
+]
+}
+]
+},
+{
+"name": "The baby",
+"items": [
+{
+"answer": "Fetal movements",
+"aliases": [
+"baby moving",
+"reduced fetal movements",
+"is the baby moving",
+"movements"
+]
+}
+]
+},
+{
+"name": "Pre-eclampsia",
+"items": [
+{
+"answer": "Headache",
+"aliases": [
+"headaches",
+"bad headache"
+]
+},
+{
+"answer": "Visual disturbance",
+"aliases": [
+"blurred vision",
+"flashing lights",
+"problems with vision",
+"visual changes"
+]
+},
+{
+"answer": "Epigastric or right upper quadrant pain",
+"aliases": [
+"upper abdominal pain",
+"pain under the ribs",
+"RUQ pain",
+"epigastric pain"
+]
+},
+{
+"answer": "Sudden swelling",
+"aliases": [
+"swelling of face",
+"swollen hands",
+"oedema",
+"puffy face"
+]
+},
+{
+"answer": "High blood pressure",
+"aliases": [
+"blood pressure",
+"hypertension",
+"raised BP"
+]
+}
+]
+},
+{
+"name": "Also in the frame",
+"items": [
+{
+"answer": "Gestation",
+"aliases": [
+"how many weeks",
+"how far along",
+"weeks pregnant",
+"EDD",
+"due date"
+]
+},
+{
+"answer": "Blood group and rhesus status",
+"aliases": [
+"rhesus",
+"rhesus negative",
+"blood group",
+"anti-D",
+"RhD"
+]
+},
+{
+"answer": "Fluid loss or ruptured membranes",
+"aliases": [
+"waters broken",
+"leaking fluid",
+"rupture of membranes",
+"fluid"
+]
+},
+{
+"answer": "Contractions",
+"aliases": [
+"tightenings",
+"labour pains",
+"regular pains"
+]
+},
+{
+"answer": "Sexual intercourse before the bleed",
+"aliases": [
+"after sex",
+"postcoital",
+"intercourse"
+]
+}
+]
+}
+]
+}
+}

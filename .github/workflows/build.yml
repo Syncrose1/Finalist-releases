@@ -1,0 +1,71 @@
+# Builds the Finalist Node as one executable per platform (PyInstaller, unsigned), checks that each
+# one starts and answers, and on a version tag publishes them as a release.
+name: build
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-22.04, name: finalist-node-linux-x64 }
+          - { os: macos-14,     name: finalist-node-macos-arm64 }
+          - { os: macos-15-intel, name: finalist-node-macos-intel }
+          - { os: windows-2022, name: finalist-node-windows-x64.exe }
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build
+        working-directory: node
+        run: |
+          pip install pyinstaller==6.*
+          sep=$(python -c "import os; print(os.pathsep)")   # ; on Windows, : elsewhere
+          pyinstaller --onefile --console --name finalist-node \
+            --add-data "data${sep}data" --add-data "voice${sep}voice" finalist-node.py
+          ls -l dist
+      - name: Starts and answers
+        working-directory: node
+        run: |
+          exe=dist/finalist-node; [ -f dist/finalist-node.exe ] && exe=dist/finalist-node.exe
+          cfg="$RUNNER_TEMP/node.json"; data="$RUNNER_TEMP/node-data"
+          python -c "import json,sys; json.dump({'port': 47699, 'data': sys.argv[2], 'open_window': False}, open(sys.argv[1], 'w'))" "$cfg" "$data"
+          FINALIST_NODE_CONFIG="$cfg" "$exe" --no-window > "$RUNNER_TEMP/node.log" 2>&1 &
+          for i in $(seq 1 40); do curl -sf http://127.0.0.1:47699/v1/hello && break; sleep 1; done
+          echo; cat "$RUNNER_TEMP/node.log"
+          curl -sf http://127.0.0.1:47699/v1/hello | grep -q '"node"'
+          curl -sf http://127.0.0.1:47699/ | grep -q "Finalist Node"
+      - name: Name it
+        run: |
+          mkdir out
+          if [ -f node/dist/finalist-node.exe ]; then cp node/dist/finalist-node.exe "out/${{ matrix.name }}"; else cp node/dist/finalist-node "out/${{ matrix.name }}"; chmod +x "out/${{ matrix.name }}"; fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.name }}
+          path: out/${{ matrix.name }}
+  release:
+    # whatever built: one platform failing shouldn't hold back the others
+    if: always() && startsWith(github.ref, 'refs/tags/v')
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: out/*
+          body: |
+            Download the one for your computer, then start it: it opens its own screen in your browser.
+            See the README for the one-time "unidentified developer" step on macOS and Windows.

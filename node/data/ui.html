@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finalist Node</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%2315110c%22/%3E%3Cg%20transform%3D%22translate%284%204%29%20scale%280.875%29%22%3E%3Cpath%20d%3D%22M15%2021%20L8%2032%20L15%2043%22%20stroke%3D%22%23ffb057%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20fill%3D%22none%22%20opacity%3D%220.5%22/%3E%3Cpath%20d%3D%22M49%2021%20L56%2032%20L49%2043%22%20stroke%3D%22%23ffb057%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20fill%3D%22none%22%20opacity%3D%220.5%22/%3E%3Cpath%20d%3D%22M30.861%2023.556%20Q32.000%2021.565%2033.139%2023.556%20C35.029%2026.536%2037.464%2028.971%2040.444%2030.861%20Q42.435%2032.000%2040.444%2033.139%20C37.464%2035.029%2035.029%2037.464%2033.139%2040.444%20Q32.000%2042.435%2030.861%2040.444%20C28.971%2037.464%2026.536%2035.029%2023.556%2033.139%20Q21.565%2032.000%2023.556%2030.861%20C26.536%2028.971%2028.971%2026.536%2030.861%2023.556Z%22%20fill%3D%22%23ffb057%22%20stroke%3D%22%23ffb057%22%20stroke-width%3D%223.13%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3C/svg%3E%0A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* The Finalist Node's one screen (31 Oct 2026). Raahat: "a visual interface, simple, ideally one
+   single screen but beautifully animated: we want normal users to use it", then "it bares little
+   resemblance to Finalist itself". So this is a Finalist page: its "Clinical Almanac" tokens, brand
+   block, cards and section heads, copied from src/app/globals.css and the account page. The living
+   part is a heartbeat trace across the status card: its pace is the node's state. Light only, like
+   Finalist; still under reduced motion. Served to this PC's own browser only. */
+:root {
+  --paper: #f2ecdd; --paper-2: #f8f3e7; --card: #fbf7ee; --ink: #1c1812; --ink-2: #574f41; --ink-3: #8a8072;
+  --line: #e2d8c3; --line-2: #d3c7ad; --go: #0f7355; --go-bright: #16916c; --flag: #d6492b; --amber: #bf7d16;
+  --spring: cubic-bezier(.34, 1.56, .64, 1); --tone: var(--go);
+  --display: Fraunces, Georgia, serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { background: var(--paper); }
+body { margin: 0; min-height: 100vh; color: var(--ink); font: 15px/1.55 "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+  background: var(--paper);
+  background-image: radial-gradient(1100px 700px at 100% -5%, rgba(15,115,85,.05), transparent 60%), radial-gradient(900px 600px at -10% 105%, rgba(214,73,43,.04), transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E"); }
+.wrap { max-width: 760px; margin: 0 auto; padding: 22px 16px 48px; }
+.eyebrow { font: 500 11px var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 1px 2px rgba(28,24,18,.04); }
+
+/* the brand bar, as in Finalist's sidebar */
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.brand { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+.brand b { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--ink); color: var(--paper); font: 400 18px var(--display); }
+.brand span { line-height: 1.15; } .brand strong { display: block; font: 400 18px var(--display); letter-spacing: -.01em; }
+.pill { display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border-radius: 999px; font-size: 12px; font-weight: 600; color: var(--tone);
+  background: color-mix(in srgb, var(--tone) 12%, transparent); transition: color .5s, background .5s; }
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; animation: dot 1.6s ease-in-out infinite; }
+@keyframes dot { 50% { opacity: .35; transform: scale(.7); } }
+
+/* reveal, as Finalist's pages load */
+.r { animation: rise .55s var(--spring) both; } .r2 { animation-delay: .07s; } .r3 { animation-delay: .14s; } .r4 { animation-delay: .21s; } .r5 { animation-delay: .28s; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+.swap { animation: swap .45s var(--spring); }
+@keyframes swap { from { opacity: 0; transform: translateY(6px); } }
+
+/* the status card and its heartbeat */
+.hero { margin-top: 26px; overflow: hidden; }
+.hero .txt { padding: 22px 22px 6px; }
+h1 { margin: 8px 0 6px; font: 600 clamp(28px, 5vw, 38px)/1.08 var(--display); letter-spacing: -.02em; }
+.lede { margin: 0; max-width: 54ch; color: var(--ink-2); }
+.trace { display: block; width: 100%; height: 74px; }
+.trace path { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.trace .base { stroke: var(--line); stroke-width: 1.5; }
+.trace .beat { stroke: var(--tone); stroke-width: 2.2; transition: stroke .6s; }
+.code { display: flex; gap: 6px; flex-wrap: wrap; margin: 16px 0 4px; }
+.code span { display: grid; place-items: center; width: 40px; height: 50px; border-radius: 10px; background: var(--paper-2); border: 1px solid var(--line-2);
+  font: 500 24px var(--mono); animation: tile .55s var(--spring) both; }
+.code span.dash { width: 14px; background: none; border: 0; color: var(--ink-3); }
+@keyframes tile { from { opacity: 0; transform: translateY(-8px) scale(.85); } }
+.cmd { display: flex; gap: 8px; align-items: center; margin-top: 12px; }
+.cmd code { flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; padding: 9px 11px; border-radius: 10px; background: var(--paper-2); border: 1px solid var(--line); font: 500 12.5px var(--mono); }
+
+/* sections, as on Finalist's account page */
+section.s { margin-top: 30px; }
+section.s > h2 { margin: 0; font: 600 22px var(--display); letter-spacing: -.01em; }
+section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
+.rows { padding: 4px 18px; }
+.row { display: grid; grid-template-columns: 22px 1fr auto; gap: 12px; align-items: center; padding: 12px 0; border-top: 1px solid var(--line); }
+.row:first-child { border-top: 0; }
+.row svg { width: 18px; height: 18px; color: var(--ink-3); }
+.row .k { font-weight: 600; font-size: 14.5px; } .row .v { color: var(--ink-2); font-size: 13.5px; }
+.tag { font: 500 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; background: var(--paper-2); color: var(--ink-3); white-space: nowrap; }
+.tag.ok { background: color-mix(in srgb, var(--go) 11%, transparent); color: var(--go); }
+.tag.warn { background: color-mix(in srgb, var(--amber) 13%, transparent); color: var(--amber); }
+.tag.bad { background: color-mix(in srgb, var(--flag) 11%, transparent); color: var(--flag); }
+
+.ctl { padding: 18px; display: grid; gap: 16px; }
+.ctl h3 { margin: 0; font-size: 15px; font-weight: 700; }
+.ctl .v { color: var(--ink-2); font-size: 13.5px; margin-top: 2px; }
+.ctl .v b { display: block; width: fit-content; max-width: 100%; margin-top: 4px; padding: 3px 8px; border-radius: 8px; background: var(--paper-2); border: 1px solid var(--line); font: 500 12.5px var(--mono); color: var(--ink); overflow-wrap: anywhere; }
+.ctl hr { border: 0; border-top: 1px solid var(--line); margin: 0; }
+.line { display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start; }
+.sw { position: relative; flex: none; width: 44px; height: 26px; margin-top: 2px; border-radius: 999px; border: 0; cursor: pointer; background: var(--line-2); transition: background .3s; }
+.sw::after { content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(28,24,18,.3); transition: transform .45s var(--spring); }
+.sw[aria-checked="true"] { background: var(--go); } .sw[aria-checked="true"]::after { transform: translateX(18px); }
+.sw:disabled { opacity: .45; cursor: default; }
+.form { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.form input { flex: 1 1 220px; min-width: 0; padding: 9px 12px; border-radius: 12px; border: 1px solid var(--line-2); background: var(--card); color: var(--ink); font: inherit; font-size: 14px; outline: 0; transition: border-color .2s; }
+.form input:focus { border-color: var(--go); }
+.friends { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; }
+.friends .eyebrow { margin-right: 4px; font-size: 10px; }
+.friend { display: inline-flex; align-items: center; border-radius: 999px; background: var(--paper-2); border: 1px solid var(--line); font-size: 12.5px; animation: tile .45s var(--spring) both; overflow: hidden; }
+.friend button { border: 0; background: none; font: inherit; color: var(--ink); cursor: pointer; padding: 5px 4px 5px 11px; }
+.friend button:hover { color: var(--go); }
+.friend button.x { padding: 5px 9px 5px 5px; color: var(--ink-3); }
+.friend button.x:hover { color: var(--flag); }
+.err { color: var(--flag); font-size: 13px; margin: 0; }
+
+.feed { padding: 6px 18px; max-height: 236px; overflow: hidden; }
+.feed.long { -webkit-mask-image: linear-gradient(#000 75%, transparent); mask-image: linear-gradient(#000 75%, transparent); }
+.feed p { margin: 0; display: grid; grid-template-columns: 54px 1fr; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink-2); animation: slide .45s var(--spring) both; }
+.feed p:first-child { border-top: 0; }
+.feed time { font: 500 11.5px var(--mono); color: var(--ink-3); padding-top: 2px; }
+@keyframes slide { from { opacity: 0; transform: translateY(-8px); } }
+
+.btn { appearance: none; border: 0; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: 12px;
+  font: 600 14px "Hanken Grotesk", system-ui, sans-serif; background: var(--ink); color: var(--paper); transition: transform .3s var(--spring), background .2s, color .2s, border-color .2s; }
+.btn:hover { transform: translateY(-2px); background: var(--go); }
+.btn:active { transform: scale(.95); transition-duration: .08s; }
+.btn.ghost { background: transparent; color: var(--ink-2); border: 1px solid var(--line-2); }
+.btn.ghost:hover { color: var(--ink); border-color: var(--ink-3); background: transparent; }
+.btn.stop:hover { color: var(--flag); border-color: var(--flag); }
+.btn:disabled { opacity: .45; cursor: default; transform: none; }
+.foot { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.foot p { flex: 1 1 260px; margin: 0; font-size: 12.5px; color: var(--ink-3); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar r">
+    <a class="brand" href="https://raahat.sh/finalist" target="_blank" rel="noopener"><b>F</b><span><strong>Finalist</strong><span class="eyebrow">Node · this computer</span></span></a>
+    <span class="pill"><i></i><span id="pillt">Starting</span></span>
+  </header>
+
+  <div class="card hero r r2">
+    <div class="txt">
+      <div class="eyebrow" id="eb">Finalist Node</div>
+      <h1 id="h">Starting…</h1>
+      <p class="lede" id="sub">One moment.</p>
+      <div id="focus" hidden></div>
+    </div>
+    <svg class="trace" viewBox="0 0 600 74" preserveAspectRatio="none" aria-hidden="true"><path class="base" d="M0 44H600"/><path class="beat" id="beat" d="M0 44H600"/></svg>
+  </div>
+
+  <section class="s r r3" aria-labelledby="t1">
+    <h2 id="t1">This computer</h2>
+    <p>What the node has to work with.</p>
+    <div class="card rows" id="rows"></div>
+  </section>
+
+  <section class="s r r4" id="ctlsec" hidden aria-labelledby="t2">
+    <h2 id="t2">Reach and sharing</h2>
+    <p>Who can use Claude on this node, and from where.</p>
+    <div class="card ctl" id="ctl"></div>
+  </section>
+
+  <section class="s r r5" aria-labelledby="t3">
+    <h2 id="t3">What it's doing</h2>
+    <p>Live, as it happens.</p>
+    <div class="card feed" id="feed"></div>
+  </section>
+
+  <div class="foot r r5">
+    <a class="btn" id="open" href="https://raahat.sh/finalist/ace-the-osces" target="_blank" rel="noopener">Open Finalist</a>
+    <button class="btn ghost stop" id="stop" type="button">Stop the node</button>
+    <p>Keep it running while you practise. Closing this tab doesn't stop it; the button does.</p>
+  </div>
+</div>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const ICON = {
+  claude: '<path d="m4 17 6-5-6-5"/><path d="M12 19h8"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  voice: '<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>',
+};
+const svg = (k) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[k]}</svg>`;
+const left = (until, now) => { const s = Math.max(0, Math.round(until - now)); return s >= 3600 ? `${Math.floor(s / 3600)} h ${Math.floor(s % 3600 / 60)} min` : `${Math.floor(s / 60)} min`; };
+const win = /Win/.test(navigator.platform);
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let last = {}, seen = 0;
+
+function set(el, html, key) {                 // swap with a spring, only when it changes
+  if (last[key] === html) return;
+  last[key] = html; el.innerHTML = html;
+  el.classList.remove("swap"); void el.offsetWidth; el.classList.add("swap");
+}
+
+/* The heartbeat: a PQRST complex per beat, scrolling across. Resting when ready, quick during a
+   station, slow while waiting to pair, and it fizzles to a flat line when the node stops. */
+const beat = $("#beat"), W = 600, Y = 44, GAP = W / 3.2;
+let bpm = 60, amp = 1, x0 = 0, tPrev = performance.now();
+function complex(x, a) {
+  const k = (dx, dy) => `L${(x + dx).toFixed(1)} ${(Y - dy * a).toFixed(1)}`;
+  return [k(0, 0), k(8, 3), k(16, 0), k(26, 0), k(30, -4), k(36, 30), k(42, -9), k(48, 0), k(62, 0), k(74, 7), k(88, 0)].join("");
+}
+function path() {
+  let d = `M0 ${Y}`;
+  for (let x = x0 - GAP; x < W; x += GAP) if (x > -90) d += complex(x, amp);
+  return d + `L${W} ${Y}`;
+}
+function draw(now) {
+  const dt = Math.min(64, now - tPrev); tPrev = now;
+  x0 = (x0 + GAP * bpm / 60000 * dt) % GAP;   // one complex passes per beat
+  beat.setAttribute("d", path());
+  requestAnimationFrame(draw);
+}
+if (reduced) { x0 = 40; beat.setAttribute("d", path()); } else requestAnimationFrame(draw);
+function rhythm(target, a) {                    // ease into a new pace rather than jump
+  const from = bpm, fa = amp, t0 = performance.now();
+  const step = (t) => { const k = Math.min(1, (t - t0) / 900); bpm = from + (target - from) * k; amp = fa + (a - fa) * k;
+    if (reduced) beat.setAttribute("d", path()); if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+
+function render(s) {
+  const live = s.live > 0;
+  const tone = { ready: "--go", pair: "--amber", "no-claude": "--flag", sharing: "--go-bright" }[s.state];
+  document.documentElement.style.setProperty("--tone", `var(${tone})`);
+  $("#pillt").textContent = live ? "In a station" : { ready: "Running", pair: "Not paired", "no-claude": "Needs Claude Code", sharing: "Shared" }[s.state];
+  const pace = live ? [104, 1] : s.state === "pair" ? [42, .8] : s.state === "no-claude" ? [30, .35] : [62, 1];
+  if (pace.join() !== last.pace) { last.pace = pace.join(); rhythm(...pace); }
+
+  const head = {
+    ready: live ? ["A station is running", "Patient and Examiner Claude are at work. Keep going in Finalist."]
+                : ["Ready for stations", "Open Finalist and run any history or communication station with Claude."],
+    pair: ["Make this node yours", "In Finalist, signed in, open Settings and enter this code. The node then works for that account."],
+    "no-claude": ["Claude Code needed", "The node runs Patient and Examiner Claude through Claude Code, on your own Claude plan. Install it, sign in once, then start the node again."],
+    sharing: ["Shared with a friend", s.share ? `${esc(s.share.email)} has it for ${left(s.share.until, s.now)} more. Your own stations wait meanwhile.` : ""],
+  }[s.state];
+  set($("#eb"), s.state === "pair" ? "New node" : "Finalist Node", "eb");
+  set($("#h"), head[0], "h"); set($("#sub"), head[1], "sub");
+
+  const f = $("#focus");
+  if (s.state === "pair" && s.code) {
+    f.hidden = false;
+    set(f, `<div class="code" aria-label="Pairing code ${esc(s.code)}">${[...s.code].map((c, i) => `<span class="${c === "-" ? "dash" : ""}" style="animation-delay:${i * 55}ms">${esc(c)}</span>`).join("")}</div>`, "focus");
+    $("#open").href = "https://raahat.sh/finalist/account#claude"; $("#open").textContent = "Pair it in Finalist";
+  } else if (s.state === "no-claude") {
+    f.hidden = false;
+    const cmd = win ? "irm https://claude.ai/install.ps1 | iex" : "curl -fsSL https://claude.ai/install.sh | bash";
+    set(f, `<div class="cmd"><code>${esc(cmd)}</code><button class="btn ghost" type="button" id="cp">Copy</button></div>`, "focus");
+    $("#cp").onclick = (e) => { navigator.clipboard.writeText(cmd); e.target.textContent = "Copied"; };
+  } else {
+    f.hidden = true; last.focus = "";
+    $("#open").href = "https://raahat.sh/finalist/ace-the-osces"; $("#open").textContent = "Open Finalist";
+  }
+
+  const rows = [
+    ["claude", "Claude Code", s.claude ? "Patient and Examiner Claude use your Claude plan" : `Not installed: run the line above in ${win ? "PowerShell" : "a terminal"}`, s.claude ? ["ok", "Ready"] : ["bad", "Missing"]],
+    ["user", "Account", s.paired ? `Works for ${esc(s.owner || "its owner")}` : "Not paired yet", s.paired ? ["ok", "Paired"] : ["warn", "To do"]],
+    ["voice", "Voice", s.voice ? "Spoken stations, or typed" : "Typed stations: no voice on this computer yet", s.voice ? ["ok", "Spoken"] : ["", "Typed"]],
+  ];
+  set($("#rows"), rows.map(([i, k, v, [c, t]]) => `<div class="row">${svg(i)}<div><div class="k">${k}</div><div class="v">${v}</div></div><span class="tag ${c}">${t}</span></div>`).join(""), "rows");
+
+  controls(s);
+
+  const feed = $("#feed"), news = s.activity.filter((a) => a.at > seen);
+  for (const a of news) {
+    const p = document.createElement("p");
+    p.innerHTML = `<time>${new Date(a.at * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</time><span>${esc(a.msg)}</span>`;
+    feed.prepend(p);
+  }
+  if (news.length) seen = news[news.length - 1].at;
+  while (feed.children.length > 8) feed.lastChild.remove();
+  feed.classList.toggle("long", feed.children.length > 5);
+}
+
+async function post(path, body) {
+  const r = await fetch(path, { method: "POST", headers: { "X-Finalist-Node": "1", "Content-Type": "application/json" }, body: JSON.stringify(body || {}) });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || "That didn't work.");
+  return j;
+}
+
+// Reach and sharing: rebuilt only when what they offer changes, so a poll never wipes what's typed
+function controls(s) {
+  const sec = $("#ctlsec"), c = $("#ctl");
+  if (!s.paired || !s.claude) { sec.hidden = true; last.ctl = ""; return; }
+  sec.hidden = false;
+  const sh = s.share, canExtend = sh && s.now >= sh.extend_from;
+  const key = JSON.stringify([s.public, s.tailnet, sh && sh.email, sh && sh.link, canExtend, s.friends]);
+  if (last.ctl !== key) {
+    last.ctl = key;
+    const others = (s.friends || []).filter((e) => !sh || e !== sh.email);
+    c.innerHTML = `
+      <div class="line"><div><h3>Reach it from anywhere</h3><div class="v">${s.tailnet
+        ? (s.public ? "On: open to the internet while it runs, for a hospital PC or a borrowed laptop. A Finalist sign-in is still needed for everything."
+                    : "Off: only your own devices on Tailscale reach it. Turn it on to use it from a hospital PC or a borrowed laptop.")
+        : "Needs Tailscale on this computer. Without it, only this computer reaches the node."}</div>
+        ${s.tailnet ? `<div class="v">From another device, Finalist's “Node elsewhere?” takes</div><div class="v"><b>${esc(s.tailnet)}</b></div>` : ""}</div>
+        <button class="sw" id="reach" role="switch" aria-checked="${!!s.public}" aria-label="Reach it from anywhere" ${s.tailnet ? "" : "disabled"}></button></div>
+      <hr>
+      <div><h3>Share it with a friend</h3><div class="v" id="shv"></div>
+      ${sh ? `<div class="form">
+          ${sh.link ? `<button class="btn" id="copy" type="button">Copy their link</button>` : ""}
+          <button class="btn ghost" id="extend" type="button" ${canExtend ? "" : "disabled"}>Extend 2 hours</button>
+          <button class="btn ghost stop" id="unshare" type="button">Stop sharing</button></div>
+          ${canExtend ? "" : `<div class="v" style="margin-top:6px">You can extend it in its last 10 minutes.</div>`}`
+        : `<form class="form" id="share"><input type="email" name="email" placeholder="Their Finalist email" required autocomplete="off">
+          <button class="btn" type="submit">Share for 2 hours</button></form>
+          ${others.length ? `<div class="friends"><span class="eyebrow">Again</span>${others.map((e, i) =>
+            `<span class="friend" style="animation-delay:${i * 45}ms"><button type="button" data-again="${esc(e)}" title="Share with ${esc(e)} for 2 hours">${esc(e)}</button><button type="button" class="x" data-forget="${esc(e)}" aria-label="Forget ${esc(e)}">×</button></span>`).join("")}</div>` : ""}`}
+      </div>
+      <p class="err" id="err" hidden></p>`;
+    c.classList.remove("swap"); void c.offsetWidth; c.classList.add("swap");
+    const fail = (e) => { const p = $("#err"); p.hidden = false; p.textContent = e.message; };
+    const busy = (el, fn) => async (ev) => { ev && ev.preventDefault(); el.disabled = true; try { await fn(); last.ctl = ""; tick(); } catch (e) { fail(e); el.disabled = false; } };
+    const r = $("#reach"); if (r) r.onclick = busy(r, () => post("/v1/local/public", { on: r.getAttribute("aria-checked") !== "true" }));
+    const f = $("#share"); if (f) f.onsubmit = busy(f.querySelector("button"), () => post("/v1/local/share", { email: f.email.value }));
+    const x = $("#extend"); if (x) x.onclick = busy(x, () => post("/v1/local/share/extend"));
+    const u = $("#unshare"); if (u) u.onclick = busy(u, () => post("/v1/local/share/stop"));
+    c.querySelectorAll("[data-again]").forEach((b) => (b.onclick = busy(b, () => post("/v1/local/share", { email: b.dataset.again }))));
+    c.querySelectorAll("[data-forget]").forEach((b) => (b.onclick = busy(b, () => post("/v1/local/friends/forget", { email: b.dataset.forget }))));
+    const cp = $("#copy"); if (cp) cp.onclick = () => { navigator.clipboard.writeText(sh.link); cp.textContent = "Copied"; setTimeout(() => (cp.textContent = "Copy their link"), 1600); };
+  }
+  $("#shv").textContent = sh
+    ? `${sh.email} has it for ${left(sh.until, s.now)} more, from their own Finalist account, with their own runs. Your own stations wait meanwhile.`
+    : "Two hours of Claude stations for one friend's Finalist account, with their own runs, never yours. Your own stations wait while it's live.";
+}
+
+async function tick() {
+  try { render(await (await fetch("/v1/local/status", { cache: "no-store" })).json()); }
+  catch {
+    document.documentElement.style.setProperty("--tone", "var(--ink-3)");
+    $("#pillt").textContent = "Stopped";
+    if (last.pace !== "stop") { last.pace = "stop"; rhythm(60, 0); }   // the trace fizzles to a flat line
+    $("#ctlsec").hidden = true; $("#focus").hidden = true; last.ctl = last.focus = "";
+    set($("#h"), "The node has stopped", "h");
+    set($("#sub"), "Start Finalist Node again to practise with Claude. Finalist's cards, the clock and the drill still work without it.", "sub");
+  }
+}
+$("#stop").onclick = async () => {
+  if (!confirm("Stop the Finalist Node? Claude stations stop until you start it again.")) return;
+  await fetch("/v1/local/stop", { method: "POST", headers: { "X-Finalist-Node": "1" } }).catch(() => {});
+  setTimeout(tick, 800);
+};
+tick(); setInterval(tick, 1500);
+</script>
+</body>
+</html>
