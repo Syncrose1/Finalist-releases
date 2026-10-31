@@ -1,6 +1,20 @@
 """The Finalist Node as one executable (PyInstaller's entry point): the same as `python -m finalist_node`,
 and, with --voice, the node's voice (voice/voiced.py), which the node starts itself when a station speaks."""
+import os
 import sys
+
+# PyInstaller points LD_LIBRARY_PATH (DYLD_* on a Mac) at its own bundled libraries, and every program the
+# node starts inherits it: the system's /bin/sh then died on the bundle's readline ("undefined symbol:
+# rl_trim_arg_from_keyseq", 31 Oct), so the browser never opened its screen, and Claude Code, Tailscale
+# and the voice engine were at risk too. Children get the system's own settings back; this process has
+# already loaded what it needs.
+if getattr(sys, "frozen", False):
+    for var in ("LD_LIBRARY_PATH", "DYLD_LIBRARY_PATH", "DYLD_FALLBACK_LIBRARY_PATH"):
+        orig = os.environ.pop(var + "_ORIG", None)
+        if orig is not None:
+            os.environ[var] = orig
+        else:
+            os.environ.pop(var, None)
 
 if "--voice" in sys.argv:
     sys.argv.remove("--voice")
