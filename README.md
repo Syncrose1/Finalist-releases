@@ -9,16 +9,17 @@ Finalist's cards, clock and recall drills work without it; the node adds the sta
 1. **Claude Code**, signed in. Install it once, then run `claude` and sign in:
    - macOS / Linux: `curl -fsSL https://claude.ai/install.sh | bash`
    - Windows (PowerShell): `irm https://claude.ai/install.ps1 | iex`
-2. **The node**: from [Releases](../../releases/latest), download the one for your computer:
-
-   | Computer | File |
-   |---|---|
-   | Windows | `finalist-node-windows-x64.exe` |
-   | Mac with Apple silicon (M1 or later) | `finalist-node-macos-arm64` |
-   | Older Intel Mac | `finalist-node-macos-intel` |
-   | Linux | `finalist-node-linux-x64` |
-
-   Nothing to install: it's one file. Keep it wherever you like.
+2. **The node**:
+   - **Linux or Mac:** in a terminal, run
+     ```
+     curl -fsSL https://raw.githubusercontent.com/Syncrose1/Finalist-releases/main/install.sh | sh
+     ```
+     It downloads the right build, adds **Finalist Node** to your apps (Linux) or Desktop (Mac), and starts it.
+     Run it again to update.
+   - **Windows:** from [Releases](../../releases/latest), download `finalist-node-windows-x64.exe`. It's one file:
+     keep it wherever you like and double-click it.
+   - Or download any build from [Releases](../../releases/latest) yourself (on Linux and Mac, `chmod +x` it first:
+     a downloaded file isn't allowed to run until it's marked).
 
 ## Start it
 
@@ -40,7 +41,7 @@ These builds aren't signed, so your computer asks once whether to trust them:
   ~/Downloads/finalist-node-macos-arm64     # or -intel
   ```
   (Or: System Settings → Privacy & Security → **Open Anyway**, after the first try.)
-- **Linux**: `chmod +x finalist-node-linux-x64 && ./finalist-node-linux-x64`
+- **Linux**: the installer above does it all; by hand, `chmod +x finalist-node-linux-x64 && ./finalist-node-linux-x64`
 
 ## From your other devices
 
