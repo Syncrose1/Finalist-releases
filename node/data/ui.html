@@ -63,7 +63,8 @@ h1 { margin: 8px 0 6px; font: 600 clamp(28px, 5vw, 38px)/1.08 var(--display); le
 .hero.thump { animation: thump .52s var(--spring); }
 @keyframes thump {
   0% { transform: scale(1); }
-  14% { transform: scale(1.013) translateY(-1px); box-shadow: 0 0 0 1px color-mix(in srgb, var(--tone) 40%, transparent), 0 18px 46px -18px color-mix(in srgb, var(--tone) 55%, transparent); }
+  14% { transform: scale(1.013); border-color: var(--tone);
+        box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--tone) 70%, transparent), 0 0 14px 1px color-mix(in srgb, var(--tone) 32%, transparent); }   /* an even green outline, no drop shadow (Raahat) */
   42% { transform: scale(.997); }
   100% { transform: scale(1); }
 }

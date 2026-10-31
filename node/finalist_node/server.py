@@ -67,6 +67,21 @@ def circuit():
     return json.loads(f.read_text()) if f and f.is_file() else None
 
 
+def station_vocab(sid):
+    """A station's own terms, from its drill list (the items' answers), for the listeners of a spoken station."""
+    try:
+        d = json.loads(Path(CFG["drills"]).read_text()).get(sid) or {}
+    except (OSError, ValueError):
+        return []
+    out = []
+    for g in d.get("groups", []):
+        for it in g.get("items", []):
+            a = (it.get("answer") or "").strip()
+            if a and a not in out:
+                out.append(a)
+    return out[:40]
+
+
 def stations_by_id():
     return {x["id"]: x for x in _stations()["stations"]}
 
@@ -313,7 +328,8 @@ def voice_cmd():
         return None
     r = voice_setup.root(CFG)
     args = ["--port", str(CFG["voice_port"]), "--engine", v["engine"], "--models", str(r / "models"),
-            "--voices", str(r / "voices"), "--mouth", v["mouth"], "--backend", v["backend"], "--device", str(v.get("device", 0))]
+            "--voices", str(r / "voices"), "--mouth", v["mouth"], "--backend", v["backend"], "--device", str(v.get("device", 0)),
+            "--ear", v.get("ear", "parakeet"), "--drills", str(Path(CFG["drills"]))]
     if getattr(sys, "frozen", False):
         return [sys.executable, "--voice", *args]
     py = Path(CFG.get("voice_python") or "").expanduser()
@@ -690,7 +706,7 @@ class Handler(BaseHTTPRequestHandler):
                     if "sim" in o:                     # tag the new station with its account before anything else
                         sim.SIMS[o["sim"]]["account"] = w.id
                     emit(o)
-                sim.start(model, d, x, content().get(x["id"], {}), first, voice=bool(b.get("voice")))
+                sim.start(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first, voice=bool(b.get("voice")))
             elif what in ("say", "whistle"):
                 mine(b.get("sim"))
                 who = sim.say(b.get("sim"), b.get("text") or "", lambda t: emit({"t": t}), event="whistle" if what == "whistle" else None)

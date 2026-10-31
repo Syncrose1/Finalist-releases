@@ -12,7 +12,7 @@ sign-in checks).
 One engine for every machine (Raahat, 31 Oct 2026: "I would prefer one backend"): audio.cpp's
 server, started here and stopped with this process. It speaks with Ming 3.0 (a GPU: Vulkan, or Metal
 on a Mac) or Pocket TTS (a CPU), every voice cloned from the same fixed clips, and hears with Parakeet
-TDT. Measured on an RTX 3060 over Vulkan: Ming streams its first audio in 0.3 s at 0.78x real time,
+TDT or Qwen3-ASR (below). Measured on an RTX 3060 over Vulkan: Ming streams its first audio in 0.3 s at 0.78x real time,
 Pocket in 0.04 s; Parakeet transcribes 6.6 s in 0.08 s. On a Ryzen 5600G's CPU: Pocket 0.52x,
 Parakeet ~10x real time. Turn-taking keeps Silero VAD per 32 ms frame (its ONNX model, no PyTorch).
 The Python Ming this replaced (PyTorch, CUDA only) is in git history: 7d294b8.
@@ -55,6 +55,8 @@ ap.add_argument("--voices", required=True, help="the station voices: voices.json
 ap.add_argument("--mouth", choices=["ming", "pocket"], default="pocket")
 ap.add_argument("--backend", default="cpu", help="vulkan, metal or cpu")
 ap.add_argument("--device", type=int, default=0)
+ap.add_argument("--ear", choices=["qwen", "parakeet"], default="parakeet")
+ap.add_argument("--drills", default="", help="the node's drills.json: each station's terms steer the ear")
 ap.add_argument("--threads", type=int, default=max(2, min(4, (os.cpu_count() or 4) // 2)))
 ap.add_argument("--idle", type=int, default=600)
 ARGS, _ = ap.parse_known_args()
@@ -62,8 +64,14 @@ ARGS, _ = ap.parse_known_args()
 MODELS = {
     "ming": {"family": "ming3_tts", "file": "ming-3.0-tts-0.5b-q8_0.gguf", "rate": 44100},
     "pocket": {"family": "pocket_tts", "file": "PocketTTS-GGUF/english/pocket-tts-english-q8_0.gguf", "rate": 24000},
-    "ear": {"family": "parakeet_tdt", "file": "Parakeet-TDT-0.6B-v3-GGUF/parakeet-tdt-0.6b-v3-q8_0.gguf"},
+    "parakeet": {"family": "parakeet_tdt", "file": "Parakeet-TDT-0.6B-v3-GGUF/parakeet-tdt-0.6b-v3-q8_0.gguf"},
+    "qwen": {"family": "qwen3_asr", "file": "Qwen3-ASR-0.6B-GGUF/qwen3-asr-0.6b-q8_0.gguf"},
 }
+# The ear (31 Oct 2026, 32 synthetic clips of students' medical summaries, 92 key terms): Parakeet got 64%
+# of the terms right; Qwen3-ASR 83%, and 95% given the station's terms as context, at 0.4 s an utterance
+# on an RTX 3060 (Parakeet 0.07 s) but 4.3 s on a 5600G's CPU (Parakeet 0.56 s). So: Qwen3 with the
+# station's terms on a graphics card, Parakeet on a CPU. Context can pull a word towards a listed term
+# (haematemesis heard as haemoptysis once), so the listeners are still told it's speech recognition.
 RATE = MODELS[ARGS.mouth]["rate"]
 HOLD = int(0.12 * RATE)             # the newest audio waits for the next look, which can still cut it
 SOUND_TAGS = {"[Sigh]", "[Cough]", "[Breathing]", "[Uhm]", "[Laughter]"}
@@ -97,7 +105,7 @@ class Engine:
                    {"id": "mouth", "family": mouth["family"], "path": str(Path(ARGS.models) / mouth["file"]), "task": "tts",
                     "mode": "streaming", "voice_presets": presets,
                     **({"load_options": {"language": "english"}} if ARGS.mouth == "pocket" else {})},
-                   {"id": "ear", "family": "parakeet_tdt", "path": str(Path(ARGS.models) / MODELS["ear"]["file"]),
+                   {"id": "ear", "family": MODELS[ARGS.ear]["family"], "path": str(Path(ARGS.models) / MODELS[ARGS.ear]["file"]),
                     "task": "asr", "mode": "offline"}]}
         conf = Path(ARGS.models) / "engine.json"
         conf.write_text(json.dumps(cfg, indent=1))
@@ -165,7 +173,8 @@ class Engine:
             w.setframerate(16000)
             w.writeframes(pcm16.tobytes())
         bnd = uuid.uuid4().hex
-        parts = [("model", b"ear")] + ([("prompt", prompt.encode())] if prompt else [])
+        parts = [("model", b"ear")] + ([("language", b"en")] if ARGS.ear == "qwen" else []) + \
+                ([("prompt", prompt.encode())] if prompt and ARGS.ear == "qwen" else [])
         body = b"".join(f'--{bnd}\r\nContent-Disposition: form-data; name="{k}"\r\n\r\n'.encode() + v + b"\r\n" for k, v in parts)
         body += f'--{bnd}\r\nContent-Disposition: form-data; name="file"; filename="u.wav"\r\nContent-Type: audio/wav\r\n\r\n'.encode()
         body += buf.getvalue() + f"\r\n--{bnd}--\r\n".encode()
@@ -346,7 +355,7 @@ def mouth_worker():
         first = next(iter(ENGINE.voices.values()))
         synth(first, "Thank you. Please take a seat.", lambda *_: None, lambda: False)    # warm: nobody waits mid-station
         ENGINE.hear(np.zeros(16000, dtype=np.int16))
-        log(f"voice ready in {time.perf_counter() - t:.1f}s: {ARGS.mouth} on {ARGS.backend}, {len(ENGINE.voices)} voices")
+        log(f"voice ready in {time.perf_counter() - t:.1f}s: {ARGS.mouth} and {ARGS.ear} on {ARGS.backend}, {len(ENGINE.voices)} voices")
         MOUTH_READY.set()
     except Exception as e:
         log("the voice failed to start:", traceback.format_exc())
@@ -388,11 +397,26 @@ class Vad:
         return float(out[0][0])
 
 
-def hear(pcm, cb):
+def station_terms(sid):
+    """A station's own terms (its drill items' answers), to steer the ear."""
+    try:
+        d = json.loads(Path(ARGS.drills).read_text()).get(sid) or {}
+    except (OSError, ValueError):
+        return []
+    out = []
+    for g in d.get("groups", []):
+        for it in g.get("items", []):
+            a = (it.get("answer") or "").strip()
+            if a and a not in out:
+                out.append(a)
+    return out[:40]
+
+
+def hear(pcm, cb, prompt=None):
     """Transcribes off the socket's thread; cb({"text"}) when done."""
     def go():
         try:
-            cb({"text": ENGINE.hear(pcm)})
+            cb({"text": ENGINE.hear(pcm, prompt)})
         except Exception as e:
             log("hearing failed:", e)
             cb({"text": ""})
@@ -428,6 +452,7 @@ class Conn:
         self.ptt, self.holding = False, False      # push to talk: the button, not the silence, decides the turn
         self.stopped = 0.0
         self.voices = {}
+        self.prompt = None                  # the station's terms, for the ear
 
     def send(self, obj):
         data = obj if isinstance(obj, (bytes, bytearray)) else json.dumps(obj)
@@ -484,7 +509,7 @@ class Conn:
                 self.utt += 1
                 self.vad.reset_states()
             self.send({"type": "heard", "text": text, "ms": round(1000 * (time.perf_counter() - t)), "early": True})
-        hear(pcm, back)
+        hear(pcm, back, self.prompt)
 
     def end(self):
         pcm = np.concatenate(self.buf)
@@ -496,7 +521,7 @@ class Conn:
             self.send({"type": "heard", "text": ""})
             return
         t = time.perf_counter()
-        hear(pcm, lambda d: self.send({"type": "heard", "text": d.get("text", ""), "ms": round(1000 * (time.perf_counter() - t))}))
+        hear(pcm, lambda d: self.send({"type": "heard", "text": d.get("text", ""), "ms": round(1000 * (time.perf_counter() - t))}), self.prompt)
 
     def speak(self, m):
         v = ENGINE.voices.get(self.voices.get(m.get("role", "patient")))
@@ -548,6 +573,11 @@ async def handle(ws):
                 if "hang" in m:
                     c.HANG_MS = max(250, min(1500, int(m["hang"])))
                 c.ptt = m.get("mode") == "ptt"
+                terms = station_terms(m.get("station") or "")
+                # the specific spellings carry it (92-term test: none 83%, a generic medical sentence 85%, the
+                # terms 95%); the sentence frames them, and covers a station with no list
+                c.prompt = "A medical conversation that contains medical and scientific terminology." + \
+                    (" Terms: " + "; ".join(terms) + "." if terms else "")
                 await ws.send(json.dumps({"type": "ready", "rate": RATE, "voices": c.pick(m.get("patient"))}))
             elif m.get("type") == "speak":
                 c.speak(m)

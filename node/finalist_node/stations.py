@@ -334,7 +334,7 @@ def start(model, data, station, entry, emit, voice=False):
     sid = secrets.token_urlsafe(9)
     sim = {"id": sid, "station": station["id"], "title": station["title"], "kind": station["kind"], "model": model,
            "case": None, "turns": [], "phase": "patient", "started": time.time(), "ready": threading.Event(),
-           "primed": primed(data, station["id"]), "voice": bool(voice),
+           "primed": primed(data, station["id"]), "voice": bool(voice), "vocab": list(station.get("vocab") or [])[:40],
            # where the run is kept: written after every exchange, so a lost page or an expired
            # link leaves a transcript that can still be read and marked (27 Oct 2026: a Breaking
            # Bad News run was lost when a share link was renewed mid-station)
@@ -423,12 +423,25 @@ How to play it:
 Reply with only your next words."""
 
 
+def heard_note(sim, who):
+    """Spoken stations reach Claude through speech recognition, which is general English and can mishear
+    medical terms (31 Oct 2026: the ear can't be steered with hotwords, so the listener is). The
+    station's own drill terms say what the student is likely to have said."""
+    if not sim.get("voice"):
+        return ""
+    terms = "; ".join(sim.get("vocab") or [])
+    return (f"\n- The candidate is speaking, and their words reach {who} through speech recognition, which can mishear medical terms"
+            + (f" (this station's include: {terms})" if terms else "")
+            + ". If a word looks wrong, take what they most likely said, as someone in the room would have heard it; never remark on odd wording.")
+
+
 def _manner_rule(sim):
     if sim.get("voice"):
         # (Sound tags like [Sigh] made the voice model fail to stop: 28 Oct. Words only, with feeling in the words.)
         return ("- You are speaking out loud, and your words are turned into speech: write only what you say. No stage directions, no *actions*, "
                 "no (brackets), no [tags]. Keep replies short: usually 1-3 sentences. Let feeling show in the words themselves "
-                "(\"Oh, I don't know, I'm just so tired of it.\"). Write numbers and doses the way you'd say them.")
+                "(\"Oh, I don't know, I'm just so tired of it.\"). Write numbers and doses the way you'd say them."
+                + heard_note(sim, "you"))
     return "- Keep replies short and spoken: usually 1-3 sentences. Put body language in *asterisks* if it matters (e.g. *looks down*)."
 
 
@@ -439,7 +452,7 @@ The station: {sim['title']}. The brief the candidate read: {c.get('brief')}
 The case: {c.get('diagnosis')}
 Your questions: {json.dumps(c.get('examiner_questions') or [])}
 The whistle has gone. Ask your questions one at a time, each in a single short sentence, moving on once they've answered (don't argue with or correct an answer). When you've asked them all, or if time is clearly up, say "Thank you, that's the end of the station."
-Reply with only what you say next.""" + ("\nYou're speaking out loud: words only, no stage directions." if sim.get("voice") else "")
+Reply with only what you say next.""" + ("\nYou're speaking out loud: words only, no stage directions." + heard_note(sim, "you") if sim.get("voice") else "")
 
 
 def _persist(sim):
@@ -603,7 +616,8 @@ def mark(sim_id, data, emit, ended_early=False, draft=""):
     note = "The candidate stopped the station early; mark what happened.\n" if ended_early else ""
     if sim.get("voice"):
         note += ("The candidate SPOKE this station and their words were transcribed by speech recognition: ignore mistranscribed words, "
-                 "missing punctuation and odd spellings (a drug name heard as a near-miss is the drug name), and mark what they evidently said.\n")
+                 "missing punctuation and odd spellings (a drug name heard as a near-miss is the drug name), and mark what they evidently said."
+                 + (f" Terms this station's students commonly use: {'; '.join(sim.get('vocab') or [])}." if sim.get("vocab") else "") + "\n")
     critical = CRITICAL[sim["kind"]] + [x for x in c.get("critical") or [] if x]
     mark_prompt = MARK_PROMPT.format(
         title=sim["title"], brief=c.get("brief"), diagnosis=c.get("diagnosis"), script=c.get("script"),

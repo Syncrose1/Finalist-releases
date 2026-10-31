@@ -6,7 +6,9 @@
   voices   station-voices-1.zip from Finalist-releases: the ten VCTK clips and their Pocket voice states
   mouth    Pocket TTS (CPU, everywhere), or Ming 3.0 where a graphics card keeps it well ahead of real
            time: timed here, on this machine. On a Mac Ming is Experimental.
-  ear      Parakeet TDT 0.6B v3
+  ear      Qwen3-ASR 0.6B steered by each station's terms on a graphics card (95% of medical terms right
+           in a 92-term test, 0.4 s an utterance on a 3060); Parakeet TDT 0.6B v3 on a CPU (64%, but 0.56 s
+           where Qwen3 takes 4.3)
 
 Everything is pinned (versions and SHA-256) and lands in <data>/voice: engine/, models/, voices/ and
 voice.json, which voice_up() reads. A file already there with the right size is kept, so running it
@@ -41,7 +43,8 @@ HF = "https://huggingface.co/{repo}/resolve/{rev}/{path}"
 GGUF = ("audio-cpp/audio.cpp-gguf", "874fcb41ececda20bcbc0782d6b4ea7f7d069ea8")
 MODELS = {   # name -> (repo, revision, path, size, sha256)
     "pocket": (*GGUF, "PocketTTS-GGUF/english/pocket-tts-english-q8_0.gguf", 127867968, "3f71cf6a51f93c2f2e554e98970a3f49fb9a98d0c64bed5a815e65be3d2ff588"),
-    "ear": (*GGUF, "Parakeet-TDT-0.6B-v3-GGUF/parakeet-tdt-0.6b-v3-q8_0.gguf", 915735760, "6fa498f10f8cb606f041aa9512733cfee842a932359b00b0c45b9b723c4f4f4b"),
+    "parakeet": (*GGUF, "Parakeet-TDT-0.6B-v3-GGUF/parakeet-tdt-0.6b-v3-q8_0.gguf", 915735760, "6fa498f10f8cb606f041aa9512733cfee842a932359b00b0c45b9b723c4f4f4b"),
+    "qwen": (*GGUF, "Qwen3-ASR-0.6B-GGUF/qwen3-asr-0.6b-q8_0.gguf", 1151279968, "5c53bbb9a6b2ade85c16c290c560658ca18b78a23c323378528f1f945683fcbe"),
     "ming": ("audio-cpp/Ming-3.0-TTS-0.5B-GGUF", "2eb8d37c7f10672e69c8aa33091baa04c461b66c", "ming-3.0-tts-0.5b-q8_0.gguf", 1742280896,
              "fcf2aa25e8e9cf2065a936e506581735c64d6255fb7869f09fbb61a2dde09aa1"),
 }
@@ -66,7 +69,8 @@ def installed(cfg):
     except (OSError, ValueError):
         return None
     r = root(cfg)
-    need = [Path(v["engine"]) / server_name(), r / "voices" / "voices.json", r / "models" / MODELS["ear"][2], r / "models" / MODELS[v["mouth"]][2]]
+    need = [Path(v["engine"]) / server_name(), r / "voices" / "voices.json", r / "models" / MODELS[v.get("ear", "parakeet")][2],
+            r / "models" / MODELS[v["mouth"]][2]]
     return v if all(p.exists() for p in need) else None
 
 
@@ -195,11 +199,10 @@ def _run(cfg, log):
         if not (r / "voices" / "voices.json").exists():
             with zipfile.ZipFile(vz) as z:
                 z.extractall(r / "voices")
-        for name, label in (("pocket", "Pocket, the everyday voice"), ("ear", "Parakeet, the ear")):
-            repo, rev, path, size, sha = MODELS[name]
-            _fetch(HF.format(repo=repo, rev=rev, path=path), r / "models" / path, size, sha, label)
+        repo, rev, path, size, sha = MODELS["pocket"]
+        _fetch(HF.format(repo=repo, rev=rev, path=path), r / "models" / path, size, sha, "Pocket, the everyday voice")
         gpu = next((d for d in devs if d[3]), None)
-        choice = {"mouth": "pocket", "backend": "cpu", "device": 0, "engine": str(engine), "gpu": gpu[2] if gpu else None,
+        choice = {"mouth": "pocket", "ear": "parakeet", "backend": "cpu", "device": 0, "engine": str(engine), "gpu": gpu[2] if gpu else None,
                   "ming_rtf": None, "experimental": None, "at": time.time()}
         if gpu:
             repo, rev, path, size, sha = MODELS["ming"]
@@ -209,12 +212,15 @@ def _run(cfg, log):
                 rtf = time_ming(engine, gpu[0], gpu[1], r / "models", r / "voices")
                 choice["ming_rtf"] = round(rtf, 2)
                 log(f"Ming on {gpu[2]}: {rtf:.2f}x real time ({'fast enough' if rtf < MING_BAR else 'too slow, so Pocket'})")
-                # the graphics card works: the ear uses it either way (Parakeet: 0.08 s there, ~1 s on a CPU)
-                choice.update(backend=gpu[0], device=gpu[1])
+                # the graphics card works: the ear uses it either way, and there it can be Qwen3-ASR
+                choice.update(backend=gpu[0], device=gpu[1], ear="qwen")
                 if rtf < MING_BAR:
                     choice.update(mouth="ming", experimental=EXPERIMENTAL if sys.platform == "darwin" else None)
             except Exception as e:
                 log(f"couldn't time Ming on {gpu[2]}: {e}; Pocket on the CPU it is")
+        repo, rev, path, size, sha = MODELS[choice["ear"]]
+        _fetch(HF.format(repo=repo, rev=rev, path=path), r / "models" / path, size, sha,
+               "Qwen3-ASR, the ear" if choice["ear"] == "qwen" else "Parakeet, the ear")
         (r / "voice.json").write_text(json.dumps(choice, indent=1))
         shutil.rmtree(r / "downloads", ignore_errors=True)
         STATE.update(phase="ready", step="", done=0, total=0)
