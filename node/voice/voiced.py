@@ -436,6 +436,26 @@ def echoed(text, prompt):
     return sum(1 for x in terms if x.rstrip(".") in t) >= 3
 
 
+def keep_echo(pcm, text):
+    """The audio behind an echo, kept on this machine (the last ten) so it can be tested against: 31 Oct, a
+    Bluetooth headset's presses echoed every time, and no recording here reproduced it."""
+    try:
+        d = Path(ARGS.models).parent / "echoes"
+        d.mkdir(exist_ok=True)
+        name = time.strftime("%Y%m%d-%H%M%S")
+        with wave.open(str(d / f"{name}.wav"), "wb") as w:
+            w.setnchannels(1)
+            w.setsampwidth(2)
+            w.setframerate(16000)
+            w.writeframes(pcm.tobytes())
+        (d / f"{name}.txt").write_text(text)
+        for old in sorted(d.glob("*.wav"))[:-10]:
+            old.unlink(missing_ok=True)
+            old.with_suffix(".txt").unlink(missing_ok=True)
+    except OSError:
+        pass
+
+
 def hear(pcm, cb, prompt=None):
     """Transcribes off the socket's thread; cb({"text"}) when done. Nothing that isn't speech reaches the
     ear (with a prompt, Qwen3 turns silence into the prompt), and an echo of the prompt is dropped."""
@@ -445,7 +465,8 @@ def hear(pcm, cb, prompt=None):
                 return cb({"text": "", "why": "no speech"})
             text = ENGINE.hear(pcm, prompt)
             if echoed(text, prompt):
-                log("dropped an echo of the ear's prompt")
+                keep_echo(pcm, text)
+                log("dropped an echo of the ear's prompt (the audio is kept in voice/echoes)")
                 text = ENGINE.hear(pcm, None)
                 text = "" if echoed(text, prompt) else text
             cb({"text": text})

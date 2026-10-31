@@ -297,7 +297,11 @@ def local_status():
         state = "sharing"
     else:
         state = "ready"
-    live = sum(1 for x in sim.SIMS.values() if not x.get("feedback") and time.time() - x.get("started", 0) < 1800)
+    def recent(x):              # its last turn (or its start) in the last five minutes
+        return time.time() - max([x.get("started", 0)] + [t.get("at", 0) for t in x.get("turns", [])]) < 300
+    # a station under way: not marked, not closed (the X in Finalist), and not abandoned (31 Oct: a closed
+    # station kept the heart racing for half an hour)
+    live = sum(1 for x in list(sim.SIMS.values()) if not x.get("feedback") and not x.get("closed") and recent(x))
     return {"state": state, "now": now, "port": CFG["port"],
             "claude": bool(claude), "paired": bool(CFG["owner_id"]), "owner": CFG.get("owner_email"),
             "code": pair_code() if not CFG["owner_id"] else None,
@@ -717,6 +721,11 @@ class Handler(BaseHTTPRequestHandler):
                 x = by_id.get((sim.SIMS.get(b.get("sim")) or {}).get("station"))
                 if x:
                     threading.Thread(target=review, args=(model, x, d), daemon=True).start()
+            elif what == "close":                   # closed in Finalist before it was marked
+                mine(b.get("sim"))
+                if b.get("sim") in sim.SIMS:
+                    sim.SIMS[b["sim"]]["closed"] = True
+                emit({"ok": True})
             elif what == "cut":
                 mine(b.get("sim"))
                 sim.cut(b.get("sim"), b.get("heard") or "")
