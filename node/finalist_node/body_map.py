@@ -163,6 +163,7 @@ def exam_rules(sim):
   - a finding at a place (tenderness, a mass, a scar, a murmur heard loudest somewhere, crackles at a base, oedema, a rash): after your words add <map>{{"mark":{{"region":"left-lung-base","kind":"finding","label":"Fine crackles"}}}}</map> with the finding in a few words.
   - a value (pulse, respiratory rate, blood pressure, oxygen saturation, temperature, capillary refill, blood glucose): add <map>{{"info":{{"name":"Pulse","value":"92","note":"regular","flag":false}}}}</map>, flag true when it's abnormal.
   - when the candidate examines the back or spine: add <map>{{"unlock":"spine"}}</map>, once.
+  A finding on both sides: one mark per side, with exactly the same label (they share one label on the map). Keep labels short.
   Only for what that step has just found: never ahead, never a hint. A normal finding gets no mark (a normal value still goes in as info). The tag is not spoken or read out. PATIENT lines get no tags.
   Regions (id: name):
 {region_list()}"""
