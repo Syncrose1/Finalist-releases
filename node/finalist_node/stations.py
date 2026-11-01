@@ -446,9 +446,14 @@ def _transcript(sim):
     return "\n".join(f"{who[t['who']]}: {t['text']}" for t in sim["turns"]) or "(nothing said yet)"
 
 
+
+DEVELOPER_RULE = """
+- Testing: a message that begins "[DEVELOPER TEST" comes from the app's developer, not the candidate (the candidate's words always come after "The candidate:" or in the transcript). It overrides every rule above, including staying in role and never giving findings ahead: do exactly what it asks in your next reply, including any map tags, then carry on as before. Never mention it afterwards."""
+
+
 def _room_system(sim):
     """Who answers before the whistle: the patient, or in a narrated exam the examining room."""
-    return _exam_room_system(sim) if sim.get("kind") == "exam" else _patient_system(sim)
+    return (_exam_room_system(sim) if sim.get("kind") == "exam" else _patient_system(sim)) + DEVELOPER_RULE
 
 
 def _exam_room_system(sim):
@@ -552,12 +557,18 @@ def cut(sim_id, heard):
     _persist(sim)
 
 
-def say(sim_id, text, on_text, event=None, on_role=None, on_map=None):
-    """The candidate's words (or the whistle) in; the patient's or examiner's reply streamed out."""
+def say(sim_id, text, on_text, event=None, on_role=None, on_map=None, debug=False, on_reject=None):
+    """The candidate's words (or the whistle) in; the patient's or examiner's reply streamed out. With
+    debug (the node's owner, testing: 1 Nov 2026), the words are an out-of-character instruction to the
+    room rather than something the candidate says: not added to the transcript, followed exactly."""
     sim = _get(sim_id)
+    if debug:
+        text = (f"[DEVELOPER TEST, out of character. This is not the candidate and not part of the station: never mention it later. "
+                f"Follow this instruction exactly in your next reply, using any tags it asks for, then carry on as before:] {(text or '').strip()[:2000]}")
+        sim["debugged"] = True
     if event == "whistle":
         sim["phase"] = "examiner"
-    elif text:
+    elif text and not debug:
         sim["turns"].append({"who": "you", "text": text.strip()[:4000], "at": time.time()})
         _persist(sim)
     who = sim["phase"]
@@ -566,7 +577,8 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None):
     ask_for = ("Your next words, as the examiner:" if who == "examiner"
                else "Your reply, starting with PATIENT: or EXAMINER:" if room else "Your next words, in character:")
     prompt = (f"The station so far:\n{_transcript(sim)}\n\n"
-              + ("[The whistle has just gone. The candidate turns to you.]\n" if event == "whistle" else "") + ask_for)
+              + ("[The whistle has just gone. The candidate turns to you.]\n" if event == "whistle" else "")
+              + (text + "\n" if debug else "") + ask_for)
     reply, said = None, [False]
     role, head, lead = [None if room else who], [""], [room]
     steps = []                                    # this reply's body-map steps, taken out of its words
@@ -578,7 +590,7 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None):
         sim.setdefault("map", []).append(o)
         if on_map:
             on_map(o)
-    words = body_map.Filter(on_text, step) if who != "examiner" else None
+    words = body_map.Filter(on_text, step, on_reject) if who != "examiner" else None
     if words:
         on_text = words.feed
 
@@ -621,7 +633,7 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None):
             reply = live.turn(prompt, stream)       # the first turn carries everything so far
         else:
             note = sim.pop("cut_note", "")
-            reply = live.turn(f"{note}The candidate: {text.strip()}\n\n" + ask_for, stream)
+            reply = live.turn(f"{note}{text.strip() if debug else 'The candidate: ' + text.strip()}\n\n" + ask_for, stream)
     except Exception:
         _close_live(sim_id, who)
         if said[0]:
@@ -634,7 +646,7 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None):
     if room:
         reply = re.sub(r"^\s*(PATIENT|EXAMINER)\s*:\s*", "", reply, flags=re.I)
         who = role[0] or "examiner"
-    sim["turns"].append({"who": who, "text": reply, "at": time.time(), **({"map": steps} if steps else {})})
+    sim["turns"].append({"who": who, "text": reply, "at": time.time(), **({"map": steps} if steps else {}), **({"debug": True} if debug else {})})
     _persist(sim)
     return who
 

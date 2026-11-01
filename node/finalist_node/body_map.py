@@ -32,6 +32,26 @@ def _short(t, n):
     return t[:n]
 
 
+def why_not(o):
+    """For debug mode: why a tag wasn't taken."""
+    if not isinstance(o, dict):
+        return "not an object"
+    if isinstance(o.get("mark"), dict):
+        m = o["mark"]
+        if m.get("region") not in REGIONS:
+            return f"unknown region {m.get('region')!r}"
+        if m.get("kind") not in KINDS:
+            return f"unknown kind {m.get('kind')!r}"
+        if m.get("kind") == "radiates" and m.get("to") not in REGIONS:
+            return f"radiates to unknown region {m.get('to')!r}"
+        return "no label"
+    if isinstance(o.get("info"), dict):
+        return "info needs a name and a value"
+    if "unlock" in o:
+        return f"unknown tool {o.get('unlock')!r}"
+    return "not a mark, info or unlock"
+
+
 def check(o):
     """A step as the page takes it, or None if it isn't one."""
     if not isinstance(o, dict):
@@ -67,6 +87,7 @@ def strip(text):
     text = TAG.sub("", text or "")
     i = text.find(OPEN)
     text = text[:i] if i >= 0 else re.sub(r"<m(a(p>?)?)?$", "", text)
+    text = re.sub(r"[ \t]+\n", "\n", re.sub(r"\n{3,}", "\n\n", text))
     return re.sub(r" +([.,!?;:])", r"\1", re.sub(r"[ \t]{2,}", " ", text)).strip()
 
 
@@ -74,8 +95,8 @@ class Filter:
     """Between the AI's stream and the candidate: words pass straight through; a tag is held until it
     closes, then becomes a step. Anything that only looked like the start of a tag is let through."""
 
-    def __init__(self, on_text, on_step):
-        self.on_text, self.on_step, self.buf = on_text, on_step, ""
+    def __init__(self, on_text, on_step, on_reject=None):
+        self.on_text, self.on_step, self.on_reject, self.buf, self.sent, self.gap = on_text, on_step, on_reject, "", "", False
 
     def feed(self, t):
         self.buf += t
@@ -98,15 +119,26 @@ class Filter:
             if j < 0:
                 return                                  # inside a tag: wait for the end
             body, self.buf = self.buf[len(OPEN):j], self.buf[j + len(CLOSE):].lstrip(" ")
+            self.gap = True                             # the line breaks around a tag aren't the reply's own
             try:
-                step = check(json.loads(body))
-            except ValueError:
-                step = None
+                o = json.loads(body)
+                step, why = check(o), None
+            except ValueError as e:
+                step, why = None, f"not JSON ({e})"
             if step:
                 self.on_step(step)
+            elif self.on_reject:
+                self.on_reject({"raw": body[:400], "why": why or why_not(o)})
 
     def _out(self, t):
+        if self.gap:                                  # after a tag: never more than one blank line
+            have = len(self.sent) - len(self.sent.rstrip("\n"))
+            lead = len(t) - len(t.lstrip("\n"))
+            t = "\n" * max(0, min(lead, 2 - have)) + t[lead:]
+            if t.strip():
+                self.gap = False
         if t:
+            self.sent = (self.sent + t)[-4:]
             self.on_text(t)
 
     def flush(self):

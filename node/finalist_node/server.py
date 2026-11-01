@@ -779,9 +779,21 @@ class Handler(BaseHTTPRequestHandler):
                 sim.start(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first, voice=bool(b.get("voice")))
             elif what in ("say", "whistle"):
                 mine(b.get("sim"))
+                # debug mode (1 Nov 2026): the node's owner, testing, can instruct the room out of character
+                # and see the tags the node turned away. Never a friend on a share: it would show the case.
+                debug, inspect = bool(b.get("ooc")), bool(b.get("inspect"))
+                if (debug or inspect) and not w.owner:
+                    raise KeyError("Debug mode is for the node's owner.")
                 who = sim.say(b.get("sim"), b.get("text") or "", lambda t: emit({"t": t}), event="whistle" if what == "whistle" else None,
-                              on_role=lambda r: emit({"who": r}), on_map=lambda o: emit({"map": o}))
+                              on_role=lambda r: emit({"who": r}), on_map=lambda o: emit({"map": o}), debug=debug and what == "say",
+                              on_reject=(lambda o: emit({"map_rejected": o})) if inspect else None)
                 emit({"done": True, "who": who})
+            elif what == "case":                      # debug mode: the hidden case, for the owner testing
+                mine(b.get("sim"))
+                if not w.owner:
+                    raise KeyError("Debug mode is for the node's owner.")
+                s_ = sim.SIMS[b.get("sim")]
+                emit({"case": s_.get("case"), "map": s_.get("map") or []})
             elif what == "mark":
                 mine(b.get("sim"))
                 sim.mark(b.get("sim"), d, emit, ended_early=bool(b.get("early")), draft=b.get("draft") or "")
