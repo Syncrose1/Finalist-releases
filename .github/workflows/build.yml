@@ -14,7 +14,7 @@ jobs:
       matrix:
         include:
           - { os: ubuntu-22.04,   name: finalist-node-linux-x64.AppImage }
-          - { os: macos-14,       name: finalist-node-macos-arm64.zip }
+          - { os: macos-15,       name: finalist-node-macos-arm64.zip }
           - { os: macos-15-intel, name: finalist-node-macos-intel.zip }
           - { os: windows-2022,   name: finalist-node-windows-x64.exe }
     runs-on: ${{ matrix.os }}
