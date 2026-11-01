@@ -82,6 +82,28 @@ def station_vocab(sid):
     return out[:40]
 
 
+# ---- the Revision System's day, in Finalist (1 Nov 2026) --------------------------------------------
+# Raahat: "port the actual revision system main screen". It's built on their own material (Unified V4,
+# QuackQuackMed, their Anki, HOURGLASS), so for now it's theirs alone: the node's owner, and this email.
+# revise.py stays the one source of truth; the node passes its state, actions and reading PDFs through.
+# A request from another device is marked as the phone, so it never launches anything on this PC.
+REVISE_EMAIL = "raahat.shah@gmail.com"
+
+
+def revise_allowed(w):
+    return bool(w and w.owner and (w.email or "").lower() == REVISE_EMAIL)
+
+
+def revise_request(method, path, body=None, phone=True, headers=None, timeout=30):
+    import http.client
+    c = http.client.HTTPConnection("127.0.0.1", int(CFG.get("revise_port", 47613)), timeout=timeout)
+    h = {"X-Revise": "1", **({"X-Revise-As": "phone"} if phone else {}), **(headers or {})}
+    if body is not None:
+        h["Content-Type"] = "application/json"
+    c.request(method, path, json.dumps(body) if body is not None else None, h)
+    return c, c.getresponse()
+
+
 def stations_by_id():
     return {x["id"]: x for x in _stations()["stations"]}
 
@@ -480,6 +502,10 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json(403, {"error": "The ranked circuit is for privileged accounts."})
             c = circuit()
             return self.send_json(200, c) if c else self.send_json(404, {"error": "This node has no ranking (it lives with the Revision System)."})
+        if path.startswith("/v1/revise/"):
+            if not revise_allowed(w):
+                return self.send_json(403, {"error": "The revision plan is Raahat's own, for now."})
+            return self.revise_get(path[len("/v1/revise"):])
         if path in ("/v1/files", "/v1/file"):
             if not w.privileged:
                 return self.send_json(403, {"error": "The school's files are for privileged accounts."})
@@ -543,6 +569,15 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(401, {"error": "Sign in with your Finalist account."})
         if path == "/v1/pair":
             return self.pair(b, w)
+        if path.startswith("/v1/revise/"):
+            if not revise_allowed(w):
+                return self.send_json(403, {"error": "The revision plan is Raahat's own, for now."})
+            try:
+                c, r = revise_request("POST", "/api/" + path[len("/v1/revise/"):], b, phone=not self.local())
+                data = r.read(); c.close()
+                return self.send_json(r.status, json.loads(data or b"{}"))
+            except (OSError, ValueError) as e:
+                return self.send_json(502, {"error": f"The Revision System didn't answer ({e}). Is it installed on this PC?"})
         if path == "/v1/public":
             return self.set_reach(b, w)
         d = data_for(w)
@@ -576,6 +611,37 @@ class Handler(BaseHTTPRequestHandler):
         auth.forget()                    # cached answers were made before there was an owner
         log(f"paired: this node is {w.email}'s")
         return self.send_json(200, {"owner": True, "email": w.email})
+
+    def revise_get(self, sub):
+        """/state, or /files/<kind>/<name> (the reading PDFs, streamed with byte ranges for the browser's viewer)."""
+        phone = not self.local()
+        try:
+            if sub == "/state":
+                c, r = revise_request("GET", "/api/state", phone=phone)
+                data = r.read(); c.close()
+                return self.send_json(r.status, json.loads(data or b"{}"))
+            if sub.startswith("/files/"):
+                rng = self.headers.get("Range")
+                c, r = revise_request("GET", sub, phone=phone, headers={"Range": rng} if rng else None, timeout=120)
+                self.send_response(r.status)
+                self.cors()
+                for k in ("Content-Type", "Content-Length", "Content-Range", "Accept-Ranges", "Content-Disposition"):
+                    if r.getheader(k):
+                        self.send_header(k, r.getheader(k))
+                self.end_headers()
+                try:
+                    while True:
+                        chunk = r.read(1 << 16)
+                        if not chunk:
+                            break
+                        self.wfile.write(chunk)
+                except (BrokenPipeError, ConnectionResetError):
+                    pass
+                c.close()
+                return
+        except OSError as e:
+            return self.send_json(502, {"error": f"The Revision System didn't answer ({e}). Is it installed on this PC?"})
+        return self.send_json(404, {"error": "not found"})
 
     def send_file(self, f):
         """Streamed with byte ranges, so a video seeks and a PDF shows its first pages at once."""
