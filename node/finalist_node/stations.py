@@ -25,7 +25,7 @@ import time
 from datetime import date
 from pathlib import Path
 
-KINDS = ("history", "comms")
+KINDS = ("history", "comms", "exam")
 CLAUDE = shutil.which("claude") or "claude"      # its full path: on Windows it is claude.cmd
 CWD = Path(tempfile.gettempdir()) / "revise-sim"      # empty, outside home: no CLAUDE.md for Claude to find (any OS)
 SIMS, LOCK = {}, threading.Lock()
@@ -223,6 +223,33 @@ The mark scheme must start with these core items, exactly as written, in this or
 CORE:
 {core}"""
 
+# Narrated examinations (1 Nov 2026, agreed with Raahat): the candidate says each step as they do it, the
+# patient reacts, and the examiner gives a finding only when the step that reveals it is performed. The
+# case keeps the same fields, read differently: "script" holds the findings step by step, "cue" how the
+# patient reacts (pain, discomfort), "opening" how they greet the candidate.
+CASE_PROMPT_EXAM = """Write one fresh case for this NARRATED physical examination station: the candidate examines a simulated patient and says aloud each step as they do it; the examiner tells them what each step finds.
+
+STATION: {title} (examination)
+WHAT IT TESTS (the student's revision notes, including the routine):
+{notes}
+
+{variety}
+Return exactly this JSON:
+{{
+  "brief": "The door note: setting, who the patient is and why they're here (one line of history), and the task (e.g. 'Examine Mr X's cardiovascular system. Present your findings to the examiner.'). Second person. Under 70 words. Never give away the findings.",
+  "person": {{"name": "", "age": 0, "sex": "female|male", "who": "the patient", "manner": "how they come across, in a line"}},
+  "opening": "How the patient greets the candidate and anything they say unprompted (one line).",
+  "script": "THE FINDINGS, step by step, following the routine in the notes, section by section: for each step what the candidate finds, specific and quantified as an examiner would state it (e.g. 'Hands: clubbing; no splinter haemorrhages; capillary refill 2 s. Radial pulse 88, irregularly irregular; no radio-radial delay.'). Every step not abnormal is stated as normal. The abnormal findings must fit together into one coherent diagnosis, with the classic discriminating signs present, at finals level. 150-350 words.",
+  "cue": "How the patient reacts during the examination: where it hurts and how they show it, anything they need (e.g. 'Winces and guards on palpation of the right upper quadrant; breathless lying flat, so prefers to sit up at 45°'). One or two lines.",
+  "diagnosis": "The unifying diagnosis the findings point to, plus the key differentials.",
+  "critical": ["Usually none; at most one pass/fail item: a patient-safety miss in THIS case (e.g. not asking about pain before palpating a tender abdomen); else empty"],
+  "examiner_questions": ["'Please present your findings.' first, then 1-2 questions: the most likely diagnosis and differentials, the investigations, or the management"],
+  "mark_scheme": [{{"item": "a specific, observable thing the candidate should do or say", "domain": "data|reasoning|communication|professionalism|safety", "weight": 1}}]
+}}
+The mark scheme must start with these core items, exactly as written, in this order, then add 8-14 items specific to this examination and case (the steps of the routine that matter, and eliciting and correctly naming the key signs). Weights 1-3.
+CORE:
+{core}"""
+
 TWISTS = ["an older patient with several conditions", "a young adult", "a working parent short on time",
           "a patient who is anxious", "a patient who is stoical and plays things down", "a patient who has looked things up online",
           "a patient with a hidden worry they won't raise unless asked", "a patient for whom English is a second language (but fluent enough)",
@@ -265,10 +292,22 @@ CORE = {
         ("Offers written information or support and thanks them", "professionalism", 1),
     ],
 }
+CORE["exam"] = [
+    ("Introduces self, confirms the patient's name and date of birth, explains and gains consent", "professionalism", 1),
+    ("Washes hands (says so)", "safety", 1),
+    ("Positions and exposes the patient appropriately, offering a chaperone where needed", "professionalism", 1),
+    ("Asks about pain before examining", "safety", 1),
+    ("General inspection from the end of the bed, including around the bed", "data", 1),
+    ("A systematic routine in a logical order", "data", 2),
+    ("Thanks the patient and offers to help them dress", "professionalism", 1),
+    ("Presents the findings concisely: the key positives and relevant negatives", "reasoning", 2),
+    ("Offers to complete the examination with the right further examinations and investigations", "reasoning", 1),
+    ("Gives a sensible most likely diagnosis and differentials", "reasoning", 2),
+]
 # A miss here fails the station whatever the score: patient safety only, never communication. None are fixed: allergies are always on the
 # checklist, and become pass/fail only where the case makes them matter, as travel does (Raahat,
 # 25 Oct). The case names its own, and the examiner can judge one the case didn't foresee.
-CRITICAL = {"history": [], "comms": []}
+CRITICAL = {"history": [], "comms": [], "exam": []}
 CONSULTATION = ["Balance of open, closed and reflective questions", "Structure: an effective, organised interview",
                 "Understandable language, no jargon", "Recognises and responds to cues",
                 "Rapport: empathy, invites the patient's contribution, collaborates"]
@@ -346,8 +385,11 @@ def start(model, data, station, entry, emit, voice=False):
     variety = f"Make the patient {random.choice(TWISTS)}."
     if seen:
         variety += " Don't repeat these earlier cases for this station: " + " | ".join(seen)
-    prompt = CASE_PROMPT.format(title=station["title"], kind=station["kind"], notes=_notes(entry),
-                                variety=variety, core=_core(station["kind"]))
+    if station["kind"] == "exam":
+        prompt = CASE_PROMPT_EXAM.format(title=station["title"], notes=_notes(entry), variety=variety, core=_core("exam"))
+    else:
+        prompt = CASE_PROMPT.format(title=station["title"], kind=station["kind"], notes=_notes(entry),
+                                    variety=variety, core=_core(station["kind"]))
     shown = {}
 
     def keep(o):                     # what the candidate has already seen
@@ -373,7 +415,7 @@ def start(model, data, station, entry, emit, voice=False):
     # the patient's Claude starts now, during the reading time, so the first reply doesn't wait for it
     def warm():
         try:
-            live = Live(model, _patient_system(sim))
+            live = Live(model, _room_system(sim))
             with LOCK:
                 if sid in SIMS and "patient" not in LIVE.get(sid, {}):
                     LIVE.setdefault(sid, {})["patient"] = live
@@ -400,6 +442,28 @@ def _get(sim_id):
 def _transcript(sim):
     who = {"you": "Candidate", "patient": sim["case"]["person"].get("name") or "Patient", "examiner": "Examiner"}
     return "\n".join(f"{who[t['who']]}: {t['text']}" for t in sim["turns"]) or "(nothing said yet)"
+
+
+def _room_system(sim):
+    """Who answers before the whistle: the patient, or in a narrated exam the examining room."""
+    return _exam_room_system(sim) if sim.get("kind") == "exam" else _patient_system(sim)
+
+
+def _exam_room_system(sim):
+    c, p = sim["case"], sim["case"].get("person") or {}
+    return f"""You run a NARRATED physical examination station in a UK medical finals OSCE (Southampton CPSA). The candidate says aloud each step as they perform it. You play two people, one per reply:
+- the PATIENT: {p.get('name')}, {p.get('age')}. Manner: {p.get('manner')}. Greets the candidate with: {c.get('opening')}
+- the EXAMINER: neutral and brief, who tells the candidate what each step they perform finds.
+
+THE FINDINGS (examiner's eyes only):
+{c.get('script')}
+How the patient reacts: {c.get('cue')}
+
+Each reply is ONE of the two, and starts with exactly "PATIENT:" or "EXAMINER:".
+- When the candidate speaks to the patient (introductions, consent, "any pain?", instructions like "take a deep breath"), reply as the PATIENT: a short, natural line, in character, everyday British English. Say if something hurts. Follow instructions without commentary.
+- When the candidate performs or describes an examination step, reply as the EXAMINER with exactly what that step finds, from the findings, specific and brief ("On palpation, the apex beat is displaced to the 6th intercostal space, anterior axillary line."). Give only what that step reveals: never findings from steps they haven't done, and never a hint of what to do next. A step the findings don't mention is normal. If they're vague ("I examine the chest"), ask which part ("What exactly are you doing?"). If a step would hurt the patient, you may add how the patient reacts, in the examiner's words ("The patient winces.").
+- If the candidate says they've finished, or turns to present, reply as the EXAMINER: "Thank you. Please present your findings." Never teach, praise, mark or step out of the station.{heard_note(sim, "the room")}
+Reply with only the next line, starting with PATIENT: or EXAMINER:."""
 
 
 def _patient_system(sim):
@@ -486,7 +550,7 @@ def cut(sim_id, heard):
     _persist(sim)
 
 
-def say(sim_id, text, on_text, event=None):
+def say(sim_id, text, on_text, event=None, on_role=None):
     """The candidate's words (or the whistle) in; the patient's or examiner's reply streamed out."""
     sim = _get(sim_id)
     if event == "whistle":
@@ -495,14 +559,40 @@ def say(sim_id, text, on_text, event=None):
         sim["turns"].append({"who": "you", "text": text.strip()[:4000], "at": time.time()})
         _persist(sim)
     who = sim["phase"]
-    system = _examiner_system(sim) if who == "examiner" else _patient_system(sim)
+    room = sim.get("kind") == "exam" and who == "patient"     # a narrated exam: patient or examiner, per turn
+    system = _examiner_system(sim) if who == "examiner" else _room_system(sim)
+    ask_for = ("Your next words, as the examiner:" if who == "examiner"
+               else "Your reply, starting with PATIENT: or EXAMINER:" if room else "Your next words, in character:")
     prompt = (f"The station so far:\n{_transcript(sim)}\n\n"
-              + ("[The whistle has just gone. The candidate turns to you.]\n" if event == "whistle" else "")
-              + ("Your next words, as the examiner:" if who == "examiner" else "Your next words, in character:"))
+              + ("[The whistle has just gone. The candidate turns to you.]\n" if event == "whistle" else "") + ask_for)
     reply, said = None, [False]
+    role, head, lead = [None if room else who], [""], [room]
 
     def stream(t):
         said[0] = True
+        if lead[0] and role[0] is not None:       # the words straight after the label, without its space
+            t = t.lstrip()
+            if not t:
+                return
+            lead[0] = False
+        if role[0] is None:                       # the room's reply names its speaker first
+            head[0] += t
+            m = re.match(r"\s*(PATIENT|EXAMINER)\s*:\s*", head[0], re.I)
+            if m:
+                role[0] = m[1].lower()
+                if on_role:
+                    on_role(role[0])
+                rest = head[0][m.end():].lstrip()
+                if rest:
+                    lead[0] = False
+                    on_text(rest)
+            elif len(head[0]) > 14:               # no label: the examiner narrates
+                role[0] = "examiner"
+                if on_role:
+                    on_role(role[0])
+                lead[0] = False
+                on_text(head[0].lstrip())
+            return
         on_text(t)
     with LOCK:
         live = (LIVE.get(sim_id) or {}).get(who)
@@ -517,14 +607,17 @@ def say(sim_id, text, on_text, event=None):
             reply = live.turn(prompt, stream)       # the first turn carries everything so far
         else:
             note = sim.pop("cut_note", "")
-            reply = live.turn(f"{note}The candidate: {text.strip()}\n\n" + ("Your next words, as the examiner:" if who == "examiner" else "Your next words, in character:"), stream)
+            reply = live.turn(f"{note}The candidate: {text.strip()}\n\n" + ask_for, stream)
     except Exception:
         _close_live(sim_id, who)
         if said[0]:
             raise
     if reply is None:                               # no live process: one call with the whole transcript, as before
-        reply = ask(sim["model"], system, prompt, on_text=on_text)
+        reply = ask(sim["model"], system, prompt, on_text=stream)
     reply = reply.strip()
+    if room:
+        reply = re.sub(r"^\s*(PATIENT|EXAMINER)\s*:\s*", "", reply, flags=re.I)
+        who = role[0] or "examiner"
     sim["turns"].append({"who": who, "text": reply, "at": time.time()})
     _persist(sim)
     return who
@@ -614,6 +707,10 @@ def mark(sim_id, data, emit, ended_early=False, draft=""):
     pt = threading.Thread(target=_patient_mark, args=(sim, patient), daemon=True)
     pt.start()
     note = "The candidate stopped the station early; mark what happened.\n" if ended_early else ""
+    if sim.get("kind") == "exam":
+        note += ("This was a NARRATED examination: the candidate said each step aloud as they performed it, and the examiner gave the findings. "
+                 "For this station, ignore the rule about assuming physical actions were done: mark each step, including hand hygiene, positioning "
+                 "and exposure, only if they said it. Mark the presentation on whether it states the findings they were actually given, accurately.\n")
     if sim.get("voice"):
         note += ("The candidate SPOKE this station and their words were transcribed by speech recognition: ignore mistranscribed words, "
                  "missing punctuation and odd spellings (a drug name heard as a near-miss is the drug name), and mark what they evidently said."

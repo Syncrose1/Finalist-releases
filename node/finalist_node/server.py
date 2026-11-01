@@ -779,7 +779,8 @@ class Handler(BaseHTTPRequestHandler):
                 sim.start(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first, voice=bool(b.get("voice")))
             elif what in ("say", "whistle"):
                 mine(b.get("sim"))
-                who = sim.say(b.get("sim"), b.get("text") or "", lambda t: emit({"t": t}), event="whistle" if what == "whistle" else None)
+                who = sim.say(b.get("sim"), b.get("text") or "", lambda t: emit({"t": t}), event="whistle" if what == "whistle" else None,
+                              on_role=lambda r: emit({"who": r}))
                 emit({"done": True, "who": who})
             elif what == "mark":
                 mine(b.get("sim"))
