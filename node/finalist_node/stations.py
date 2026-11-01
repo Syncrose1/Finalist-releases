@@ -25,6 +25,8 @@ import time
 from datetime import date
 from pathlib import Path
 
+from . import body_map
+
 KINDS = ("history", "comms", "exam")
 CLAUDE = shutil.which("claude") or "claude"      # its full path: on Windows it is claude.cmd
 CWD = Path(tempfile.gettempdir()) / "revise-sim"      # empty, outside home: no CLAUDE.md for Claude to find (any OS)
@@ -462,7 +464,7 @@ How the patient reacts: {c.get('cue')}
 Each reply is ONE of the two, and starts with exactly "PATIENT:" or "EXAMINER:".
 - When the candidate speaks to the patient (introductions, consent, "any pain?", instructions like "take a deep breath"), reply as the PATIENT: a short, natural line, in character, everyday British English. Say if something hurts. Follow instructions without commentary.
 - When the candidate performs or describes an examination step, reply as the EXAMINER with exactly what that step finds, from the findings, specific and brief ("On palpation, the apex beat is displaced to the 6th intercostal space, anterior axillary line."). Give only what that step reveals: never findings from steps they haven't done, and never a hint of what to do next. A step the findings don't mention is normal. If they're vague ("I examine the chest"), ask which part ("What exactly are you doing?"). If a step would hurt the patient, you may add how the patient reacts, in the examiner's words ("The patient winces.").
-- If the candidate says they've finished, or turns to present, reply as the EXAMINER: "Thank you. Please present your findings." Never teach, praise, mark or step out of the station.{heard_note(sim, "the room")}
+- If the candidate says they've finished, or turns to present, reply as the EXAMINER: "Thank you. Please present your findings." Never teach, praise, mark or step out of the station.{heard_note(sim, "the room")}{body_map.exam_rules(sim)}
 Reply with only the next line, starting with PATIENT: or EXAMINER:."""
 
 
@@ -483,7 +485,7 @@ How to play it:
 - Your worry is real but not a puzzle: drop the cue once, and tell your concern plainly the moment they ask what you're worried about, what you think it is, or pick up the cue. Don't make them dig past jokes or deflection.
 {_manner_rule(sim)}
 - React like a person: if they're kind, warm up; if they rush or ignore your worry, become a little less forthcoming.
-- Never coach, never mark, never step out of role, never mention the script or the exam. If the student speaks to the examiner, stay quiet: reply with nothing but "*waits*".
+- Never coach, never mark, never step out of role, never mention the script or the exam. If the student speaks to the examiner, stay quiet: reply with nothing but "*waits*".{body_map.patient_rules(sim)}
 Reply with only your next words."""
 
 
@@ -503,7 +505,7 @@ def _manner_rule(sim):
     if sim.get("voice"):
         # (Sound tags like [Sigh] made the voice model fail to stop: 28 Oct. Words only, with feeling in the words.)
         return ("- You are speaking out loud, and your words are turned into speech: write only what you say. No stage directions, no *actions*, "
-                "no (brackets), no [tags]. Keep replies short: usually 1-3 sentences. Let feeling show in the words themselves "
+                "no (brackets), no [tags] (the body map's <map> tags are the one exception: they're never spoken). Keep replies short: usually 1-3 sentences. Let feeling show in the words themselves "
                 "(\"Oh, I don't know, I'm just so tired of it.\"). Write numbers and doses the way you'd say them."
                 + heard_note(sim, "you"))
     return "- Keep replies short and spoken: usually 1-3 sentences. Put body language in *asterisks* if it matters (e.g. *looks down*)."
@@ -550,7 +552,7 @@ def cut(sim_id, heard):
     _persist(sim)
 
 
-def say(sim_id, text, on_text, event=None, on_role=None):
+def say(sim_id, text, on_text, event=None, on_role=None, on_map=None):
     """The candidate's words (or the whistle) in; the patient's or examiner's reply streamed out."""
     sim = _get(sim_id)
     if event == "whistle":
@@ -567,6 +569,18 @@ def say(sim_id, text, on_text, event=None, on_role=None):
               + ("[The whistle has just gone. The candidate turns to you.]\n" if event == "whistle" else "") + ask_for)
     reply, said = None, [False]
     role, head, lead = [None if room else who], [""], [room]
+    steps = []                                    # this reply's body-map steps, taken out of its words
+
+    def step(o):
+        if "mark" in o and not room and who == "patient":       # the patient's own words
+            o["mark"]["label"] = "\u201c" + o["mark"]["label"].strip("\"\u201c\u201d") + "\u201d"
+        steps.append(o)
+        sim.setdefault("map", []).append(o)
+        if on_map:
+            on_map(o)
+    words = body_map.Filter(on_text, step) if who != "examiner" else None
+    if words:
+        on_text = words.feed
 
     def stream(t):
         said[0] = True
@@ -614,11 +628,13 @@ def say(sim_id, text, on_text, event=None, on_role=None):
             raise
     if reply is None:                               # no live process: one call with the whole transcript, as before
         reply = ask(sim["model"], system, prompt, on_text=stream)
-    reply = reply.strip()
+    if words:
+        words.flush()
+    reply = body_map.strip(reply)
     if room:
         reply = re.sub(r"^\s*(PATIENT|EXAMINER)\s*:\s*", "", reply, flags=re.I)
         who = role[0] or "examiner"
-    sim["turns"].append({"who": who, "text": reply, "at": time.time()})
+    sim["turns"].append({"who": who, "text": reply, "at": time.time(), **({"map": steps} if steps else {})})
     _persist(sim)
     return who
 
@@ -791,7 +807,8 @@ def run(data, name):
     s = json.loads(f.read_text())
     return {"title": s.get("title"), "at": s.get("started"), "brief": (s.get("case") or {}).get("brief"),
             "person": (s.get("case") or {}).get("person") or {},
-            "turns": [{"who": t["who"], "text": t["text"]} for t in s.get("turns") or []], "feedback": s.get("feedback")}
+            "turns": [{"who": t["who"], "text": t["text"]} for t in s.get("turns") or []], "feedback": s.get("feedback"),
+            **({"map": s["map"]} if s.get("map") else {})}
 
 
 # ---- the station review: your evaluation across runs, and what gets an A -------------------------

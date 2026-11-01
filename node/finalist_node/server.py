@@ -780,7 +780,7 @@ class Handler(BaseHTTPRequestHandler):
             elif what in ("say", "whistle"):
                 mine(b.get("sim"))
                 who = sim.say(b.get("sim"), b.get("text") or "", lambda t: emit({"t": t}), event="whistle" if what == "whistle" else None,
-                              on_role=lambda r: emit({"who": r}))
+                              on_role=lambda r: emit({"who": r}), on_map=lambda o: emit({"map": o}))
                 emit({"done": True, "who": who})
             elif what == "mark":
                 mine(b.get("sim"))
