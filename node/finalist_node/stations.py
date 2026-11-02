@@ -301,7 +301,7 @@ CORE["exam"] = [
     ("Asks about pain before examining", "safety", 1),
     ("General inspection from the end of the bed, including around the bed", "data", 1),
     ("A systematic routine in a logical order", "data", 2),
-    ("Thanks the patient and offers to help them dress", "professionalism", 1),
+    ("Thanks the patient, covers them, and gives them privacy to dress", "professionalism", 1),
     ("Presents the findings concisely: the key positives and relevant negatives", "reasoning", 2),
     ("Offers to complete the examination with the right further examinations and investigations", "reasoning", 1),
     ("Gives a sensible most likely diagnosis and differentials", "reasoning", 2),
