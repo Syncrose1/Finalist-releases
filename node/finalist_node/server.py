@@ -28,7 +28,7 @@ import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-from . import auth, config
+from . import auth, config, dfs
 from . import voice_setup
 from . import stations as sim
 
@@ -330,7 +330,8 @@ def local_status():
             "voice": voice_setup.status(CFG), "ranking": circuit() is not None,
             "tailnet": public_url(), "public": public_on(),
             "share": share_view(LocalOwner()) if s.get("email") and now < s.get("until", 0) + FINISH else None,
-            "friends": friends(), "live": live, "activity": ACTIVITY[-12:]}
+            "friends": friends(), "live": live, "activity": ACTIVITY[-12:],
+            "dfs": {"sets": dfs.status(CFG), "allow": dfs.allowed_emails(CFG)}}
 
 
 def share_reaper():
@@ -493,6 +494,8 @@ class Handler(BaseHTTPRequestHandler):
                                         "share": share_view(w)})
         if path == "/v1/share":
             return self.send_json(200, share_view(w) or {})
+        if path == "/v1/dfs" or path.startswith("/v1/dfs/"):
+            return self.dfs_get(path, w)
         if path == "/v1/voice":
             if not may_use_claude(w):
                 return self.send_json(403, {"error": "This node's voice is its owner's, or a friend's while it's shared with them."})
@@ -560,6 +563,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json(200, {"friends": friends()})
             if path.startswith("/v1/local/share"):
                 return self.share(path.replace("/v1/local", "/v1", 1), b, me)
+            if path == "/v1/local/dfs/allow":
+                return self.send_json(200, {"allow": dfs.set_allowed(CFG, b.get("emails") or [])})
             return self.send_json(404, {"error": "not found"})
         b = self.body()
         if b is None:
@@ -578,6 +583,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json(r.status, json.loads(data or b"{}"))
             except (OSError, ValueError) as e:
                 return self.send_json(502, {"error": f"The Revision System didn't answer ({e}). Is it installed on this PC?"})
+        if path.startswith("/v1/dfs/") and path.endswith("/install"):
+            return self.dfs_install(path[len("/v1/dfs/"):-len("/install")], w)
         if path == "/v1/public":
             return self.set_reach(b, w)
         d = data_for(w)
@@ -743,6 +750,48 @@ class Handler(BaseHTTPRequestHandler):
         res = [r if r.get("verdict") != "match" or r.get("item") in names else {**r, "verdict": "valid"} for r in res]
         sim.learn_aliases(shared(), x["id"], [(r["guess"], r["item"]) for r in res if r.get("verdict") == "match"])
         return self.send_json(200, {"results": res})
+
+    # ---- DFS: datasets for stations (2 Nov 2026) ----
+
+    def dfs_get(self, path, w):
+        """GET /v1/dfs: what's here and whether you may use it; /v1/dfs/<set>: its catalogue;
+        /v1/dfs/<set>/<id>: one item (fetched from its source the first time)."""
+        guest = may_use_claude(w)
+        may = dfs.may_use(w, CFG, guest=guest)
+        parts = [x for x in path.split("/")[3:] if x]
+        if not parts:
+            return self.send_json(200, {"sets": dfs.status(CFG), "may": may, "owner": bool(w.owner)})
+        if not may:
+            return self.send_json(403, {"error": "This node's datasets are for its owner and the people they allow."})
+        if len(parts) == 1:
+            c = dfs.catalogue(CFG, parts[0])
+            return self.send_json(200 if c else 404, c or {"error": "not found"})
+        try:
+            it = dfs.item(CFG, parts[0], parts[1])
+        except Exception as e:
+            return self.send_json(502, {"error": f"Couldn't fetch it from its source ({str(e)[:120]}). Try again in a moment."})
+        return self.send_json(200 if it else 404, it or {"error": "not found"})
+
+    def dfs_install(self, name, w):
+        """Fetch a whole set, streamed as lines of JSON so the station can show progress."""
+        if not dfs.may_use(w, CFG, guest=may_use_claude(w)):
+            return self.send_json(403, {"error": "This node's datasets are for its owner and the people they allow."})
+        if not dfs.manifest(name):
+            return self.send_json(404, {"error": "not found"})
+        self.send_response(200)
+        self.cors()
+        self.send_header("Content-Type", "application/x-ndjson")
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+
+        def emit(o):
+            self.wfile.write((json.dumps(o) + "\n").encode())
+            self.wfile.flush()
+        log(f"datasets: installing {name}")
+        try:
+            dfs.install(CFG, name, emit)
+        except (OSError, KeyError) as e:
+            emit({"error": str(e)})
 
     def station(self, what, b, w, d):
         """A Patient/Examiner Claude call, streamed as lines of JSON while Claude writes."""

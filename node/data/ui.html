@@ -180,6 +180,12 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
     <div class="card ctl" id="ctl"></div>
   </section>
 
+  <section class="s r r4" id="dfssec" hidden aria-labelledby="t4">
+    <h2 id="t4">Datasets for stations</h2>
+    <p>Real ECGs and more for interpretation stations, fetched once from their open sources.</p>
+    <div class="card ctl" id="dfs"></div>
+  </section>
+
   <section class="s r r5" aria-labelledby="t3">
     <h2 id="t3">What it's doing</h2>
     <p>Live, as it happens.</p>
@@ -345,7 +351,7 @@ function render(s) {
   set($("#rows"), rows.map(([i, k, v, [c, t]]) => `<div class="row">${svg(i)}<div><div class="k">${k}</div><div class="v">${v}</div></div><span class="tag ${c}">${t}</span></div>`).join(""), "rows");
 
   voiceRow(s.voice || {});
-  controls(s);
+  controls(s); datasets(s);
 
   const feed = $("#feed"), news = s.activity.filter((a) => a.at > seen);
   for (const a of news) {
@@ -445,13 +451,39 @@ function controls(s) {
     : "Two hours of Claude stations for one friend's Finalist account, with their own runs, never yours. Your own stations wait while it's live.";
 }
 
+// Datasets for stations (2 Nov 2026): what's here, and whose Finalist accounts may use them. Relaxed on
+// purpose: open datasets, not your Claude. Rebuilt only when it changes, so typing survives a poll.
+function datasets(s) {
+  const sec = $("#dfssec"), c = $("#dfs");
+  if (!s.paired || !s.dfs) { sec.hidden = true; last.dfs = ""; return; }
+  sec.hidden = false;
+  const key = JSON.stringify(s.dfs);
+  if (last.dfs === key) return;
+  last.dfs = key;
+  const sets = Object.values(s.dfs.sets || {}), allow = s.dfs.allow || [];
+  c.innerHTML = `
+    <div>${sets.map((x) => `<div class="line"><div><h3>${esc(x.name)}</h3><div class="v">${x.installed ? `Ready: all ${x.items}` : x.ready ? `${x.ready} of ${x.items} fetched; the rest come when a station needs them` : `${x.items} to fetch, the first time a station asks`}</div></div></div>`).join("")}</div>
+    <hr>
+    <div><h3>Who else may use them</h3><div class="v">You always can. Add a friend's Finalist email and their stations can use this node's datasets, any time it's running.</div>
+      <form class="form" id="allow"><input type="email" name="email" placeholder="Their Finalist email" required autocomplete="off"><button class="btn" type="submit">Allow</button></form>
+      ${allow.length ? `<div class="friends"><span class="eyebrow">Allowed</span>${allow.map((e, i) =>
+        `<span class="friend" style="animation-delay:${i * 45}ms"><button type="button" disabled>${esc(e)}</button><button type="button" class="x" data-unallow="${esc(e)}" aria-label="Stop allowing ${esc(e)}">×</button></span>`).join("")}</div>` : ""}
+    </div>
+    <p class="err" id="dfserr" hidden></p>`;
+  c.classList.remove("swap"); void c.offsetWidth; c.classList.add("swap");
+  const fail = (e) => { const p = $("#dfserr"); p.hidden = false; p.textContent = e.message; };
+  const save = async (emails) => { try { await post("/v1/local/dfs/allow", { emails }); last.dfs = ""; tick(); } catch (e) { fail(e); } };
+  const f = $("#allow"); f.onsubmit = (ev) => { ev.preventDefault(); save([...allow, f.email.value]); };
+  c.querySelectorAll("[data-unallow]").forEach((b) => (b.onclick = () => save(allow.filter((e) => e !== b.dataset.unallow))));
+}
+
 async function tick() {
   try { render(await (await fetch("/v1/local/status", { cache: "no-store" })).json()); }
   catch {
     document.documentElement.style.setProperty("--tone", "var(--ink-3)");
     $("#pillt").textContent = "Stopped";
     if (last.pace !== "stop") { last.pace = "stop"; rhythm(60, 0); }   // the trace fizzles to a flat line
-    $("#ctlsec").hidden = true; $("#focus").hidden = true; last.ctl = last.focus = "";
+    $("#ctlsec").hidden = true; $("#dfssec").hidden = true; $("#focus").hidden = true; last.ctl = last.focus = last.dfs = "";
     set($("#h"), "The node has stopped", "h");
     set($("#sub"), "Start Finalist Node again to practise with Claude. Finalist's cards, the clock and the drill still work without it.", "sub");
   }
