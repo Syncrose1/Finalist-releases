@@ -468,7 +468,7 @@ How the patient reacts: {c.get('cue')}
 
 Each reply is ONE of the two, and starts with exactly "PATIENT:" or "EXAMINER:".
 - When the candidate speaks to the patient (introductions, consent, "any pain?", instructions like "take a deep breath"), reply as the PATIENT: a short, natural line, in character, everyday British English. Say if something hurts. Follow instructions without commentary.
-- When the candidate performs or describes an examination step, reply as the EXAMINER with exactly what that step finds, from the findings, specific and brief ("On palpation, the apex beat is displaced to the 6th intercostal space, anterior axillary line."). Give only what that step reveals: never findings from steps they haven't done, and never a hint of what to do next. A step the findings don't mention is normal. If they're vague ("I examine the chest"), ask which part ("What exactly are you doing?"). If a step would hurt the patient, you may add how the patient reacts, in the examiner's words ("The patient winces.").
+- When the candidate performs or describes an examination step, reply as the EXAMINER with ONLY what they specifically looked for or tested, from the findings: you don't ask, you don't get. "I'm checking the capillary refill" gets the capillary refill and nothing else; "I'm looking for clubbing" gets clubbing, not the rest of the hands. Give each sign they name, specific and brief ("On palpation, the apex beat is displaced to the 6th intercostal space, anterior axillary line."). Never volunteer a sign they didn't name, even one in the same part of the body, and never a hint of what to do next. A sign they name that the findings don't mention is normal. If they name only a region or a broad step without saying what they're looking for ("I examine the hands", "I look at the chest"), ask: "What are you looking for?" From the end of the bed, give only the patient's general appearance in a line, plus anything around the bed they say they're looking for. If a step would hurt the patient, you may add how the patient reacts, in the examiner's words ("The patient winces.").
 - If the candidate says they've finished, or turns to present, reply as the EXAMINER: "Thank you. Please present your findings." Never teach, praise, mark or step out of the station.{heard_note(sim, "the room")}{body_map.exam_rules(sim)}
 Reply with only the next line, starting with PATIENT: or EXAMINER:."""
 
@@ -738,7 +738,11 @@ def mark(sim_id, data, emit, ended_early=False, draft=""):
     if sim.get("kind") == "exam":
         note += ("This was a NARRATED examination: the candidate said each step aloud as they performed it, and the examiner gave the findings. "
                  "For this station, ignore the rule about assuming physical actions were done: mark each step, including hand hygiene, positioning "
-                 "and exposure, only if they said it. Mark the presentation on whether it states the findings they were actually given, accurately.\n")
+                 "and exposure, only if they said it. Mark the presentation on whether it states the findings they were actually given, accurately. "
+                 "Weigh the grade as real examination stations are weighted: most of the credit is for a systematic, fluent, safe examination that "
+                 "elicits the signs; presenting and interpreting them is a minority. A candidate who examines well and finds the key signs can still "
+                 "pass without naming the diagnosis (a C, or a D if the presentation is also weak): a missing diagnosis alone never takes the grade "
+                 "below D. If the examiner gave a sign the candidate hadn't asked for, don't mark the candidate down for not eliciting it.\n")
     if sim.get("voice"):
         note += ("The candidate SPOKE this station and their words were transcribed by speech recognition: ignore mistranscribed words, "
                  "missing punctuation and odd spellings (a drug name heard as a near-miss is the drug name), and mark what they evidently said."
