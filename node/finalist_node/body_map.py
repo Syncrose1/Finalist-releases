@@ -61,6 +61,8 @@ def check(o):
         if m.get("region") not in REGIONS or m.get("kind") not in KINDS or not _short(m.get("label"), 90):
             return None
         out = {"region": m["region"], "kind": m["kind"], "label": _short(m["label"], 90)}
+        if m["kind"] == "scar" and m.get("dir") in ("v", "h", "d"):
+            out["dir"] = m["dir"]
         if m["kind"] == "radiates":
             if m.get("to") not in REGIONS:
                 return None
@@ -160,7 +162,10 @@ def patient_rules(sim):
 def exam_rules(sim):
     return f"""
 - The body map: the candidate sees a body map of the patient. In an EXAMINER line:
-  - a finding at a place (tenderness, a mass, a scar, a murmur heard loudest somewhere, crackles at a base, oedema, a rash): after your words add <map>{{"mark":{{"region":"left-lung-base","kind":"finding","label":"Fine crackles"}}}}</map> with the finding in a few words.
+  - a finding at a place: after your words add <map>{{"mark":{{"region":"ruq","kind":"felt","label":"Liver edge 3 cm below costal margin"}}}}</map>, the finding in a few words. "kind" is how it was found:
+    "seen" on inspection (jaundice, spider naevi, palmar erythema, bruising, a rash, a deformity), "felt" on palpation (an organ edge, a mass, a lump, oedema, a thrill, a heave),
+    "tender" (tenderness, guarding), "dull" to percussion (shifting dullness, a dull base), "heard" on auscultation (a murmur where it's loudest, crackles, a bruit, bowel sounds),
+    "sign" for a test or movement (asterixis, tremor, weakness, reflexes, fatigability, a positive special test), "scar" for a scar (add "dir": "v", "h" or "d" for its direction; a sternotomy or midline laparotomy is "v").
   - a value (pulse, respiratory rate, blood pressure, oxygen saturation, temperature, capillary refill, blood glucose): add <map>{{"info":{{"name":"Pulse","value":"92","note":"regular","flag":false}}}}</map>, flag true when it's abnormal.
   - when the candidate examines the back or spine: add <map>{{"unlock":"spine"}}</map>, once.
   A finding on both sides: one mark per side, with exactly the same label (they share one label on the map). Keep labels short.
