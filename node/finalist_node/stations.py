@@ -428,6 +428,69 @@ def start(model, data, station, entry, emit, voice=False):
     threading.Thread(target=warm, daemon=True).start()
 
 
+# ---- teach me this (3 Nov 2026) ---------------------------------------------------------------------
+# Untimed and unmarked: Claude as a tutor for one station. Learn it step by step, run it informally
+# with pauses to teach, be quizzed, or ask what examiners reward. Kept in its own folder, never a run.
+
+TEACH_KIND = {"history": "a history-taking station", "comms": "a communication station", "exam": "a narrated physical examination station"}
+
+
+def teach(model, data, station, entry, emit, voice=False):
+    sid = secrets.token_urlsafe(9)
+    sim = {"id": sid, "station": station["id"], "title": station["title"], "kind": "teach", "of": station["kind"], "model": model,
+           "case": {"person": {}}, "notes": _notes(entry), "core": _core(station["kind"]),
+           "turns": [], "phase": "tutor", "started": time.time(), "ready": threading.Event(), "voice": bool(voice),
+           "vocab": list(station.get("vocab") or [])[:40],
+           "file": str(data / "teach" / f"{date.today().isoformat()}-{station['id']}-{sid}.json")}
+    sim["ready"].set()
+    with LOCK:
+        SIMS[sid] = sim
+    emit({"sim": sid, "ready": True})
+
+    def warm():                               # the tutor starts now, so the first reply doesn't wait for it
+        try:
+            live = Live(model, _tutor_system(sim))
+            with LOCK:
+                if sid in SIMS and "tutor" not in LIVE.get(sid, {}):
+                    LIVE.setdefault(sid, {})["tutor"] = live
+                    return
+            live.close()
+        except Exception:
+            pass
+    threading.Thread(target=warm, daemon=True).start()
+
+
+def _tutor_system(sim):
+    of = sim.get("of")
+    manner = ("You are speaking out loud, and your words are turned into speech: write only what you say, no markdown, no lists, "
+              "no stage directions. Keep each reply short: two to five sentences, then hand back to the student. Write numbers and doses the way you'd say them."
+              + heard_note(sim, "you")) if sim.get("voice") else \
+             ("Keep each reply short: a few sentences, or a short list when steps really are a list, then hand back to the student. "
+              "Plain text: **bold** for the one thing to remember is fine; no headings.")
+    run = ("play the examiner's side: ask what they'd do next, and give findings only for what they name" if of == "exam"
+           else "play the patient, in character, in everyday British English")
+    return f"""You are a warm, sharp clinical tutor, a registrar who loves teaching, helping a final-year UK medical student (Southampton CPSA finals) learn ONE station: "{sim['title']}", {TEACH_KIND.get(of, 'a station')}.
+
+What the mark scheme rewards (its core items):
+{sim.get('core')}
+What the student's own notes for this station say:
+{sim.get('notes') or '(none)'}
+
+This is untimed and informal: there is no clock and no mark. Follow the student's lead. They may ask you to:
+- teach the station step by step: go through it in the order a candidate does it, one chunk at a time, each with why it matters and the words to use, then check with a quick question before moving on;
+- run it in an informal teaching format: set the scene in a line, {run}, and step out to teach whenever there's something worth learning, starting that part with "Pause:" and returning with "Back in the station:". Point out what they did well too;
+- quiz them: one question at a time, wait for the answer, then say what was right, what was missing, and the next question;
+- explain what examiners look for, and where students lose marks, including the safety step that fails a station.
+
+How you teach:
+- Short, concrete, one idea at a time. Ask, don't lecture: get them to say it before you do.
+- Take the steps, their order, the positioning and the phrasing from the mark scheme and the notes above when they cover it; they are the reference for this station.
+- UK practice only (NICE, BNF, Resuscitation Council UK, GMC, the relevant UK societies). If you aren't sure of a fact, a dose or a threshold, say so plainly rather than guess.
+- Encouraging and honest: praise what is right, correct what isn't, kindly and clearly.
+- {manner}
+Reply with only your next words to the student."""
+
+
 def _get(sim_id):
     with LOCK:
         sim = SIMS.get(sim_id)
@@ -442,7 +505,8 @@ def _get(sim_id):
 # ---- the room ------------------------------------------------------------------------------------
 
 def _transcript(sim):
-    who = {"you": "Candidate", "patient": sim["case"]["person"].get("name") or "Patient", "examiner": "Examiner"}
+    who = {"you": "Student" if sim.get("kind") == "teach" else "Candidate", "patient": sim["case"]["person"].get("name") or "Patient",
+           "examiner": "Examiner", "tutor": "Tutor"}
     return "\n".join(f"{who[t['who']]}: {t['text']}" for t in sim["turns"]) or "(nothing said yet)"
 
 
@@ -573,10 +637,10 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None, debug=Fals
         _persist(sim)
     who = sim["phase"]
     room = sim.get("kind") == "exam" and who == "patient"     # a narrated exam: patient or examiner, per turn
-    system = _examiner_system(sim) if who == "examiner" else _room_system(sim)
-    ask_for = ("Your next words, as the examiner:" if who == "examiner"
+    system = _tutor_system(sim) if who == "tutor" else _examiner_system(sim) if who == "examiner" else _room_system(sim)
+    ask_for = ("Your next words, as the tutor:" if who == "tutor" else "Your next words, as the examiner:" if who == "examiner"
                else "Your reply, starting with PATIENT: or EXAMINER:" if room else "Your next words, in character:")
-    prompt = (f"The station so far:\n{_transcript(sim)}\n\n"
+    prompt = (f"{'The session' if who == 'tutor' else 'The station'} so far:\n{_transcript(sim)}\n\n"
               + ("[The whistle has just gone. The candidate turns to you.]\n" if event == "whistle" else "")
               + (text + "\n" if debug else "") + ask_for)
     reply, said = None, [False]
@@ -590,7 +654,7 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None, debug=Fals
         sim.setdefault("map", []).append(o)
         if on_map:
             on_map(o)
-    words = body_map.Filter(on_text, step, on_reject) if who != "examiner" else None
+    words = body_map.Filter(on_text, step, on_reject) if who == "patient" else None
     if words:
         on_text = words.feed
 
@@ -633,7 +697,8 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None, debug=Fals
             reply = live.turn(prompt, stream)       # the first turn carries everything so far
         else:
             note = sim.pop("cut_note", "")
-            reply = live.turn(f"{note}{text.strip() if debug else 'The candidate: ' + text.strip()}\n\n" + ask_for, stream)
+            said_by = "The student: " if who == "tutor" else "The candidate: "
+            reply = live.turn(f"{note}{text.strip() if debug else said_by + text.strip()}\n\n" + ask_for, stream)
     except Exception:
         _close_live(sim_id, who)
         if said[0]:

@@ -824,6 +824,18 @@ class Handler(BaseHTTPRequestHandler):
                         sim.SIMS[o["sim"]]["account"] = w.id
                     emit(o)
                 sim.start(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first, voice=bool(b.get("voice")))
+            elif what == "teach":                  # Teach me this (3 Nov 2026): a tutor, untimed, never marked
+                x = by_id.get(b.get("id"))
+                if not x or x["kind"] not in KINDS:
+                    raise KeyError("Claude can only teach history, communication and examination stations.")
+                if w.owner and share_live():
+                    raise KeyError("A friend's link is live, so your own Claude sessions wait until it ends (or stop sharing).")
+
+                def first_t(o):
+                    if "sim" in o:
+                        sim.SIMS[o["sim"]]["account"] = w.id
+                    emit(o)
+                sim.teach(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first_t, voice=bool(b.get("voice")))
             elif what in ("say", "whistle"):
                 mine(b.get("sim"))
                 # debug mode (1 Nov 2026): the node's owner, testing, can instruct the room out of character

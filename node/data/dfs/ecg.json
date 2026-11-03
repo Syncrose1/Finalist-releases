@@ -1,6 +1,6 @@
 {
  "name": "PTB-XL ECGs",
- "version": 1,
+ "version": 2,
  "licence": "CC BY 4.0",
  "credit": "Wagner P, Strodthoff N, Bousseljot R-D, et al. PTB-XL, a large publicly available electrocardiography dataset (version 1.0.3). PhysioNet (2022). CC BY 4.0.",
  "source": "https://physionet.org/content/ptb-xl/1.0.3/",
@@ -17,7 +17,16 @@
   "wpw": "Wolff–Parkinson–White pattern",
   "imi-acute": "Acute inferior STEMI",
   "imi-old": "Old inferior MI (Q waves)",
-  "asmi-old": "Old anteroseptal MI (Q waves)"
+  "asmi-old": "Old anteroseptal MI (Q waves)",
+  "ami-acute": "Acute anterior STEMI",
+  "2avb": "Second-degree heart block",
+  "3avb": "Complete (third-degree) heart block",
+  "svt": "Supraventricular tachycardia (SVT)",
+  "pvc": "Ventricular ectopics",
+  "pace": "Paced rhythm",
+  "lafb": "Left anterior fascicular block",
+  "rvh": "Right ventricular hypertrophy",
+  "dig": "Digoxin effect"
  },
  "items": [
   {
@@ -99,6 +108,48 @@
     "dat": {
      "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/17000/17897_lr.dat",
      "sha256": "d2ba2603537508033c4f598a8ebe02ab2f229286fe1f7efc207bfb7b2a737342",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-748",
+   "kind": "ecg",
+   "label": "norm",
+   "answer": "Normal ECG (sinus rhythm)",
+   "age": 66,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/00000/00748_lr.hea",
+     "sha256": "b826c01642c3f931e915ab3325b1475d558aaf02f95ad7833d689df5a4f38f32",
+     "bytes": 603
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/00000/00748_lr.dat",
+     "sha256": "b323644b1ecd432105a24b253e162ea0b7073b82f09fd265631367dceb0fc9d6",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-3067",
+   "kind": "ecg",
+   "label": "norm",
+   "answer": "Normal ECG (sinus rhythm)",
+   "age": 64,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/03000/03067_lr.hea",
+     "sha256": "4712267f3590e62f7ed4836435eb3275f7b362efaae8ff80bc7080c1d46b1a8a",
+     "bytes": 607
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/03000/03067_lr.dat",
+     "sha256": "cea71863ddb2556c56e9be40f814d9dd9284894b9398ca70e9ced191d9715414",
      "bytes": 24000
     }
    },
@@ -210,6 +261,69 @@
    "rate": 100
   },
   {
+   "id": "ptbxl-16388",
+   "kind": "ecg",
+   "label": "sbrad",
+   "answer": "Sinus bradycardia",
+   "age": 45,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16388_lr.hea",
+     "sha256": "51dbbb48ab6a327d71fbcee7c53951b00098866460591f9c6634fb553b18d76e",
+     "bytes": 596
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16388_lr.dat",
+     "sha256": "215eed5276098c8230d9ac6222b17cfe05dfd9e5af99b585f39ac67043823180",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-13960",
+   "kind": "ecg",
+   "label": "sbrad",
+   "answer": "Sinus bradycardia",
+   "age": 45,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/13000/13960_lr.hea",
+     "sha256": "60633c06523e58c320551ae0aeaf23272a0185c4f929c97d5de0c297db4ea75c",
+     "bytes": 617
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/13000/13960_lr.dat",
+     "sha256": "3aa110a0ce5c43a06e82f5fcb2f18dde9835aa432af4a35482151d2faf28a534",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-20461",
+   "kind": "ecg",
+   "label": "sbrad",
+   "answer": "Sinus bradycardia",
+   "age": 41,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/20000/20461_lr.hea",
+     "sha256": "0959fde148e61d99ebacbdff5e4e1b078fb70d9a29a8fdf79e4e9fa6d9dca188",
+     "bytes": 597
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/20000/20461_lr.dat",
+     "sha256": "b23f4053982dc86ec8e16f8c16f4f245b847b3a8a0a5e3010f97d159bf399633",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
    "id": "ptbxl-9133",
    "kind": "ecg",
    "label": "stach",
@@ -315,6 +429,48 @@
    "rate": 100
   },
   {
+   "id": "ptbxl-2387",
+   "kind": "ecg",
+   "label": "stach",
+   "answer": "Sinus tachycardia",
+   "age": 48,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02387_lr.hea",
+     "sha256": "bebaab9a74915c1bcf172d5714b6098a80017377eb08a0a532a55445ef9b2ef0",
+     "bytes": 601
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02387_lr.dat",
+     "sha256": "0cce87f5da2108f2db6b0c4d989954af800d68c557f4282432dc38900c0e074e",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-8150",
+   "kind": "ecg",
+   "label": "stach",
+   "answer": "Sinus tachycardia",
+   "age": 56,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08150_lr.hea",
+     "sha256": "e0d71b1eeaeb7f7830cceccc353e4e02332ee15763652bdcd1ad9304891abe29",
+     "bytes": 606
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08150_lr.dat",
+     "sha256": "f493c9734a488ebfe6df4ad23c88a2b290b354ac69038a4fd5379c280aed27b1",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
    "id": "ptbxl-19412",
    "kind": "ecg",
    "label": "afib",
@@ -414,6 +570,69 @@
     "dat": {
      "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/00000/00866_lr.dat",
      "sha256": "a38ea2c46640acc7931398987eca129759462494bef212041ced04940540734c",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-16016",
+   "kind": "ecg",
+   "label": "afib",
+   "answer": "Atrial fibrillation",
+   "age": 70,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16016_lr.hea",
+     "sha256": "f065b489c97aced34cb4b397d4a748a85379019cd90109760d10b03a7a7ad0f5",
+     "bytes": 602
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16016_lr.dat",
+     "sha256": "d880ef3e6693453fb9d3d2170ad3a578d73bb1b0d59b01d11f1f37310bb36149",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-2673",
+   "kind": "ecg",
+   "label": "afib",
+   "answer": "Atrial fibrillation",
+   "age": 49,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02673_lr.hea",
+     "sha256": "e1f50bfd6d13dd31ab22017d9894b1bb385b56a8132acfecb4111531b01844f6",
+     "bytes": 607
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02673_lr.dat",
+     "sha256": "f8c9be5e37867f9b1f0fb35762f500bc05e83648f0352129e0f69ca200c33e25",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-12147",
+   "kind": "ecg",
+   "label": "afib",
+   "answer": "Atrial fibrillation",
+   "age": 61,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/12000/12147_lr.hea",
+     "sha256": "492d5c51a44b186664e3bb1a1ffe1622d3437d232e7250d47b3b4790c7db38ed",
+     "bytes": 599
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/12000/12147_lr.dat",
+     "sha256": "33c4a510b94b8b4c8ccbcd05a9e15416ef81770add077e24e0bbd762c24bff00",
      "bytes": 24000
     }
    },
@@ -609,6 +828,48 @@
    "rate": 100
   },
   {
+   "id": "ptbxl-11174",
+   "kind": "ecg",
+   "label": "lbbb",
+   "answer": "Left bundle branch block",
+   "age": 69,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/11000/11174_lr.hea",
+     "sha256": "774b0877f4aef793906f55e4086b9e7dd4a9693cb9da1aa819a113c466447d4a",
+     "bytes": 600
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/11000/11174_lr.dat",
+     "sha256": "e8090b5da4e8e063c149f2f901d15549f19b88382e25748aa6794fe6ee306305",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-2581",
+   "kind": "ecg",
+   "label": "lbbb",
+   "answer": "Left bundle branch block",
+   "age": 87,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02581_lr.hea",
+     "sha256": "091e5f364876cc6e5f68af5a8c41ed53ec591d26259ac2a388ed6b26c47d90bf",
+     "bytes": 604
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02581_lr.dat",
+     "sha256": "6c05128e5979041079b992592d8de2ccc32795ee1d51992fbe05f64e4c94e014",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
    "id": "ptbxl-1024",
    "kind": "ecg",
    "label": "rbbb",
@@ -687,6 +948,69 @@
     "dat": {
      "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/12000/12627_lr.dat",
      "sha256": "d0a8e6a96f2e676b4c209d0f164ff7a9ecea0780f7a4c3ed28885b5dbb2823c7",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-13441",
+   "kind": "ecg",
+   "label": "rbbb",
+   "answer": "Right bundle branch block",
+   "age": 81,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/13000/13441_lr.hea",
+     "sha256": "57173eda6a3197b198e241d1c0ca7a1c29de22a58d766830f6e6c10fcfe56988",
+     "bytes": 601
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/13000/13441_lr.dat",
+     "sha256": "8c85bf40b18d627ee2092b4d6de1b1d8c5dccbdfa3532209a0fe2450585356af",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-5451",
+   "kind": "ecg",
+   "label": "rbbb",
+   "answer": "Right bundle branch block",
+   "age": 69,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/05000/05451_lr.hea",
+     "sha256": "4ab039b76302787e26be823044ead867a78aa8cd2a10f431bc45cd3072708a5b",
+     "bytes": 601
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/05000/05451_lr.dat",
+     "sha256": "bca399e43f0496993db3a2331042671b6c4fd24559c2fa6ea383c5b83df2c279",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-4757",
+   "kind": "ecg",
+   "label": "rbbb",
+   "answer": "Right bundle branch block",
+   "age": 68,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/04000/04757_lr.hea",
+     "sha256": "4c826c7ce8c8ec22001fc139f30254d270cd3cfc6e05546d8709d5127b9591c5",
+     "bytes": 603
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/04000/04757_lr.dat",
+     "sha256": "f66cb8ef10133db1098109c64a47079bb034ce8673a1f0c2f3279a3320cb7281",
      "bytes": 24000
     }
    },
@@ -834,6 +1158,90 @@
     "dat": {
      "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/01000/01198_lr.dat",
      "sha256": "9ac280269dd2d348fdd49cc237406e08be319b5a0501712a942ff6b5d36a95cd",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-8456",
+   "kind": "ecg",
+   "label": "lvh",
+   "answer": "Left ventricular hypertrophy",
+   "age": 50,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08456_lr.hea",
+     "sha256": "14aa05f5b1f248bf45e19a74591b4a6498de6ea1f3312fe8a7d3a4727067f58f",
+     "bytes": 602
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08456_lr.dat",
+     "sha256": "8ccac9af1b33b7812b1e3cd09bd41ea38a3be5c51c1bb513e5d8bc43d784179d",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-3790",
+   "kind": "ecg",
+   "label": "lvh",
+   "answer": "Left ventricular hypertrophy",
+   "age": 75,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/03000/03790_lr.hea",
+     "sha256": "931efb37685667cd8bc335b9c7f2d20960fcb7985751be16318fb331c955dab6",
+     "bytes": 604
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/03000/03790_lr.dat",
+     "sha256": "e97c7b55db8384a421b8ca4072e696940417f667f1fe9af5a585d880a050ebe6",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-18190",
+   "kind": "ecg",
+   "label": "lvh",
+   "answer": "Left ventricular hypertrophy",
+   "age": 57,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/18000/18190_lr.hea",
+     "sha256": "c398135720393a6f77acfabfdfe0116d32136404dcbd1a26448fc5ec9cc5ff41",
+     "bytes": 610
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/18000/18190_lr.dat",
+     "sha256": "60bf8984e1a65b1d4c6c48e31be80348a576e6ff819580679e4d8580e2091423",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-6347",
+   "kind": "ecg",
+   "label": "lvh",
+   "answer": "Left ventricular hypertrophy",
+   "age": 50,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/06000/06347_lr.hea",
+     "sha256": "fff2bad740e06574b8cbbd3813e85bf4cb28845d45166169c602a0f983e09285",
+     "bytes": 613
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/06000/06347_lr.dat",
+     "sha256": "b16ebac7e66527bf0d821f2870dde362170890f880f863718afb99a1f9230250",
      "bytes": 24000
     }
    },
@@ -1008,6 +1416,48 @@
    "rate": 100
   },
   {
+   "id": "ptbxl-2719",
+   "kind": "ecg",
+   "label": "imi-old",
+   "answer": "Old inferior MI (Q waves)",
+   "age": 75,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02719_lr.hea",
+     "sha256": "9c04e6a220dc8ead8be1195a5b2fe80f98ee5ce3ecaeef602c635d9ca3b3546f",
+     "bytes": 605
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02719_lr.dat",
+     "sha256": "405870191c70e2ea4b25c8234aca0a5de9c80665efd748849ad59eb1d1d60ea4",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-10157",
+   "kind": "ecg",
+   "label": "imi-old",
+   "answer": "Old inferior MI (Q waves)",
+   "age": 79,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10157_lr.hea",
+     "sha256": "92906e6788b8dbabd38ec2e95e8d951a5ab383497fd9b5f9bb2ecc1f8faf1843",
+     "bytes": 600
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10157_lr.dat",
+     "sha256": "d86a1856a95b1a22a5806b6bd1ed0c128b31f8cfdf0c13dcca0de3c8de4a40fd",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
    "id": "ptbxl-13815",
    "kind": "ecg",
    "label": "asmi-old",
@@ -1086,6 +1536,909 @@
     "dat": {
      "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/18000/18324_lr.dat",
      "sha256": "9d193a25f85adea49491b69fe44e88ff5737342f2847b9c8bb9327e2ded8235f",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-1738",
+   "kind": "ecg",
+   "label": "asmi-old",
+   "answer": "Old anteroseptal MI (Q waves)",
+   "age": 66,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/01000/01738_lr.hea",
+     "sha256": "5e6bc599ac081045fabf0ee0abfeec841b1b17b0550711a4566285b4bbd8891c",
+     "bytes": 607
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/01000/01738_lr.dat",
+     "sha256": "a095ff1f54ab8403e59d5373a2a20194e85d73280c03087177e5af0429d351bc",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-4380",
+   "kind": "ecg",
+   "label": "asmi-old",
+   "answer": "Old anteroseptal MI (Q waves)",
+   "age": 68,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/04000/04380_lr.hea",
+     "sha256": "938dbe2b53de001cff7b2b635e6be8298b8834e5ca49e4f37c3b1c9f616d9ff7",
+     "bytes": 609
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/04000/04380_lr.dat",
+     "sha256": "4331271826cf1beb0f70de2a52d139d13e4fb0a7ede2fe41932dc6d8ca105ec9",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-20396",
+   "kind": "ecg",
+   "label": "asmi-old",
+   "answer": "Old anteroseptal MI (Q waves)",
+   "age": 66,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/20000/20396_lr.hea",
+     "sha256": "492677885b108bb29c4aa080dc1f259f429d82b03b4e33550eb9a0788dc8a907",
+     "bytes": 600
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/20000/20396_lr.dat",
+     "sha256": "6a848ecd2c16ff51faa4b6039c6bd7c0df7e1d5e3b78b85469a5f17ca0b05127",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-19067",
+   "kind": "ecg",
+   "label": "ami-acute",
+   "answer": "Acute anterior STEMI",
+   "age": 59,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/19000/19067_lr.hea",
+     "sha256": "0fcc8363c3844583903756a3388d647b0531e00d744fda36448376dc12e5e319",
+     "bytes": 609
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/19000/19067_lr.dat",
+     "sha256": "9b275ffd91579a0e9edcc42a11fbfa309345d365f28a5b9f817ebf3bc1b900ff",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-20139",
+   "kind": "ecg",
+   "label": "ami-acute",
+   "answer": "Acute anterior STEMI",
+   "age": 82,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/20000/20139_lr.hea",
+     "sha256": "d7ce253b649e35d1fa2f19f3f27298cc621dbe8e51ffb49ad3cd419e95708fb9",
+     "bytes": 603
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/20000/20139_lr.dat",
+     "sha256": "8f355a5f7ebd59fef90cb5a5764ec2fcf0e59f1ad05445c512d919ffc5959167",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-20617",
+   "kind": "ecg",
+   "label": "ami-acute",
+   "answer": "Acute anterior STEMI",
+   "age": 47,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/20000/20617_lr.hea",
+     "sha256": "bccc3f29b37cb9c5e3bf991807fb3668e3897dfc4c07593d02486f337a77c26f",
+     "bytes": 600
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/20000/20617_lr.dat",
+     "sha256": "0e3b8c7797fcbd591681eff014f2a4bff4ce26122dfcbf1ce869b7c34e983622",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-14009",
+   "kind": "ecg",
+   "label": "2avb",
+   "answer": "Second-degree heart block",
+   "age": null,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/14000/14009_lr.hea",
+     "sha256": "2e7f97c00f8fb3ca2c03c6a4313ee881bfa5d81f5d55a38a7ffee62e2614e817",
+     "bytes": 603
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/14000/14009_lr.dat",
+     "sha256": "15732314ef78cf1962558b5a43a0bf5e9e66b99d4d374ed9b9d0abf91803144e",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-19164",
+   "kind": "ecg",
+   "label": "2avb",
+   "answer": "Second-degree heart block",
+   "age": 89,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/19000/19164_lr.hea",
+     "sha256": "053a998154b205417a8dab9a927d4605aa3f6cfc9054d660a8f0b22c5275fa74",
+     "bytes": 601
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/19000/19164_lr.dat",
+     "sha256": "95f45812887de692bd071339882d04bfeede877fb021f44d0fbd959029fa7f86",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-8048",
+   "kind": "ecg",
+   "label": "2avb",
+   "answer": "Second-degree heart block",
+   "age": 58,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08048_lr.hea",
+     "sha256": "45942fcb4cdd1e50dd703b288392d0ae0940fd6f7774ddb7308e38dacdef32d4",
+     "bytes": 605
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08048_lr.dat",
+     "sha256": "9f711d34a527447c862b7a21a15002557eeedf0f7f1f630a65e3d26c9701cdab",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-4838",
+   "kind": "ecg",
+   "label": "3avb",
+   "answer": "Complete (third-degree) heart block",
+   "age": 80,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/04000/04838_lr.hea",
+     "sha256": "4c29aad95d8a3e19e0064e75284037b7dd84038c9d282a38eca31d38850ec997",
+     "bytes": 610
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/04000/04838_lr.dat",
+     "sha256": "e7e8fd8ebbf4c4c40d18b1f0dc5b1c8abb6ce5bcb572580b7563345bd3cf64b8",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-959",
+   "kind": "ecg",
+   "label": "3avb",
+   "answer": "Complete (third-degree) heart block",
+   "age": 88,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/00000/00959_lr.hea",
+     "sha256": "83d32e15e391866ceab7312056720540b306ce676d94ae46cafbd6ef04b7baf3",
+     "bytes": 603
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/00000/00959_lr.dat",
+     "sha256": "d21901a2955f4cf65c7363ed1579f5c5104c4342ba9c55c3cac047ee3d771db5",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-8620",
+   "kind": "ecg",
+   "label": "3avb",
+   "answer": "Complete (third-degree) heart block",
+   "age": null,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08620_lr.hea",
+     "sha256": "765d2137e6af79278ebe1e3a7e795573f896e4ac2b32792bb8b238a1a6f32d75",
+     "bytes": 597
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08620_lr.dat",
+     "sha256": "a2f97107f982b6f9767642b0529a620a55e1a074f6decf165fe7323f981f70e3",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-8911",
+   "kind": "ecg",
+   "label": "3avb",
+   "answer": "Complete (third-degree) heart block",
+   "age": 68,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08911_lr.hea",
+     "sha256": "74f36d9536967063b4c7a2b1e0c52b538501983c6ba86cdc8f94f4de4ae53622",
+     "bytes": 604
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08911_lr.dat",
+     "sha256": "ff0c8a3b39c78c679dc373aa584a8c7a869bd6d562a7937591f7740beb8113ae",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-10936",
+   "kind": "ecg",
+   "label": "svt",
+   "answer": "Supraventricular tachycardia (SVT)",
+   "age": 72,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10936_lr.hea",
+     "sha256": "a02357fbc9f284f59315b8c150571921e5ffd962977915fbf645baeb957bcae4",
+     "bytes": 610
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10936_lr.dat",
+     "sha256": "580e7217418795678144d1d5819e2b85753795e433284d0fab658e1c468f0834",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-16753",
+   "kind": "ecg",
+   "label": "svt",
+   "answer": "Supraventricular tachycardia (SVT)",
+   "age": 76,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16753_lr.hea",
+     "sha256": "6cdc23351b9491344f1e8e41297c7dbfd3f71fa85a0d0926afb23684573a2c81",
+     "bytes": 612
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16753_lr.dat",
+     "sha256": "4369c2f04a8147608819129fab5baf31c86776a82e16eca98189eb8831cc5d81",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-7889",
+   "kind": "ecg",
+   "label": "svt",
+   "answer": "Supraventricular tachycardia (SVT)",
+   "age": 74,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/07000/07889_lr.hea",
+     "sha256": "f81922b16d23f0f59634b201a2462328f9cc7ba380c2efb8d423af657fcb5a39",
+     "bytes": 602
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/07000/07889_lr.dat",
+     "sha256": "1cff252cc223baaed3192cc5343162ac8f6c04d731e48fe01b5837b2b5019537",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-13186",
+   "kind": "ecg",
+   "label": "svt",
+   "answer": "Supraventricular tachycardia (SVT)",
+   "age": 25,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/13000/13186_lr.hea",
+     "sha256": "0a95a017884c45d2eef9aebf701e34f9835b8b5d8d0164b7b1111df697ac9f15",
+     "bytes": 598
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/13000/13186_lr.dat",
+     "sha256": "be758729973d2f9c550817559a930e1bf700de989d12e8f722127e0923d4ffd8",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-9866",
+   "kind": "ecg",
+   "label": "svt",
+   "answer": "Supraventricular tachycardia (SVT)",
+   "age": 78,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/09000/09866_lr.hea",
+     "sha256": "0c3a04b107dfe6555bf1fb1530e3b4eb7b6964dcd85044139b43a078334d4bf4",
+     "bytes": 605
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/09000/09866_lr.dat",
+     "sha256": "3e2d4bdca0a4771a62ee0664ddbbae019320e920fb14e6dbc19002fa8769d0e4",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-3476",
+   "kind": "ecg",
+   "label": "svt",
+   "answer": "Supraventricular tachycardia (SVT)",
+   "age": 75,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/03000/03476_lr.hea",
+     "sha256": "ecdfe36b163f7df4df4f53895c9b7e32e005cbbb31344c84c77110d8946d9c80",
+     "bytes": 607
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/03000/03476_lr.dat",
+     "sha256": "06553ffaa6ccadb0c6b15f6c04731ffec448eb6f4a791a57602db77252867832",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-16786",
+   "kind": "ecg",
+   "label": "pvc",
+   "answer": "Ventricular ectopics",
+   "age": 73,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16786_lr.hea",
+     "sha256": "f80312509cbc0200b81af024d8afb3c22ac5d47c2bd03fe44e033d49ae4afaab",
+     "bytes": 610
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16786_lr.dat",
+     "sha256": "683480bcb172bee04305448aee9d0004347c9f0dee71f07393132559db3c3050",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-11151",
+   "kind": "ecg",
+   "label": "pvc",
+   "answer": "Ventricular ectopics",
+   "age": 71,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/11000/11151_lr.hea",
+     "sha256": "52fe094161ef36827a7ccb918bffdb72a32759137199583e0e0bb31c932b7e0a",
+     "bytes": 612
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/11000/11151_lr.dat",
+     "sha256": "067be5f2ef3df514753eee643cc709446c6e5a4ba78af26062e0928227ae4ee1",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-10561",
+   "kind": "ecg",
+   "label": "pvc",
+   "answer": "Ventricular ectopics",
+   "age": 37,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10561_lr.hea",
+     "sha256": "ab776e04048959a7ea8f6eb1dfff27993748601976dee39538f367c55248c38f",
+     "bytes": 610
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10561_lr.dat",
+     "sha256": "a283ca59c55419ed3731968a80d69db2c72aade18170b24db54c1d03051718f2",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-14022",
+   "kind": "ecg",
+   "label": "pvc",
+   "answer": "Ventricular ectopics",
+   "age": 76,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/14000/14022_lr.hea",
+     "sha256": "21bff0abc2429e434b5c8299a63dcf802d61191c88775247aef0fed7f2121da7",
+     "bytes": 598
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/14000/14022_lr.dat",
+     "sha256": "105a71fd0bd6eb71fbd66c1068493823e2b3355d69fab2d669dd1acc8bebc9a9",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-18185",
+   "kind": "ecg",
+   "label": "pvc",
+   "answer": "Ventricular ectopics",
+   "age": 65,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/18000/18185_lr.hea",
+     "sha256": "48e1db238140fbe5e61fb1b14cbc86b2682724396cb3ef4a23685780eba2da3e",
+     "bytes": 611
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/18000/18185_lr.dat",
+     "sha256": "3295e46188445aaa5445974a6c23a165c4c0b5e2185a8e924f8b734103085038",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-5737",
+   "kind": "ecg",
+   "label": "pvc",
+   "answer": "Ventricular ectopics",
+   "age": 41,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/05000/05737_lr.hea",
+     "sha256": "8ae6b1cbd022d7354c46e0acc1bdd274ed8541f63cf1bdc42016124c278db38d",
+     "bytes": 613
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/05000/05737_lr.dat",
+     "sha256": "687906f38f34b78497c5aed1e6e8dfcc01cfe79bb4796d3d9fd0f416af7c7f55",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-19315",
+   "kind": "ecg",
+   "label": "pvc",
+   "answer": "Ventricular ectopics",
+   "age": 58,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/19000/19315_lr.hea",
+     "sha256": "361b5a1aeed665c543694afe691dcbf477ce580d88ca37a28f28bc4f594769f1",
+     "bytes": 612
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/19000/19315_lr.dat",
+     "sha256": "0a5d0dde921286096638bc48cc76b453bbfd1acbde1bd4f5564331ce40144deb",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-8263",
+   "kind": "ecg",
+   "label": "pace",
+   "answer": "Paced rhythm",
+   "age": 63,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08263_lr.hea",
+     "sha256": "0effc11440929649c1bead31dad11fad09ceb47fbad6fcbd4da8b9cee3d72bcc",
+     "bytes": 592
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08263_lr.dat",
+     "sha256": "4f7d57451ca92697dca7838f8213a4b9ab753e4bacbe935378584a168d564ac4",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-16056",
+   "kind": "ecg",
+   "label": "pace",
+   "answer": "Paced rhythm",
+   "age": null,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16056_lr.hea",
+     "sha256": "631c62f7b5f1f1bfa7bb9f0bbe4e660f80edb5220885222cb562e1b71038ece4",
+     "bytes": 606
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16056_lr.dat",
+     "sha256": "d18da8d454f7853f73e694e46ff1cd5b6675e1e4dee04c5b7d670f0e684fb51a",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-12085",
+   "kind": "ecg",
+   "label": "pace",
+   "answer": "Paced rhythm",
+   "age": 87,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/12000/12085_lr.hea",
+     "sha256": "7543384b1b96482e130337f84e0515545921583107adde77c40255ab35aed4b4",
+     "bytes": 601
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/12000/12085_lr.dat",
+     "sha256": "780c6714d3c42fcca45faa3dac93b1b73551fc94b04e4476371efe73c5e13061",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-7445",
+   "kind": "ecg",
+   "label": "pace",
+   "answer": "Paced rhythm",
+   "age": 65,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/07000/07445_lr.hea",
+     "sha256": "467d280396f158601f81d4e72a38a078e7f3a6ca90cd303f74744fa0b5689ee4",
+     "bytes": 618
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/07000/07445_lr.dat",
+     "sha256": "40f14b1378ca46e6e0a21d69c33e1ead86ea177aab73d94c2241debebd12d322",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-8060",
+   "kind": "ecg",
+   "label": "pace",
+   "answer": "Paced rhythm",
+   "age": 67,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08060_lr.hea",
+     "sha256": "143715436c19cd057a2db9ce3549f718fcdcdd92079c2221d4ebb626891e5f36",
+     "bytes": 610
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/08000/08060_lr.dat",
+     "sha256": "a10570bb24e9515b4244bdb4cfe1f0aebe4b027c92c734f43b19cb5c765eeced",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-3178",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 79,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/03000/03178_lr.hea",
+     "sha256": "47ab29595d2ab0872f09e4821a23169f2c09a0bbb4b0e1297e76bc97b175ac83",
+     "bytes": 603
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/03000/03178_lr.dat",
+     "sha256": "d57aee811de7d8fd871b2dcc94f8007f2e285ed74709382bc52ede66353bc1ca",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-12712",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 66,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/12000/12712_lr.hea",
+     "sha256": "4cf196b0707c8fd722c9b3f1a684c57fa7a4e31ba31c37b01cfe49fb901aedc4",
+     "bytes": 613
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/12000/12712_lr.dat",
+     "sha256": "b41e725811af00e0ae74152179680c1c92286e323f89a37dfabf501ac5df804f",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-220",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 46,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/00000/00220_lr.hea",
+     "sha256": "8b3d48548b79b951a2306bb04dec23fa57f5875d9c5be8594f52fdf8103dcc17",
+     "bytes": 608
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/00000/00220_lr.dat",
+     "sha256": "770d9166bea1904e3631e477296d5ee4b0fdee3d782b02a6f97ab077152a5190",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-4963",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 33,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/04000/04963_lr.hea",
+     "sha256": "3f11c68dce778f81f769ad4d1d522c1a6eafa2eb8d64a2a0b7a8df9d2416354e",
+     "bytes": 606
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/04000/04963_lr.dat",
+     "sha256": "5800b8a37183ff0ad0a42c38df51e49f5a1df48898bc075b2c4b5233b0b8f1de",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-10439",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 66,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10439_lr.hea",
+     "sha256": "bea10b338a1420612a0b36fc62446c09091ac9c79a6db0cca999317177373324",
+     "bytes": 599
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10439_lr.dat",
+     "sha256": "6735033c4273caf59ae417e78b67e5444e13d90966e70dae73c1155987b818a5",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-5991",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 66,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/05000/05991_lr.hea",
+     "sha256": "66e3b7dd3d628de98547b80e7ccfa049e9975d0e7bb276a4633505984db9d59f",
+     "bytes": 607
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/05000/05991_lr.dat",
+     "sha256": "c8de1d719a4f2128417d78e1ef9baa4bf074ed6403c25a55ea8ef2a57c02e229",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-10626",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 69,
+   "sex": "m",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10626_lr.hea",
+     "sha256": "70d2ba83d56bf847681b875b9d9ad26209713e2da95bbbf3d46fba391b80ce9c",
+     "bytes": 600
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/10000/10626_lr.dat",
+     "sha256": "25bbe535408703928ef26cbb3c48f13c23205e5c33e0365ac82c2dae54352198",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-16085",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 83,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16085_lr.hea",
+     "sha256": "929abe4397f3dcad2513f5afd7bc8d64cb067a543d608b207a23adbe464f5c71",
+     "bytes": 604
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/16000/16085_lr.dat",
+     "sha256": "ad822b997b7a1d325467815286d95a9ee0dda5cfc553fd88e60947e8f19da9c8",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-1663",
+   "kind": "ecg",
+   "label": "lafb",
+   "answer": "Left anterior fascicular block",
+   "age": 88,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/01000/01663_lr.hea",
+     "sha256": "bcbbf38aebc3b83c41e372f88f5ec3e2ec964f26bca0dc42c09bbe06f4f28607",
+     "bytes": 600
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/01000/01663_lr.dat",
+     "sha256": "30677ae07fa307cd99fdd006031a132c0364ea8eb23466bf40987a856eb352bb",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-2417",
+   "kind": "ecg",
+   "label": "rvh",
+   "answer": "Right ventricular hypertrophy",
+   "age": 78,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02417_lr.hea",
+     "sha256": "72506dc33348f5d5462b904bd317ab53303b45f72bf7b449764320cf778941d3",
+     "bytes": 618
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02417_lr.dat",
+     "sha256": "55d977cb660d8877d793bbde78a8c904910d107f6f053e0518c07daf7a1db7e3",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-7806",
+   "kind": "ecg",
+   "label": "dig",
+   "answer": "Digoxin effect",
+   "age": 64,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/07000/07806_lr.hea",
+     "sha256": "b34c840a7fae1768a6ee5aaad41a0cce41ecc0cd317ec1e17e8d52ddad65fc19",
+     "bytes": 610
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/07000/07806_lr.dat",
+     "sha256": "1b44ba9e4820a2a34b2a42b511db7e7127cc395087d5691a97e2ee0caefef524",
+     "bytes": 24000
+    }
+   },
+   "rate": 100
+  },
+  {
+   "id": "ptbxl-2886",
+   "kind": "ecg",
+   "label": "dig",
+   "answer": "Digoxin effect",
+   "age": 82,
+   "sex": "f",
+   "files": {
+    "hea": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02886_lr.hea",
+     "sha256": "a0a2f13832d7918589ccea4a4b7e95980d33e436a0dcad1d9d1c0922a9be65d8",
+     "bytes": 599
+    },
+    "dat": {
+     "url": "https://physionet.org/files/ptb-xl/1.0.3/records100/02000/02886_lr.dat",
+     "sha256": "533d761aabe31ba2531bbe96b20a2cdfed1516a8de3f37622e7a8787faad4893",
      "bytes": 24000
     }
    },
