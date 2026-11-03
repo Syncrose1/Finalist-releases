@@ -105,12 +105,60 @@ def fetch(cfg, name, it):
 
 
 def item(cfg, name, item_id):
+    """One item, fetched now if it isn't kept yet (a second or so): a station never waits for a whole set."""
     m = manifest(name)
     it = next((x for x in (m or {}).get("items", []) if x["id"] == item_id), None)
     if not it:
         return None
+    return fetch(cfg, name, it)
+
+
+# 3 Nov 2026: a set is never installed in one go behind a progress bar (Raahat: it restarted whenever the
+# page was left mid-way, since the fetching lived in the page's request; and a thousand cases would be a
+# long wait). Opening a set starts this instead: on its own thread, four at a time, it fetches whatever
+# isn't kept yet, while the station serves what is and fetches any item asked for on the spot.
+WARMING = set()
+
+
+def warm(cfg, name):
+    m = manifest(name)
     with LOCK:
-        return fetch(cfg, name, it)
+        if not m or name in WARMING:
+            return False
+        have = {p.stem for p in (_store(cfg) / name).glob("*.json")} if (_store(cfg) / name).is_dir() else set()
+        todo = [it for it in m["items"] if it["id"] not in have]
+        if not todo:
+            return False
+        WARMING.add(name)
+
+    def run():
+        from concurrent.futures import ThreadPoolExecutor
+        try:
+            with ThreadPoolExecutor(max_workers=4) as pool:
+                for _ in pool.map(lambda it: _quiet(fetch, cfg, name, it), todo):
+                    pass
+        finally:
+            with LOCK:
+                WARMING.discard(name)
+    threading.Thread(target=run, daemon=True).start()
+    return True
+
+
+def _quiet(f, *a):
+    """Three tries, a little apart (the source turns away the odd request when four arrive at once);
+    still unreachable, it's fetched when asked for, or on the next warm."""
+    import time
+    for wait in (1.5, 4, None):
+        try:
+            return f(*a)
+        except Exception as e:
+            if wait is None:
+                FAILED[a[-1]["id"]] = str(e)[:160]
+                return None
+            time.sleep(wait)
+
+
+FAILED = {}
 
 
 def catalogue(cfg, name):
@@ -129,13 +177,15 @@ def status(cfg):
         m = manifest(name) or {"items": []}
         d = _store(cfg) / name
         have = sum(1 for _ in d.glob("*.json")) if d.is_dir() else 0
-        out[name] = {"name": m.get("name"), "items": len(m["items"]), "ready": have, "installed": have >= len(m["items"]) > 0}
+        out[name] = {"name": m.get("name"), "items": len(m["items"]), "ready": have, "installed": have >= len(m["items"]) > 0,
+                     "warming": name in WARMING}
     return out
 
 
 def install(cfg, name, emit):
     """Fetch every item of a set, eight at a time, saying how far it's got; items already kept are
-    skipped. (One after another, 51 ECGs took two minutes: 2 Nov.)"""
+    skipped. (One after another, 51 ECGs took two minutes: 2 Nov.) Kept for Finalist pages from before
+    3 Nov 2026; newer ones never wait for this, see warm()."""
     from concurrent.futures import ThreadPoolExecutor, as_completed
     m = manifest(name)
     if not m:

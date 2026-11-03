@@ -763,6 +763,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(403, {"error": "This node's datasets are for its owner and the people they allow."})
         if len(parts) == 1:
             c = dfs.catalogue(CFG, parts[0])
+            if c:
+                dfs.warm(CFG, parts[0])         # whatever isn't kept yet comes in behind, on its own thread
             return self.send_json(200 if c else 404, c or {"error": "not found"})
         try:
             it = dfs.item(CFG, parts[0], parts[1])
