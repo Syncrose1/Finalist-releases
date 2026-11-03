@@ -59,9 +59,31 @@ def may_use(w, cfg, guest=False):
 
 # ---- items ------------------------------------------------------------------------------------------
 
-def _get(url):
-    with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "FinalistNode"}), timeout=60) as r:
-        return r.read()
+def _get(url, rng=None):
+    """A source file, or a byte range of one; waits when the source says too many requests (Zenodo
+    allows about one a second, 3 Nov 2026)."""
+    import time, urllib.error
+    h = {"User-Agent": "FinalistNode"} | ({"Range": f"bytes={rng[0]}-{rng[1]}"} if rng else {})
+    for wait in (2, 5, 15, 40, None):
+        try:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=60) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or wait is None:
+                raise
+            time.sleep(min(120, int(e.headers.get("Retry-After") or wait)))
+
+
+def _zip_member(f):
+    """One file out of a zip at its source, by byte range: its local header, whose name and extra field
+    say where the data starts, then the data (stored or deflated). One request, never the whole zip."""
+    import struct, zlib
+    b = _get(f["zip"], (f["offset"], f["offset"] + 30 + 512 + f["csize"]))
+    if b[:4] != b"PK\x03\x04":
+        raise ValueError("the source zip has changed")
+    ln, le = struct.unpack("<HH", b[26:30])
+    raw = b[30 + ln + le:30 + ln + le + f["csize"]]
+    return raw if f["method"] == 0 else zlib.decompress(raw, -15)
 
 
 def _ecg(hea: bytes, dat: bytes):
@@ -90,12 +112,17 @@ def fetch(cfg, name, it):
         return json.loads(out.read_text())
     blobs = {}
     for ext, f in it["files"].items():
-        b = _get(f["url"])
+        b = _zip_member(f) if "zip" in f else _get(f["url"])
         if hashlib.sha256(b).hexdigest() != f["sha256"]:
             raise ValueError(f"{it['id']}: the source file doesn't match what was vetted")
         blobs[ext] = b
-    data = {"id": it["id"], "rate": it.get("rate", 100), "leads": _ecg(blobs["hea"], blobs["dat"])} if it["kind"] == "ecg" else None
-    if data is None:
+    if it["kind"] == "ecg":
+        data = {"id": it["id"], "rate": it.get("rate", 100), "leads": _ecg(blobs["hea"], blobs["dat"])}
+    elif it["kind"] == "image":            # a photograph (fundus, 3 Nov 2026), kept as it came, as base64
+        import base64
+        f = it["files"]["img"]
+        data = {"id": it["id"], "mime": f.get("mime", "image/jpeg"), "data": base64.b64encode(blobs["img"]).decode()}
+    else:
         raise ValueError(f"unknown kind {it['kind']}")
     out.parent.mkdir(parents=True, exist_ok=True)
     tmp = out.with_suffix(f".{threading.get_ident()}.tmp")       # two fetches of one item never share a file
@@ -130,10 +157,18 @@ def warm(cfg, name):
         if not todo:
             return False
         WARMING.add(name)
+    # a set served out of one zip on Zenodo goes one at a time, a little apart: it turns away a crowd
+    zipped = any("zip" in f for it in todo for f in it["files"].values())
 
     def run():
         from concurrent.futures import ThreadPoolExecutor
+        import time
         try:
+            if zipped:
+                for it in todo:
+                    _quiet(fetch, cfg, name, it)
+                    time.sleep(1.2)
+                return
             with ThreadPoolExecutor(max_workers=4) as pool:
                 for _ in pool.map(lambda it: _quiet(fetch, cfg, name, it), todo):
                     pass

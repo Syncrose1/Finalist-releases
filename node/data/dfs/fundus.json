@@ -1,0 +1,1952 @@
+{
+ "name": "JSIEC fundus photographs",
+ "version": 1,
+ "licence": "Free to use for any purpose (JSIEC)",
+ "credit": "Cen L-P, Ji J, Lin J-W, et al. Automatic detection of 39 fundus diseases and conditions in retinal photographs using deep neural networks. Nat Commun 2021;12:4828. Images: Joint Shantou International Eye Centre (JSIEC), Zenodo 10.5281/zenodo.3477553, free to use for any purpose.",
+ "source": "https://zenodo.org/records/3477553",
+ "labels": {
+  "norm": "Normal fundus",
+  "dr": "Diabetic retinopathy",
+  "laser": "Laser photocoagulation scars",
+  "htn": "Hypertensive retinopathy",
+  "discswell": "Optic disc swelling",
+  "atrophy": "Optic atrophy",
+  "glauc": "Glaucomatous optic disc cupping",
+  "crvo": "Central retinal vein occlusion",
+  "brvo": "Branch retinal vein occlusion",
+  "rao": "Retinal artery occlusion",
+  "rd": "Retinal detachment",
+  "rp": "Retinitis pigmentosa",
+  "myopia": "Pathological myopia",
+  "myel": "Myelinated nerve fibres",
+  "mh": "Macular hole"
+ },
+ "items": [
+  {
+   "id": "jsiec-1ffa9657-8d8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal fundus",
+   "folder": "0.0.Normal",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 20454504,
+     "csize": 410545,
+     "method": 8,
+     "bytes": 426812,
+     "sha256": "6334ace240133684ea00e760cb1950aae4c7d3b9cbecb72496d392668e66c9ac",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa965a-8d8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal fundus",
+   "folder": "0.0.Normal",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 22034817,
+     "csize": 535605,
+     "method": 8,
+     "bytes": 545486,
+     "sha256": "e45cf9874c5f341e8240e66a043990e3aed919d699fa920b7be2829635cb0293",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa962b-8d8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal fundus",
+   "folder": "0.0.Normal",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 2176300,
+     "csize": 763906,
+     "method": 8,
+     "bytes": 818291,
+     "sha256": "40b68a5af70123c93193bde61c9c1ce7f35def4abda40a905e4184ebb512d95a",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9636-8d8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal fundus",
+   "folder": "0.0.Normal",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 7348465,
+     "csize": 734369,
+     "method": 8,
+     "bytes": 783002,
+     "sha256": "a040dfc613639ab514d08f50b70dc941b2c2c526c835986dc8e383aca15e743c",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9629-8d8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal fundus",
+   "folder": "0.0.Normal",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 1158139,
+     "csize": 485497,
+     "method": 8,
+     "bytes": 499205,
+     "sha256": "15028c2c17c614c20b97ebe19ac851eb1f103db1d35ec5d172730a0f396ee3e4",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9642-8d8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal fundus",
+   "folder": "0.0.Normal",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 12066519,
+     "csize": 737514,
+     "method": 8,
+     "bytes": 788841,
+     "sha256": "b764ed3a687e3985f1e1c47a179709f70f6b977f7a1641f1233f3ec12ea5edac",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9627-8d8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal fundus",
+   "folder": "0.0.Normal",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 93,
+     "csize": 481931,
+     "method": 8,
+     "bytes": 496401,
+     "sha256": "a04ce148aaaa41ec7cee7db90145a5b7ee8c5ce959ed0b629d058cbe4f21d705",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9628-8d8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal fundus",
+   "folder": "0.0.Normal",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 482117,
+     "csize": 675929,
+     "method": 8,
+     "bytes": 734753,
+     "sha256": "c59d27c3333fbc1ac5b7f0cf1c009dc36fc764c9749cadf0d295d906e60c7b26",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92e7-8d8",
+   "kind": "image",
+   "label": "dr",
+   "answer": "Diabetic retinopathy",
+   "folder": "1.1.DR3",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 91274976,
+     "csize": 600976,
+     "method": 8,
+     "bytes": 612130,
+     "sha256": "21737db605d8f743969546762fdd9ce3ad7e18420da8c17a4fd98d9cd619f61f",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92e8-8d8",
+   "kind": "image",
+   "label": "dr",
+   "answer": "Diabetic retinopathy",
+   "folder": "1.1.DR3",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 91876042,
+     "csize": 487502,
+     "method": 8,
+     "bytes": 499944,
+     "sha256": "078332273529d10fb5b77043a04fcbe19e1d726b0fb578a484d42d538bd47a88",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92fc-8d8",
+   "kind": "image",
+   "label": "dr",
+   "answer": "Diabetic retinopathy",
+   "folder": "1.1.DR3",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 99291923,
+     "csize": 409190,
+     "method": 8,
+     "bytes": 423749,
+     "sha256": "6ee187fabb5dea7d0005ff5136ed6219cd354350f247ae63b27c0930a66e21ab",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa93db-8d8",
+   "kind": "image",
+   "label": "dr",
+   "answer": "Diabetic retinopathy",
+   "folder": "1.0.DR2",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 80587806,
+     "csize": 183401,
+     "method": 8,
+     "bytes": 195660,
+     "sha256": "9df0bd49d460a35db34ea3ef1a3b36e800641e1939e39d8f1203263d5bb72d17",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa93eb-8d8",
+   "kind": "image",
+   "label": "dr",
+   "answer": "Diabetic retinopathy",
+   "folder": "1.0.DR2",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 88802794,
+     "csize": 476734,
+     "method": 8,
+     "bytes": 492537,
+     "sha256": "657068c177fe38d518da0bf7b06590935acf464aa0b2204406e35340bde2ba7e",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa93b1-8d8",
+   "kind": "image",
+   "label": "dr",
+   "answer": "Diabetic retinopathy",
+   "folder": "1.0.DR2",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 60948979,
+     "csize": 742334,
+     "method": 8,
+     "bytes": 788809,
+     "sha256": "75ee5bed61b8d3c756007df87e89a9f513cd1395bd9cdd6e8f0e307309328d12",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa93d7-8d8",
+   "kind": "image",
+   "label": "dr",
+   "answer": "Diabetic retinopathy",
+   "folder": "1.0.DR2",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 78376231,
+     "csize": 615162,
+     "method": 8,
+     "bytes": 630834,
+     "sha256": "4020d0950dad35350f36cc896b435910a3ff35e4014f6c885b594a3c7c2d5359",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92ea-8d8",
+   "kind": "image",
+   "label": "dr",
+   "answer": "Diabetic retinopathy",
+   "folder": "1.1.DR3",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 92846798,
+     "csize": 666335,
+     "method": 8,
+     "bytes": 718760,
+     "sha256": "b29e8fabf3c1b361f4112ceff2fd08737ea16576185be6b7b41101f6dc2d25dc",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9387-8d8",
+   "kind": "image",
+   "label": "laser",
+   "answer": "Laser photocoagulation scars",
+   "folder": "27.Laser Spots",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 220917525,
+     "csize": 461727,
+     "method": 8,
+     "bytes": 481117,
+     "sha256": "5eb7f6756f2306859ba0fda2e6b45b41519122ba04fe8b6f968dd47e642c5100",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9383-8d8",
+   "kind": "image",
+   "label": "laser",
+   "answer": "Laser photocoagulation scars",
+   "folder": "27.Laser Spots",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 219857324,
+     "csize": 231579,
+     "method": 8,
+     "bytes": 241967,
+     "sha256": "13774d50dfae730bbf4aa01cca99fdaa1803b10d3b3fd665426d4b2a30dac769",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa937f-8d8",
+   "kind": "image",
+   "label": "laser",
+   "answer": "Laser photocoagulation scars",
+   "folder": "27.Laser Spots",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 218781332,
+     "csize": 192589,
+     "method": 8,
+     "bytes": 203630,
+     "sha256": "a5d91597938e03fb053dae415f10e8cce81ade6c028b105fc7f656452f040cd6",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9378-8d8",
+   "kind": "image",
+   "label": "laser",
+   "answer": "Laser photocoagulation scars",
+   "folder": "27.Laser Spots",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 216882965,
+     "csize": 197107,
+     "method": 8,
+     "bytes": 209171,
+     "sha256": "5acfa1eed615805066d6186f4ca375a1525021684cb1644b297b61520546bac8",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9380-8d8",
+   "kind": "image",
+   "label": "laser",
+   "answer": "Laser photocoagulation scars",
+   "folder": "27.Laser Spots",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 218974018,
+     "csize": 225002,
+     "method": 8,
+     "bytes": 234622,
+     "sha256": "30a6cd5e610e383a3fb9e0ca82b6000f621e099be6594ec06c0d15b7e14391c9",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9377-8d8",
+   "kind": "image",
+   "label": "laser",
+   "answer": "Laser photocoagulation scars",
+   "folder": "27.Laser Spots",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 216705570,
+     "csize": 177298,
+     "method": 8,
+     "bytes": 190321,
+     "sha256": "6ee4e3eb70ac2c3c0dad32d2ea24a646bf70faecb32b62aee07c6d144ddc6ac0",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9386-8d8",
+   "kind": "image",
+   "label": "laser",
+   "answer": "Laser photocoagulation scars",
+   "folder": "27.Laser Spots",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 220744673,
+     "csize": 172755,
+     "method": 8,
+     "bytes": 187719,
+     "sha256": "0970c63c020dcd10892663c64118d83885ca989e89ba8ac3fd498800187b6dcb",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-eb83e7b2d06c",
+   "kind": "image",
+   "label": "htn",
+   "answer": "Hypertensive retinopathy",
+   "folder": "11.Severe hypertensive retinopathy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 121651224,
+     "csize": 230167,
+     "method": 8,
+     "bytes": 239302,
+     "sha256": "57e9ba7d6254e48963fea87de92d26809cac1b01a2f9a9da79f8700b412a3d34",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1004c8163b0f",
+   "kind": "image",
+   "label": "htn",
+   "answer": "Hypertensive retinopathy",
+   "folder": "11.Severe hypertensive retinopathy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 118418800,
+     "csize": 304943,
+     "method": 8,
+     "bytes": 330919,
+     "sha256": "d429388279040f0ab4191a9b41af431045c785e2fe7015abaf6e27578501a7ed",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-e3a5c4421746",
+   "kind": "image",
+   "label": "htn",
+   "answer": "Hypertensive retinopathy",
+   "folder": "11.Severe hypertensive retinopathy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 121420955,
+     "csize": 230149,
+     "method": 8,
+     "bytes": 237904,
+     "sha256": "147add7ede3bc7a51ddcd9e9931e151ecc0314b7a1c584f38f5e6719c02e9fda",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-3eed6f7d0e92",
+   "kind": "image",
+   "label": "htn",
+   "answer": "Hypertensive retinopathy",
+   "folder": "11.Severe hypertensive retinopathy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 119970892,
+     "csize": 230258,
+     "method": 8,
+     "bytes": 268866,
+     "sha256": "e7c40e6174541d5a74e864e011bc1b26d8bad176212ec2d60fef1d2a54ba2fdf",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-239904f2225e",
+   "kind": "image",
+   "label": "htn",
+   "answer": "Hypertensive retinopathy",
+   "folder": "11.Severe hypertensive retinopathy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 119253138,
+     "csize": 236339,
+     "method": 8,
+     "bytes": 274775,
+     "sha256": "5d4f1d5751408a58030354aee714940a92ebc9cc8823c544e9e8f066ab83afa8",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-ceee348eb636",
+   "kind": "image",
+   "label": "htn",
+   "answer": "Hypertensive retinopathy",
+   "folder": "11.Severe hypertensive retinopathy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 120949208,
+     "csize": 471627,
+     "method": 8,
+     "bytes": 484762,
+     "sha256": "7b6ff68b6d09f07395230de223c91eb70c9323e3979e896f6b95fe399a7f3654",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-f40442bb45d1",
+   "kind": "image",
+   "label": "htn",
+   "answer": "Hypertensive retinopathy",
+   "folder": "11.Severe hypertensive retinopathy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 122117023,
+     "csize": 226286,
+     "method": 8,
+     "bytes": 233316,
+     "sha256": "7a9cf3f7e2bc592ace67764834cba957d16a5c1b924ea75af93753d3607f183d",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-21e273fb1c3c",
+   "kind": "image",
+   "label": "htn",
+   "answer": "Hypertensive retinopathy",
+   "folder": "11.Severe hypertensive retinopathy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 118968087,
+     "csize": 284931,
+     "method": 8,
+     "bytes": 313225,
+     "sha256": "2a87cb6522b5d0250a6e852665c509f9e581a8ed5f763c6922805a93bdc4b033",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95a8-8d8",
+   "kind": "image",
+   "label": "discswell",
+   "answer": "Optic disc swelling",
+   "folder": "12.Disc swelling and elevation",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 123096880,
+     "csize": 197278,
+     "method": 8,
+     "bytes": 209661,
+     "sha256": "1cdcdd7b6d02e90e117099247d5a1fcb3f1ccdabcae3c8a2bcad1cb251a593eb",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95ab-8d8",
+   "kind": "image",
+   "label": "discswell",
+   "answer": "Optic disc swelling",
+   "folder": "12.Disc swelling and elevation",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 123919516,
+     "csize": 197141,
+     "method": 8,
+     "bytes": 208280,
+     "sha256": "357293c6e19c9a2376c0ee447aaed0967ce182415eb7d79f081fe116fda02555",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95a6-8d8",
+   "kind": "image",
+   "label": "discswell",
+   "answer": "Optic disc swelling",
+   "folder": "12.Disc swelling and elevation",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 122736447,
+     "csize": 173333,
+     "method": 8,
+     "bytes": 187042,
+     "sha256": "caf90cadac3e1fad2350db919b3c2809054c880fb5a5c16ae5b8e96ae6a3bce8",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95a4-8d8",
+   "kind": "image",
+   "label": "discswell",
+   "answer": "Optic disc swelling",
+   "folder": "12.Disc swelling and elevation",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 122343501,
+     "csize": 205364,
+     "method": 8,
+     "bytes": 213698,
+     "sha256": "7147ed11288d6b2190dd5e24dcefac416224646135ef458be6b9528d05864f5b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95ae-8d8",
+   "kind": "image",
+   "label": "discswell",
+   "answer": "Optic disc swelling",
+   "folder": "12.Disc swelling and elevation",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 124558398,
+     "csize": 209964,
+     "method": 8,
+     "bytes": 221636,
+     "sha256": "0514a91e94c3afaf810f8e9447f51e033f83935d3067b40701f102b69e685477",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95a7-8d8",
+   "kind": "image",
+   "label": "discswell",
+   "answer": "Optic disc swelling",
+   "folder": "12.Disc swelling and elevation",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 122909893,
+     "csize": 186874,
+     "method": 8,
+     "bytes": 199320,
+     "sha256": "05c46027ddc99e82b82e7cae0005208980be7aed9e1a447b0402b940b1c1691b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95a9-8d8",
+   "kind": "image",
+   "label": "discswell",
+   "answer": "Optic disc swelling",
+   "folder": "12.Disc swelling and elevation",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 123294271,
+     "csize": 199797,
+     "method": 8,
+     "bytes": 210838,
+     "sha256": "07b683902fc6e69c6dbde5b1d0b6ceab207161406dcf2a9a22e9393dee11ceb6",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95af-8d8",
+   "kind": "image",
+   "label": "discswell",
+   "answer": "Optic disc swelling",
+   "folder": "12.Disc swelling and elevation",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 124768475,
+     "csize": 415503,
+     "method": 8,
+     "bytes": 430884,
+     "sha256": "6b60412bf7f54ac68a165e8f16e595d14f1718a6875abc6a2381ddb82b53aca2",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd2d-8d8",
+   "kind": "image",
+   "label": "atrophy",
+   "answer": "Optic atrophy",
+   "folder": "10.1.Optic atrophy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 117201565,
+     "csize": 475642,
+     "method": 8,
+     "bytes": 495500,
+     "sha256": "b5c37483f41e66f1b54b0d621949d9e09d2d221c9a0af50fa4645e88201f20d1",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd2e-8d8",
+   "kind": "image",
+   "label": "atrophy",
+   "answer": "Optic atrophy",
+   "folder": "10.1.Optic atrophy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 117677308,
+     "csize": 506023,
+     "method": 8,
+     "bytes": 518018,
+     "sha256": "06a4db64ed5fcad96a95f83406ae25e32aba3751cc3e45d8e7cc0ed902ca9f2b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd2c-8d8",
+   "kind": "image",
+   "label": "atrophy",
+   "answer": "Optic atrophy",
+   "folder": "10.1.Optic atrophy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 116750954,
+     "csize": 450510,
+     "method": 8,
+     "bytes": 467331,
+     "sha256": "fdd3848a31d19364d2864db384bbfe552599adbe0c98d0f0d1c85dd8e684c508",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd23-8d8",
+   "kind": "image",
+   "label": "atrophy",
+   "answer": "Optic atrophy",
+   "folder": "10.1.Optic atrophy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 112639111,
+     "csize": 539857,
+     "method": 8,
+     "bytes": 551139,
+     "sha256": "36d7ff2b5ddf37c8047014de2eb4fdec0deba4a41f0d5dffd053345092be1e01",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd28-8d8",
+   "kind": "image",
+   "label": "atrophy",
+   "answer": "Optic atrophy",
+   "folder": "10.1.Optic atrophy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 115070342,
+     "csize": 434272,
+     "method": 8,
+     "bytes": 449943,
+     "sha256": "e675fb5dc9c5d5c11ac4464c35d6a97bb4bf21cd5094a64d876f1b37ac27d303",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd29-8d8",
+   "kind": "image",
+   "label": "atrophy",
+   "answer": "Optic atrophy",
+   "folder": "10.1.Optic atrophy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 115504715,
+     "csize": 462276,
+     "method": 8,
+     "bytes": 476442,
+     "sha256": "8c2c9a5a9e26c839063177a8dc5232d241e7c66b4dc94608659edebd98181314",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd26-8d8",
+   "kind": "image",
+   "label": "atrophy",
+   "answer": "Optic atrophy",
+   "folder": "10.1.Optic atrophy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 114131228,
+     "csize": 497717,
+     "method": 8,
+     "bytes": 510782,
+     "sha256": "1e17ab633d8342503552134b4ef8459b7a00edcaf230dd6d53a2b5b7dce05ddd",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd25-8d8",
+   "kind": "image",
+   "label": "atrophy",
+   "answer": "Optic atrophy",
+   "folder": "10.1.Optic atrophy",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 113630016,
+     "csize": 501111,
+     "method": 8,
+     "bytes": 512574,
+     "sha256": "34882209c29d684c6b3efd16c2af20d9f4a2fda6ef9b11079c64309a90b4fd29",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa933d-8d8",
+   "kind": "image",
+   "label": "glauc",
+   "answer": "Glaucomatous optic disc cupping",
+   "folder": "10.0.Possible glaucoma",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 112249093,
+     "csize": 389853,
+     "method": 8,
+     "bytes": 408972,
+     "sha256": "130ae4b18b1476352a183d2e60d8a0e239fa959a7fe3ced88619420c1f2d7547",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9332-8d8",
+   "kind": "image",
+   "label": "glauc",
+   "answer": "Glaucomatous optic disc cupping",
+   "folder": "10.0.Possible glaucoma",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 108548644,
+     "csize": 410299,
+     "method": 8,
+     "bytes": 426098,
+     "sha256": "9cb76848c1db2adafef491bee18225feb3da827d69164ea865e8bf8d0ddb8761",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9333-8d8",
+   "kind": "image",
+   "label": "glauc",
+   "answer": "Glaucomatous optic disc cupping",
+   "folder": "10.0.Possible glaucoma",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 108959048,
+     "csize": 377938,
+     "method": 8,
+     "bytes": 393970,
+     "sha256": "cc2befbc15ec9456c03c721f4c797d60804729ebfe82655093dbebd9f4096c9b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9339-8d8",
+   "kind": "image",
+   "label": "glauc",
+   "answer": "Glaucomatous optic disc cupping",
+   "folder": "10.0.Possible glaucoma",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 110991170,
+     "csize": 223798,
+     "method": 8,
+     "bytes": 234811,
+     "sha256": "9c1f66cc103011a833692e5b9201e289e009bbbb46263566ff210fddbadb28f9",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa933c-8d8",
+   "kind": "image",
+   "label": "glauc",
+   "answer": "Glaucomatous optic disc cupping",
+   "folder": "10.0.Possible glaucoma",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 111861631,
+     "csize": 387357,
+     "method": 8,
+     "bytes": 401421,
+     "sha256": "52912ae73ab994e6a3b1fa7bf127b60357808b11e35fc4e2fc94715e41f29ed9",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9331-8d8",
+   "kind": "image",
+   "label": "glauc",
+   "answer": "Glaucomatous optic disc cupping",
+   "folder": "10.0.Possible glaucoma",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 108291330,
+     "csize": 257209,
+     "method": 8,
+     "bytes": 265733,
+     "sha256": "01ef11404af43607f6349095b53759c1a6843f1fa7760d3676c296ec34b79fcc",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd1b-8d8",
+   "kind": "image",
+   "label": "crvo",
+   "answer": "Central retinal vein occlusion",
+   "folder": "2.1.CRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 180306577,
+     "csize": 205258,
+     "method": 8,
+     "bytes": 215520,
+     "sha256": "5993b9f45dd7eb09c32b48cc52efc32e6cb4b8afa05e0255651c1b970cb756fa",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd0f-8d8",
+   "kind": "image",
+   "label": "crvo",
+   "answer": "Central retinal vein occlusion",
+   "folder": "2.1.CRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 177899354,
+     "csize": 178946,
+     "method": 8,
+     "bytes": 188016,
+     "sha256": "487a609954f0536c743d01d5901dbf11292b8509a2ea85946a26a2c7647395bd",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd17-8d8",
+   "kind": "image",
+   "label": "crvo",
+   "answer": "Central retinal vein occlusion",
+   "folder": "2.1.CRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 179512699,
+     "csize": 223459,
+     "method": 8,
+     "bytes": 231757,
+     "sha256": "1b0524307a34029f29631bd5b2fb2673f72012328bbc050e9790a61b05dc97a9",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd1a-8d8",
+   "kind": "image",
+   "label": "crvo",
+   "answer": "Central retinal vein occlusion",
+   "folder": "2.1.CRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 180119670,
+     "csize": 186816,
+     "method": 8,
+     "bytes": 197496,
+     "sha256": "1b6a95cf27b1af35079aa0368f390d2b72b8bec3f60b147382e56204fffd0a2a",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd1e-8d8",
+   "kind": "image",
+   "label": "crvo",
+   "answer": "Central retinal vein occlusion",
+   "folder": "2.1.CRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 180952248,
+     "csize": 219046,
+     "method": 8,
+     "bytes": 229203,
+     "sha256": "7cb25ba5b27f2a3a20440555182dc9d85a7eab1bd108410f6bfa57af77d80e1a",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd0d-8d8",
+   "kind": "image",
+   "label": "crvo",
+   "answer": "Central retinal vein occlusion",
+   "folder": "2.1.CRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 177450396,
+     "csize": 240313,
+     "method": 8,
+     "bytes": 250349,
+     "sha256": "73bf290a09c75044ae8123eb53ff03eef64c3b011a67ff8c9149ce747536897c",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd14-8d8",
+   "kind": "image",
+   "label": "crvo",
+   "answer": "Central retinal vein occlusion",
+   "folder": "2.1.CRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 178954714,
+     "csize": 192852,
+     "method": 8,
+     "bytes": 205304,
+     "sha256": "d7f0f2e1484782afa823c0ac502b980f8acd74131cd8b93c24128034400e417c",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95fb-8d8",
+   "kind": "image",
+   "label": "brvo",
+   "answer": "Branch retinal vein occlusion",
+   "folder": "2.0.BRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 161902967,
+     "csize": 769533,
+     "method": 8,
+     "bytes": 816391,
+     "sha256": "9b949c625d37454dc80f1587587e46947018c183dc919348b0e87e615c63a3c8",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa960b-8d8",
+   "kind": "image",
+   "label": "brvo",
+   "answer": "Branch retinal vein occlusion",
+   "folder": "2.0.BRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 169468959,
+     "csize": 491439,
+     "method": 8,
+     "bytes": 506078,
+     "sha256": "633e9cedf0e4c177619991d2ee80658ddbf98898a6b40f514770f42c36c98510",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9604-8d8",
+   "kind": "image",
+   "label": "brvo",
+   "answer": "Branch retinal vein occlusion",
+   "folder": "2.0.BRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 166291639,
+     "csize": 489230,
+     "method": 8,
+     "bytes": 501677,
+     "sha256": "f63839249bfdb1fcb7e0144c5daad4f1df0b55b413dc3df69d4625367c287013",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95f7-8d8",
+   "kind": "image",
+   "label": "brvo",
+   "answer": "Branch retinal vein occlusion",
+   "folder": "2.0.BRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 160233923,
+     "csize": 221274,
+     "method": 8,
+     "bytes": 230715,
+     "sha256": "f1131352426173bab7aff89c5c0c9e3b6208a7fa264265944104c3c63cbbcde7",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95f5-8d8",
+   "kind": "image",
+   "label": "brvo",
+   "answer": "Branch retinal vein occlusion",
+   "folder": "2.0.BRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 159276563,
+     "csize": 465769,
+     "method": 8,
+     "bytes": 479170,
+     "sha256": "bf43240fe320133404263fce9f6e80cfec47ecb0d3994755b8c97c6d295f31be",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa960f-8d8",
+   "kind": "image",
+   "label": "brvo",
+   "answer": "Branch retinal vein occlusion",
+   "folder": "2.0.BRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 171784948,
+     "csize": 470489,
+     "method": 8,
+     "bytes": 485061,
+     "sha256": "500689c25c471294ebfc8261ae6e4778ad7ef64a083f9287c999872cd1fdbaed",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa95f2-8d8",
+   "kind": "image",
+   "label": "brvo",
+   "answer": "Branch retinal vein occlusion",
+   "folder": "2.0.BRVO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 158108871,
+     "csize": 488816,
+     "method": 8,
+     "bytes": 502690,
+     "sha256": "c44733a53303850e236d64d9128a6eba47e71f0083b36e715cf2d60bbadb692f",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd32-8d8",
+   "kind": "image",
+   "label": "rao",
+   "answer": "Retinal artery occlusion",
+   "folder": "3.RAO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 286592236,
+     "csize": 198096,
+     "method": 8,
+     "bytes": 206203,
+     "sha256": "d6e3b2e76390e813f1def5a0d7f0970d4c3721e68f034263ac91614014078c82",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd34-8d8",
+   "kind": "image",
+   "label": "rao",
+   "answer": "Retinal artery occlusion",
+   "folder": "3.RAO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 287176994,
+     "csize": 208084,
+     "method": 8,
+     "bytes": 217854,
+     "sha256": "d37c9e9dfaff730e64af117d3acd924a1cf293378787817c51c485f443176cad",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd30-8d8",
+   "kind": "image",
+   "label": "rao",
+   "answer": "Retinal artery occlusion",
+   "folder": "3.RAO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 286023239,
+     "csize": 200657,
+     "method": 8,
+     "bytes": 211787,
+     "sha256": "cc699360799376d50dfbc55a4a45c0535b039ef4555c1df2c8079834e17948a1",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd31-8d8",
+   "kind": "image",
+   "label": "rao",
+   "answer": "Retinal artery occlusion",
+   "folder": "3.RAO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 286223984,
+     "csize": 368164,
+     "method": 8,
+     "bytes": 381265,
+     "sha256": "9d06847a2443ebe546dce9efd7748618eff82d50c763710220f0ecaa1acea4ed",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd3e-8d8",
+   "kind": "image",
+   "label": "rao",
+   "answer": "Retinal artery occlusion",
+   "folder": "3.RAO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 289205392,
+     "csize": 162728,
+     "method": 8,
+     "bytes": 173660,
+     "sha256": "ee94fd9e261bd0099c667712c71826097d6cc784a24781390c904b8ecd9d7e13",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd3d-8d8",
+   "kind": "image",
+   "label": "rao",
+   "answer": "Retinal artery occlusion",
+   "folder": "3.RAO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 289027881,
+     "csize": 177423,
+     "method": 8,
+     "bytes": 187938,
+     "sha256": "c09b46e756f114549df857c06fc37f978326690eeeaf9779da1d0276a78aae9d",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd36-8d8",
+   "kind": "image",
+   "label": "rao",
+   "answer": "Retinal artery occlusion",
+   "folder": "3.RAO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 287599326,
+     "csize": 226090,
+     "method": 8,
+     "bytes": 235848,
+     "sha256": "2e6c4a49395ebf8ec0a8a5168f8270d5402cb9475d6681cd57f791491b4adc7a",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-202efd3c-8d8",
+   "kind": "image",
+   "label": "rao",
+   "answer": "Retinal artery occlusion",
+   "folder": "3.RAO",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 288803372,
+     "csize": 224421,
+     "method": 8,
+     "bytes": 233869,
+     "sha256": "1b68536b4edbc61532f80f5e3ee0b06def4702af9cbd0f6cf63c1db5ca2a192b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9359-8d8",
+   "kind": "image",
+   "label": "rd",
+   "answer": "Retinal detachment",
+   "folder": "4.Rhegmatogenous RD",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 301953194,
+     "csize": 464241,
+     "method": 8,
+     "bytes": 486103,
+     "sha256": "bcec0933b243c1302d632bdc1b7fb00224f060faafb409030d7a9d4c5a5a8b08",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9367-8d8",
+   "kind": "image",
+   "label": "rd",
+   "answer": "Retinal detachment",
+   "folder": "4.Rhegmatogenous RD",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 308490787,
+     "csize": 497114,
+     "method": 8,
+     "bytes": 512609,
+     "sha256": "5b28fb07164fd3f2d752f0ae8ffe69daadb845d9aa03d9473bd43dbc0e7f6364",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9343-8d8",
+   "kind": "image",
+   "label": "rd",
+   "answer": "Retinal detachment",
+   "folder": "4.Rhegmatogenous RD",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 291700444,
+     "csize": 469579,
+     "method": 8,
+     "bytes": 488666,
+     "sha256": "8c88e4f644f609c2e86a154f74dfa30a9cd5375039706798d77ca34dc48761c6",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa936e-8d8",
+   "kind": "image",
+   "label": "rd",
+   "answer": "Retinal detachment",
+   "folder": "4.Rhegmatogenous RD",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 311766691,
+     "csize": 440636,
+     "method": 8,
+     "bytes": 462678,
+     "sha256": "385512279614554ea82dc8823026367da7f70761238e8a46ac501499b35dba51",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9358-8d8",
+   "kind": "image",
+   "label": "rd",
+   "answer": "Retinal detachment",
+   "folder": "4.Rhegmatogenous RD",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 301496122,
+     "csize": 456970,
+     "method": 8,
+     "bytes": 475675,
+     "sha256": "94362166ec27ac79e0348586c700ba9732c758c4515e866d540d1b3aca200b4a",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9364-8d8",
+   "kind": "image",
+   "label": "rd",
+   "answer": "Retinal detachment",
+   "folder": "4.Rhegmatogenous RD",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 307104866,
+     "csize": 467157,
+     "method": 8,
+     "bytes": 487964,
+     "sha256": "b5680f6aaedb2d8814309c016fa12a1df36dcd967c61ce8fae821205776b9d30",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa955d-8d8",
+   "kind": "image",
+   "label": "rp",
+   "answer": "Retinitis pigmentosa",
+   "folder": "15.0.Retinitis pigmentosa",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 133674279,
+     "csize": 210766,
+     "method": 8,
+     "bytes": 220960,
+     "sha256": "816899178c5a044cf03ddb6624dbcda3e808dc7a1df9e5ba54509c54bc21fddf",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9562-8d8",
+   "kind": "image",
+   "label": "rp",
+   "answer": "Retinitis pigmentosa",
+   "folder": "15.0.Retinitis pigmentosa",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 137616549,
+     "csize": 222627,
+     "method": 8,
+     "bytes": 232394,
+     "sha256": "9129663893c43a05c8f481d9fa4435abefc8883b9db20f6b972f01437641501b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9567-8d8",
+   "kind": "image",
+   "label": "rp",
+   "answer": "Retinitis pigmentosa",
+   "folder": "15.0.Retinitis pigmentosa",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 139384391,
+     "csize": 231534,
+     "method": 8,
+     "bytes": 241065,
+     "sha256": "4a3b42d1461cdb5c253dd78394da619849944e996742e6fe02316b0ebb8b2367",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa94e2-8d8",
+   "kind": "image",
+   "label": "myopia",
+   "answer": "Pathological myopia",
+   "folder": "9.Pathological myopia",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 386671419,
+     "csize": 396313,
+     "method": 8,
+     "bytes": 415500,
+     "sha256": "59936133df3c2f6d0b36e11427e696cf208a1e794a859a5b9beb99fe8462bb03",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa94fe-8d8",
+   "kind": "image",
+   "label": "myopia",
+   "answer": "Pathological myopia",
+   "folder": "9.Pathological myopia",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 398572904,
+     "csize": 486483,
+     "method": 8,
+     "bytes": 497989,
+     "sha256": "6793a43ebfd1844ecd4dc2d3fe7611f14af970b298d7030d499a444d758f253c",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa94d6-8d8",
+   "kind": "image",
+   "label": "myopia",
+   "answer": "Pathological myopia",
+   "folder": "9.Pathological myopia",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 381496492,
+     "csize": 436595,
+     "method": 8,
+     "bytes": 447811,
+     "sha256": "3699079ac02d9736ca69af32f35008bae0f4204f84a2477066a0e369ddaf2fe0",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa94e1-8d8",
+   "kind": "image",
+   "label": "myopia",
+   "answer": "Pathological myopia",
+   "folder": "9.Pathological myopia",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 386156024,
+     "csize": 515291,
+     "method": 8,
+     "bytes": 525623,
+     "sha256": "7d2315224543659b849be52168aaf4c7f0dc580936e82fc7f2260ecc921e71ab",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa94f8-8d8",
+   "kind": "image",
+   "label": "myopia",
+   "answer": "Pathological myopia",
+   "folder": "9.Pathological myopia",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 395575371,
+     "csize": 490373,
+     "method": 8,
+     "bytes": 501587,
+     "sha256": "74d329b89df316c28300d79d90b7cfa2aac102e73998acc5db0dca70ec4ebe15",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa94fc-8d8",
+   "kind": "image",
+   "label": "myopia",
+   "answer": "Pathological myopia",
+   "folder": "9.Pathological myopia",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 397445855,
+     "csize": 661496,
+     "method": 8,
+     "bytes": 675447,
+     "sha256": "98ae614801be2f0b6ef1f927ff8dbf04c2c278548ddeff6c5565b3a625527134",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa9503-8d8",
+   "kind": "image",
+   "label": "myopia",
+   "answer": "Pathological myopia",
+   "folder": "9.Pathological myopia",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 400439892,
+     "csize": 455738,
+     "method": 8,
+     "bytes": 467694,
+     "sha256": "c37ead60c9376a61f775d244bc3cea3ad90637cfa823bae0ddfac77f037a8f0f",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa94d8-8d8",
+   "kind": "image",
+   "label": "myopia",
+   "answer": "Pathological myopia",
+   "folder": "9.Pathological myopia",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 382459117,
+     "csize": 446990,
+     "method": 8,
+     "bytes": 460830,
+     "sha256": "41f684153e21a1bdde94647691d71dcb36aeeb349dd73820648995fedac9d59f",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92c5-8d8",
+   "kind": "image",
+   "label": "myel",
+   "answer": "Myelinated nerve fibres",
+   "folder": "17.Myelinated nerve fiber",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 150910073,
+     "csize": 234645,
+     "method": 8,
+     "bytes": 241006,
+     "sha256": "fbd7e0db51279c3d9a0e81ded9bb2534af1056c89ebfd590c9dc9c47a114bd97",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92c4-8d8",
+   "kind": "image",
+   "label": "myel",
+   "answer": "Myelinated nerve fibres",
+   "folder": "17.Myelinated nerve fiber",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 150679544,
+     "csize": 230421,
+     "method": 8,
+     "bytes": 230942,
+     "sha256": "e87d29525c5bab6dc0aec9b84cd35c017082b578b0fe99b5d517f114db75ce1f",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92c1-8d8",
+   "kind": "image",
+   "label": "myel",
+   "answer": "Myelinated nerve fibres",
+   "folder": "17.Myelinated nerve fiber",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 149805004,
+     "csize": 236266,
+     "method": 8,
+     "bytes": 245504,
+     "sha256": "a783157b8177c5e58b39d69e2508e9b4244b4a482901e1179ec1df76a2af7489",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92c6-8d8",
+   "kind": "image",
+   "label": "myel",
+   "answer": "Myelinated nerve fibres",
+   "folder": "17.Myelinated nerve fiber",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 151144826,
+     "csize": 232809,
+     "method": 8,
+     "bytes": 239935,
+     "sha256": "9b7bbc24475c2fc607427b1b0d2cdcea7d4d643fc04bf2ec5654e8e192396522",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92c7-8d8",
+   "kind": "image",
+   "label": "myel",
+   "answer": "Myelinated nerve fibres",
+   "folder": "17.Myelinated nerve fiber",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 151377743,
+     "csize": 205930,
+     "method": 8,
+     "bytes": 213759,
+     "sha256": "0e9f9792c973ce1a2e5bf678d9fea903e5d59345ffacda33c2e9cdc4aed4e9b0",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92c3-8d8",
+   "kind": "image",
+   "label": "myel",
+   "answer": "Myelinated nerve fibres",
+   "folder": "17.Myelinated nerve fiber",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 150462109,
+     "csize": 217327,
+     "method": 8,
+     "bytes": 223824,
+     "sha256": "3ea121e655467b7f7d53dcabaaa3591213c3f569ddf78431707c5557b91eb728",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92ca-8d8",
+   "kind": "image",
+   "label": "myel",
+   "answer": "Myelinated nerve fibres",
+   "folder": "17.Myelinated nerve fiber",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 152015847,
+     "csize": 187364,
+     "method": 8,
+     "bytes": 196635,
+     "sha256": "a0289d1e72b0fab357f3aff6332e0210c4dd7a7386580f966e4b91a12a8806ea",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92cb-8d8",
+   "kind": "image",
+   "label": "myel",
+   "answer": "Myelinated nerve fibres",
+   "folder": "17.Myelinated nerve fiber",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 152203319,
+     "csize": 438689,
+     "method": 8,
+     "bytes": 447196,
+     "sha256": "fd82c8ea7f9a4d830360b0939c25ca21f78f1a1d5dc626b31730048a90ad5a1d",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92e1-8d8",
+   "kind": "image",
+   "label": "mh",
+   "answer": "Macular hole",
+   "folder": "8.MH",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 379171453,
+     "csize": 440270,
+     "method": 8,
+     "bytes": 454155,
+     "sha256": "c1285965124539e2260099e3e2782e91edbfdfc1682cf1f87fe436c923e083ec",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92d4-8d8",
+   "kind": "image",
+   "label": "mh",
+   "answer": "Macular hole",
+   "folder": "8.MH",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 373436297,
+     "csize": 468438,
+     "method": 8,
+     "bytes": 480634,
+     "sha256": "c3aa2be608d9289397d07a56d9c89930146c3deba8094573c108975d6100eac4",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92e2-8d8",
+   "kind": "image",
+   "label": "mh",
+   "answer": "Macular hole",
+   "folder": "8.MH",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 379611810,
+     "csize": 339393,
+     "method": 8,
+     "bytes": 356045,
+     "sha256": "609440c6a1fafe2d264cee2a10ac5f890d9df500ae6f7b0dc2667a699bae028b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92d1-8d8",
+   "kind": "image",
+   "label": "mh",
+   "answer": "Macular hole",
+   "folder": "8.MH",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 372109528,
+     "csize": 407564,
+     "method": 8,
+     "bytes": 422163,
+     "sha256": "6d2625bff7305515cd544d1b6076b0a9fed12fa86017aadce25ce579892b8210",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92cc-8d8",
+   "kind": "image",
+   "label": "mh",
+   "answer": "Macular hole",
+   "folder": "8.MH",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 370037755,
+     "csize": 415826,
+     "method": 8,
+     "bytes": 432400,
+     "sha256": "56b7c3cb6077810271e3ef57e40ba6eceebc103115d626031937aa8832dde033",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92d5-8d8",
+   "kind": "image",
+   "label": "mh",
+   "answer": "Macular hole",
+   "folder": "8.MH",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 373904822,
+     "csize": 432316,
+     "method": 8,
+     "bytes": 446969,
+     "sha256": "3de33470fbf7f50329cb38dc68797ba3b02144de3f57eb74052f6655413d2e41",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "jsiec-1ffa92dd-8d8",
+   "kind": "image",
+   "label": "mh",
+   "answer": "Macular hole",
+   "folder": "8.MH",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/3477553/files/1000images.zip/content",
+     "offset": 377372216,
+     "csize": 471546,
+     "method": 8,
+     "bytes": 484999,
+     "sha256": "9c82837547179646d28f9d9202d0a7007a9010bc4267c875cfba61257af641d0",
+     "mime": "image/jpeg"
+    }
+   }
+  }
+ ]
+}
