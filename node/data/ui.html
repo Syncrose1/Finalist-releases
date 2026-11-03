@@ -416,12 +416,10 @@ function controls(s) {
     last.ctl = key;
     const others = (s.friends || []).filter((e) => !sh || e !== sh.email);
     c.innerHTML = `
-      <div class="line"><div><h3>Reach it from anywhere</h3><div class="v">${s.tailnet
-        ? (s.public ? "On: open to the internet while it runs, for a hospital PC or a borrowed laptop. A Finalist sign-in is still needed for everything."
-                    : "Off: only your own devices on Tailscale reach it. Turn it on to use it from a hospital PC or a borrowed laptop.")
-        : "Needs Tailscale on this computer. Without it, only this computer reaches the node."}</div>
+      <div><h3>Reach it from anywhere</h3><div class="v">${s.tailnet
+        ? "Open to the internet while it runs, for a hospital PC, a borrowed laptop or a phone on mobile data. A Finalist sign-in is still needed for everything, and a share only lets in the email it names."
+        : "Needs Tailscale on this computer. Without it, only this computer reaches the node, and you can't share it."}</div>
         ${s.tailnet ? `<div class="v">From another device, Finalist's “Node elsewhere?” takes</div><div class="v"><b>${esc(s.tailnet)}</b></div>` : ""}</div>
-        <button class="sw" id="reach" role="switch" aria-checked="${!!s.public}" aria-label="Reach it from anywhere" ${s.tailnet ? "" : "disabled"}></button></div>
       <hr>
       <div><h3>Share it with a friend</h3><div class="v" id="shv"></div>
       ${sh ? `<div class="form">
@@ -438,7 +436,6 @@ function controls(s) {
     c.classList.remove("swap"); void c.offsetWidth; c.classList.add("swap");
     const fail = (e) => { const p = $("#err"); p.hidden = false; p.textContent = e.message; };
     const busy = (el, fn) => async (ev) => { ev && ev.preventDefault(); el.disabled = true; try { await fn(); last.ctl = ""; tick(); } catch (e) { fail(e); el.disabled = false; } };
-    const r = $("#reach"); if (r) r.onclick = busy(r, () => post("/v1/local/public", { on: r.getAttribute("aria-checked") !== "true" }));
     const f = $("#share"); if (f) f.onsubmit = busy(f.querySelector("button"), () => post("/v1/local/share", { email: f.email.value }));
     const x = $("#extend"); if (x) x.onclick = busy(x, () => post("/v1/local/share/extend"));
     const u = $("#unshare"); if (u) u.onclick = busy(u, () => post("/v1/local/share/stop"));
@@ -448,7 +445,8 @@ function controls(s) {
   }
   $("#shv").textContent = sh
     ? `${sh.email} has it for ${left(sh.until, s.now)} more, from their own Finalist account, with their own runs. Your own stations wait meanwhile.`
-    : "Two hours of Claude stations for one friend's Finalist account, with their own runs, never yours. Your own stations wait while it's live.";
+    : s.tailnet ? "Two hours of Claude stations for one friend's Finalist account, with their own runs, never yours. Your own stations wait while it's live. Your friend reaches the node through Tailscale on this computer."
+      : "Sharing needs Tailscale on this computer: your friend reaches the node through it. Install Tailscale and sign in, then restart the node.";
 }
 
 // Datasets for stations (2 Nov 2026): what's here, and whose Finalist accounts may use them. Relaxed on

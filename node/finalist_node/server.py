@@ -271,12 +271,10 @@ def funnel(on):
 
 
 def public_on():
-    """The owner's 'reach it from anywhere' (plan phase 5: in place of the Revision System's Away
-    password): open to the internet whenever the node runs, for hospital PCs and the like."""
-    try:
-        return bool(json.loads((Path(CFG["data"]).expanduser() / "access.json").read_text()).get("public"))
-    except (OSError, ValueError):
-        return False
+    """Reach it from anywhere: on whenever Tailscale is here, with no switch (Raahat, 3 Nov 2026: every
+    request still needs a Finalist sign-in, and a share only lets in the email it names). Without
+    Tailscale, only this computer reaches the node."""
+    return bool(public_url())
 
 
 def set_public(on):
