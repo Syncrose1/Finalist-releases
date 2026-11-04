@@ -121,7 +121,11 @@ def fetch(cfg, name, it):
     elif it["kind"] == "image":            # a photograph (fundus, 3 Nov 2026), kept as it came, as base64
         import base64
         f = it["files"]["img"]
-        data = {"id": it["id"], "mime": f.get("mime", "image/jpeg"), "data": base64.b64encode(blobs["img"]).decode()}
+        if f.get("window"):                # a CT slice (CQ500, 4 Nov 2026): windowed into a PNG here
+            from . import dicom
+            data = {"id": it["id"], "mime": "image/png", "data": base64.b64encode(dicom.png(blobs["img"], tuple(f["window"]))).decode()}
+        else:
+            data = {"id": it["id"], "mime": f.get("mime", "image/jpeg"), "data": base64.b64encode(blobs["img"]).decode()}
     else:
         raise ValueError(f"unknown kind {it['kind']}")
     out.parent.mkdir(parents=True, exist_ok=True)

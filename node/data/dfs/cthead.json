@@ -1,8 +1,8 @@
 {
- "name": "CT head (MultiCaRe case reports)",
+ "name": "CT head (case reports and CQ500)",
  "version": 1,
- "licence": "Per image: CC BY, CC BY-SA, CC0, CC BY-NC (non-commercial)",
- "credit": "Images and captions: open-access case reports on PubMed Central, each credited to its authors under its own licence; collected in MultiCaRe (Nievas Offidani M, Delrieux C et al., Zenodo 10.5281/zenodo.20416562).",
+ "licence": "Per image: CC BY, CC BY-SA, CC0, CC BY-NC (non-commercial); CQ500 slices CC BY-NC-SA",
+ "credit": "Images and captions: open-access case reports on PubMed Central, each credited to its authors under its own licence; collected in MultiCaRe (Nievas Offidani M, Delrieux C et al., Zenodo 10.5281/zenodo.20416562). CQ500: Chilamkurthy S et al. Deep learning algorithms for detection of critical findings in head CT scans. Lancet 2018. Qure.ai, CC BY-NC-SA 4.0. Boxes: BHX, Reis EP et al., PhysioNet 2020, CC BY-SA 4.0.",
  "source": "https://zenodo.org/records/20416562",
  "labels": {
   "edh": "Extradural haematoma",
@@ -14,7 +14,9 @@
   "tumour": "Brain tumour (mass with oedema)",
   "abscess": "Brain abscess",
   "frac": "Skull fracture",
-  "norm": "Normal CT head"
+  "norm": "Normal CT head",
+  "ivh": "Intraventricular haemorrhage",
+  "csdh": "Chronic subdural haematoma"
  },
  "items": [
   {
@@ -3122,6 +3124,2315 @@
      "bytes": 22906,
      "sha256": "4e53713f9b53e2c2714d8ca3d75187a2869bdbfbcbdca99234fa3ab54c431f39",
      "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "cq-5e1464158d",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "boxes": [
+    {
+     "finding": "edh",
+     "box": [
+      178,
+      68,
+      69,
+      35
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 137).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 137 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-137.zip",
+     "offset": 59943858,
+     "csize": 179708,
+     "method": 8,
+     "bytes": 526006,
+     "sha256": "64225a59bcd58ac32fe61c4a8faaf41bdd3f0c7f3ff3c7842802b4cf61499af8",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-7831c13def",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "also": [
+    "sah"
+   ],
+   "boxes": [
+    {
+     "finding": "sah",
+     "box": [
+      241,
+      291,
+      25,
+      155
+     ]
+    },
+    {
+     "finding": "edh",
+     "box": [
+      92,
+      212,
+      53,
+      162
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 434).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 434 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-434.zip",
+     "offset": 3767584,
+     "csize": 182879,
+     "method": 8,
+     "bytes": 526006,
+     "sha256": "ba3022dfdb83e353d7ada6d51ed24b2b7eed39f0ed822b7c97ac8a376b25d243",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-0673c337d3",
+   "kind": "image",
+   "label": "ivh",
+   "answer": "Intraventricular haemorrhage",
+   "also": [
+    "sah"
+   ],
+   "boxes": [
+    {
+     "finding": "ivh",
+     "box": [
+      248,
+      343,
+      54,
+      52
+     ]
+    },
+    {
+     "finding": "ivh",
+     "box": [
+      151,
+      330,
+      49,
+      54
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 19).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 19 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-19.zip",
+     "offset": 155104,
+     "csize": 158505,
+     "method": 8,
+     "bytes": 171724,
+     "sha256": "54772ffb3a69bfb673abe83f38663cf93436077adf906f43b9fe63a999032ea7",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-18f89310d2",
+   "kind": "image",
+   "label": "ivh",
+   "answer": "Intraventricular haemorrhage",
+   "also": [
+    "sah"
+   ],
+   "boxes": [
+    {
+     "finding": "ivh",
+     "box": [
+      183,
+      283,
+      125,
+      76
+     ]
+    },
+    {
+     "finding": "ivh",
+     "box": [
+      251,
+      210,
+      16,
+      27
+     ]
+    },
+    {
+     "finding": "sah",
+     "box": [
+      134,
+      84,
+      237,
+      338
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 473).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 473 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-473.zip",
+     "offset": 4930778,
+     "csize": 267888,
+     "method": 8,
+     "bytes": 525780,
+     "sha256": "fa6b55a5fc4cfada51f50858bf5f365c1f711c50f600a100ba195985e5b5207b",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-281986cecb",
+   "kind": "image",
+   "label": "ivh",
+   "answer": "Intraventricular haemorrhage",
+   "also": [
+    "ich"
+   ],
+   "boxes": [
+    {
+     "finding": "ivh",
+     "box": [
+      180,
+      192,
+      88,
+      163
+     ]
+    },
+    {
+     "finding": "ivh",
+     "box": [
+      164,
+      182,
+      64,
+      48
+     ]
+    },
+    {
+     "finding": "ich",
+     "box": [
+      135,
+      190,
+      79,
+      134
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 343).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 343 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-343.zip",
+     "offset": 17775127,
+     "csize": 147243,
+     "method": 8,
+     "bytes": 166062,
+     "sha256": "68cedeb647ba306b56b391522e00b19d9b3077758ef133af6f3815b41a45f343",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-8ccb8403af",
+   "kind": "image",
+   "label": "ivh",
+   "answer": "Intraventricular haemorrhage",
+   "also": [
+    "ich"
+   ],
+   "boxes": [
+    {
+     "finding": "ivh",
+     "box": [
+      183,
+      205,
+      46,
+      153
+     ]
+    },
+    {
+     "finding": "ivh",
+     "box": [
+      245,
+      209,
+      25,
+      89
+     ]
+    },
+    {
+     "finding": "ich",
+     "box": [
+      229,
+      207,
+      21,
+      75
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 296).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 296 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-296.zip",
+     "offset": 202296292,
+     "csize": 220189,
+     "method": 8,
+     "bytes": 525930,
+     "sha256": "dab9168fa59f2b009b463863e72e439164168a08ec39b100a4452e5c65ca8286",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-4d704961f1",
+   "kind": "image",
+   "label": "ivh",
+   "answer": "Intraventricular haemorrhage",
+   "boxes": [
+    {
+     "finding": "ivh",
+     "box": [
+      224,
+      152,
+      73,
+      74
+     ]
+    },
+    {
+     "finding": "ivh",
+     "box": [
+      287,
+      298,
+      52,
+      48
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 95).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 95 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-95.zip",
+     "offset": 40506365,
+     "csize": 145988,
+     "method": 8,
+     "bytes": 159256,
+     "sha256": "ff11b530b8b7265e917a461d791bcf0eb0db8c4c65e0894f9bb9465fb2572067",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-278b9dbb74",
+   "kind": "image",
+   "label": "ivh",
+   "answer": "Intraventricular haemorrhage",
+   "boxes": [
+    {
+     "finding": "ivh",
+     "box": [
+      149,
+      173,
+      168,
+      187
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 481).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 481 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-481.zip",
+     "offset": 1779148,
+     "csize": 209285,
+     "method": 8,
+     "bytes": 525850,
+     "sha256": "2fa8158335a5ecc71fc35c569b8488902abcec5e704d47028629f6302e8fab0f",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-16dedc2722",
+   "kind": "image",
+   "label": "ivh",
+   "answer": "Intraventricular haemorrhage",
+   "also": [
+    "ich",
+    "sah"
+   ],
+   "boxes": [
+    {
+     "finding": "ivh",
+     "box": [
+      201,
+      223,
+      121,
+      159
+     ]
+    },
+    {
+     "finding": "ich",
+     "box": [
+      142,
+      204,
+      92,
+      63
+     ]
+    },
+    {
+     "finding": "sah",
+     "box": [
+      135,
+      107,
+      232,
+      301
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 1).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 1 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-1.zip",
+     "offset": 2373670,
+     "csize": 190554,
+     "method": 8,
+     "bytes": 525792,
+     "sha256": "8f7e6ec3f130220ea059cfa774e0e010f21c99ec77ab0977bda7117394d15474",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-e5abb7d41d",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      128,
+      83,
+      93,
+      196
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      236,
+      77,
+      141,
+      296
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      334,
+      155,
+      40,
+      217
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 458).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 458 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-458.zip",
+     "offset": 53825270,
+     "csize": 188011,
+     "method": 8,
+     "bytes": 525946,
+     "sha256": "8adb9a079e5e6d70011d01de4cc5da632b7dc87b5db4bd79dda74aae862a0aa7",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-4279720934",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      120,
+      91,
+      124,
+      321
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 219).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 219 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-219.zip",
+     "offset": 3763596,
+     "csize": 184211,
+     "method": 8,
+     "bytes": 525934,
+     "sha256": "1d215cf941310b2ceb82a964649dc9b8f4040010af10ab45d09e7ac80e8ad592",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-bb759c9019",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      114,
+      65,
+      127,
+      337
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      117,
+      234,
+      30,
+      106
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 480).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 480 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-480.zip",
+     "offset": 7330358,
+     "csize": 185220,
+     "method": 8,
+     "bytes": 199206,
+     "sha256": "77bee2b5546792106e3b1f99875f844497d0e0a1bb512b8bb5b4319a2e0cd937",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-071d9e0eb4",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      89,
+      88,
+      148,
+      288
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      247,
+      79,
+      140,
+      272
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      210,
+      100,
+      28,
+      30
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      332,
+      193,
+      60,
+      153
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 243).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 243 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-243.zip",
+     "offset": 9812400,
+     "csize": 195985,
+     "method": 8,
+     "bytes": 525930,
+     "sha256": "5805bcf242b422fc2124f8c26c818c6f28ae086a91c48ab420413057f7b4b383",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-19520160f9",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      302,
+      98,
+      73,
+      238
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      188,
+      84,
+      61,
+      78
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      347,
+      184,
+      27,
+      89
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      247,
+      296,
+      21,
+      60
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 210).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 210 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-210.zip",
+     "offset": 6041468,
+     "csize": 223201,
+     "method": 8,
+     "bytes": 525776,
+     "sha256": "7b062f004e236c3490160d9548c523053094453538fbe7931956af2ea3aa86f8",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-4fa22789c3",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      119,
+      138,
+      73,
+      285
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      127,
+      150,
+      55,
+      92
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      173,
+      388,
+      17,
+      35
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 190).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 190 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-190.zip",
+     "offset": 712677,
+     "csize": 144273,
+     "method": 8,
+     "bytes": 157678,
+     "sha256": "617a7ff8d0c3fe16d71686d100d2da8cf5f3299657cdc32c908b63e3131be30a",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-de54e5c4c4",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      263,
+      110,
+      142,
+      332
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      269,
+      222,
+      122,
+      214
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 359).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 359 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-359.zip",
+     "offset": 42760732,
+     "csize": 135819,
+     "method": 8,
+     "bytes": 149694,
+     "sha256": "22a6bdd502f3a32feab32e0895866bbfe65a304ab178bb54d71a363ffba5a27a",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-a8d455d101",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      360,
+      151,
+      39,
+      152
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      120,
+      53,
+      147,
+      295
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      281,
+      53,
+      124,
+      369
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      370,
+      220,
+      19,
+      69
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      221,
+      55,
+      43,
+      26
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      139,
+      100,
+      58,
+      146
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 364).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 364 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-364.zip",
+     "offset": 8271138,
+     "csize": 264723,
+     "method": 8,
+     "bytes": 525776,
+     "sha256": "98160986f9b28f4f45f34516c19fa14bfe44132951458051a426a63114b03e1e",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-830653ecf3",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      123,
+      132,
+      93,
+      248
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      330,
+      186,
+      39,
+      136
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      134,
+      147,
+      60,
+      230
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      336,
+      202,
+      32,
+      92
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 358).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 358 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-358.zip",
+     "offset": 7713264,
+     "csize": 237710,
+     "method": 8,
+     "bytes": 525778,
+     "sha256": "81de828828f41b205b64df9a6eb2ae7a1e9941334f9cc8a9733137047f0090ea",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-a5b0786666",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      326,
+      134,
+      67,
+      268
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      123,
+      96,
+      110,
+      352
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      322,
+      132,
+      44,
+      105
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      191,
+      384,
+      85,
+      42
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 238).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 238 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-238.zip",
+     "offset": 58468337,
+     "csize": 190540,
+     "method": 8,
+     "bytes": 525946,
+     "sha256": "547076cdbe503757f3e8c500fe686510c7f5fdf4723f4681ff64ac1c0fa1edb0",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-114ead18b1",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      116,
+      149,
+      127,
+      312
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      123,
+      170,
+      60,
+      109
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      127,
+      357,
+      26,
+      63
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 297).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 297 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-297.zip",
+     "offset": 2839524,
+     "csize": 203518,
+     "method": 8,
+     "bytes": 525940,
+     "sha256": "9ef8702afabaedea922cbdcca53d27c28b6a79c565cf22641ff37f5f3d8f58d2",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-8ac9f0c397",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      103,
+      38,
+      134,
+      421
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      118,
+      122,
+      67,
+      294
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      108,
+      238,
+      32,
+      81
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      141,
+      63,
+      89,
+      113
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 340).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 340 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-340.zip",
+     "offset": 43133921,
+     "csize": 140721,
+     "method": 8,
+     "bytes": 154368,
+     "sha256": "f950ec8ae4f16af23ebb7db8c3a42d3d0c1833c98260edbf98e562711c56f995",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-23c5f0e774",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      278,
+      96,
+      115,
+      342
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      122,
+      95,
+      104,
+      183
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      301,
+      111,
+      29,
+      37
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      331,
+      229,
+      63,
+      206
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 318).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 318 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-318.zip",
+     "offset": 53176117,
+     "csize": 134552,
+     "method": 8,
+     "bytes": 148210,
+     "sha256": "dd9fd3617d312dc252ae4caafb9e02eb4125d577417ba292609f4bf691234e79",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-eb81551621",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "ich",
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      166,
+      169,
+      66,
+      76
+     ]
+    },
+    {
+     "finding": "csdh",
+     "box": [
+      132,
+      225,
+      103,
+      214
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      147,
+      160,
+      83,
+      80
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 346).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 346 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-346.zip",
+     "offset": 3692283,
+     "csize": 122031,
+     "method": 8,
+     "bytes": 131202,
+     "sha256": "1807c1e884f4426b78221e0a5d293b16b9393ae99f39e9cacc689e6a9def961c",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-79ab2cf1da",
+   "kind": "image",
+   "label": "csdh",
+   "answer": "Chronic subdural haematoma",
+   "also": [
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "csdh",
+     "box": [
+      147,
+      106,
+      142,
+      247
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      158,
+      191,
+      31,
+      82
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 114).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 114 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-114.zip",
+     "offset": 3231404,
+     "csize": 234404,
+     "method": 8,
+     "bytes": 525780,
+     "sha256": "9fdf7f4a9c1e96bb32721b9d4574ce0ef2d58b9884f38343576cd59df4d52465",
+     "mime": "application/dicom",
+     "window": [
+      75,
+      215
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-44cf7eb164",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "boxes": [
+    {
+     "finding": "sah",
+     "box": [
+      144,
+      170,
+      178,
+      153
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 406).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 406 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-406.zip",
+     "offset": 44550274,
+     "csize": 139360,
+     "method": 8,
+     "bytes": 154314,
+     "sha256": "e443aab88f001e5588922fd6699d3bb35c51a8eb0c45251b96660cf5113a2a44",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-b1a280c359",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      157,
+      100,
+      69,
+      84
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 352).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 352 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-352.zip",
+     "offset": 14267229,
+     "csize": 198706,
+     "method": 8,
+     "bytes": 525846,
+     "sha256": "945304038a3e0e4e3408c4658df640eb103b1e310598282c223e1f4ce76c599f",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-e65e2a401d",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      227,
+      317,
+      78,
+      99
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 92).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 92 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-92.zip",
+     "offset": 86193381,
+     "csize": 150739,
+     "method": 8,
+     "bytes": 164880,
+     "sha256": "dbdcc160e27cdeedf2d71b515692a3d38e380f5147e5ca595c8ccbb101940215",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-be95d31cbe",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      260,
+      96,
+      75,
+      116
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 485).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 485 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-485.zip",
+     "offset": 5812030,
+     "csize": 147665,
+     "method": 8,
+     "bytes": 161034,
+     "sha256": "503e00345cb5e8e35f16c2953bb53a54560a74d22da6893489751c8caa08277a",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-72f90b6cb8",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      274,
+      224,
+      71,
+      100
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 226).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 226 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-226.zip",
+     "offset": 36087621,
+     "csize": 133089,
+     "method": 8,
+     "bytes": 142304,
+     "sha256": "6c95b2dfbca9f0408fd18a627339b196305cf5a36ccab35bd2bdd16e7ba604f1",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-1869eab2a1",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      274,
+      165,
+      54,
+      127
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 314).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 314 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-314.zip",
+     "offset": 42190214,
+     "csize": 147197,
+     "method": 8,
+     "bytes": 162402,
+     "sha256": "ce54b730011a69d7d45545685ef544216a7a5cdda18e82f41cc61fc1152e33f3",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-d3820042cb",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 460).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 460 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-460.zip",
+     "offset": 76146789,
+     "csize": 159198,
+     "method": 8,
+     "bytes": 172824,
+     "sha256": "b567b1d6f97e03ba417487124141f2a031baf618a86aa6c67652682f481e32f9",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-bff1998aa8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 62).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 168864187,
+     "csize": 138863,
+     "method": 8,
+     "bytes": 152708,
+     "sha256": "7a8eaef65692bc2e75b0c7b9465ad8cfef413c4c87c355b370e664ed2ed6308f",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-cce4650915",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 150).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 150 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-150.zip",
+     "offset": 48857755,
+     "csize": 147099,
+     "method": 8,
+     "bytes": 160658,
+     "sha256": "32057af9a046d2696b5bbe61adbb7c92d34bd081e553c3d1a17eab017c4a0c9f",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-a78a957c4b",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 148).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 148 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-148.zip",
+     "offset": 80858116,
+     "csize": 139647,
+     "method": 8,
+     "bytes": 153396,
+     "sha256": "96c139a1cebe52a20e8b9119dad837c75099e226db58129d9a4e0afc2d0698c5",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-b416032380",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 490).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 490 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-490.zip",
+     "offset": 14217472,
+     "csize": 207303,
+     "method": 8,
+     "bytes": 525784,
+     "sha256": "9bc63d3ad872aa7bcadfcd6c39995cdcf4e47a939000f36984c659ad9cfdda85",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-bc551c9004",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 178).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 178 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-178.zip",
+     "offset": 36804986,
+     "csize": 138752,
+     "method": 8,
+     "bytes": 152214,
+     "sha256": "cedfb76702eacfd3e295a9111c8e17ea6fd138e4c402752272a9aad8275dd75f",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-8c93d396ce",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 442).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 442 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-442.zip",
+     "offset": 45699086,
+     "csize": 149488,
+     "method": 8,
+     "bytes": 162864,
+     "sha256": "600a3d701b0f31593faf3a981f18bdd177229b98bd2ce595dbee5ec7fe661609",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-74fe5813b8",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 464).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 464 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-464.zip",
+     "offset": 8429879,
+     "csize": 200982,
+     "method": 8,
+     "bytes": 525786,
+     "sha256": "f8f2e547f7a0a09be4cec494c1f11cbf4f9742abd703813233877711ca78f569",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-bd0e077858",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 259).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 259 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-259.zip",
+     "offset": 4687864,
+     "csize": 206838,
+     "method": 8,
+     "bytes": 525784,
+     "sha256": "561f2bebb557e46ffb57d08ad35d717c87a60b1e6ae61b4b974418f5ef6703b1",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-2e37dadc5d",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 185).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 185 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-185.zip",
+     "offset": 411862,
+     "csize": 147837,
+     "method": 8,
+     "bytes": 161358,
+     "sha256": "c0155630ee5d3778d8859da15e0e1a42bacd45d7d310c40581f365fae207b177",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-b7068bb1c3",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 307).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 307 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-307.zip",
+     "offset": 2789617,
+     "csize": 231667,
+     "method": 8,
+     "bytes": 525784,
+     "sha256": "fca6020f581f0f5b70ea65737b3960a324eed2a9469d3f64f355513e9920730c",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-7b06a2cf4d",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 327).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 327 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-327.zip",
+     "offset": 34429063,
+     "csize": 156737,
+     "method": 8,
+     "bytes": 170256,
+     "sha256": "05ed14de9b3305dbd859566d2e4ee68c4b5e864e6922d712bbbb76198686828f",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-0bd5ff335d",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 315).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 315 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-315.zip",
+     "offset": 2892555,
+     "csize": 219614,
+     "method": 8,
+     "bytes": 525782,
+     "sha256": "39c6c4ed7d8ca95894989f9dded9a319fb478085eacf08443651ceefd14841ef",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-3e0db506ed",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 394).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 394 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-394.zip",
+     "offset": 4347182,
+     "csize": 144676,
+     "method": 8,
+     "bytes": 158034,
+     "sha256": "3b5e4962d074fc994fe6a96e659b44bd1ab1f5906ab41c344f2a111698cf8c02",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-f29d781c75",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 83).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 83 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-83.zip",
+     "offset": 5407514,
+     "csize": 211417,
+     "method": 8,
+     "bytes": 525784,
+     "sha256": "fafcccf5cfcd0ebef48091f897c2031a8ca24ae83e5d15fdf832da7ef6d53d25",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-ba0e5650bb",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 91).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 91 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-91.zip",
+     "offset": 4836234,
+     "csize": 208815,
+     "method": 8,
+     "bytes": 525784,
+     "sha256": "026c3d535e93705e3b6d1d63acf8ab7bbbf2eda3282dd50d03ebfe7cc99030fb",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-549e6eb442",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 104).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 104 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-104.zip",
+     "offset": 86440276,
+     "csize": 212804,
+     "method": 8,
+     "bytes": 525784,
+     "sha256": "5bee0980875e2bf80d41d34c94235afb0ebb3b7de0fca1d445fe7eccc8e0e44c",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-cfdbfb2ad1",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 223).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 223 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-223.zip",
+     "offset": 38466350,
+     "csize": 148485,
+     "method": 8,
+     "bytes": 163974,
+     "sha256": "edb45f6d24ea0d997c0d5da65f0dae9c23acd04c0f4d2c65d52c49a38b384bbd",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-47ddea80a0",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 156).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 156 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-156.zip",
+     "offset": 3437440,
+     "csize": 201860,
+     "method": 8,
+     "bytes": 525786,
+     "sha256": "ec4c85e116acb3cf71f3fceab24b7aabf91a2494ee3928e46acef886ebed5446",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-7bc72cdc2a",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 308).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 308 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-308.zip",
+     "offset": 54713717,
+     "csize": 215449,
+     "method": 8,
+     "bytes": 525786,
+     "sha256": "e0fe2ad3779a43207828f17b7be1fc2f55a249fecff1f41fd58d3a09fec1c3cc",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-ef42d0eb8a",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 395).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 395 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-395.zip",
+     "offset": 115615597,
+     "csize": 198136,
+     "method": 8,
+     "bytes": 525946,
+     "sha256": "fee39491fc80d166df5c25360e1d3b883e9e5814710b7c1fe9d35f0f8ebd7ada",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-6efd1f6a8b",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 26).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 26 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-26.zip",
+     "offset": 3059377,
+     "csize": 144817,
+     "method": 8,
+     "bytes": 158020,
+     "sha256": "cd1a6a21b9089ad3064dd5f135eabeba229985bf27a1930f4f09eab109561846",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-61a0a9f94b",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 53).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 53 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-53.zip",
+     "offset": 41382781,
+     "csize": 141399,
+     "method": 8,
+     "bytes": 155084,
+     "sha256": "982b401e57d47c52d985eb64a20e2f334604ce67824362843f5325ab9e8b19b4",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-77f816efa5",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 145).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 145 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-145.zip",
+     "offset": 832740,
+     "csize": 205524,
+     "method": 8,
+     "bytes": 525786,
+     "sha256": "c29aec877abe9768eb3cf630e5d2a2d74b0a174da370f3d3ac1238bcfcd76205",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-41481c3713",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 197).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 197 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-197.zip",
+     "offset": 2980370,
+     "csize": 215147,
+     "method": 8,
+     "bytes": 525784,
+     "sha256": "4adb68cdb1612236f9cb5e53d16ea885c86241aeb1763ccb61fec4f3cac2203b",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-ac80488991",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 184).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 184 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-184.zip",
+     "offset": 42881450,
+     "csize": 147913,
+     "method": 8,
+     "bytes": 161266,
+     "sha256": "90d3ee7ca21c6ee1abdee100ba3e6995e5c3494ba918ea8567f2433409cdf2d8",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-de4c6d470f",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 123).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 123 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-123.zip",
+     "offset": 11998694,
+     "csize": 214199,
+     "method": 8,
+     "bytes": 525782,
+     "sha256": "cdfccbadd177c55a240801e8e8c4bd751fd6651c1ae0d5653dd6bc92bcd500d3",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
     }
    }
   }
