@@ -70,6 +70,18 @@ function createMain() {
   }
   watch()
   main.webContents.on('did-finish-load', tellPage)
+  // zoom (4 Nov 2026, Raahat: "I can't zoom in, just out"): Electron's Zoom In is Ctrl+Plus, which on a UK/US keyboard is
+  // Ctrl+Shift+=, so the Ctrl+= everyone presses did nothing. Ctrl+= / + / numpad + zoom in, Ctrl+- out, Ctrl+0 resets,
+  // and Ctrl+scroll zooms too; kept between 30% and 300%.
+  const zoomBy = (d) => { const wc = main.webContents; wc.setZoomLevel(d === 0 ? 0 : Math.max(-6.5, Math.min(6, wc.getZoomLevel() + d))) }
+  main.webContents.on('before-input-event', (e, i) => {
+    if (i.type !== 'keyDown' || !(i.control || i.meta) || i.alt) return
+    const k = i.key, c = i.code
+    if (k === '=' || k === '+' || c === 'NumpadAdd' || c === 'Equal') { zoomBy(0.5); e.preventDefault() }
+    else if (k === '-' || k === '_' || c === 'NumpadSubtract' || c === 'Minus') { zoomBy(-0.5); e.preventDefault() }
+    else if (k === '0' || c === 'Numpad0' || c === 'Digit0') { zoomBy(0); e.preventDefault() }
+  })
+  main.webContents.on('zoom-changed', (_e, dir) => zoomBy(dir === 'in' ? 0.5 : -0.5))
   // testing: run a snippet in the page once it's up (FINALIST_PROBE_JS)
   if (process.env.FINALIST_PROBE_JS) main.webContents.on('did-finish-load', () => { if (main.webContents.getURL().startsWith('http')) setTimeout(() => main.webContents.executeJavaScript(process.env.FINALIST_PROBE_JS).catch(() => {}), 4000) })
   main.on('closed', () => { main = null })
