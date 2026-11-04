@@ -1,0 +1,1463 @@
+{
+ "name": "Abdominal X-rays (case reports and Wikimedia Commons)",
+ "version": 1,
+ "licence": "Per image: CC BY, CC BY-SA, CC0, public domain, CC BY-NC (non-commercial)",
+ "credit": "Images and captions: open-access case reports on PubMed Central, each credited to its authors under its own licence; collected in MultiCaRe (Nievas Offidani M, Delrieux C et al., Zenodo 10.5281/zenodo.20416562). Further films from Wikimedia Commons, each credited to its author under its own licence.",
+ "source": "https://zenodo.org/records/20416562",
+ "labels": {
+  "perf": "Pneumoperitoneum (perforation)",
+  "stone": "Urinary tract calculus",
+  "fb": "Ingested foreign body",
+  "sbo": "Small bowel obstruction",
+  "lbo": "Large bowel obstruction",
+  "chilaiditi": "Chilaiditi sign (interposed colon, not free air)"
+ },
+ "items": [
+  {
+   "id": "mc-9fe285bbb3",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Plain abdominal x-ray. Distended small bowel loops consistent with small bowel obstruction.",
+   "licence": "CC BY",
+   "cite": "Nachimuthu et al. Strangulated inguinal hernia due to an omental band adhesion within the hernial sac: a case report. Cases J 2009. PMC2626576",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2626576/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC2.zip/content",
+     "offset": 20980259,
+     "csize": 16502,
+     "method": 8,
+     "bytes": 16492,
+     "sha256": "d8e5cbbd97c4e12a316b439b5e71812bd2653b71faebf7c570eb153517ae037d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-84959007d0",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Erect film shows multiple air-fluid levels.",
+   "licence": "CC BY",
+   "cite": "Popoola et al. Intestinal obstruction: a rare complication of channeling transurethral resection of the prostate (TURP): a case report. J Med Case Rep 2008. PMC2259370",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2259370/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC2.zip/content",
+     "offset": 8900127,
+     "csize": 8819,
+     "method": 8,
+     "bytes": 8814,
+     "sha256": "c89fcc1cb9010cf0e5e706938f368e1e6ac2b8b58186b72480ea0d5b0d1010ff",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b7bc4da9df",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "plain abdominal radiograph reveals air fluid levels and dilated loops of small bowel.",
+   "licence": "CC BY",
+   "cite": "Oukhouya et al. Meckel's diverticulum causing intestinal obstruction in the newborn. Pan Afr Med J 2018. PMC6691295",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6691295/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 150867731,
+     "csize": 89716,
+     "method": 8,
+     "bytes": 89686,
+     "sha256": "75165257aa486811cd9ea1670c490698dd3d9ec21cb4a98002a6eaaf585af357",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-0de545a494",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "erect radiograph of the abdomen showing dilated small bowel loops with some air-fluid levels.",
+   "licence": "CC BY",
+   "cite": "Moussa et al. A paraduodenal hernia revealed by bowel obstruction: case report and literature review. Pan Afr Med J 2018. PMC6462366",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6462366/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 49571072,
+     "csize": 50304,
+     "method": 8,
+     "bytes": 50284,
+     "sha256": "283287e41b3eafe9838aad2467eba4d3779dd0547359485ef00e124640921ae2",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-1237d42306",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Erect x ray abdomen showing dilated bowel loops.",
+   "licence": "CC BY",
+   "cite": "Atif Complete ileal transection: A rare complication of adhesive bowel disease-A case report. Int J Surg Case Rep 2019. PMC6438903",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6438903/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 61422537,
+     "csize": 18566,
+     "method": 8,
+     "bytes": 18556,
+     "sha256": "9f7ff5f759e4a68dd025a904e9a8a9c2b1c9e201bd5f72bd16a59306373654a4",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-9ff3582a5c",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Plain abdominal radiography , air-fluid levels consistent with mechanical intestinal obstruction.",
+   "licence": "CC BY",
+   "cite": "Firat et al. Intestinal obstruction due to phytobezoar induced in the Meckel's diverticulum-report of two cases. North Clin Istanb 2022. PMC9039633",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9039633/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC9.zip/content",
+     "offset": 24713468,
+     "csize": 2821,
+     "method": 8,
+     "bytes": 2816,
+     "sha256": "31f01cdbe7b8500b26405607d8430d575f90642d748321f94bf7f5deec0bc477",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-12a63cad08",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "A) X-ray of the abdomen (sagittal plane) showing distension of the small bowel with air fluid levels and no free air.",
+   "licence": "CC BY",
+   "cite": "Lovece et al. Toothpick ingestion complicated by cecal perforation: case report and literature review. World J Emerg Surg 2014. PMC4290385",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4290385/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 208995157,
+     "csize": 30970,
+     "method": 8,
+     "bytes": 30960,
+     "sha256": "1732e544245ed22f24a2b1db18c81c36667a0defc8ddcb8a96aebf78d7c67a32",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-a6f1efd9c0",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Plain abdominal radiography, upright view, showing several air-fluid levels.",
+   "licence": "CC BY",
+   "cite": "Ghazan-Shahi et al. Case report: acute bowel obstruction with an isolated transition point in peritoneal dialysis patients; a presentation of encapsulating peritoneal sclerosis?. BMC Nephrol 2016. PMC4700655",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4700655/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 256197237,
+     "csize": 7293,
+     "method": 8,
+     "bytes": 7288,
+     "sha256": "3bb25f008b58bfe2745b2c9ebe3b50a2fa396e154549c92b1ecae02d1a434d62",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-114a9274a6",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Abdominal X-ray showed small bowel obstruction suspected ileus.",
+   "licence": "CC BY",
+   "cite": "Handaya et al. Covid-19 mimicking symptoms in emergency gastrointestinal surgery cases during pandemic: A case series. Int J Surg Case Rep 2020. PMC7585363",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7585363/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 195852982,
+     "csize": 11609,
+     "method": 8,
+     "bytes": 11604,
+     "sha256": "bc9d1585c254628cb0ac35ac4518aedb1c968d546f4105fe65fa6d718878df3c",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d365113866",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Scout film of the abdomen: multiple dilated loops of small intestine with air-fluid levels.",
+   "licence": "CC BY",
+   "cite": "Bouassida et al. Internal supravesical hernia - a rare cause of intestinal obstruction: report of two cases. Pan Afr Med J 2012. PMC3283013",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3283013/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 250683230,
+     "csize": 8199,
+     "method": 8,
+     "bytes": 8194,
+     "sha256": "738156eb870bb31028ff01fc27071039b4f37c96c0511d6cca8ea5fd45089d6f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d0b0096ba8",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Abdominal X-ray. Right lower quadrant fixed air fluid level and small bowel dilatation.",
+   "licence": "CC BY",
+   "cite": "Gonzalez-Urquijo et al. Cecal Volvulus following a Right Nephrectomy for Wilms' Tumor: Should We Need to Close the Lateral Peritoneum?. European J Pediatr Surg Rep 2018. PMC5758359",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5758359/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 74900838,
+     "csize": 15113,
+     "method": 8,
+     "bytes": 15108,
+     "sha256": "231eb3e8f07853ebc860c649cec8cb44952ce9ee3d5a215c89629baedaa0c283",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-f46834c83d",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Erect abdominal X ray showing air-fluid levels and dilated bowel loops.",
+   "licence": "CC BY",
+   "cite": "Fatimah et al. Stone in the distal jejunum presenting as small bowel obstruction: A case report. Int J Surg Case Rep 2018. PMC6176843",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6176843/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 206411166,
+     "csize": 18076,
+     "method": 8,
+     "bytes": 18066,
+     "sha256": "091ed1b52510756d0bd2557ec8bfb8c704e1573f878eb95567f5a7843e7d2dc7",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-74742c8c47",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Abdominal X-ray revealing multiple liquid-gas surfaces.",
+   "licence": "CC BY",
+   "cite": "Qiu et al. Small intestine metastasis from cervical cancer with acute abdomen: A case report. Oncol Lett 2015. PMC4246630",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4246630/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 197171517,
+     "csize": 21890,
+     "method": 8,
+     "bytes": 21880,
+     "sha256": "c87f4c207ddfe2456d2472f6cb651af882d654261ab5a1791a731a1fd2579cd4",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b0a2e39f7a",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Abdominal X-ray showing the presence of air-fluid levels.",
+   "licence": "CC BY",
+   "cite": "Reda et al. Acute intestinal obstruction revealing synchronous gastrointestinal stromal tumors in a small bowel diverticulum and mucinous adenocarcinoma of the colon: a case report. Pan Afr Med J 2015. PMC4802801",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4802801/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 6082611,
+     "csize": 12109,
+     "method": 8,
+     "bytes": 12104,
+     "sha256": "e9aa10ce3067efbb535f2ff9f1569479441f1bd1f5dad189dd52cf15d7ed2247",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d737a90a4c",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Plain abdominal radiography , air-fluid levels consistent with mechanical intestinal obstruction.",
+   "licence": "CC BY",
+   "cite": "Firat et al. Intestinal obstruction due to phytobezoar induced in the Meckel's diverticulum-report of two cases. North Clin Istanb 2022. PMC9039633",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9039633/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC9.zip/content",
+     "offset": 23209254,
+     "csize": 3641,
+     "method": 8,
+     "bytes": 3636,
+     "sha256": "9e59da409a2cec4d94886d35b089391badeffd62df6aa1cec8d15ba675b19c3e",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-6ba3884d3a",
+   "kind": "image",
+   "label": "lbo",
+   "answer": "Large bowel obstruction",
+   "caption": "Abdominal X-ray showing dilated colon and multiple air-fluid levels.",
+   "licence": "CC BY",
+   "cite": "Amare et al. Metachronous descending colon volvulus after sigmoidectomy: a case report. J Surg Case Rep 2025. PMC11700578",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11700578/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 533668919,
+     "csize": 25880,
+     "method": 8,
+     "bytes": 25870,
+     "sha256": "12a9a0d6f8757de890a2d7ec681b029f498a5f61e38ba5584f0c96b195c1cf9f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-c32b0341a8",
+   "kind": "image",
+   "label": "lbo",
+   "answer": "Large bowel obstruction",
+   "caption": "X-rays showed demonstrated several loops of dilated colon within the left upper quadrant.",
+   "licence": "CC BY",
+   "cite": "Liu et al. Diaphragmatic hernia as a rare complication of colonoscopy: Case report and literature review. Medicine (Baltimore) 2018. PMC5779774",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5779774/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 58639374,
+     "csize": 22240,
+     "method": 8,
+     "bytes": 22230,
+     "sha256": "eb6649582fdaec589e5a2e2734c32a8272c11f03d7db0d838b37934be45b9dd0",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-eeb433fff9",
+   "kind": "image",
+   "label": "lbo",
+   "answer": "Large bowel obstruction",
+   "caption": "Plain X-ray image shows multiple air-fluid levels with significant colonic distension and an absence of gas in the rectum, suggesting colonic obstruction.",
+   "licence": "CC BY",
+   "cite": "Jazaerly et al. Bochdalek Hernia Revealed by Incarceration of the Splenic Flexure: A Rare Case in an Adult. Case Rep Surg 2026. PMC12945697",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12945697/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 862476906,
+     "csize": 15205,
+     "method": 8,
+     "bytes": 15200,
+     "sha256": "4f386fafbacf6d338fca259ec4a78fcb51a3965488937d017ba226fc4bbf059b",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-293df9d9c8",
+   "kind": "image",
+   "label": "lbo",
+   "answer": "Large bowel obstruction",
+   "caption": "Simple radiography of the abdomen at patient admission to the Emergency Room shows air-fluid level and colonic dilatation in the standing.",
+   "licence": "CC BY-NC",
+   "cite": "Dutra et al. Immune Thrombocytopenic Purpura as an Extraintestinal Manifestation in a Patient with Ulcerative Colitis. Case Rep Gastroenterol 2022. PMC9035917",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9035917/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC9.zip/content",
+     "offset": 12647775,
+     "csize": 6483,
+     "method": 8,
+     "bytes": 6478,
+     "sha256": "9c834947f56e69467ac05ca3f461580b0390270f05c1690f8146d01434aa0ffe",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-367482f16d",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "caption": "Free air beneath the diaphragm at abdominal x-ray film.",
+   "licence": "CC BY",
+   "cite": "Acıpayam et al. Duodenal perforation: an unusual complication of sickle cell anemia. Pan Afr Med J 2014. PMC4239440",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4239440/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 211428304,
+     "csize": 15041,
+     "method": 8,
+     "bytes": 15036,
+     "sha256": "5a7e18244a4c050b1b7639bfc28fc9be82755d7d1e2f87da7fb10366ae66b6b9",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-148c98d5a4",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "caption": "Second X-ray was 2 days after the first operation ie omental Graham patch operation, which showed a significant huge hydro pneumoperitoneum.",
+   "licence": "CC BY",
+   "cite": "Elrobaa et al. Huge hydro pneumoperitoneum reported as complication of perforated duodenal ulcer with interesting images. Pan Afr Med J 2019. PMC7060911",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7060911/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 120030535,
+     "csize": 37497,
+     "method": 8,
+     "bytes": 37482,
+     "sha256": "82ff5bb07a2b8c73aaf9e688eb23b15b4505e73f3bbc0aeadb5b33148b70ecab",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-de2240bec0",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "caption": "plain abdominal X-rays showing free air-stripes under both hemidiaphragm and in the peripherals.",
+   "licence": "CC BY",
+   "cite": "Simbila et al. Colon perforation by foreign body insertion for sexual gratification: a case report. Pan Afr Med J 2021. PMC8728799",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8728799/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 222885592,
+     "csize": 39113,
+     "method": 8,
+     "bytes": 39098,
+     "sha256": "3596a8e44319326fe146f66892f99213e731019c1aa1fb2b3ef0ff970fe7ec40",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-0ebf76140a",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "caption": "Supine plain abdominal film with evidence of free air in the peritoneal cavity.",
+   "licence": "CC BY",
+   "cite": "Jehangir et al. Pullthrough Operation for Hirschsprung's Disease: Importance of a Circumferential (Donut) Biopsy at the Level of the Anastomosis. European J Pediatr Surg Rep 2019. PMC6629996",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6629996/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 133953375,
+     "csize": 17760,
+     "method": 8,
+     "bytes": 17750,
+     "sha256": "12982c13294918c900470869dbc6a65660eaf164bde50974d3f51b29b3b288fc",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-cee2cc4e55",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "Abdominal plain radiograph shows a large radio-opaque shadow in the left renal fossa and multiple small radio-opaque shadows in the left pelvic region. These findings are consistent with multiple calculi.",
+   "licence": "CC BY",
+   "cite": "Singh et al. Xanthogranulomatous pyelonephritis with calculus migration into the psoas abscess: an unusual complication. Autops Case Rep 2020. PMC8101683",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8101683/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 200108278,
+     "csize": 50612,
+     "method": 8,
+     "bytes": 50592,
+     "sha256": "bccfb31968e22959c765625f18279e35e61f78bd9f60937d0a38c1e835a78bfb",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-f3aee7e51e",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "A) Plain x-ray KUB showing a large left staghorn calculus.",
+   "licence": "CC BY",
+   "cite": "Shah et al. Laparoscopic nephrectomy for giant staghorn calculus with non-functioning kidneys: is associated unsuspected urothelial carcinoma responsible for conversion? Report of 2 cases. BMC Urol 2006. PMC1373662",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1373662/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 893560584,
+     "csize": 4567,
+     "method": 8,
+     "bytes": 4562,
+     "sha256": "785d54f8e712596908d7bf3a4a33a5b8552cef43d9c026cba4a15cb443fbdf8f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-3818b66275",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "A) Plain x-ray KUB revealing a large right staghorn calculus extending in the upper ureter.",
+   "licence": "CC BY",
+   "cite": "Shah et al. Laparoscopic nephrectomy for giant staghorn calculus with non-functioning kidneys: is associated unsuspected urothelial carcinoma responsible for conversion? Report of 2 cases. BMC Urol 2006. PMC1373662",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1373662/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 906344703,
+     "csize": 5993,
+     "method": 8,
+     "bytes": 5988,
+     "sha256": "b357fbef1409d2166f13a438015f43ab3a36bfef61c8246fddcf32ffc6772e63",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-3875ddfbad",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "Pelvic X-ray showing bladder stone with embedded Copper T intrauterine contraceptive device.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Abdulwahab-Ahmed et al. Vesical calculus 10 years post missing intrauterine contraceptive device. J Surg Tech Case Rep 2013. PMC3889006",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3889006/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 26085680,
+     "csize": 9693,
+     "method": 8,
+     "bytes": 9688,
+     "sha256": "67e60b0313cfeb13a15f49088b45318c27b3b25640fd43ee811102560c1508c1",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-fa1a1e4757",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "KUB showing left stag horn calculi.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Malhotra et al. Packing of renal fossa: useful technique for intractable bleeding after open pyelolithotomy surgery. Niger J Surg 2012. PMC3716237",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3716237/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 4486188,
+     "csize": 10773,
+     "method": 8,
+     "bytes": 10768,
+     "sha256": "a56e152008567e27756164a2ef991adb055c360f7bfba875c8248b5ea3c9bfc9",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-2153f97282",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "NCCT KUB Showing Multiple Large Vesicle Calculi.",
+   "licence": "CC BY-NC",
+   "cite": "Kumar et al. Massive vesical calculi formation as a complication of augmentation cystoplasty. Nephrourol Mon 2014. PMC4330689",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4330689/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 146316044,
+     "csize": 26652,
+     "method": 8,
+     "bytes": 26642,
+     "sha256": "60d29a2a46bde7519256a6d56734d15d396696541fbee4ccfa9717e4963548f6",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-7eb351327f",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "Plain pelvic X-ray showing prostatic urethral calculus.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Bello et al. Unusual giant prostatic urethral calculus. J Surg Tech Case Rep 2010. PMC3214488",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3214488/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 257035439,
+     "csize": 8573,
+     "method": 8,
+     "bytes": 8568,
+     "sha256": "3792770a161250ce0340565e8acd867ea6ee925c381b111dca33a54185cf8a68",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-0c1ff5774f",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "caption": "The location of MFBs on an abdominal X-ray native abdominal image. MFBs, magnetic foreign bodies.",
+   "licence": "CC BY",
+   "cite": "Dotlacil et al. Removal of Ingested Magnetic Bodies via Laparoscopic Appendectomy. European J Pediatr Surg Rep 2020. PMC7577785",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7577785/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 207683475,
+     "csize": 23014,
+     "method": 8,
+     "bytes": 23004,
+     "sha256": "001e9ad8bba16fb421c32a09407a1657b9207ebde4ff648e1326f880903544ce",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "wc-755aa3d433",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "caption": "Double wall sign. This is a secondary sign of pneumoperitoneum. Patient is supine, and air within the abdomen and lumen of the bowel accentuate both sides of the bowel wall.",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Scott1751, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Double_wall_sign.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Double_wall_sign.jpg",
+     "bytes": 3585751,
+     "sha256": "f6fe493e57ef0654844143331b2135b855368ccc5b1a4cf3341bb64bfe20a047",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-74acd74773",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Freie_Luft_bei_Sigmaperforation_71W_-_CR_ap_-_001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Freie_Luft_bei_Sigmaperforation_71W_-_CR_ap_-_001.jpg",
+     "bytes": 125564,
+     "sha256": "513d73d4915b8a14055e89a5af0115f43c53de24e3f0fb8d43f506cc63bf42ed",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-f794b3af09",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Freie_Luft_im_Abdomen_nach_PEG-Anlage_65W_-_CR_Linksseitenlage_-_001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Freie_Luft_im_Abdomen_nach_PEG-Anlage_65W_-_CR_Linksseitenlage_-_001.jpg",
+     "bytes": 252137,
+     "sha256": "15b546a164e9ec206932cbab3635dce679d1512a690f7393968a9cff52b12877",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-8867dfb4a9",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Perforation_bei_Coloskopie_LSL.png",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Perforation_bei_Coloskopie_LSL.png",
+     "bytes": 690373,
+     "sha256": "6e3b240d87178e2f1bd17a311aa228fec715cf943301e7950a113897c38c10c8",
+     "mime": "image/png"
+    }
+   }
+  },
+  {
+   "id": "wc-081da7a5bb",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Pneumoperitoneum_bei_Sigmaperforation_76M_-_CR_LSL_-_001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/48/Pneumoperitoneum_bei_Sigmaperforation_76M_-_CR_LSL_-_001.jpg",
+     "bytes": 117060,
+     "sha256": "f61bfb1ca3362a689b9e7bd396f766e9679be5f72efeb7483577213b489ebef9",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-b35aab3074",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY 2.0",
+   "cite": "Bill Rhodes from Asheville, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Pneumoperitoneum_lateral_decubitus.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Pneumoperitoneum_lateral_decubitus.jpg",
+     "bytes": 213543,
+     "sha256": "0f17660d9bde493eb0e75c7fd35f2412afc69ea08c3bd5e16366d22d4c351c03",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-b2f08f97ed",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Rigler_Zeichen_71jm_unklare_Perforation.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Rigler_Zeichen_71jm_unklare_Perforation.jpg",
+     "bytes": 121171,
+     "sha256": "c256d5e7aa3137fea25ee1a9fa608dafd01d21d5cadde4eafd392c1e9349d059",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-1f42374a7c",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Riglerzeichen_bei_freier_Luft_84M_-_CR_ap_-_001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Riglerzeichen_bei_freier_Luft_84M_-_CR_ap_-_001.jpg",
+     "bytes": 225051,
+     "sha256": "119a7faffc5108147d581f4a46d92a93aa983ee32002b54df70f5df6bec471eb",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-42301509ac",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:34-01-Freie_Luft_nach_LH-OP.png",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/78/34-01-Freie_Luft_nach_LH-OP.png",
+     "bytes": 679352,
+     "sha256": "177e02e0f9d29292e075b547d194ab931388cc27f2f01ff35a4d64612d7f4830",
+     "mime": "image/png"
+    }
+   }
+  },
+  {
+   "id": "wc-2ba3142866",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "Public domain",
+   "cite": "Carlos Melgoza, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Aire_subdiafragmático.JPG",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Aire_subdiafragm%C3%A1tico.JPG",
+     "bytes": 801866,
+     "sha256": "15f7546cdd297a2cd11797df90638b41779fadcf415dc45b174fc2ee7a67169e",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-738d57e4c8",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Radiopedia, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Cupola_sign.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Cupola_sign.jpg",
+     "bytes": 79866,
+     "sha256": "d799468be879affee87178241866124b77e0b76e80aaecbc5ff61f92349cf1ed",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-9d45a97959",
+   "kind": "image",
+   "label": "perf",
+   "answer": "Pneumoperitoneum (perforation)",
+   "licence": "CC BY 2.0",
+   "cite": "Bill Rhodes from Asheville, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Pneumoperitoneum_chest_X-ray.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Pneumoperitoneum_chest_X-ray.jpg",
+     "bytes": 497179,
+     "sha256": "02af13ed8d1448bdffc610490805976c6e998d81429136c01585e8259667a088",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-a9788f3d99",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Bladder_Stone_08783.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Bladder_Stone_08783.jpg",
+     "bytes": 1238264,
+     "sha256": "eea8f175091ff54996ec6916fb261c494341087cb7be12429760f895867a2dce",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-7a9da2fd96",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Grosser_Blasenstein_87W_-_CR_ap_-_001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Grosser_Blasenstein_87W_-_CR_ap_-_001.jpg",
+     "bytes": 124292,
+     "sha256": "a197726f6f78c0615eb6fb37e2c79eca42b6d81a43731d528e92f5621877da59",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-9ba89852a6",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Medical_X-Ray_imaging_AYA02_nevit.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Medical_X-Ray_imaging_AYA02_nevit.jpg",
+     "bytes": 1921790,
+     "sha256": "3249be099b997cb3d3a5add2b1e55f4b8b10f726f19ed3cf9ce827d238ca28e1",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-f9738a5f5c",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "Bilateral kidney stones on abdominal X-ray. Not to be confused with phleboliths seen in the pelvis.",
+   "licence": "CC BY 2.0",
+   "cite": "Bill Rhodes from Asheville, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Kidney_stones_abdominal_X-ray.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Kidney_stones_abdominal_X-ray.jpg",
+     "bytes": 207558,
+     "sha256": "474d265689a1d5e4202b18b48f58059eb540275cb38207f2bd1edb9a1cf6904b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-e9aeda4e07",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Medical_X-Ray_imaging_EEY04_nevit.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Medical_X-Ray_imaging_EEY04_nevit.jpg",
+     "bytes": 606602,
+     "sha256": "fe12a1d3ca294daa44f5934d7c1a1acb970513fbed59a79b16565b8fd00561eb",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-a90d50985e",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Medical_X-Ray_imaging_GBD04_nevit.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Medical_X-Ray_imaging_GBD04_nevit.jpg",
+     "bytes": 642014,
+     "sha256": "8c5916e10af4b9aa31e934942aa37e90cd0bc61c5ba1b23f94fa2eacb734b90a",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-358735c6d0",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Rad_1310119_ND.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Rad_1310119_ND.jpg",
+     "bytes": 2636971,
+     "sha256": "616cdb7418cfdd5ac4637c9a698ad48e6401688830a093eeef563582476d26bd",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-1ded836f71",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Radiology_1300371.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/Radiology_1300371.jpg",
+     "bytes": 2445385,
+     "sha256": "1517ee9781375dced878597ad4b35a88bf39c6955f7d11c9dd0c45a419dac250",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-5774589c10",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "Large Stone in the right distal ureter",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Der ehrbare Trinker, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:HL_Stein_nativ.JPG",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/HL_Stein_nativ.JPG",
+     "bytes": 1159953,
+     "sha256": "5c011bfc59794fe97b7c95bf97eb027a3f999c7ceab54289b92eba56373d7ba0",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-7c490c93c2",
+   "kind": "image",
+   "label": "stone",
+   "answer": "Urinary tract calculus",
+   "caption": "Created by Morning2k. A KUB film shows an radiopaque lesion over left paraspinal area, indicating a large ureteral stone.",
+   "licence": "CC BY 2.5",
+   "cite": "No machine-readable author provided. Morning2k assumed (based on copyright claims)., Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:KUB_stone.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/KUB_stone.jpg",
+     "bytes": 168127,
+     "sha256": "53ea7997c71dc395ce275d3768c3b4b9ef4f4ddb6d16f48104967d58508bad87",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-735cb0664e",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "caption": "AP X ray showing a 9mm battery in the intestines",
+   "licence": "CC BY-SA 4.0",
+   "cite": "James Heilman, MD, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:9mmbatteryintestines.png",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/9mmbatteryintestines.png",
+     "bytes": 879841,
+     "sha256": "88e8ae10d57673c96f646210d03b8603643c04e81779514c6655007a078d20f0",
+     "mime": "image/png"
+    }
+   }
+  },
+  {
+   "id": "wc-11c32e6626",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0 de",
+   "cite": "Dr. med. Jürgen Belz, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Gabel_im_Magen.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Gabel_im_Magen.jpg",
+     "bytes": 920308,
+     "sha256": "1dbd77753fd4a4907495490e99988200ede127981b1b7db91ff17ec9992e0e2b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-c21210754a",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "caption": "Roentgenogram or Medical X-ray image. May not be to scale.",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Medical_X-Ray_imaging_SGY07_nevit.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Medical_X-Ray_imaging_SGY07_nevit.jpg",
+     "bytes": 532487,
+     "sha256": "a5891ffbbdc4f634f05651861e01cb47399ec8ef07f173dcd586ff961b1dc967",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-fb32002077",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "caption": "Roentgenogram or Medical X-ray image. May not be to scale.",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Medical_X-Ray_imaging_SGZ07_nevit.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Medical_X-Ray_imaging_SGZ07_nevit.jpg",
+     "bytes": 1261704,
+     "sha256": "16dca5175c69db5b21177678b17c1df12bd7736fe37c1fd4403dd2e97b0e9880",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-d8cf2dea89",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "caption": "Roentgenogram or Medical X-ray image. May not be to scale.",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Nevit Dilmen ( talk ), Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Medical_X-Ray_imaging_SHA07_nevit.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/Medical_X-Ray_imaging_SHA07_nevit.jpg",
+     "bytes": 528747,
+     "sha256": "c243f8d18fd53c23c000f34a2c352e2c2555ded6a35f36347037ac19b267a630",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-2a43c0515a",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckte_Bureauklammer_1-jaehrig.png",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Verschluckte_Bureauklammer_1-jaehrig.png",
+     "bytes": 164763,
+     "sha256": "c65cb8bb0532b1df06f71b622bccad8ae492f0a142bf04cfe3dca7185678e18b",
+     "mime": "image/png"
+    }
+   }
+  },
+  {
+   "id": "wc-ee13889055",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckte_Fuellerkappe_im_Magen.png",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Verschluckte_Fuellerkappe_im_Magen.png",
+     "bytes": 456245,
+     "sha256": "05061ff02dfbd699e1fc781cb88b425ab2e28ba8046544848d0f99094cb576c5",
+     "mime": "image/png"
+    }
+   }
+  },
+  {
+   "id": "wc-935163be9a",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckte_Haarspange_-_3_jaehrig.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Verschluckte_Haarspange_-_3_jaehrig.jpg",
+     "bytes": 59173,
+     "sha256": "31d60979226183139613a6cb10b0eab46a5a766563f4f9504a269bc902957610",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-7889ca07e7",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckte_Muenze_-_3_einhalb_-_jaehrig.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Verschluckte_Muenze_-_3_einhalb_-_jaehrig.jpg",
+     "bytes": 30444,
+     "sha256": "7452d781ae4875a7e9ee4b1c5ff967efacf2a4f0606b951bd9c74def7177f901",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-551a189bcf",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckte_Zahnkrone_001_-_Tag_1_Magen.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Verschluckte_Zahnkrone_001_-_Tag_1_Magen.jpg",
+     "bytes": 43934,
+     "sha256": "b7770e8c1b0e1561f6dc3c7c42c7d7c86aa4da9e446018c1c0b8b9ba710e7e98",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-feb5190723",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckte_Zahnkrone_002.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/8/89/Verschluckte_Zahnkrone_002.jpg",
+     "bytes": 74285,
+     "sha256": "501dbc563b68ce0c0b9e06c9159e76852cb999fb2f575d2bd964eca7561293ef",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-2496f5936b",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckter_Aufsatz_einer_elektrischen_Zahnbuerste_-_2_einhalb_-_jaehrig.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Verschluckter_Aufsatz_einer_elektrischen_Zahnbuerste_-_2_einhalb_-_jaehrig.jpg",
+     "bytes": 32021,
+     "sha256": "c42c41d74483066ad2239e1e17902826833ae7d31fd6b22cd185519d25086c4f",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-b3388bbffc",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckter_Fingerring_-_Demenz.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Verschluckter_Fingerring_-_Demenz.jpg",
+     "bytes": 130436,
+     "sha256": "9cfc81d253896254b2ea552faad80073d8070576fa1dddf1d734ae470aa30fd6",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-8cb9480216",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckter_Nagel_4-jaehrig.png",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Verschluckter_Nagel_4-jaehrig.png",
+     "bytes": 217632,
+     "sha256": "ce147c7a49e2869a0f1ad92c83ca4b81b16c4e647c7dd0c6168a952db550057d",
+     "mime": "image/png"
+    }
+   }
+  },
+  {
+   "id": "wc-89ddb914db",
+   "kind": "image",
+   "label": "fb",
+   "answer": "Ingested foreign body",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Verschluckter_Zahnarztbohrer.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Verschluckter_Zahnarztbohrer.jpg",
+     "bytes": 65747,
+     "sha256": "16464a5f0c44a7deef80618391d64ed1872ec223dce13e43441d5deb8d8d1eb1",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-048643dd7e",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Abdominal radiograph of a patient with small bowel obstruction showing dilated loops of bowels with air-fluid levels",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Igboeze, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:1._Bowel-obstruction-x-ray.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/1._Bowel-obstruction-x-ray.jpg",
+     "bytes": 70136,
+     "sha256": "92336a3b5a8904a0e8ed3261157ab1e399a0c457490bac9cd26695ad18340ce9",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-c2b9db0152",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Bridenileus_27M_-_CR_ap_-_001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Bridenileus_27M_-_CR_ap_-_001.jpg",
+     "bytes": 114017,
+     "sha256": "9a74e16d317d547cd97e9d62b553b74386c5126ec2b4c4a9febe7ea01d97da97",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-c8a05abfe5",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Duenndarmileus_Chiasamen_-_Roe_-_0001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Duenndarmileus_Chiasamen_-_Roe_-_0001.jpg",
+     "bytes": 153600,
+     "sha256": "ecf6eb40b7ba144c4f21d0d0beb7246d62b38630e9b764ef58c020104a7d014c",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-3e916387f6",
+   "kind": "image",
+   "label": "sbo",
+   "answer": "Small bowel obstruction",
+   "caption": "Upright abdominal X-ray demonstrating a bowel obstruction",
+   "licence": "CC BY-SA 3.0",
+   "cite": "James Heilman, MD, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Upright_abdominal_X-ray_demonstrating_a_bowel_obstruction.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Upright_abdominal_X-ray_demonstrating_a_bowel_obstruction.jpg",
+     "bytes": 255685,
+     "sha256": "eb80acee8718ed864babe708090c6d5319ebe6a0a921bea513a6dbd54cde2b6b",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-69117fc83c",
+   "kind": "image",
+   "label": "chilaiditi",
+   "answer": "Chilaiditi sign (interposed colon, not free air)",
+   "caption": "Air under the right hemidiaphragm caused by Chilaiditi's sign.",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Steven Fruitsmaak, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Chilaiditi_1.PNG",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Chilaiditi_1.PNG",
+     "bytes": 393381,
+     "sha256": "48860951d9d38df3164b3716b78a82e634797ca4f44438bee160deca8d3d8410",
+     "mime": "image/png"
+    }
+   }
+  },
+  {
+   "id": "wc-89203d7e40",
+   "kind": "image",
+   "label": "chilaiditi",
+   "answer": "Chilaiditi sign (interposed colon, not free air)",
+   "caption": "Chest X-ray showing obvious Chilaiditi's sign, or presence of gas in the right colic angle between the liver and right hemidiaphragm (left side of the image).",
+   "licence": "CC BY-SA 3.0",
+   "cite": "Steven Fruitsmaak, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Chilaiditi_obvious.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Chilaiditi_obvious.jpg",
+     "bytes": 233205,
+     "sha256": "1fec3fa6296c7d264832a011bf77126d2cf7bc1705645d1a352741921006bc51",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-171cd549eb",
+   "kind": "image",
+   "label": "chilaiditi",
+   "answer": "Chilaiditi sign (interposed colon, not free air)",
+   "caption": "Chilaiditi syndrome is a generally benign condition in which a segment of the intestine is interposed between the liver and diaphragm, which can be confused for more severe conditions and lead to unwarranted procedures. Chilaiditi sign is a radiological finding that occurs when a segment of a large ",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Dr Sudeep Shukla, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Chilaiditi_Syndrome.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Chilaiditi_Syndrome.jpg",
+     "bytes": 1403441,
+     "sha256": "55dd1636a6e5b3b3a85e0abc49c1c230240053fa7adecb6e6b3bcd4badd28fb2",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-cc0e4dfd26",
+   "kind": "image",
+   "label": "chilaiditi",
+   "answer": "Chilaiditi sign (interposed colon, not free air)",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Chilaiditi-Syndrom_73M_-_CR_pa_-_001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Chilaiditi-Syndrom_73M_-_CR_pa_-_001.jpg",
+     "bytes": 312109,
+     "sha256": "975c1e207197ce41b9ce50f450df6fa3e2d883cbe68255807a9ec128d4782bb7",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-3415eb370e",
+   "kind": "image",
+   "label": "chilaiditi",
+   "answer": "Chilaiditi sign (interposed colon, not free air)",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Chilaiditi-Syndrom_bei_Zwerchfellhochstand_rechts_85W_-_CR_pa_-_001.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Chilaiditi-Syndrom_bei_Zwerchfellhochstand_rechts_85W_-_CR_pa_-_001.jpg",
+     "bytes": 231223,
+     "sha256": "3326f2be66051681ccaa23c5a6f5b561969f0719f1ccc1ebc5cf64e627e6944f",
+     "mime": "image/jpeg"
+    }
+   }
+  }
+ ]
+}
