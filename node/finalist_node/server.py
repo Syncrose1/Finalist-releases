@@ -29,7 +29,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 from . import auth, config, dfs
-from . import voice_setup
+from . import voice_setup, tunnel
 from . import stations as sim
 
 CFG = config.load()
@@ -258,6 +258,8 @@ def _public_url():
 def funnel(on):
     """Open the node to the internet for a share, or close it to the tailnet again. Turning Funnel off
     for a port removes its route too, so the tailnet-only one is put back."""
+    if not shutil.which("tailscale"):
+        return False            # no Tailscale here: the Cloudflare tunnel is the way in (tunnel.py)
     port, target = str(CFG["public_port"]), f"http://127.0.0.1:{CFG['port']}"
     run = lambda *a: subprocess.run(["tailscale", *a], capture_output=True, text=True, timeout=20)
     if on:
@@ -268,6 +270,12 @@ def funnel(on):
     run("serve", "--bg", f"--https={port}", target)
     log("closed to the internet again (tailnet only)")
     return True
+
+
+def reach_url():
+    """Where the node answers from anywhere: the tailnet's address where Tailscale is set up (it doesn't
+    change), else the Cloudflare quick tunnel's (new on every start; the owner's Finalist records it)."""
+    return public_url() or tunnel.URL["url"]
 
 
 def public_on():
@@ -326,7 +334,7 @@ def local_status():
             "claude": bool(claude), "paired": bool(CFG["owner_id"]), "owner": CFG.get("owner_email"),
             "code": pair_code() if not CFG["owner_id"] else None,
             "voice": voice_setup.status(CFG), "ranking": circuit() is not None,
-            "tailnet": public_url(), "public": public_on(),
+            "tailnet": public_url(), "public": public_on(), "reach": reach_url(), "tunnel": CFG.get("tunnel", True),
             "share": share_view(LocalOwner()) if s.get("email") and now < s.get("until", 0) + FINISH else None,
             "friends": friends(), "live": live, "activity": ACTIVITY[-12:],
             "dfs": {"sets": dfs.status(CFG), "allow": dfs.allowed_emails(CFG)}}
@@ -462,7 +470,7 @@ class Handler(BaseHTTPRequestHandler):
         """This PC's own browser, not a request through Tailscale or Funnel (which arrive from
         127.0.0.1 too, but say so in their headers): only it sees the node's screen or stops it."""
         return (self.client_address[0] in ("127.0.0.1", "::1") and not self.headers.get("X-Forwarded-For")
-                and not any(k.lower().startswith("tailscale-") for k in self.headers.keys())
+                and not any(k.lower().startswith(("tailscale-", "cf-")) for k in self.headers.keys())
                 and self.headers.get("Host", "").split(":")[0] in ("127.0.0.1", "localhost"))
 
     # ---- the site, through the node (4 Nov 2026) ------------------------------------------------------
@@ -532,6 +540,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/v1/hello":
             return self.send_json(200, {"node": VERSION, "supabase_url": CFG["supabase_url"], "supabase_anon_key": CFG["supabase_anon_key"],
                                         "voice": bool(voice_setup.installed(CFG)), "paired": bool(CFG["owner_id"]), "public": public_on(),
+                                        "url": reach_url(),
                                         "ranking": circuit() is not None})
         w = self.who()
         if not w:
@@ -758,9 +767,9 @@ class Handler(BaseHTTPRequestHandler):
                     return self.send_json(400, {"error": "Which Finalist account? Their email."})
                 if email == (w.email or "").lower():
                     return self.send_json(400, {"error": "That's you: your own stations need no share."})
-                url = public_url()
-                if not url or not funnel(True):
-                    return self.send_json(502, {"error": "Couldn't open the node to the internet (Tailscale Funnel). Is Tailscale up on this PC?"})
+                url = reach_url()
+                if not url or (public_url() and not funnel(True)):
+                    return self.send_json(502, {"error": "This computer isn't reachable from the internet yet (it takes a few seconds after Finalist opens). Try again in a moment."})
                 link = f"https://raahat.sh/finalist/join?node={urllib.parse.quote(url, safe='')}"
                 s = {"email": email, "until": now + SHARE_FOR, "started": now, "link": link}
                 share_save(s)
@@ -999,6 +1008,7 @@ def watch_parent():
             except (ProcessLookupError, PermissionError):
                 log("Finalist Desktop has closed: stopping")
                 voice_down()
+                tunnel.stop()
                 os._exit(0)
             except OSError:
                 pass
@@ -1007,6 +1017,10 @@ def watch_parent():
 
 def main():
     watch_parent()
+    import signal
+    def on_term(*_):          # Finalist Desktop closing it: take the voice and the tunnel with it
+        voice_down(); tunnel.stop(); os._exit(0)
+    signal.signal(signal.SIGTERM, on_term)
     srv = ThreadingHTTPServer(("127.0.0.1", int(CFG["port"])), Handler)
     srv.daemon_threads = True      # Ctrl+C ends it even mid-station or with the voice's socket open
     log(f"Finalist Node on http://127.0.0.1:{CFG['port']} (Ctrl+C stops it, and the voice it started)", screen=False)
@@ -1026,6 +1040,8 @@ def main():
     if public_on():
         funnel(True)
         log(f"reachable from anywhere at {public_url()} (your Syncra account is still needed)", screen=False)
+    elif CFG.get("tunnel", True):
+        tunnel.start(CFG["port"], CFG["data"], log)
     threading.Thread(target=share_reaper, daemon=True).start()
     if CFG.get("open_window", True) and "--no-window" not in sys.argv:
         import webbrowser
@@ -1034,6 +1050,7 @@ def main():
         srv.serve_forever()
     except KeyboardInterrupt:
         voice_down()
+        tunnel.stop()
         log("stopped")
 
 

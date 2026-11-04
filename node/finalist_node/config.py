@@ -15,6 +15,8 @@
   voice_python, voice_port
                     the voice; absent means typed stations only
   public_port       the tailnet (and, while shared, the internet's) HTTPS port
+  tunnel            reach it from anywhere through a Cloudflare quick tunnel (no account, nothing to set
+                    up): on by default; false turns it off. Tailscale Funnel, where set up, is used instead
   model             Claude model alias for stations (follows the newest Sonnet)
 """
 import json
@@ -46,6 +48,7 @@ DEFAULTS = {
     "voice_python": "",          # from source: a Python with numpy, websockets and onnxruntime (else this one)
     "voice_port": 47615,
     "public_port": 8443,
+    "tunnel": True,
     "model": "sonnet",
     "owner_email": None,      # for the node's screen; saved at pairing
     "open_window": True,      # open the node's screen in the browser when it starts (--no-window: don't)

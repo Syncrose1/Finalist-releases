@@ -158,9 +158,18 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
     <span class="pill"><i></i><span id="pillt">Starting</span></span>
   </header>
   <script>
+    // in Finalist Desktop (4 Nov 2026) the node is part of the app, and its user may never have heard of a
+    // "node": this screen speaks of "this computer", and drops what makes no sense there (stopping it: closing
+    // the app does that; opening Finalist: you're in it)
+    window.DESK = window.self !== window.top || /FinalistDesktop/.test(navigator.userAgent)
     // in Finalist Desktop (4 Nov 2026) this screen is a page in the app's window: the brand goes back to
     // Finalist there, in the same window
     // inside Finalist's /node page (a frame): Finalist's own chrome is round it, so no brand bar or aura
+    if (DESK) addEventListener('DOMContentLoaded', () => {
+      document.getElementById('t1s').textContent = 'What this computer has to work with.'
+      document.getElementById('t2s').textContent = 'Who can use Claude on this computer, and from where. Only while Finalist is open here.'
+      document.getElementById('foot').hidden = true
+    })
     if (window.self !== window.top) {
       document.querySelector('header.bar').style.display = 'none'
       const au = document.getElementById('aura'); if (au) au.style.display = 'none'
@@ -183,13 +192,13 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
 
   <section class="s r r3" aria-labelledby="t1">
     <h2 id="t1">This computer</h2>
-    <p>What the node has to work with.</p>
+    <p id="t1s">What the node has to work with.</p>
     <div class="card rows"><div id="rows"></div><div class="row" id="voice"></div></div>
   </section>
 
   <section class="s r r4" id="ctlsec" hidden aria-labelledby="t2">
     <h2 id="t2">Reach and sharing</h2>
-    <p>Who can use Claude on this node, and from where.</p>
+    <p id="t2s">Who can use Claude on this node, and from where.</p>
     <div class="card ctl" id="ctl"></div>
   </section>
 
@@ -205,7 +214,7 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
     <div class="card feed" id="feed"></div>
   </section>
 
-  <div class="foot r r5">
+  <div class="foot r r5" id="foot">
     <a class="btn" id="open" href="https://raahat.sh/finalist/ace-the-osces" target="_blank" rel="noopener">Open Finalist</a>
     <button class="btn ghost stop" id="stop" type="button">Stop the node</button>
     <p>Keep it running while you practise. Closing this tab doesn't stop it; the button does.</p>
@@ -334,12 +343,14 @@ function render(s) {
 
   const head = {
     ready: live ? ["A station is running", "Patient and Examiner Claude are at work. Keep going in Finalist."]
-                : ["Ready for stations", "Open Finalist and run any history or communication station with Claude."],
-    pair: ["Make this node yours", "In Finalist, signed in, open Settings and enter this code. The node then works for that account."],
-    "no-claude": ["Claude Code needed", "The node runs Patient and Examiner Claude through Claude Code, on your own Claude plan. Install it, sign in once, then start the node again."],
+                : ["Ready for stations", DESK ? "Run any history or communication station with Claude: this computer does the work." : "Open Finalist and run any history or communication station with Claude."],
+    pair: DESK ? ["Link it to your account", "Signed in to Finalist, open Settings and enter this code. This computer then works for your account."]
+               : ["Make this node yours", "In Finalist, signed in, open Settings and enter this code. The node then works for that account."],
+    "no-claude": DESK ? ["Claude Code needed", "Patient and Examiner Claude run through Claude Code, on your own Claude plan. Install it, sign in once, then reopen Finalist."]
+                      : ["Claude Code needed", "The node runs Patient and Examiner Claude through Claude Code, on your own Claude plan. Install it, sign in once, then start the node again."],
     sharing: ["Shared with a friend", s.share ? `${esc(s.share.email)} has it for ${left(s.share.until, s.now)} more. Your own stations wait meanwhile.` : ""],
   }[s.state];
-  set($("#eb"), s.state === "pair" ? "New node" : "Finalist Node", "eb");
+  set($("#eb"), DESK ? "This computer" : s.state === "pair" ? "New node" : "Finalist Node", "eb");
   set($("#h"), head[0], "h"); set($("#sub"), head[1], "sub");
 
   const f = $("#focus");
@@ -424,19 +435,19 @@ function controls(s) {
   if (!s.paired || !s.claude) { sec.hidden = true; last.ctl = ""; return; }
   sec.hidden = false;
   const sh = s.share, canExtend = sh && s.now >= sh.extend_from;
-  const key = JSON.stringify([s.public, s.tailnet, sh && sh.email, sh && sh.link, canExtend, s.friends]);
+  const key = JSON.stringify([s.public, s.reach, sh && sh.email, sh && sh.link, canExtend, s.friends]);
   if (last.ctl !== key) {
     last.ctl = key;
     const others = (s.friends || []).filter((e) => !sh || e !== sh.email);
     c.innerHTML = `
-      <div><h3>Reach it from anywhere</h3><div class="v">${s.tailnet
-        ? "Open to the internet while it runs, for a hospital PC, a borrowed laptop or a phone on mobile data. A Finalist sign-in is still needed for everything, and a share only lets in the email it names."
-        : "Needs Tailscale on this computer. Without it, only this computer reaches the node, and you can't share it."}</div>
-        ${s.tailnet ? `<div class="v">From another device, Finalist's “Node elsewhere?” takes</div><div class="v"><b>${esc(s.tailnet)}</b></div>` : ""}</div>
+      <div><h3>Reach it from anywhere</h3><div class="v">${s.reach
+        ? "Your other devices find it by themselves: sign in to Finalist there (a hospital PC, a borrowed laptop, a phone on mobile data). Keep Finalist open on this computer. A Finalist sign-in is still needed for everything, and a share only lets in the email it names."
+        : s.tunnel ? "Getting ready to be reached from anywhere: this takes a few seconds after it starts, and needs this computer online."
+        : "Off: only this computer reaches the node, and it can't be shared. (\u201ctunnel\u201d is false in its settings.)"}</div>
+        ${s.reach ? `<div class="v" style="margin-top:6px">Its address just now, if a device ever asks: <b>${esc(s.reach)}</b></div>` : ""}</div>
       <hr>
       <div><h3>Share it with a friend</h3><div class="v" id="shv"></div>
       ${sh ? `<div class="form">
-          ${sh.link ? `<button class="btn" id="copy" type="button">Copy their link</button>` : ""}
           <button class="btn ghost" id="extend" type="button" ${canExtend ? "" : "disabled"}>Extend 2 hours</button>
           <button class="btn ghost stop" id="unshare" type="button">Stop sharing</button></div>
           ${canExtend ? "" : `<div class="v" style="margin-top:6px">You can extend it in its last 10 minutes.</div>`}`
@@ -454,12 +465,11 @@ function controls(s) {
     const u = $("#unshare"); if (u) u.onclick = busy(u, () => post("/v1/local/share/stop"));
     c.querySelectorAll("[data-again]").forEach((b) => (b.onclick = busy(b, () => post("/v1/local/share", { email: b.dataset.again }))));
     c.querySelectorAll("[data-forget]").forEach((b) => (b.onclick = busy(b, () => post("/v1/local/friends/forget", { email: b.dataset.forget }))));
-    const cp = $("#copy"); if (cp) cp.onclick = () => { navigator.clipboard.writeText(sh.link); cp.textContent = "Copied"; setTimeout(() => (cp.textContent = "Copy their link"), 1600); };
   }
   $("#shv").textContent = sh
-    ? `${sh.email} has it for ${left(sh.until, s.now)} more, from their own Finalist account, with their own runs. Your own stations wait meanwhile.`
-    : s.tailnet ? "Two hours of Claude stations for one friend's Finalist account, with their own runs, never yours. Your own stations wait while it's live. Your friend reaches the node through Tailscale on this computer."
-      : "Sharing needs Tailscale on this computer: your friend reaches the node through it. Install Tailscale and sign in, then restart the node.";
+    ? `${sh.email} has it for ${left(sh.until, s.now)} more. They open raahat.sh/finalist anywhere and sign in with that email: their Finalist finds your node by itself, with their own runs. Your own stations wait meanwhile.`
+    : s.reach ? "Two hours of Claude stations for one friend's Finalist account, with their own runs, never yours. They just sign in to Finalist with that email: nothing to install, no link to send. Your own stations wait while it's live."
+      : "Sharing works once this computer can be reached from anywhere (a few seconds after it starts).";
 }
 
 // Datasets for stations (2 Nov 2026): what's here, and whose Finalist accounts may use them. Relaxed on
