@@ -160,7 +160,12 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
   <script>
     // in Finalist Desktop (4 Nov 2026) this screen is a page in the app's window: the brand goes back to
     // Finalist there, in the same window
-    if (/FinalistDesktop/.test(navigator.userAgent)) {
+    // inside Finalist's /node page (a frame): Finalist's own chrome is round it, so no brand bar or aura
+    if (window.self !== window.top) {
+      document.querySelector('header.bar').style.display = 'none'
+      const au = document.getElementById('aura'); if (au) au.style.display = 'none'
+      document.documentElement.style.background = 'transparent'
+    } else if (/FinalistDesktop/.test(navigator.userAgent)) {
       const a = document.querySelector('.brand'); a.href = '/finalist'; a.removeAttribute('target')
       a.querySelector('.eyebrow').textContent = '← Back to Finalist'
     }

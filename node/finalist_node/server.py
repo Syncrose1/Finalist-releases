@@ -672,8 +672,8 @@ class Handler(BaseHTTPRequestHandler):
         """/state, or /files/<kind>/<name> (the reading PDFs, streamed with byte ranges for the browser's viewer)."""
         phone = not self.local()
         try:
-            if sub == "/state":
-                c, r = revise_request("GET", "/api/state", phone=phone)
+            if sub in ("/state", "/timers"):         # /timers: just the timers, for the page's timer chip
+                c, r = revise_request("GET", "/api/" + sub[1:], phone=phone)
                 data = r.read(); c.close()
                 return self.send_json(r.status, json.loads(data or b"{}"))
             if sub.startswith("/files/"):
