@@ -14,9 +14,8 @@
   origins           pages allowed to call the node from a browser
   voice_python, voice_port
                     the voice; absent means typed stations only
-  public_port       the tailnet (and, while shared, the internet's) HTTPS port
   tunnel            reach it from anywhere through a Cloudflare quick tunnel (no account, nothing to set
-                    up): on by default; false turns it off. Tailscale Funnel, where set up, is used instead
+                    up): on by default; false turns it off, and then only this computer reaches the node
   model             Claude model alias for stations (follows the newest Sonnet)
 """
 import json
@@ -47,7 +46,6 @@ DEFAULTS = {
     "origins": ["https://raahat.sh", "http://127.0.0.1:47613", "http://localhost:47613", "http://localhost:3000"],
     "voice_python": "",          # from source: a Python with numpy, websockets and onnxruntime (else this one)
     "voice_port": 47615,
-    "public_port": 8443,
     "tunnel": True,
     "model": "sonnet",
     "owner_email": None,      # for the node's screen; saved at pairing

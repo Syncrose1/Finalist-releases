@@ -172,8 +172,8 @@ def shared():
 # Like the Revision System's links (Raahat, 27 Oct): extended only in the last 10 minutes, on the
 # same session, so the host has to be there; when it lapses, a station already under way may finish
 # (30 minutes) but nothing new starts; while it's live, the owner's own stations wait. While a share
-# is live the node is reachable from the internet (Tailscale Funnel), since the friend isn't on the
-# tailnet; every request still needs a Finalist session. Afterwards it's tailnet-only again.
+# is live the friend's Finalist finds the node through the owner's account record (node_endpoints) and
+# reaches it through the tunnel; every request still needs a Finalist session.
 SHARE_FOR, EXTEND_IN, FINISH = 2 * 60 * 60, 10 * 60, 30 * 60
 SHARE_LOCK = threading.Lock()
 
@@ -236,59 +236,14 @@ def may_use_claude(w, starting=False):
     return now < until or (not starting and now < until + FINISH)
 
 
-_URL = {"at": 0, "url": None}
-
-
-def public_url():
-    """This machine's tailnet HTTPS address (asked of Tailscale at most once a minute)."""
-    if time.time() - _URL["at"] < 60:
-        return _URL["url"]
-    _URL.update(at=time.time(), url=_public_url())
-    return _URL["url"]
-
-
-def _public_url():
-    try:
-        me = json.loads(subprocess.run(["tailscale", "status", "--json"], capture_output=True, text=True, timeout=10).stdout)["Self"]
-        return f"https://{me['DNSName'].rstrip('.')}:{CFG['public_port']}"
-    except Exception:
-        return None
-
-
-def funnel(on):
-    """Open the node to the internet for a share, or close it to the tailnet again. Turning Funnel off
-    for a port removes its route too, so the tailnet-only one is put back."""
-    if not shutil.which("tailscale"):
-        return False            # no Tailscale here: the Cloudflare tunnel is the way in (tunnel.py)
-    port, target = str(CFG["public_port"]), f"http://127.0.0.1:{CFG['port']}"
-    run = lambda *a: subprocess.run(["tailscale", *a], capture_output=True, text=True, timeout=20)
-    if on:
-        r = run("funnel", "--bg", f"--https={port}", target)
-        log("open to the internet for the share" if r.returncode == 0 else f"couldn't open it to the internet: {r.stderr.strip()[:200]}")
-        return r.returncode == 0
-    run("funnel", f"--https={port}", "off")
-    run("serve", "--bg", f"--https={port}", target)
-    log("closed to the internet again (tailnet only)")
-    return True
-
-
 def reach_url():
-    """Where the node answers from anywhere: the tailnet's address where Tailscale is set up (it doesn't
-    change), else the Cloudflare quick tunnel's (new on every start; the owner's Finalist records it)."""
-    return public_url() or tunnel.URL["url"]
+    """Where the node answers from anywhere: its Cloudflare quick tunnel (tunnel.py), new on every start;
+    the owner's Finalist records it on the account (4 Nov 2026: Tailscale Funnel dropped, one way for all)."""
+    return tunnel.URL["url"]
 
 
 def public_on():
-    """Reach it from anywhere: on whenever Tailscale is here, with no switch (Raahat, 3 Nov 2026: every
-    request still needs a Finalist sign-in, and a share only lets in the email it names). Without
-    Tailscale, only this computer reaches the node."""
-    return bool(public_url())
-
-
-def set_public(on):
-    f = Path(CFG["data"]).expanduser() / "access.json"
-    f.parent.mkdir(parents=True, exist_ok=True)
-    f.write_text(json.dumps({"public": bool(on)}))
+    return bool(reach_url())
 
 
 def share_view(w):
@@ -334,7 +289,7 @@ def local_status():
             "claude": bool(claude), "paired": bool(CFG["owner_id"]), "owner": CFG.get("owner_email"),
             "code": pair_code() if not CFG["owner_id"] else None,
             "voice": voice_setup.status(CFG), "ranking": circuit() is not None,
-            "tailnet": public_url(), "public": public_on(), "reach": reach_url(), "tunnel": CFG.get("tunnel", True),
+            "public": public_on(), "reach": reach_url(), "tunnel": CFG.get("tunnel", True),
             "share": share_view(LocalOwner()) if s.get("email") and now < s.get("until", 0) + FINISH else None,
             "friends": friends(), "live": live, "activity": ACTIVITY[-12:],
             "dfs": {"sets": dfs.status(CFG), "allow": dfs.allowed_emails(CFG)}}
@@ -348,8 +303,6 @@ def share_reaper():
             s = node_share()
             if s.get("email") and time.time() > s.get("until", 0) + FINISH:
                 share_save({})
-                if not public_on():
-                    funnel(False)
                 log(f"the share with {s['email']} has ended")
 
 
@@ -467,7 +420,7 @@ class Handler(BaseHTTPRequestHandler):
     # ---- GET -------------------------------------------------------------------------------------
 
     def local(self):
-        """This PC's own browser, not a request through Tailscale or Funnel (which arrive from
+        """This PC's own browser, not a request through the tunnel or Tailscale (which arrive from
         127.0.0.1 too, but say so in their headers): only it sees the node's screen or stops it."""
         return (self.client_address[0] in ("127.0.0.1", "::1") and not self.headers.get("X-Forwarded-For")
                 and not any(k.lower().startswith(("tailscale-", "cf-")) for k in self.headers.keys())
@@ -611,8 +564,6 @@ class Handler(BaseHTTPRequestHandler):
             if not CFG["owner_id"]:
                 return self.send_json(409, {"error": "Pair the node with your Finalist account first."})
             me = LocalOwner()
-            if path == "/v1/local/public":
-                return self.set_reach(b, me)
             if path == "/v1/local/voice/setup":
                 voice_setup.start(CFG, log)
                 return self.send_json(200, {"voice": voice_setup.status(CFG)})
@@ -643,8 +594,6 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json(502, {"error": f"The Revision System didn't answer ({e}). Is it installed on this PC?"})
         if path.startswith("/v1/dfs/") and path.endswith("/install"):
             return self.dfs_install(path[len("/v1/dfs/"):-len("/install")], w)
-        if path == "/v1/public":
-            return self.set_reach(b, w)
         d = data_for(w)
         if path.startswith("/v1/share"):
             return self.share(path, b, w)
@@ -742,18 +691,6 @@ class Handler(BaseHTTPRequestHandler):
             except (BrokenPipeError, ConnectionResetError):
                 pass
 
-    def set_reach(self, b, w):
-        if not w.owner:
-            return self.send_json(403, {"error": "Only the node's owner can open it to the internet."})
-        on = bool(b.get("on"))
-        if on and not funnel(True):
-            return self.send_json(502, {"error": "Couldn't open it to the internet (Tailscale Funnel). Is Tailscale up on this PC?"})
-        set_public(on)
-        if not on and not share_live():
-            funnel(False)
-        log("open to the internet while it runs" if on else "back to your own devices only")
-        return self.send_json(200, {"public": on, "url": public_url()})
-
     def share(self, path, b, w):
         """Start (or replace), extend and stop a share: the owner's alone."""
         if not w.owner:
@@ -768,7 +705,7 @@ class Handler(BaseHTTPRequestHandler):
                 if email == (w.email or "").lower():
                     return self.send_json(400, {"error": "That's you: your own stations need no share."})
                 url = reach_url()
-                if not url or (public_url() and not funnel(True)):
+                if not url:
                     return self.send_json(502, {"error": "This computer isn't reachable from the internet yet (it takes a few seconds after Finalist opens). Try again in a moment."})
                 link = f"https://raahat.sh/finalist/join?node={urllib.parse.quote(url, safe='')}"
                 s = {"email": email, "until": now + SHARE_FOR, "started": now, "link": link}
@@ -786,8 +723,6 @@ class Handler(BaseHTTPRequestHandler):
             elif path == "/v1/share/stop":
                 if s.get("email"):
                     share_save({})
-                    if not public_on():
-                        funnel(False)
                     log(f"stopped sharing with {s['email']}")
             else:
                 return self.send_json(404, {"error": "not found"})
@@ -1037,10 +972,7 @@ def main():
     s = node_share()
     if s.get("email"):
         log(f"still shared with {s['email']} for {max(0, int((s['until'] - time.time()) / 60))} more minutes", screen=False)
-    if public_on():
-        funnel(True)
-        log(f"reachable from anywhere at {public_url()} (your Syncra account is still needed)", screen=False)
-    elif CFG.get("tunnel", True):
+    if CFG.get("tunnel", True):
         tunnel.start(CFG["port"], CFG["data"], log)
     threading.Thread(target=share_reaper, daemon=True).start()
     if CFG.get("open_window", True) and "--no-window" not in sys.argv:

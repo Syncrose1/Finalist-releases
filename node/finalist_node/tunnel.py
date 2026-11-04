@@ -4,7 +4,7 @@ releases into the node's data folder) gives this node a public https://….trycl
 account or sign-up. The address changes on every start; the owner's Finalist records it against their account
 (Supabase, node_endpoints) so their devices and friends find it. Every request still needs a Finalist sign-in.
 
-Tailscale Funnel, where it's set up, is used as well; the tunnel is the default for everyone else.
+The only way in from elsewhere (Tailscale Funnel dropped the same day: one way for everyone).
 Config: "tunnel": false turns it off.
 """
 
