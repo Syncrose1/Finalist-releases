@@ -498,6 +498,11 @@ class Handler(BaseHTTPRequestHandler):
         w = self.who()
         if not w:
             return self.send_json(401, {"error": "Sign in with your Finalist account."})
+        if path == "/v1/me" and not CFG["owner_id"] and self.from_app():
+            # Finalist Desktop (4 Nov 2026): the account signed in to the app's own window owns the node it
+            # started; no code to type. Only that window (same origin, this PC, a node the app started).
+            self.adopt(w)
+            w = self.who()
         if path == "/v1/me":
             return self.send_json(200, {"id": w.id, "email": w.email, "owner": w.owner, "privileged": w.privileged, "claude": may_use_claude(w),
                                         "share": share_view(w)})
@@ -613,17 +618,23 @@ class Handler(BaseHTTPRequestHandler):
             return self.station(path[len("/v1/station/"):], b, w, d)
         return self.send_json(404, {"error": "not found"})
 
+    def from_app(self):
+        return bool(os.environ.get("FINALIST_PARENT_PID")) and self.local() and self.headers.get("Sec-Fetch-Site") == "same-origin"
+
+    def adopt(self, w):
+        CFG["owner_id"] = w.id
+        CFG["owner_email"] = w.email
+        config.save_owner(w.id, w.email)
+        auth.forget()                    # cached answers were made before there was an owner
+        log(f"this node is {w.email}'s: signed in to Finalist here")
+
     def pair(self, b, w):
         """The first owner: whoever signs in to Finalist and enters the code this node printed."""
         if CFG["owner_id"]:
             return self.send_json(409, {"error": "This node already has an owner."})
         if str(b.get("code") or "").strip().upper() != pair_code():
             return self.send_json(403, {"error": "That isn't the code in the node's terminal."})
-        CFG["owner_id"] = w.id
-        CFG["owner_email"] = w.email
-        config.save_owner(w.id, w.email)
-        auth.forget()                    # cached answers were made before there was an owner
-        log(f"paired: this node is {w.email}'s")
+        self.adopt(w)
         return self.send_json(200, {"owner": True, "email": w.email})
 
     def revise_get(self, sub):

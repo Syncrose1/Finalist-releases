@@ -344,7 +344,7 @@ function render(s) {
   const head = {
     ready: live ? ["A station is running", "Patient and Examiner Claude are at work. Keep going in Finalist."]
                 : ["Ready for stations", DESK ? "Run any history or communication station with Claude: this computer does the work." : "Open Finalist and run any history or communication station with Claude."],
-    pair: DESK ? ["Link it to your account", "Signed in to Finalist, open Settings and enter this code. This computer then works for your account."]
+    pair: DESK ? ["Sign in to make it yours", "Sign in to Finalist in this window, and this computer works for your account from then on."]
                : ["Make this node yours", "In Finalist, signed in, open Settings and enter this code. The node then works for that account."],
     "no-claude": DESK ? ["Claude Code needed", "Patient and Examiner Claude run through Claude Code, on your own Claude plan. Install it, sign in once, then reopen Finalist."]
                       : ["Claude Code needed", "The node runs Patient and Examiner Claude through Claude Code, on your own Claude plan. Install it, sign in once, then start the node again."],
@@ -354,7 +354,7 @@ function render(s) {
   set($("#h"), head[0], "h"); set($("#sub"), head[1], "sub");
 
   const f = $("#focus");
-  if (s.state === "pair" && s.code) {
+  if (s.state === "pair" && s.code && !DESK) {
     f.hidden = false;
     set(f, `<div class="code" aria-label="Pairing code ${esc(s.code)}">${[...s.code].map((c, i) => `<span class="${c === "-" ? "dash" : ""}" style="animation-delay:${i * 55}ms">${esc(c)}</span>`).join("")}</div>`, "focus");
     $("#open").href = "https://raahat.sh/finalist/account#claude"; $("#open").textContent = "Pair it in Finalist";
@@ -440,11 +440,11 @@ function controls(s) {
     last.ctl = key;
     const others = (s.friends || []).filter((e) => !sh || e !== sh.email);
     c.innerHTML = `
-      <div><h3>Reach it from anywhere</h3><div class="v">${s.reach
-        ? "Your other devices find it by themselves: sign in to Finalist there (a hospital PC, a borrowed laptop, a phone on mobile data). Keep Finalist open on this computer. A Finalist sign-in is still needed for everything, and a share only lets in the email it names."
-        : s.tunnel ? "Getting ready to be reached from anywhere: this takes a few seconds after it starts, and needs this computer online."
-        : "Off: only this computer reaches the node, and it can't be shared. (\u201ctunnel\u201d is false in its settings.)"}</div>
-        ${s.reach ? `<div class="v" style="margin-top:6px">Its address just now, if a device ever asks: <b>${esc(s.reach)}</b></div>` : ""}</div>
+      <div><h3>Use it from anywhere</h3><div class="v">${s.reach
+        ? "Leave Finalist open on this computer and everything it does here, from Claude stations to the voice and the images, works on your other devices too: a hospital PC, a borrowed laptop, your phone on mobile data. They use this computer\u2019s power over the internet, so there\u2019s nothing to install on them. Just sign in to Finalist."
+        : s.tunnel ? "Getting ready: your other devices can use this computer a few seconds after it starts, while it\u2019s online."
+        : "Off: only this computer can use the node, and it can\u2019t be shared. (\u201ctunnel\u201d is false in its settings.)"}</div>
+        ${s.reach ? `<div class="v" style="margin-top:6px;color:var(--ink-3);font-size:12.5px">A Finalist sign-in is still needed for everything, and a share only lets in the email it names.</div>` : ""}</div>
       <hr>
       <div><h3>Share it with a friend</h3><div class="v" id="shv"></div>
       ${sh ? `<div class="form">

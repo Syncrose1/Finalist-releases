@@ -1,63 +1,61 @@
-# Finalist Node
+# Finalist Desktop
 
-The Finalist Node runs **Patient and Examiner Claude** for [Finalist](https://raahat.sh/finalist)'s OSCE stations on your own
-computer, through your own [Claude Code](https://claude.com/claude-code) (so the stations cost nothing beyond your Claude plan).
-Finalist's cards, clock and recall drills work without it; the node adds the stations you run with Claude.
+**Finalist Desktop** is [Finalist](https://raahat.sh/finalist) as an app on your computer, with a small helper inside it
+we call a node. The node runs **Patient and Examiner Claude** for the OSCE stations through your own
+[Claude Code](https://claude.com/claude-code) (so stations cost nothing beyond your Claude plan), the voice, and the
+image and ECG datasets. Timers float over your screen while you work.
+
+Leave it open, and your other devices (a hospital PC, a borrowed laptop, your phone) can use all of it too: open
+Finalist there and sign in. They use this computer's power over the internet, with nothing to install on them.
 
 ## Get it
 
-1. **Claude Code**, signed in. Install it once, then run `claude` and sign in:
-   - macOS / Linux: `curl -fsSL https://claude.ai/install.sh | bash`
-   - Windows (PowerShell): `irm https://claude.ai/install.ps1 | iex`
-2. **The node**: from [Releases](../../releases/latest), download the one for your computer. Nothing is installed:
-   it's one file (or one app) you keep wherever you like.
+From [Releases](../../releases/latest), download the one for your computer:
 
-   | Computer | Download | Then |
-   |---|---|---|
-   | Windows | `finalist-node-windows-x64.exe` | double-click it |
-   | Mac with Apple silicon (M1 or later) | `finalist-node-macos-arm64.zip` | double-click it to unzip, then open **Finalist Node** |
-   | Older Intel Mac | `finalist-node-macos-intel.zip` | the same |
-   | Linux | `finalist-node-linux-x64.AppImage` | mark it as executable (right-click → Properties → Permissions → allow it to run as a program), then double-click it |
+| Computer | Download | Then |
+|---|---|---|
+| Windows | `Finalist-windows-x64-setup.exe` | double-click it: it installs for you only and opens |
+| Mac with Apple silicon (M1 or later) | `Finalist-macos-arm64.dmg` | open it and drag **Finalist** into Applications |
+| Older Intel Mac | `Finalist-macos-intel.dmg` | the same |
+| Linux | `Finalist-linux-x64.AppImage` | mark it as executable (right-click → Properties → Permissions → allow it to run as a program), then double-click it |
 
-## Start it
+Open **Finalist** and sign in. That's all: this computer now works for your account, here and from anywhere.
 
-Open **Finalist Node**. Its own screen opens in your browser (on Windows and Mac a small window also shows its log). The first time, that screen shows
-a pairing code: in Finalist, signed in, go to **Settings → Practise with Claude** and enter it. The node is then yours.
+For Claude stations, install **Claude Code** on this computer once and sign in (run `claude`):
 
-To stop it, press **Stop the node** on its screen (or close its window, where there is one). Closing the browser tab
-doesn't stop it.
-It never installs itself as a background service.
+- macOS / Linux: `curl -fsSL https://claude.ai/install.sh | bash`
+- Windows (PowerShell): `irm https://claude.ai/install.ps1 | iex`
 
 ### The first time on a Mac or Windows
 
 These builds aren't signed, so your computer asks once whether to trust them:
 
 - **Windows**: "Windows protected your PC" → **More info** → **Run anyway**.
-- **macOS**: the first double-click says it can't be opened. Go to System Settings → Privacy & Security and press
-  **Open Anyway** (once). Or in Terminal: `xattr -dr com.apple.quarantine ~/Downloads/"Finalist Node.app"`.
+- **macOS**: the first open says it can't be opened. Go to System Settings → Privacy & Security and press
+  **Open Anyway** (once). Or in Terminal: `xattr -dr com.apple.quarantine /Applications/Finalist.app`.
 - **Linux**: mark the AppImage as executable first (above). In a terminal that's
-  `chmod +x finalist-node-linux-x64.AppImage`.
+  `chmod +x Finalist-linux-x64.AppImage`.
 
-## From your other devices
+## Using it from elsewhere
 
-The node answers only this computer's browser unless you use [Tailscale](https://tailscale.com) (free for personal use). With
-Tailscale on both devices, run this once on the node's computer:
+Keep Finalist open on this computer (it can sit minimised). Your other devices find it by themselves: sign in to
+Finalist there. Close the app, or let the computer sleep, and they lose it until it's back.
 
-```
-tailscale serve --bg --https=8443 http://127.0.0.1:47620
-```
+How: the node gets its own secure web address through a Cloudflare tunnel (free, no account), and Finalist keeps
+that address on your account so your devices, and a friend you share it with, can look it up. The address alone
+opens nothing: every request still needs a Finalist sign-in.
 
-Then, in Finalist on your other device, open **Node elsewhere?** and enter the address the node's screen shows (it ends in
-`.ts.net:8443`). The node's screen also has **Reach it from anywhere** (for a hospital PC) and **Share it with a friend**.
+**Share it with a friend** from the node's screen in the app: two hours of Claude stations for their Finalist
+account, with their own runs. They just sign in to Finalist with that email.
 
 ## Voice
 
-Spoken stations need a local voice, which is only set up on some machines for now; elsewhere stations are typed.
+Spoken stations need a local voice, set up from the node's screen; until then stations are typed.
 
 ## Running from source
 
-Python 3.10 or newer, no packages needed: `cd node && python3 -m finalist_node`. `node/install.sh` (Linux, macOS) and
-`node/install.ps1` (Windows) set up a launcher.
+The node: Python 3.10 or newer, no packages needed: `cd node && python3 -m finalist_node`.
+The app: `cd desktop && npm install && npm start`.
 
 ## What it can see
 

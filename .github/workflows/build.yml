@@ -1,5 +1,7 @@
-# Builds the Finalist Node as one executable per platform (PyInstaller, unsigned), checks that each
-# one starts and answers, and on a version tag publishes them as a release.
+# Builds Finalist Desktop for each platform with its node inside (4 Nov 2026: the standalone node is retired;
+# the app is the one download). The node is built first (PyInstaller, one folder), checked to start and
+# answer on its own, then packed into the app (Electron, unsigned), which is checked to start its node.
+# On a version tag the apps are published as a release.
 name: build
 on:
   push:
@@ -13,10 +15,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { os: ubuntu-22.04,   name: finalist-node-linux-x64.AppImage }
-          - { os: macos-15,       name: finalist-node-macos-arm64.zip }
-          - { os: macos-15-intel, name: finalist-node-macos-intel.zip }
-          - { os: windows-2022,   name: finalist-node-windows-x64.exe }
+          - { os: ubuntu-22.04,   name: Finalist-linux-x64.AppImage }
+          - { os: macos-15,       name: Finalist-macos-arm64.dmg }
+          - { os: macos-15-intel, name: Finalist-macos-intel.dmg }
+          - { os: windows-2022,   name: Finalist-windows-x64-setup.exe }
     runs-on: ${{ matrix.os }}
     defaults:
       run:
@@ -26,57 +28,81 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Build
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Build the node
         working-directory: node
         run: |
           # the voice (voice/voiced.py, run by the executable with --voice) needs these three
           pip install pyinstaller==6.* numpy websockets onnxruntime || pip install pyinstaller==6.* numpy websockets "onnxruntime<1.20"
           sep=$(python -c "import os; print(os.pathsep)")   # ; on Windows, : elsewhere
-          common=(--collect-submodules websockets --add-data "data${sep}data" --add-data "voice${sep}voice")
-          if [ "$RUNNER_OS" = macOS ]; then
-            # a Mac's own portable form: an .app, no Terminal window
-            pyinstaller --windowed --onedir --name "Finalist Node" --osx-bundle-identifier sh.raahat.finalist-node "${common[@]}" finalist-node.py
-            echo "EXE=dist/Finalist Node.app/Contents/MacOS/Finalist Node" >> "$GITHUB_ENV"
-          else
-            pyinstaller --onefile --console --name finalist-node "${common[@]}" finalist-node.py
-            [ -f dist/finalist-node.exe ] && echo "EXE=dist/finalist-node.exe" >> "$GITHUB_ENV" || echo "EXE=dist/finalist-node" >> "$GITHUB_ENV"
-          fi
-          ls -l dist
-      - name: Package
+          # one folder, not one file: it starts at once instead of unpacking itself every launch; console, so
+          # its log has somewhere to go (the app starts it with no window)
+          pyinstaller --onedir --console --name finalist-node --collect-submodules websockets \
+            --add-data "data${sep}data" --add-data "voice${sep}voice" finalist-node.py
+          [ -f dist/finalist-node/finalist-node.exe ] && echo "EXE=node/dist/finalist-node/finalist-node.exe" >> "$GITHUB_ENV" \
+            || echo "EXE=node/dist/finalist-node/finalist-node" >> "$GITHUB_ENV"
+          ls -l dist/finalist-node
+      - name: The node starts and answers
         run: |
-          # Portable, nothing installed (Raahat): an AppImage on Linux, an .app on a Mac, the .exe on Windows
-          mkdir out
-          case "${{ matrix.name }}" in
-            *.exe) cp node/dist/finalist-node.exe "out/${{ matrix.name }}" ;;
-            *.zip) ditto -c -k --keepParent "node/dist/Finalist Node.app" "out/${{ matrix.name }}" ;;
-            *.AppImage)
-              A=AppDir; mkdir -p $A/usr/bin
-              cp node/dist/finalist-node $A/usr/bin/finalist-node
-              printf '#!/bin/sh\nexec "$(dirname "$(readlink -f "$0")")/usr/bin/finalist-node" "$@"\n' > $A/AppRun
-              chmod +x $A/AppRun $A/usr/bin/finalist-node
-              printf '[Desktop Entry]\nType=Application\nName=Finalist Node\nComment=Patient and Examiner Claude for Finalist, on this computer\nExec=finalist-node\nIcon=finalist-node\nTerminal=false\nCategories=Education;\n' > $A/finalist-node.desktop
-              cp assets/finalist-node.png $A/finalist-node.png && cp assets/finalist-node.png $A/.DirIcon   # appimagetool wants a PNG
-              curl -fsSL -o appimagetool https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage
-              chmod +x appimagetool
-              ARCH=x86_64 APPIMAGE_EXTRACT_AND_RUN=1 ./appimagetool $A "out/${{ matrix.name }}"
-              echo "PKG=out/${{ matrix.name }}" >> "$GITHUB_ENV" ;;
-          esac
-          ls -l out
-      - name: Starts and answers
-        run: |
-          # the packaged thing itself where it differs (the AppImage); the .app's own executable; the .exe
-          exe="node/$EXE"
-          [ -n "${PKG:-}" ] && exe="$PKG" && export APPIMAGE_EXTRACT_AND_RUN=1
           cfg="$RUNNER_TEMP/node.json"; data="$RUNNER_TEMP/node-data"
-          python -c "import json,sys; json.dump({'port': 47699, 'data': sys.argv[2], 'open_window': False}, open(sys.argv[1], 'w'))" "$cfg" "$data"
-          FINALIST_NODE_CONFIG="$cfg" "$exe" --no-window > "$RUNNER_TEMP/node.log" 2>&1 &
+          python -c "import json,sys; json.dump({'port': 47699, 'data': sys.argv[2], 'open_window': False, 'tunnel': False}, open(sys.argv[1], 'w'))" "$cfg" "$data"
+          FINALIST_NODE_CONFIG="$cfg" "$EXE" --no-window > "$RUNNER_TEMP/node.log" 2>&1 &
           for i in $(seq 1 60); do curl -sf http://127.0.0.1:47699/v1/hello -o /dev/null && break; sleep 1; done
           cat "$RUNNER_TEMP/node.log"
           # to files first: grep -q stops reading early and curl then fails with 23 (31 Oct, on the Macs)
           curl -sf http://127.0.0.1:47699/v1/hello -o hello.json && grep -q '"node"' hello.json
           curl -sf http://127.0.0.1:47699/ -o screen.html && grep -q "Finalist Node" screen.html
           # the voice's own Python parts are inside (its engine and models download on the machine)
-          "$exe" --voice --help > voice-help.txt && grep -q -- "--engine" voice-help.txt
+          "$EXE" --voice --help > voice-help.txt && grep -q -- "--engine" voice-help.txt
+          curl -sf -X POST http://127.0.0.1:47699/v1/local/stop -H 'X-Finalist-Node: 1' -o /dev/null || true
+      - name: Build the app
+        working-directory: desktop
+        run: |
+          npm install --no-audit --no-fund
+          v="${GITHUB_REF_NAME#v}"; [[ "$v" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] && npm version --no-git-tag-version --allow-same-version "$v"
+          npx electron-builder --publish never
+          ls -l dist
+      - name: Package
+        run: |
+          mkdir out
+          case "${{ matrix.name }}" in
+            *.AppImage) cp desktop/dist/*.AppImage "out/${{ matrix.name }}"
+                        echo "APP=out/${{ matrix.name }}" >> "$GITHUB_ENV" ;;
+            *.exe)      cp desktop/dist/*.exe "out/${{ matrix.name }}"
+                        echo "APP=desktop/dist/win-unpacked/Finalist.exe" >> "$GITHUB_ENV" ;;
+            *.dmg)
+              # unsigned, but signed ad hoc (the whole bundle, the node inside included): Apple silicon won't
+              # run an unsigned binary at all, and an ad hoc one asks once ("Open Anyway")
+              app=$(ls -d desktop/dist/mac*/Finalist.app)
+              codesign --force --deep --sign - "$app"
+              codesign --verify --deep --strict "$app"
+              mkdir dmg && cp -R "$app" dmg/ && ln -s /Applications dmg/Applications
+              hdiutil create -volname Finalist -srcfolder dmg -ov -format UDZO "out/${{ matrix.name }}"
+              echo "APP=$app/Contents/MacOS/Finalist" >> "$GITHUB_ENV" ;;
+          esac
+          ls -l out
+      - name: The app starts its node
+        run: |
+          # the app itself, as someone would open it: it should start the node inside it, which answers on
+          # 47620 (a throwaway config: no tunnel, its own data)
+          cfg="$RUNNER_TEMP/app-node.json"; data="$RUNNER_TEMP/app-node-data"
+          python -c "import json,sys; json.dump({'data': sys.argv[2], 'owner_data': sys.argv[2], 'open_window': False, 'tunnel': False}, open(sys.argv[1], 'w'))" "$cfg" "$data"
+          export FINALIST_NODE_CONFIG="$cfg"
+          if [ "$RUNNER_OS" = Linux ]; then
+            sudo apt-get install -y -qq xvfb libfuse2 > /dev/null
+            chmod +x "$APP"; export APPIMAGE_EXTRACT_AND_RUN=1
+            xvfb-run -a "$APP" > "$RUNNER_TEMP/app.log" 2>&1 &
+          else
+            "$APP" > "$RUNNER_TEMP/app.log" 2>&1 &
+          fi
+          ok=""
+          for i in $(seq 1 90); do curl -sf http://127.0.0.1:47620/v1/hello -o app-hello.json && ok=1 && break; sleep 1; done
+          cat "$RUNNER_TEMP/app.log" | tail -40
+          [ -n "$ok" ] && grep -q '"node"' app-hello.json && echo "the app's node answered"
+          # and it serves Finalist through itself, as the window loads it
+          curl -s -o /dev/null -w '%{http_code}\n' http://127.0.0.1:47620/finalist | tee code.txt; grep -qE '^(200|30[0-9])$' code.txt
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.name }}
@@ -95,5 +121,6 @@ jobs:
         with:
           files: out/*
           body: |
-            Download the one for your computer, then start it: it opens its own screen in your browser.
-            See the README for the one-time "unidentified developer" step on macOS and Windows.
+            Finalist Desktop: download the one for your computer, open it and sign in. Leave it open and your
+            other devices can use this computer's Claude stations, voice and datasets too.
+            The first time, macOS and Windows ask whether to trust it: see the README.

@@ -1,0 +1,32 @@
+{
+  "name": "finalist-desktop",
+  "version": "0.6.0",
+  "description": "Finalist Desktop: the Finalist site and its node in one app, with timers that float over your screen",
+  "main": "main.js",
+  "private": true,
+  "author": "Syncratic",
+  "homepage": "https://raahat.sh/finalist",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "productName": "Finalist",
+  "desktopName": "finalist.desktop",
+  "devDependencies": {
+    "electron": "^44.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "sh.raahat.finalist",
+    "productName": "Finalist",
+    "artifactName": "Finalist-${os}-${arch}.${ext}",
+    "directories": { "buildResources": "build", "output": "dist" },
+    "files": ["main.js", "main-preload.js", "timer.html", "timer-preload.js", "splash.html", "icon.png", "package.json"],
+    "extraResources": [{ "from": "../node/dist/finalist-node", "to": "node" }],
+    "publish": null,
+    "linux": { "target": "AppImage", "category": "Education", "executableName": "finalist", "desktop": { "entry": { "StartupWMClass": "finalist" } } },
+    "mac": { "target": "dir", "identity": null, "category": "public.app-category.education" },
+    "win": { "target": "nsis" },
+    "nsis": { "oneClick": true, "perMachine": false, "shortcutName": "Finalist" }
+  }
+}
