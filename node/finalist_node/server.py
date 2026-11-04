@@ -759,7 +759,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def dfs_get(self, path, w):
         """GET /v1/dfs: what's here and whether you may use it; /v1/dfs/<set>: its catalogue;
-        /v1/dfs/<set>/<id>: one item (fetched from its source the first time)."""
+        /v1/dfs/<set>/<id>: one item (fetched from its source the first time); /v1/dfs/<set>/<id>/<window>: a CT
+        slice at another window (brain, blood, bone)."""
         guest = may_use_claude(w)
         may = dfs.may_use(w, CFG, guest=guest)
         parts = [x for x in path.split("/")[3:] if x]
@@ -773,7 +774,7 @@ class Handler(BaseHTTPRequestHandler):
                 dfs.warm(CFG, parts[0])         # whatever isn't kept yet comes in behind, on its own thread
             return self.send_json(200 if c else 404, c or {"error": "not found"})
         try:
-            it = dfs.item(CFG, parts[0], parts[1])
+            it = dfs.windowed(CFG, parts[0], parts[1], parts[2]) if len(parts) == 3 else dfs.item(CFG, parts[0], parts[1])
         except Exception as e:
             return self.send_json(502, {"error": f"Couldn't fetch it from its source ({str(e)[:120]}). Try again in a moment."})
         return self.send_json(200 if it else 404, it or {"error": "not found"})

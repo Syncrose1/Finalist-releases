@@ -3149,6 +3149,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 137 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     250.3,
+     257.2
+    ],
+    "ang": 1.5342,
+    "ax": [
+     191.1,
+     135.5
+    ]
+   },
+   "level": 0.387,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-137.zip",
@@ -3199,6 +3211,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 434 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     241.9,
+     263.7
+    ],
+    "ang": 1.4084,
+    "ax": [
+     180.5,
+     147.4
+    ]
+   },
+   "level": 0.606,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-434.zip",
@@ -3249,6 +3273,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 19 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     233.6,
+     257.4
+    ],
+    "ang": 1.618,
+    "ax": [
+     180.3,
+     126.4
+    ]
+   },
+   "level": 0.464,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-19.zip",
@@ -3308,6 +3344,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 473 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     256.8,
+     252.2
+    ],
+    "ang": 1.6951,
+    "ax": [
+     176.0,
+     117.4
+    ]
+   },
+   "level": 0.473,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-473.zip",
@@ -3367,6 +3415,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 343 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     224.5,
+     255.0
+    ],
+    "ang": 0.9355,
+    "ax": [
+     176.8,
+     125.0
+    ]
+   },
+   "level": 0.586,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-343.zip",
@@ -3426,6 +3486,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 296 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     238.9,
+     262.1
+    ],
+    "ang": 1.5105,
+    "ax": [
+     169.4,
+     128.2
+    ]
+   },
+   "level": 0.588,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-296.zip",
@@ -3473,6 +3545,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 95 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     251.8,
+     240.9
+    ],
+    "ang": 1.5204,
+    "ax": [
+     180.8,
+     136.8
+    ]
+   },
+   "level": 0.467,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-95.zip",
@@ -3511,6 +3595,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 481 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     234.3,
+     276.3
+    ],
+    "ang": 1.6523,
+    "ax": [
+     185.5,
+     138.2
+    ]
+   },
+   "level": 0.4,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-481.zip",
@@ -3571,6 +3667,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 1 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.2,
+     261.4
+    ],
+    "ang": 1.6627,
+    "ax": [
+     150.7,
+     114.9
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-1.zip",
@@ -3630,6 +3738,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 458 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     246.7,
+     253.4
+    ],
+    "ang": 1.4264,
+    "ax": [
+     168.9,
+     122.2
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-458.zip",
@@ -3668,6 +3788,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 219 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     251.3,
+     258.4
+    ],
+    "ang": 1.6211,
+    "ax": [
+     161.5,
+     131.7
+    ]
+   },
+   "level": 0.639,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-219.zip",
@@ -3718,6 +3850,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 480 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     249.5,
+     235.7
+    ],
+    "ang": 1.6386,
+    "ax": [
+     172.6,
+     131.2
+    ]
+   },
+   "level": 0.467,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-480.zip",
@@ -3786,6 +3930,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 243 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     238.3,
+     263.8
+    ],
+    "ang": 1.6348,
+    "ax": [
+     167.1,
+     141.1
+    ]
+   },
+   "level": 0.531,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-243.zip",
@@ -3854,6 +4010,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 210 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     268.9,
+     237.5
+    ],
+    "ang": 1.6579,
+    "ax": [
+     145.8,
+     101.5
+    ]
+   },
+   "level": 0.473,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-210.zip",
@@ -3913,6 +4081,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 190 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     245.4,
+     276.8
+    ],
+    "ang": 1.6727,
+    "ax": [
+     161.8,
+     126.8
+    ]
+   },
+   "level": 0.639,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-190.zip",
@@ -3963,6 +4143,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 359 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     258.6,
+     271.9
+    ],
+    "ang": 1.7781,
+    "ax": [
+     173.5,
+     128.1
+    ]
+   },
+   "level": 0.531,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-359.zip",
@@ -4049,6 +4241,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 364 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     265.6,
+     238.8
+    ],
+    "ang": 1.6052,
+    "ax": [
+     188.9,
+     127.1
+    ]
+   },
+   "level": 0.48,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-364.zip",
@@ -4117,6 +4321,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 358 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.2,
+     242.5
+    ],
+    "ang": 1.8059,
+    "ax": [
+     154.5,
+     112.2
+    ]
+   },
+   "level": 0.635,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-358.zip",
@@ -4185,6 +4401,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 238 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     257.8,
+     262.7
+    ],
+    "ang": 1.4848,
+    "ax": [
+     160.2,
+     131.5
+    ]
+   },
+   "level": 0.625,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-238.zip",
@@ -4244,6 +4472,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 297 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     249.0,
+     311.8
+    ],
+    "ang": 1.5905,
+    "ax": [
+     165.0,
+     133.4
+    ]
+   },
+   "level": 0.639,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-297.zip",
@@ -4312,6 +4552,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 340 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     257.6,
+     255.6
+    ],
+    "ang": 1.6161,
+    "ax": [
+     205.6,
+     139.7
+    ]
+   },
+   "level": 0.375,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-340.zip",
@@ -4380,6 +4632,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 318 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.2,
+     280.5
+    ],
+    "ang": 1.4831,
+    "ax": [
+     181.2,
+     132.5
+    ]
+   },
+   "level": 0.6,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-318.zip",
@@ -4440,6 +4704,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 346 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     251.0,
+     301.7
+    ],
+    "ang": 1.541,
+    "ax": [
+     144.1,
+     105.8
+    ]
+   },
+   "level": 0.611,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-346.zip",
@@ -4490,6 +4766,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 114 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     277.6,
+     252.6
+    ],
+    "ang": 1.5646,
+    "ax": [
+     137.9,
+     117.7
+    ]
+   },
+   "level": 0.636,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-114.zip",
@@ -4528,6 +4816,7 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 406 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "level": 0.375,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-406.zip",
@@ -4566,6 +4855,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 352 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     244.7,
+     260.5
+    ],
+    "ang": 1.715,
+    "ax": [
+     213.5,
+     153.1
+    ]
+   },
+   "level": 0.389,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-352.zip",
@@ -4604,6 +4905,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 92 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     235.9,
+     267.0
+    ],
+    "ang": 1.5442,
+    "ax": [
+     152.3,
+     123.6
+    ]
+   },
+   "level": 0.625,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-92.zip",
@@ -4642,6 +4955,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 485 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     242.4,
+     267.9
+    ],
+    "ang": 1.6618,
+    "ax": [
+     180.6,
+     134.5
+    ]
+   },
+   "level": 0.567,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-485.zip",
@@ -4680,6 +5005,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 226 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     259.8,
+     274.4
+    ],
+    "ang": 1.6626,
+    "ax": [
+     168.2,
+     124.2
+    ]
+   },
+   "level": 0.464,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-226.zip",
@@ -4718,6 +5055,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 446 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     235.3,
+     251.2
+    ],
+    "ang": 1.5521,
+    "ax": [
+     182.7,
+     128.9
+    ]
+   },
+   "level": 0.406,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-446.zip",
@@ -4787,6 +5136,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 371 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     298.1,
+     273.6
+    ],
+    "ang": 1.5483,
+    "ax": [
+     159.4,
+     126.4
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-371.zip",
@@ -4825,6 +5186,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 266 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     242.3,
+     258.6
+    ],
+    "ang": 1.6897,
+    "ax": [
+     177.8,
+     133.5
+    ]
+   },
+   "level": 0.667,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-266.zip",
@@ -4875,6 +5248,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 312 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     253.9,
+     250.3
+    ],
+    "ang": 1.604,
+    "ax": [
+     190.6,
+     135.5
+    ]
+   },
+   "level": 0.333,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-312.zip",
@@ -4913,6 +5298,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 408 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     253.3,
+     266.3
+    ],
+    "ang": 1.6972,
+    "ax": [
+     182.4,
+     136.6
+    ]
+   },
+   "level": 0.548,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-408.zip",
@@ -4951,6 +5348,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 314 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     244.2,
+     242.5
+    ],
+    "ang": 1.5768,
+    "ax": [
+     175.2,
+     119.3
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-314.zip",
@@ -4989,6 +5398,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 355 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     250.5,
+     269.4
+    ],
+    "ang": 1.5789,
+    "ax": [
+     158.6,
+     122.7
+    ]
+   },
+   "level": 0.526,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-355.zip",
@@ -5048,6 +5469,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 399 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     267.1,
+     226.7
+    ],
+    "ang": 1.7533,
+    "ax": [
+     141.2,
+     110.4
+    ]
+   },
+   "level": 0.367,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-399.zip",
@@ -5074,6 +5507,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 460 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     251.3,
+     264.5
+    ],
+    "ang": 1.6529,
+    "ax": [
+     179.2,
+     125.9
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-460.zip",
@@ -5100,6 +5545,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.2,
+     255.9
+    ],
+    "ang": 1.6458,
+    "ax": [
+     177.3,
+     136.7
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
@@ -5114,7 +5571,8 @@
       80
      ]
     }
-   }
+   },
+   "ref": true
   },
   {
    "id": "cq-cce4650915",
@@ -5126,6 +5584,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 150 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     250.4,
+     257.2
+    ],
+    "ang": 1.518,
+    "ax": [
+     170.3,
+     134.1
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-150.zip",
@@ -5152,6 +5622,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 148 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     254.5,
+     270.9
+    ],
+    "ang": 1.5882,
+    "ax": [
+     180.8,
+     137.8
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-148.zip",
@@ -5178,6 +5660,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 490 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     247.9,
+     255.0
+    ],
+    "ang": 1.727,
+    "ax": [
+     163.6,
+     118.4
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-490.zip",
@@ -5204,6 +5698,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 178 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     227.5,
+     227.6
+    ],
+    "ang": 1.6642,
+    "ax": [
+     159.8,
+     113.0
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-178.zip",
@@ -5230,6 +5736,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 442 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     256.1,
+     241.9
+    ],
+    "ang": 1.5052,
+    "ax": [
+     197.8,
+     147.5
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-442.zip",
@@ -5256,6 +5774,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 464 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     254.4,
+     262.4
+    ],
+    "ang": 1.6745,
+    "ax": [
+     163.4,
+     133.7
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-464.zip",
@@ -5282,6 +5812,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 259 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     235.3,
+     272.8
+    ],
+    "ang": 1.6671,
+    "ax": [
+     180.0,
+     137.0
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-259.zip",
@@ -5308,6 +5850,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 185 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     261.8,
+     241.2
+    ],
+    "ang": 1.2314,
+    "ax": [
+     157.2,
+     135.8
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-185.zip",
@@ -5334,6 +5888,7 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 307 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-307.zip",
@@ -5360,6 +5915,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 327 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     239.3,
+     265.3
+    ],
+    "ang": 1.3913,
+    "ax": [
+     174.1,
+     141.6
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-327.zip",
@@ -5386,6 +5953,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 315 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.4,
+     259.7
+    ],
+    "ang": 1.6851,
+    "ax": [
+     185.1,
+     137.8
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-315.zip",
@@ -5412,6 +5991,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 394 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     258.3,
+     265.2
+    ],
+    "ang": 1.6719,
+    "ax": [
+     167.6,
+     118.7
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-394.zip",
@@ -5438,6 +6029,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 83 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     233.4,
+     265.1
+    ],
+    "ang": 1.5225,
+    "ax": [
+     177.1,
+     129.7
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-83.zip",
@@ -5464,6 +6067,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 91 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     242.5,
+     267.2
+    ],
+    "ang": 1.5701,
+    "ax": [
+     189.1,
+     124.5
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-91.zip",
@@ -5490,6 +6105,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 104 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     236.4,
+     265.7
+    ],
+    "ang": 1.586,
+    "ax": [
+     175.2,
+     133.7
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-104.zip",
@@ -5516,6 +6143,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 223 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     241.8,
+     259.5
+    ],
+    "ang": 1.4912,
+    "ax": [
+     180.7,
+     123.9
+    ]
+   },
+   "level": 0.52,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-223.zip",
@@ -5542,6 +6181,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 156 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     241.0,
+     270.4
+    ],
+    "ang": 1.6098,
+    "ax": [
+     174.7,
+     144.4
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-156.zip",
@@ -5568,6 +6219,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 308 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     240.3,
+     266.5
+    ],
+    "ang": 1.6421,
+    "ax": [
+     168.7,
+     125.2
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-308.zip",
@@ -5594,6 +6257,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 395 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     271.7,
+     267.4
+    ],
+    "ang": 1.5578,
+    "ax": [
+     175.4,
+     141.5
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-395.zip",
@@ -5620,6 +6295,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 26 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     239.0,
+     264.3
+    ],
+    "ang": 1.6798,
+    "ax": [
+     187.7,
+     148.9
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-26.zip",
@@ -5646,6 +6333,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 53 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     259.5,
+     244.8
+    ],
+    "ang": 1.4427,
+    "ax": [
+     177.5,
+     155.5
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-53.zip",
@@ -5672,6 +6371,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 145 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     237.1,
+     275.5
+    ],
+    "ang": 1.6601,
+    "ax": [
+     177.3,
+     146.9
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-145.zip",
@@ -5698,6 +6409,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 197 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     237.5,
+     244.5
+    ],
+    "ang": 1.5452,
+    "ax": [
+     148.8,
+     124.4
+    ]
+   },
+   "level": 0.476,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-197.zip",
@@ -5724,6 +6447,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 184 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     264.3,
+     274.1
+    ],
+    "ang": 1.4185,
+    "ax": [
+     175.8,
+     137.1
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-184.zip",
@@ -5750,6 +6485,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 123 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     237.2,
+     242.6
+    ],
+    "ang": 1.538,
+    "ax": [
+     196.4,
+     147.8
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-123.zip",
@@ -5776,6 +6523,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 294 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     241.1,
+     268.2
+    ],
+    "ang": 1.6549,
+    "ax": [
+     170.2,
+     123.6
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-294.zip",
@@ -5802,6 +6561,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 235 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     253.9,
+     240.7
+    ],
+    "ang": 1.5672,
+    "ax": [
+     184.2,
+     140.2
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-235.zip",
@@ -5828,6 +6599,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 418 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     247.0,
+     254.7
+    ],
+    "ang": 1.5049,
+    "ax": [
+     179.4,
+     136.4
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-418.zip",
@@ -5854,6 +6637,18 @@
    "licence": "CC BY-NC-SA",
    "cite": "CQ500 study 421 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
    "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     256.7,
+     269.2
+    ],
+    "ang": 1.5105,
+    "ax": [
+     177.8,
+     136.9
+    ]
+   },
+   "level": 0.5,
    "files": {
     "img": {
      "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-421.zip",
@@ -5869,6 +6664,692 @@
      ]
     }
    }
+  },
+  {
+   "id": "cq-d1d6ccba2b",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "level": 0.25,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 167897268,
+     "csize": 156018,
+     "method": 8,
+     "bytes": 169610,
+     "sha256": "8dfcef45ede6a322db026e2f7a05abe5434c56c0d30ecf2b9a98b0bf9073860a",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-da59a7b8ab",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "level": 0.281,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 169459204,
+     "csize": 150618,
+     "method": 8,
+     "bytes": 164116,
+     "sha256": "6232350dea9fa76fdbfe86cf6e345dc75db8fe3c9789a58b4a6c0e23bb83658e",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-42b36115ad",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "level": 0.312,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 169775844,
+     "csize": 148468,
+     "method": 8,
+     "bytes": 161946,
+     "sha256": "4a6af93e414ccb652ddb97b79ffa96fa430b5c0b706e48a1f67c28c34b00023c",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-519a7c376a",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "level": 0.344,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 169003140,
+     "csize": 148732,
+     "method": 8,
+     "bytes": 162200,
+     "sha256": "efdad1ffbbd7903d0bc789756043e5ccdd55604283fcae9f409061ea4bfaa362",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-5158f8f747",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     249.5,
+     266.1
+    ],
+    "ang": 1.5966,
+    "ax": [
+     170.0,
+     132.3
+    ]
+   },
+   "level": 0.375,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 166780295,
+     "csize": 147996,
+     "method": 8,
+     "bytes": 161320,
+     "sha256": "3f866ddd4ccb2a0c8cbd8ca0c11ce1214d5c9c15a70e454244c3ca57bdbce962",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-6ccfc44b54",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     251.4,
+     264.4
+    ],
+    "ang": 1.6806,
+    "ax": [
+     173.4,
+     132.7
+    ]
+   },
+   "level": 0.406,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 166210182,
+     "csize": 143814,
+     "method": 8,
+     "bytes": 157130,
+     "sha256": "32edd8dbaa1daf007dd29194c29b02c6725870fd3c8c92b395868102d7c564e3",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-a688a03d17",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     251.5,
+     260.2
+    ],
+    "ang": 1.6564,
+    "ax": [
+     178.8,
+     133.6
+    ]
+   },
+   "level": 0.438,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 168475310,
+     "csize": 140056,
+     "method": 8,
+     "bytes": 153388,
+     "sha256": "a11de28acac912e8c96c65d50b40525fb72b73b1c56b92f76e0bb8a8d6bdb249",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-c5a123fa6c",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     251.9,
+     258.0
+    ],
+    "ang": 1.6555,
+    "ax": [
+     179.0,
+     135.5
+    ]
+   },
+   "level": 0.469,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 168334801,
+     "csize": 140419,
+     "method": 8,
+     "bytes": 154230,
+     "sha256": "7168bc7add69dbd2cdfd2f50b65e84a9e4c309a01f15fb65a06ba42fa71ebb3e",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-3792fd8640",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.5,
+     255.2
+    ],
+    "ang": 1.6365,
+    "ax": [
+     174.8,
+     137.1
+    ]
+   },
+   "level": 0.531,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 168053376,
+     "csize": 138929,
+     "method": 8,
+     "bytes": 152270,
+     "sha256": "3af723a8a904913051116beea93513a8c4f97f0dbf8d453ae8432dda7cf43713",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-425cfb2612",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.8,
+     255.1
+    ],
+    "ang": 1.6338,
+    "ax": [
+     171.1,
+     137.2
+    ]
+   },
+   "level": 0.562,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 167350288,
+     "csize": 141243,
+     "method": 8,
+     "bytes": 154578,
+     "sha256": "db53c9d4a2a9cb4c55e6c2605b34921e5719e051b46f352e3c47ad84850e46aa",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-4de224db51",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.7,
+     255.7
+    ],
+    "ang": 1.6266,
+    "ax": [
+     166.9,
+     136.7
+    ]
+   },
+   "level": 0.594,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 168721641,
+     "csize": 142456,
+     "method": 8,
+     "bytes": 155820,
+     "sha256": "850cbc3fb426e3fae3fa8a7b7573f1c0a3d52014ef2648983a99d9f1e2ca3671",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-74372fed82",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.3,
+     256.6
+    ],
+    "ang": 1.6255,
+    "ax": [
+     159.8,
+     135.1
+    ]
+   },
+   "level": 0.625,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 166354086,
+     "csize": 143195,
+     "method": 8,
+     "bytes": 156612,
+     "sha256": "af7d721eb3c7842af71ac3ffb26ec9c3be292f423e512e7bceda313e7159c5ab",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-6493b72698",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     252.0,
+     258.1
+    ],
+    "ang": 1.6433,
+    "ax": [
+     152.7,
+     132.6
+    ]
+   },
+   "level": 0.656,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 168192395,
+     "csize": 142316,
+     "method": 8,
+     "bytes": 155710,
+     "sha256": "bf10a7b8703401f9d6f5add6464d7ca93ce24219b88a775d5cab4421eb94ba27",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-a24d3e1d2d",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     251.3,
+     260.1
+    ],
+    "ang": 1.6865,
+    "ax": [
+     144.7,
+     127.7
+    ]
+   },
+   "level": 0.688,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 167608830,
+     "csize": 143059,
+     "method": 8,
+     "bytes": 156596,
+     "sha256": "c282afd6afbaebfe3c60e38ce27943056a9e3c2e2f0a939ba40ff447d37b7a88",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-0f8b3bac9e",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     250.3,
+     262.3
+    ],
+    "ang": 1.7191,
+    "ax": [
+     136.2,
+     121.0
+    ]
+   },
+   "level": 0.719,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 167751979,
+     "csize": 145199,
+     "method": 8,
+     "bytes": 158864,
+     "sha256": "5595d102848ba2d7f4ab15b8d38dfcf39b8320bd2bc7d7dbfea021d32d3bfbe1",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-99daeb5191",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     249.7,
+     263.8
+    ],
+    "ang": 1.7314,
+    "ax": [
+     124.9,
+     109.1
+    ]
+   },
+   "level": 0.75,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 169151962,
+     "csize": 145406,
+     "method": 8,
+     "bytes": 159346,
+     "sha256": "fea332d39e608fd855da9f1e6f534a60091ae4b82d0b967432b180bf8da3aa03",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-84f76b6967",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     249.5,
+     264.4
+    ],
+    "ang": 1.7311,
+    "ax": [
+     113.4,
+     94.9
+    ]
+   },
+   "level": 0.781,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 167060152,
+     "csize": 145069,
+     "method": 8,
+     "bytes": 159680,
+     "sha256": "b79a223050a85633da4322a4a1c7740ccf223b523bdcddbf4acaf3ac32c5821e",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-5750328cfe",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "frame": {
+    "c": [
+     250.6,
+     264.1
+    ],
+    "ang": 1.7373,
+    "ax": [
+     99.7,
+     75.5
+    ]
+   },
+   "level": 0.812,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 166497371,
+     "csize": 144556,
+     "method": 8,
+     "bytes": 159464,
+     "sha256": "3691fe64c44c7365521b606822167d9eb362461f1ef021d7bc95f18403b4dded",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
+  },
+  {
+   "id": "cq-c58edc5e73",
+   "kind": "image",
+   "label": "ref",
+   "answer": "Normal CT head (reference)",
+   "caption": "Normal non-contrast CT head, reference slice (CQ500 study 62, read as normal by three radiologists).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 62 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "level": 0.844,
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-62.zip",
+     "offset": 167205311,
+     "csize": 144887,
+     "method": 8,
+     "bytes": 159882,
+     "sha256": "11ddc2a75c0356eda0d77b80a7fee265af1128bbefeec07fbe02f9f66f71bc75",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   },
+   "ref": true
   }
  ]
 }

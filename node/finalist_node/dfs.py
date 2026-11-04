@@ -144,6 +144,37 @@ def item(cfg, name, item_id):
     return fetch(cfg, name, it)
 
 
+# The CT windows a reading room offers (4 Nov 2026, the atlas): the same slice spread over a different range of
+# densities. The slice's DICOM is kept beside its rendered PNG so another window is a render, not a refetch.
+WINDOWS = {"brain": (40, 80), "blood": (75, 215), "bone": (600, 2800)}
+
+
+def windowed(cfg, name, item_id, win):
+    """One CT slice at a named window; None for an item that isn't a CT slice or a window that doesn't exist."""
+    m = manifest(name)
+    it = next((x for x in (m or {}).get("items", []) if x["id"] == item_id), None)
+    if not it or win not in WINDOWS or not it.get("files", {}).get("img", {}).get("window"):
+        return None
+    out = _store(cfg) / name / f"{item_id}@{win}.json"
+    if out.exists():
+        return json.loads(out.read_text())
+    raw = _store(cfg) / name / f"{item_id}.dcm"
+    if raw.exists():
+        b = raw.read_bytes()
+    else:
+        f = it["files"]["img"]
+        b = _zip_member(f) if "zip" in f else _get(f["url"])
+        if hashlib.sha256(b).hexdigest() != f["sha256"]:
+            raise ValueError(f"{item_id}: the source file doesn't match what was vetted")
+        raw.parent.mkdir(parents=True, exist_ok=True); raw.write_bytes(b)
+    import base64
+    from . import dicom
+    data = {"id": item_id, "mime": "image/png", "window": win, "data": base64.b64encode(dicom.png(b, WINDOWS[win])).decode()}
+    tmp = out.with_suffix(f".{threading.get_ident()}.tmp")
+    tmp.write_text(json.dumps(data, separators=(",", ":"))); tmp.replace(out)
+    return data
+
+
 # 3 Nov 2026: a set is never installed in one go behind a progress bar (Raahat: it restarted whenever the
 # page was left mid-way, since the fetching lived in the page's request; and a thousand cases would be a
 # long wait). Opening a set starts this instead: on its own thread, four at a time, it fetches whatever
@@ -207,7 +238,8 @@ def catalogue(cfg, name):
         return None
     have = {p.stem for p in (_store(cfg) / name).glob("*.json")} if (_store(cfg) / name).is_dir() else set()
     return {"name": m["name"], "licence": m["licence"], "credit": m["credit"], "source": m["source"], "labels": m["labels"],
-            "items": [{k: v for k, v in x.items() if k != "files"} | {"ready": x["id"] in have} for x in m["items"]]}
+            "items": [{k: v for k, v in x.items() if k != "files"} | {"ready": x["id"] in have}
+                      | ({"windows": True} if x.get("files", {}).get("img", {}).get("window") else {}) for x in m["items"]]}
 
 
 def status(cfg):
