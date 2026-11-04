@@ -1,9 +1,0 @@
-{
- "name": "Abdominal X-rays (MultiCaRe case reports)",
- "version": 1,
- "licence": "Per image: CC BY, CC BY-SA, CC0, CC BY-NC (non-commercial)",
- "credit": "Images and captions: open-access case reports on PubMed Central, each credited to its authors under its own licence; collected in MultiCaRe (Nievas Offidani M, Delrieux C et al., Zenodo 10.5281/zenodo.20416562).",
- "source": "https://zenodo.org/records/20416562",
- "labels": {},
- "items": []
-}
