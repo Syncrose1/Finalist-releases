@@ -4697,6 +4697,239 @@
    }
   },
   {
+   "id": "cq-931b9734f9",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      144,
+      78,
+      88,
+      122
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 446).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 446 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-446.zip",
+     "offset": 76744990,
+     "csize": 207776,
+     "method": 8,
+     "bytes": 525784,
+     "sha256": "c615bc08b5ed66c7bce8804db725da60cd706c7c703d2223f04f1a203f3411d0",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-e1dbd85d47",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "also": [
+    "sah",
+    "sdh"
+   ],
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      207,
+      292,
+      87,
+      131
+     ]
+    },
+    {
+     "finding": "sah",
+     "box": [
+      295,
+      321,
+      17,
+      106
+     ]
+    },
+    {
+     "finding": "sah",
+     "box": [
+      282,
+      127,
+      22,
+      39
+     ]
+    },
+    {
+     "finding": "sdh",
+     "box": [
+      282,
+      125,
+      21,
+      54
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 371).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 371 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-371.zip",
+     "offset": 5199586,
+     "csize": 228587,
+     "method": 8,
+     "bytes": 525776,
+     "sha256": "441537d2519b85feb7aaccb0e4cdfe4d4e643334d5e318e6d54ea1c7b7837820",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-a01c6fb654",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      117,
+      211,
+      123,
+      140
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 266).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 266 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-266.zip",
+     "offset": 131707502,
+     "csize": 195298,
+     "method": 8,
+     "bytes": 525936,
+     "sha256": "132310d9d5aa9f3a68e24b5ef2eecbea9566585926656949911fc3b03cce12bd",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-f74a62511f",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "also": [
+    "sah"
+   ],
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      189,
+      66,
+      149,
+      127
+     ]
+    },
+    {
+     "finding": "sah",
+     "box": [
+      190,
+      278,
+      50,
+      68
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 312).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 312 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-312.zip",
+     "offset": 12132479,
+     "csize": 206310,
+     "method": 8,
+     "bytes": 526004,
+     "sha256": "69a7ffd8cf7cae2f9ce4935f80d3a1064a9204a6f43d90f9e64ca82655fa5f96",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-648ac9113a",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      292,
+      219,
+      45,
+      86
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 408).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 408 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-408.zip",
+     "offset": 71331151,
+     "csize": 207960,
+     "method": 8,
+     "bytes": 525792,
+     "sha256": "f16cc93d26e462b80cf4b51ba29966627eb38d0833e7e852a0233f2b6967fbe8",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
    "id": "cq-1869eab2a1",
    "kind": "image",
    "label": "ich",
@@ -4726,6 +4959,103 @@
      "method": 8,
      "bytes": 162402,
      "sha256": "ce54b730011a69d7d45545685ef544216a7a5cdda18e82f41cc61fc1152e33f3",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-2d8202d441",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      180,
+      116,
+      71,
+      84
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 355).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 355 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-355.zip",
+     "offset": 71549414,
+     "csize": 177952,
+     "method": 8,
+     "bytes": 526006,
+     "sha256": "c0ab66515bbe7c720ed6529809613a89c79ca4bff3122a10d84c16b8d116c1cf",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-b28408b6f4",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "also": [
+    "sah"
+   ],
+   "boxes": [
+    {
+     "finding": "ich",
+     "box": [
+      180,
+      175,
+      53,
+      67
+     ]
+    },
+    {
+     "finding": "sah",
+     "box": [
+      178,
+      123,
+      53,
+      51
+     ]
+    },
+    {
+     "finding": "sah",
+     "box": [
+      349,
+      234,
+      30,
+      57
+     ]
+    }
+   ],
+   "box_space": 512,
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 399).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 399 (Chilamkurthy et al., Lancet 2018; Qure.ai), boxes from BHX (Reis et al., PhysioNet 2020)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-399.zip",
+     "offset": 9231546,
+     "csize": 223664,
+     "method": 8,
+     "bytes": 525778,
+     "sha256": "9d28f23fe55c7c43f065e53cd902d3f87c68fc07eddedd2511094dbeedd7e827",
      "mime": "application/dicom",
      "window": [
       40,
@@ -5428,6 +5758,110 @@
      "method": 8,
      "bytes": 525782,
      "sha256": "cdfccbadd177c55a240801e8e8c4bd751fd6651c1ae0d5653dd6bc92bcd500d3",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-4586dbb8ab",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 294).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 294 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-294.zip",
+     "offset": 2030824,
+     "csize": 142982,
+     "method": 8,
+     "bytes": 153482,
+     "sha256": "8fccc06dbcd65d257ffe65ff8d1c363df70f62601101aea936c960e98627b968",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-3b0479e8d9",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 235).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 235 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-235.zip",
+     "offset": 4167754,
+     "csize": 147702,
+     "method": 8,
+     "bytes": 161086,
+     "sha256": "a4e8573fc9950af4d71855337cef77b12bc211d96a0ae4cbbd2bd68020893cf2",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-01c381c3a7",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 418).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 418 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-418.zip",
+     "offset": 40828588,
+     "csize": 147189,
+     "method": 8,
+     "bytes": 160424,
+     "sha256": "117065980fd18ab92f8d8e81b0cd2f9128495a222b2dc3aafe7a16ad4bc6bbc1",
+     "mime": "application/dicom",
+     "window": [
+      40,
+      80
+     ]
+    }
+   }
+  },
+  {
+   "id": "cq-29daf03e22",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Non-contrast CT head, axial slice (CQ500 study 421).",
+   "from": "study",
+   "licence": "CC BY-NC-SA",
+   "cite": "CQ500 study 421 (Chilamkurthy et al., Lancet 2018; Qure.ai)",
+   "link": "http://headctstudy.qure.ai/dataset",
+   "files": {
+    "img": {
+     "zip": "https://s3.ap-south-1.amazonaws.com/qure.headct.study/CQ500-CT-421.zip",
+     "offset": 59763152,
+     "csize": 189248,
+     "method": 8,
+     "bytes": 525946,
+     "sha256": "8f3f8cdbad800da6e86aa748ac83548cf20f7c6bd0915bd36381f72ce265809e",
      "mime": "application/dicom",
      "window": [
       40,

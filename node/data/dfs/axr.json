@@ -10,7 +10,10 @@
   "fb": "Ingested foreign body",
   "sbo": "Small bowel obstruction",
   "lbo": "Large bowel obstruction",
-  "chilaiditi": "Chilaiditi sign (interposed colon, not free air)"
+  "chilaiditi": "Chilaiditi sign (interposed colon, not free air)",
+  "faecal": "Faecal loading",
+  "megacolon": "Toxic megacolon",
+  "volv": "Volvulus (sigmoid or caecal)"
  },
  "items": [
   {
@@ -660,6 +663,69 @@
      "method": 8,
      "bytes": 23004,
      "sha256": "001e9ad8bba16fb421c32a09407a1657b9207ebde4ff648e1326f880903544ce",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-2c07d7864e",
+   "kind": "image",
+   "label": "faecal",
+   "answer": "Faecal loading",
+   "caption": "Plain upright abdominal film showing displaced bowel loops to the left with large amount of stool in the colon.",
+   "licence": "CC BY",
+   "cite": "Mori et al. A Giant Primary Retroperitoneal Serous Cystadenoma: Case Report and Review of Retroperitoneal Cysts. Surg J (N Y) 2017. PMC5553492",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5553492/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 152549271,
+     "csize": 20384,
+     "method": 8,
+     "bytes": 20374,
+     "sha256": "017bda64875f181549fcc1fafa3ba90457b6a5db43a7fb1bb0fa7717fa560034",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b1485ce2db",
+   "kind": "image",
+   "label": "faecal",
+   "answer": "Faecal loading",
+   "caption": "Plain erect abdominal X-ray showing huge fecal loading of the whole colon.",
+   "licence": "CC BY",
+   "cite": "Hefny et al. Intestinal obstruction caused by a laxative drug (Psyllium): A case report and review of the literature. Int J Surg Case Rep 2018. PMC6197948",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6197948/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 221330755,
+     "csize": 30742,
+     "method": 8,
+     "bytes": 30732,
+     "sha256": "aad0f052bbc580c555d0ff76db309724dd395e144a84b5c1bc2f94b67f1c41cd",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-50fa2e249b",
+   "kind": "image",
+   "label": "megacolon",
+   "answer": "Toxic megacolon",
+   "caption": "Abdominal X-ray showing megacolon.",
+   "licence": "CC BY-NC",
+   "cite": "Vougas et al. Intestinal neuronal dysplasia type B in adults: a controversial entity. Case Rep Gastroenterol 2014. PMC3934697",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3934697/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 176875388,
+     "csize": 23258,
+     "method": 8,
+     "bytes": 23248,
+     "sha256": "e8949daa3f9c6db403cfb47adb22a1214a892cb54466892306af085f47041481",
      "mime": "image/webp"
     }
    }
@@ -1455,6 +1521,60 @@
      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Chilaiditi-Syndrom_bei_Zwerchfellhochstand_rechts_85W_-_CR_pa_-_001.jpg",
      "bytes": 231223,
      "sha256": "3326f2be66051681ccaa23c5a6f5b561969f0719f1ccc1ebc5cf64e627e6944f",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-cf939d3bdf",
+   "kind": "image",
+   "label": "faecal",
+   "answer": "Faecal loading",
+   "caption": "Significant stool throughout the colon of an 8 year old with constipation.",
+   "licence": "CC BY-SA 4.0",
+   "cite": "James Heilman, MD, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Constipation(lots).png",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Constipation%28lots%29.png",
+     "bytes": 1024355,
+     "sha256": "2fd6c0cfc6ac89d768d5e300c2ec908a88782e13141634a6a0e8a1ef33591e0b",
+     "mime": "image/png"
+    }
+   }
+  },
+  {
+   "id": "wc-7764d6f546",
+   "kind": "image",
+   "label": "megacolon",
+   "answer": "Toxic megacolon",
+   "caption": "Toxic Megacolon seen in ulcerative colitis. The patient was then subjected to colectomy (removal of the whole colon). This is an edited version of the source image made for use in the \"Anatomist\" iOS and Android app and shared here under the terms of the source image's Share Alike Creative Commons l",
+   "licence": "CC BY-SA 4.0",
+   "cite": "Hellerhoff, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Toxic_Megacolon_in_Ulcerative_Colitis.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Toxic_Megacolon_in_Ulcerative_Colitis.jpg",
+     "bytes": 298606,
+     "sha256": "61a5501ec711ec52c84a15f3e53682ddc7482394d3aa78baf23cfe7838adb9b9",
+     "mime": "image/jpeg"
+    }
+   }
+  },
+  {
+   "id": "wc-1fc04e05a5",
+   "kind": "image",
+   "label": "volv",
+   "answer": "Volvulus (sigmoid or caecal)",
+   "caption": "Abdominal radiography with a sigmoid volvulus in a 10 year old child.",
+   "licence": "CC0",
+   "cite": "Mont4nha, Wikimedia Commons",
+   "link": "https://commons.wikimedia.org/wiki/File:Sigmoidvolvulus.jpg",
+   "files": {
+    "img": {
+     "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Sigmoidvolvulus.jpg",
+     "bytes": 22655,
+     "sha256": "296e801e90e29674788ea2d481b59c5c7afc10264d3b3c38b909b386c3e19737",
      "mime": "image/jpeg"
     }
    }
