@@ -465,7 +465,56 @@ class Handler(BaseHTTPRequestHandler):
                 and not any(k.lower().startswith("tailscale-") for k in self.headers.keys())
                 and self.headers.get("Host", "").split(":")[0] in ("127.0.0.1", "localhost"))
 
+    # ---- the site, through the node (4 Nov 2026) ------------------------------------------------------
+    # Finalist Desktop loads the site from here, http://127.0.0.1:<port>/finalist/..., passed through to
+    # raahat.sh: WebKit won't let a secure page call http://127.0.0.1, so the site and the node share
+    # one origin instead, and the node's own screen is a page in the same window. This PC only.
+
+    SITE = os.environ.get("FINALIST_SITE", "https://raahat.sh")
+    HOP = {"connection", "keep-alive", "proxy-connection", "transfer-encoding", "upgrade", "te", "trailer", "host"}
+
+    def site_proxy(self):
+        import http.client, re as _re
+        if not self.local():
+            return self.send_json(404, {"error": "not found"})
+        u = urllib.parse.urlparse(self.SITE)
+        n = int(self.headers.get("Content-Length") or 0)
+        body = self.rfile.read(n) if n else None
+        h = {k: v for k, v in self.headers.items() if k.lower() not in self.HOP and k.lower() not in ("origin", "referer", "content-length")}
+        h["Host"] = u.netloc
+        if self.headers.get("Origin"):
+            h["Origin"] = self.SITE
+        try:
+            c = http.client.HTTPSConnection(u.netloc, timeout=60)
+            c.request(self.command, self.path, body=body, headers=h)
+            r = c.getresponse()
+        except OSError as e:
+            return self.send_json(502, {"error": f"Finalist didn't answer ({e}). Are you online?"})
+        self.send_response(r.status)
+        here = f"http://{self.headers.get('Host', '127.0.0.1')}"
+        for k, v in r.getheaders():
+            kl = k.lower()
+            if kl in self.HOP or kl in ("strict-transport-security", "content-security-policy", "alt-svc"):
+                continue
+            if kl == "location":
+                v = v.replace(self.SITE, here)
+            if kl == "set-cookie":          # a cookie for raahat.sh, kept for 127.0.0.1 over http
+                v = _re.sub(r";\s*(Secure|Domain=[^;]*|SameSite=None)", "", v, flags=_re.I)
+            self.send_header(k, v)
+        self.end_headers()                  # HTTP/1.0: the length if it came, else to the close
+        try:
+            while True:
+                chunk = r.read(1 << 16)
+                if not chunk:
+                    break
+                self.wfile.write(chunk)
+        except (BrokenPipeError, ConnectionResetError):
+            pass
+        c.close()
+
     def do_GET(self):
+        if self.path == "/finalist" or self.path.startswith("/finalist/") or self.path.startswith("/finalist?"):
+            return self.site_proxy()
         u = urllib.parse.urlparse(self.path)
         path, q = u.path, {k: v[0] for k, v in urllib.parse.parse_qs(u.query).items()}
         if path in ("/", "/v1/local/status"):
@@ -533,6 +582,8 @@ class Handler(BaseHTTPRequestHandler):
     # ---- POST ------------------------------------------------------------------------------------
 
     def do_POST(self):
+        if self.path.startswith("/finalist/"):
+            return self.site_proxy()
         path = urllib.parse.urlparse(self.path).path
         if path.startswith("/v1/local/"):
             # the node's own screen: this PC only, and a header no other site can send without a
@@ -935,7 +986,27 @@ def review(model, x, d, quiet=True):
             raise
 
 
+def watch_parent():
+    """Started by Finalist Desktop (4 Nov 2026): go when the app goes, even if it crashed."""
+    pid = int(os.environ.get("FINALIST_PARENT_PID") or 0)
+    if not pid:
+        return
+    def run():
+        while True:
+            time.sleep(2)
+            try:
+                os.kill(pid, 0)
+            except (ProcessLookupError, PermissionError):
+                log("Finalist Desktop has closed: stopping")
+                voice_down()
+                os._exit(0)
+            except OSError:
+                pass
+    threading.Thread(target=run, daemon=True).start()
+
+
 def main():
+    watch_parent()
     srv = ThreadingHTTPServer(("127.0.0.1", int(CFG["port"])), Handler)
     srv.daemon_threads = True      # Ctrl+C ends it even mid-station or with the voice's socket open
     log(f"Finalist Node on http://127.0.0.1:{CFG['port']} (Ctrl+C stops it, and the voice it started)", screen=False)

@@ -157,6 +157,14 @@ section.s > p { margin: 2px 0 12px; color: var(--ink-2); font-size: 14px; }
     <a class="brand" href="https://raahat.sh/finalist" target="_blank" rel="noopener"><b>F</b><span><strong>Finalist</strong><span class="eyebrow">Node · this computer</span></span></a>
     <span class="pill"><i></i><span id="pillt">Starting</span></span>
   </header>
+  <script>
+    // in Finalist Desktop (4 Nov 2026) this screen is a page in the app's window: the brand goes back to
+    // Finalist there, in the same window
+    if (/FinalistDesktop/.test(navigator.userAgent)) {
+      const a = document.querySelector('.brand'); a.href = '/finalist'; a.removeAttribute('target')
+      a.querySelector('.eyebrow').textContent = '← Back to Finalist'
+    }
+  </script>
 
   <div class="card hero r r2">
     <div class="txt">
