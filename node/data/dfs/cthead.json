@@ -1,0 +1,3129 @@
+{
+ "name": "CT head (MultiCaRe case reports)",
+ "version": 1,
+ "licence": "Per image: CC BY, CC BY-SA, CC0, CC BY-NC (non-commercial)",
+ "credit": "Images and captions: open-access case reports on PubMed Central, each credited to its authors under its own licence; collected in MultiCaRe (Nievas Offidani M, Delrieux C et al., Zenodo 10.5281/zenodo.20416562).",
+ "source": "https://zenodo.org/records/20416562",
+ "labels": {
+  "edh": "Extradural haematoma",
+  "sdh": "Subdural haematoma",
+  "sah": "Subarachnoid haemorrhage",
+  "ich": "Intracerebral haemorrhage",
+  "infarct": "Ischaemic stroke (infarct)",
+  "hydro": "Hydrocephalus",
+  "tumour": "Brain tumour (mass with oedema)",
+  "abscess": "Brain abscess",
+  "frac": "Skull fracture",
+  "norm": "Normal CT head"
+ },
+ "items": [
+  {
+   "id": "mc-6aca931ff3",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "caption": "CT scan demonstrating left extradural haematoma.",
+   "licence": "CC BY",
+   "cite": "Al-Mahfoudh et al. A neurosurgical golf injury. Clin Med Case Rep 2008. PMC3785344",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3785344/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 20348845,
+     "csize": 27812,
+     "method": 8,
+     "bytes": 27802,
+     "sha256": "84390a4afbe910d969cb20be3a7403575c77273e2ead55dfa872c00b8a73a772",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-5b20dcf3fe",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "caption": "Preoperative noncontrast CT head scans show a right temporal epidural hematomas (EDHs).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Montemurro et al. Posttraumatic synchronous double acute epidural hematomas: Two craniotomies, single skin incision. Surg Neurol Int 2020. PMC7749931",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7749931/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 130139698,
+     "csize": 7349,
+     "method": 8,
+     "bytes": 7344,
+     "sha256": "1f80bb2c1e052e7d8bf3449d934d72e3764800168a64218b053578ba8eb1de95",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-e926dfb5e7",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "caption": "Initial head CT after trauma 7 years before AV fistula development. (a) L temporal epidural hematoma with 0.5 cm midline shift.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Ordaz et al. Delayed presentation of a traumatic scalp arteriovenous fistula. Surg Neurol Int 2021. PMC8247668",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8247668/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 123655704,
+     "csize": 17058,
+     "method": 8,
+     "bytes": 17048,
+     "sha256": "b6fb0a644170c993652f94a458ea1e7a98c8180becc68e06fce49379e5e82e2a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-bdacf05325",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "caption": "Axial CT scan of head shows Rt parietal heterogeneously hypodence biconvex extradural lesion.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Mishra et al. Spontaneous extradural and subgaleal hematoma: A rare neurosurgical crisis of sickle cell disease. Asian J Neurosurg 2017. PMC5379803",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5379803/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 47859628,
+     "csize": 13115,
+     "method": 8,
+     "bytes": 13110,
+     "sha256": "831304ba4d01f9c7a3c341870114af2422eae372f81507f83ca07c9f34f674b5",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ab26f85bf9",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "caption": "Left parietal acute epidural haematoma (arrow) is seen axial CT scan (F).",
+   "licence": "CC BY-NC",
+   "cite": "Yılmaz et al. Epidural hematoma after minor trauma on patient with biparietal osteodystrophy. J Korean Neurosurg Soc 2013. PMC3579085",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3579085/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 79796536,
+     "csize": 5589,
+     "method": 8,
+     "bytes": 5584,
+     "sha256": "53b546cbdb4ca6041ba03d3d393394f719709d282c436755f42a4eb33f5f9f9e",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ad59341bbc",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "caption": "Preoperative axial computed tomography (CT) scan head showing posterior fossa Epidural hematoma (EDH) with swirl sign (thin arrow). Preoperative sagittal CT scan head showing EDH in both supratentorial and infratentorial compartments (thin arrow).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Yadav et al. Quartet of catastrophe: Bilateral epidural hematoma in both supratentorial and infratentorial compartments - A case report and a novel surgical technique to approach. Surg Neurol Int 2023. PMC10629312",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10629312/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 114049672,
+     "csize": 11773,
+     "method": 8,
+     "bytes": 11768,
+     "sha256": "a87c03dc119f499fadea01ddf4377095840f437d8b57076f60b7529fee7726c2",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b79d59f84c",
+   "kind": "image",
+   "label": "edh",
+   "answer": "Extradural haematoma",
+   "caption": "(a) Axial CT head, no IV contrast: Large left epidural hematoma with left to right shift.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Lee et al. Management of child after traumatic epidural hematoma with pulmonary edema and arrhythmia. Saudi J Anaesth 2021. PMC8016058",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8016058/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 264530,
+     "csize": 9823,
+     "method": 8,
+     "bytes": 9818,
+     "sha256": "e0c1c24c148385462b709fddd0f69932defc1fdce3c48f4e3fcf9c0a039ad837",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-e8999b45ad",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Initial cranial CT scans show a 20 mm thick low-isodensity chronic subdural hematoma at bilateral frontotemporoparietal region.",
+   "licence": "CC BY",
+   "cite": "Yilmaz et al. Spontaneous resolution of post-traumatic chronic subdural hematoma: a case report. Pan Afr Med J 2017. PMC5847253",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5847253/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 238767333,
+     "csize": 46605,
+     "method": 8,
+     "bytes": 46590,
+     "sha256": "1d8c009e4b91895e2b84081c286e74467605eba23e9b2ebc9bdfb87055fac898",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-1e9118b8e0",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "A. Baseline plain brain CT demonstrated acute subdural hemorrhage (arrowheads) with a midline shift of 13 mm (measured).",
+   "licence": "CC BY",
+   "cite": "Kilenzi et al. Subdural hematoma, a rare complication of plasmodium falciparum malaria: A case report. Int J Surg Case Rep 2025. PMC11722198",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11722198/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 561764447,
+     "csize": 8001,
+     "method": 8,
+     "bytes": 7996,
+     "sha256": "aa28e91ccc5989e3b1ff661b07ce9ab284a1b6d3ac71b737b14b1a5ecfcf7a8a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-8c50be1626",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Neuroimaging findings for Patient 3. (A) Computed tomography revealed bilateral chronic subdural hematoma (red arrows).",
+   "licence": "CC BY",
+   "cite": "Yuan et al. Atorvastatin Plus Low-Dose Dexamethasone May Be Effective for Leukemia-Related Chronic Subdural Hematoma but Not for Leukemia Encephalopathy: A Report of Three Cases. Front Oncol 2021. PMC8320332",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8320332/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 50388018,
+     "csize": 7951,
+     "method": 8,
+     "bytes": 7946,
+     "sha256": "480c63abc69f8fbd322be3d92ead778226b4a8fbde3c6636a40971a4b50e6225",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-cbc374588e",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Computed tomography head showed an acute left subdural hemorrhage with significant left-to-right midline shift.",
+   "licence": "CC BY",
+   "cite": "Wang et al. Case Report: Takotsubo Cardiomyopathy After Traumatic Brain Injury. Front Neurol 2021. PMC8479872",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8479872/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 178344590,
+     "csize": 25682,
+     "method": 8,
+     "bytes": 25802,
+     "sha256": "a7927da7bbba9f0bf7780519343e57e2654ca96e43674b86aa1ef1ab1a3e0cc8",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-fd22295912",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "axial non contrast cerebral CT scan showing an acute fronto-parietal left subdural hematoma responsible for a mass effect on the left cerebral hemisphere and subfalcorial engagement.",
+   "licence": "CC BY",
+   "cite": "Sandouno et al. Acute spontaneous subdural hematoma as an inaugural presentation of systemic lupus erythematosus with acquired factor XIII deficiency: a case report. Pan Afr Med J 2021. PMC8464216",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8464216/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 170722497,
+     "csize": 36787,
+     "method": 8,
+     "bytes": 36772,
+     "sha256": "abe6ca1a684dfadd81c4225c993b5a6eb825a1ee3c4e4aae12ac5a05d2e487c0",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ffccff4301",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Computerized tomography scan of the head demonstrating a midline shift and a large left sided subdural hematoma.",
+   "licence": "CC BY",
+   "cite": "Oudghiri et al. Spontaneous subdural hematoma associated with preeclampsia: a case report and litterature review. Pan Afr Med J 2014. PMC4372310",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4372310/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 125346093,
+     "csize": 21660,
+     "method": 8,
+     "bytes": 21650,
+     "sha256": "a68de193b63b0e2b793f2594555877d4b312db0083b37e90a1263ae00b4eefcf",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-004e609938",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "A; Computerized tomography of the head showing subacute subdural hematoma 12 mm over left convexity (arrows), midline shift not shown on this image.",
+   "licence": "CC BY-NC",
+   "cite": "Steenstraten et al. Headache due to Bilateral Subacute Subdural Hematomas following Intracranial Hypotension Caused by Cervical Disc Herniation. Case Rep Neurol 2021. PMC8138280",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8138280/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 217106496,
+     "csize": 23700,
+     "method": 8,
+     "bytes": 23690,
+     "sha256": "3590ef7761ece12594e2bac515a2ca49f9c182919920a0c1df11b24253e26e90",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-3c340c46bb",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Computed tomography (CT) images of case 2. (a) CT performed at admission showing recurrence of a left chronic subdural hematoma.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Kaneshiro et al. Remote hemorrhage after burr-hole surgery for chronic subdural hematoma: A report of two cases. Surg Neurol Int 2019. PMC6416752",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6416752/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 43529886,
+     "csize": 8757,
+     "method": 8,
+     "bytes": 8752,
+     "sha256": "d15b3df5ab2f0d87de0b829db2c054780fadea2431d54e4700b26812309808e5",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b64dd5a205",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Outside hospital head computed tomography demonstrating a right convexity mixed density subdural hematoma, axial.",
+   "licence": "CC BY-NC-SA",
+   "cite": "O'Neill et al. Acute nontraumatic subdural hematoma from ruptured accessory meningeal artery pseudoaneurysm. Surg Neurol Int 2021. PMC8168677",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8168677/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 203516229,
+     "csize": 13253,
+     "method": 8,
+     "bytes": 13248,
+     "sha256": "e1b0e88c4276e27898ecc01533373cb336e41f65cac62bddc53c1eb4a88462b1",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-7b77247d5d",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Evolution of subdural hematoma (SDH) from presentation to 45 days later via head computed tomography (CT). (a) Head CT at initial presentation revealed a right-sided, mixed density 12 mm SDH with 12 mm midline shift to the left.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Morden et al. Middle meningeal artery embolization for symptomatic chronic subdural hematoma in the setting of severe transfusion-refractory thrombocytopenia: A case study and review of literature. Surg Neurol Int 2023. PMC10316227",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10316227/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 366937569,
+     "csize": 3887,
+     "method": 8,
+     "bytes": 3882,
+     "sha256": "db6b94d23eaaf5082d0f4210dfdd60c3775422d3a7ca2240083012b04e081374",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-4f92ee7f11",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "(b) Noncontrast CT head on hospital day 2 demonstrating expansion of the right subdural hematoma.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Parr et al. Arteriovenous malformation presenting as traumatic subdural hematoma: A case report. Surg Neurol Int 2020. PMC7451141",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7451141/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 173542760,
+     "csize": 11033,
+     "method": 8,
+     "bytes": 11028,
+     "sha256": "6c4d9ae6208f8c53bf2cdf16420c894dfca54449ccb54997d869d8bb33ba50c1",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-dfcef758dd",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Initial brain computed tomography obtained at admission showing a chronic subdural hemorrhage (arrowheads) over both cerebral hemispheres, which compressed the adjacent brain.",
+   "licence": "CC BY-NC",
+   "cite": "Shin et al. Extended Pneumocephalus after Drainage of Chronic Subdural Hematoma Associated with Intracranial Hypotension : Case Report with Pathophysiologic Consideration. J Korean Neurosurg Soc 2016. PMC4754592",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4754592/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 271977799,
+     "csize": 38953,
+     "method": 8,
+     "bytes": 38938,
+     "sha256": "fbf2a2a1ff6258d040ad4c3334fa7764ca04d664abbd3ecd394854dec54d47b3",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-787f76e2d8",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "(c) (5 h after trauma) computed tomography scan showing significant reduction of acute subdural hematoma and midline shift with enlargement of subgaleal hematoma (marked with broken arrow).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Rathore et al. Rapid Spontaneous Resolution of the Acute Subdural Hematoma: Case Series and Review of Literature. Asian J Neurosurg 2021. PMC8202355",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8202355/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 147883635,
+     "csize": 12037,
+     "method": 8,
+     "bytes": 12032,
+     "sha256": "774d3e05c6edd4b72aed79affa13cdd8cfe9bb3eaa2cb686c7e7358f2c12d637",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-85b9a6d315",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Left subdural hematoma with mass effect on underlying brain parenchyma and midline shift, and ventricular hemorrhage.",
+   "licence": "CC BY-NC",
+   "cite": "Bekele et al. Diagnosis and Treatment of Paroxysmal Sympathetic Hyperactivity in Medical ICU, University of Gondar Hospital, Northwest Ethiopia: A Case Report. Int Med Case Rep J 2020. PMC7667580",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7667580/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 23563472,
+     "csize": 18242,
+     "method": 8,
+     "bytes": 18232,
+     "sha256": "50f0b026a1f4459462beac730c9b2c867354813d023cd43c2f09b69b6e952ed3",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d8317325d3",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "(a and b) Axial and coronal noncontrast CT demonstrates a 7 mm right convexity mixed density subdural hematoma.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Tabibian et al. Incidentally discovered dural arteriovenous fistula during middle meningeal artery embolization for the treatment of chronic subdural hematoma. Surg Neurol Int 2021. PMC8422413",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8422413/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 159447053,
+     "csize": 13943,
+     "method": 8,
+     "bytes": 13938,
+     "sha256": "ef0bcb9f45533807e6f2e41a04ff068a84e4bd4848792fa0e1aab79e0fbe800c",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-f7cd7004ca",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "(a and b) Bilateral acute on chronic subdural hematomas with midline shift and subfalcine herniation towards the right.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Zaidi et al. A complex case of recurrent intracranial bleeds due to malaria-induced coagulopathy: A case report and literature review. Surg Neurol Int 2024. PMC11380894",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11380894/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 691710385,
+     "csize": 10269,
+     "method": 8,
+     "bytes": 10264,
+     "sha256": "7f0c0a8a77b7886567faba81b93e3cb9a443327c5c64da0bb5a4f0ba146eb07f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-f529e0da84",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "A computed tomography scan of the brain that shows the patient's recurrent acute subdural hematoma.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Aljuboori et al. Delayed recurrence of acute subdural hematoma in a patient with plasminogen activator inhibitor mutation. Surg Neurol Int 2020. PMC7568130",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7568130/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 216786675,
+     "csize": 12345,
+     "method": 8,
+     "bytes": 12340,
+     "sha256": "f73de1a5f6acbd8074eb74a5514e61c9565d8440947d2132fa5d240bc9855666",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-99cd8f69c4",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Preoperative computerized tomography brain showing subdural hematoma with mid line shift.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Shivalingaiah et al. Hyperhomocysteinemia and Evan's syndrome with uncal herniation for emergency splenectomy. Anesth Essays Res 2015. PMC4383129",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4383129/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 147245853,
+     "csize": 11671,
+     "method": 8,
+     "bytes": 11666,
+     "sha256": "c2459c7bf0d414268932122e934d205ede86d2bef5dc5afda897eee86b305bee",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-07a2665a49",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Initial head computed tomography reveals right convexity, and ,interhemispheric acute subdural hematoma.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Tanaka et al. Fatal convexity and interhemispheric acute subdural hematoma from a falx meningioma: A case report. Surg Neurol Int 2024. PMC11090548",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11090548/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 527909786,
+     "csize": 8649,
+     "method": 8,
+     "bytes": 8644,
+     "sha256": "c14aff13fb267f9b99c84c8c12bd1cdd360a12168e355bfbcdaea8ebfb7b121a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-35a2a6840a",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Initial brain computed tomography that shows acute and chronic subdural hemorrhage over the right cerebral hemisphere that cause a right-to-left midline shift and intraventricular hemorrhage in both lateral ventricles.",
+   "licence": "CC BY-NC",
+   "cite": "Huh Burr Hole Drainage : Could Be Another Treatment Option for Cerebrospinal Fluid Leakage after Unidentified Dural Tear during Spinal Surgery?. J Korean Neurosurg Soc 2013. PMC3579086",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3579086/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 66693247,
+     "csize": 25608,
+     "method": 8,
+     "bytes": 25598,
+     "sha256": "2cc803c65aa75eddb64b53033e1b3213b90b51894e5ae052c70b81dad4578f5a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-c5c282e20a",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "(b and c) Following repeated falls, there was continued increase in the subdural collection of higher signal intensity, indicative of rebleeds.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Cardoso et al. Combined pterional burr hole and coagulation of middle meningeal artery for chronic subdural hematoma. Surg Neurol Int 2024. PMC11302598",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11302598/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 638662017,
+     "csize": 21778,
+     "method": 8,
+     "bytes": 21768,
+     "sha256": "eb35c3c52999f88e72b37de84c724501343b52cc72782d0c7dfc6b5629710ec7",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ac585633b1",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Neuroradiological findings of the case. (a) Plain computed tomography (CT) taken at admission showing a right-sided acute subdural hematoma with low-density areas in some places.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Nagai et al. Cerebral infarction following administration of andexanet alfa for anticoagulant reversal in a patient with traumatic acute subdural hematoma. Surg Neurol Int 2023. PMC10481803",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10481803/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 398528942,
+     "csize": 8077,
+     "method": 8,
+     "bytes": 8072,
+     "sha256": "91955256d3a0252070b71fc8da25d56fc8a26924b592a887e6d657ceaa3c621c",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-e40e0cfd41",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Computed tomography scan shows reduction in the volume of subdural hematoma.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Kim et al. Subdural hematoma occurred after spinal anesthesia in a human immunodeficiency virus-infected patient. Saudi J Anaesth 2017. PMC5292830",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5292830/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 133942174,
+     "csize": 36463,
+     "method": 8,
+     "bytes": 36448,
+     "sha256": "1d9ad5b2f4572231b8b1ef6f8d075d6926ec7ced58278381a817e71cf7f50e45",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-e3a5c7fa6b",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Non-enhanced computed tomography scan of brain showing an acute interhemispheric left-sided subdural hematoma with maximal thickness in the left frontal parafalcine region with a hypodense area inside it focally compressing the medial frontal lobe anteriorly.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Krishnan et al. Occult falcine meningioma unmasked following nearly complete hemorrhagic transformation with resultant spontaneous acute interhemispheric subdural hematoma. J Neurosci Rural Pract 2015. PMC4244799",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4244799/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 198777144,
+     "csize": 11831,
+     "method": 8,
+     "bytes": 11826,
+     "sha256": "5504d1e8ba82e813a08b27576af3e7b5c1a3e02986a6b3ab9e751b97a8e76933",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-1271573518",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "(a) Head computed tomography (CT) shows right chronic subdural hematoma (CSDH) (black arrows).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Akiyama et al. Helicobacter cinaedi-infected chronic subdural hematoma mimicking an expanding hematoma: A case report. Surg Neurol Int 2021. PMC8247720",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8247720/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 125000978,
+     "csize": 6435,
+     "method": 8,
+     "bytes": 6430,
+     "sha256": "e835348b685b4ccc1cfe1d5d2618b58d6f0c4ee8ebdf6bc9046e621d1ea07b5c",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-6daf745fa8",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "(b) Axial CT showing a left subdural hematoma with 3.94 mm of midline shift.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Fish et al. Cerebral abscesses after endovascular coiling of a paraophthalmic aneurysm: Case report and review of the literature. Surg Neurol Int 2018. PMC6302554",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6302554/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 247780178,
+     "csize": 9165,
+     "method": 8,
+     "bytes": 9160,
+     "sha256": "ba9c6d4ceae317c48d0c7f2a77a9b88898066ee7551c934755c38efef561400d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ae65f7ac87",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Computed tomography of the head after neurological deterioration:. Right subdural hematoma.",
+   "licence": "CC BY-NC",
+   "cite": "Nguyen et al. Good outcomes in a patient with a Duret hemorrhage from an acute subdural hematoma. Int Med Case Rep J 2016. PMC4734784",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4734784/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 270428660,
+     "csize": 21596,
+     "method": 8,
+     "bytes": 21586,
+     "sha256": "19c38f806ad8797911f3ff8cbbd34791383c1521a87aeaaab9bd314c419c13d5",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-735346f4bd",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Acute subdural hematoma.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Tanaka et al. Endoscopic-assisted removal of bilateral traumatic intracerebral hemorrhage: A case report. Surg Neurol Int 2023. PMC10481816",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10481816/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 303443331,
+     "csize": 8417,
+     "method": 8,
+     "bytes": 8412,
+     "sha256": "db3c54b574fd51cd24f0daa799336f019110f11b60e5bef5d0ff781819223848",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-fad45740ec",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Head CT showing bilateral subdural hemorrhage. with fluid-blood levels shown by red arrowheads CT, computed tomography.",
+   "licence": "CC BY-NC",
+   "cite": "Khosravi et al. Neurological Immune-Related Adverse Events in Patients Treated with Anti-Programmed Death 1 Agent, Pembrolizumab: A Case Series. Case Rep Neurol 2025. PMC12274057",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12274057/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 781993082,
+     "csize": 4985,
+     "method": 8,
+     "bytes": 4980,
+     "sha256": "b039647b090ece96752f268c68272e182fd9eb7b959b6ea2294e9278f680a021",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-43e1b19a6d",
+   "kind": "image",
+   "label": "sdh",
+   "answer": "Subdural haematoma",
+   "caption": "Case 1. (b) Axial head computed tomography (CT) scan demonstrating bilateral subdural hematomas with associated cerebral edema and moderate amount of pneumocephalus.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Ravindra et al. Surgical management of traumatic frontal sinus fractures: Case series from a single institution and literature review. Surg Neurol Int 2015. PMC4553660",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4553660/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 315262139,
+     "csize": 18434,
+     "method": 8,
+     "bytes": 18424,
+     "sha256": "a9a63763ac0bcfc700f916b384ffd7396ae26e62ff260ac690c29d61baa98b6a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-60d772c232",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Noncontrast head computed tomography (CT) scan. Scan obtained on admission demonstrating subarachnoid hemorrhage in the suprasellar cistern with intraventricular extension.",
+   "licence": "CC BY",
+   "cite": "Sada et al. Subarachnoid Hemorrhage Caused by Supratentorial Cerebral Cavernous Malformation: A Case Report. Cureus 2024. PMC10836757",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10836757/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 300167170,
+     "csize": 12347,
+     "method": 8,
+     "bytes": 12342,
+     "sha256": "194be7ba48142be25d5f19879db69019cce08f1525687ae481d698aa64af8153",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-cfac327dba",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Computed tomography scan as shown in (D) shows subarachnoid haemorrhage with hyperintense cisterns.",
+   "licence": "CC BY",
+   "cite": "Dar et al. Granulomatosis with polyangiitis with cardiac and large vessel involvement: a case report with a constellation of rare complications. Eur Heart J Case Rep 2024. PMC11683360",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11683360/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 572288497,
+     "csize": 9343,
+     "method": 8,
+     "bytes": 9338,
+     "sha256": "abcaa0cb4453ec81831e12df111f8d9ff102efa140c725ee5088c63ea7f395d5",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-0ceb12d6c4",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Non-contrast computed tomography scan with diffuse cisternal subarachnoid hemorrhage extending into the interhemispheric fissure with associated obstructive hydrocephalus.",
+   "licence": "CC BY",
+   "cite": "Atchley et al. Endovascular Thrombectomy for Radial Artery Occlusion in Neuro-Interventional Procedures: A Report of Two Cases. Cureus 2024. PMC10907135",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10907135/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 60204018,
+     "csize": 28346,
+     "method": 8,
+     "bytes": 28336,
+     "sha256": "853d40485e847c264f4ef98bfbbe868fec74f66f34229a6754e37118ebeb98d6",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-a7bc13fbfb",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "CT-Head demonstrating diffuse subarachnoid hemorrhage in bilateral basal cisterns which is mainly concentrated in the left sylvian fissure (Fisher Grade 3).",
+   "licence": "CC BY",
+   "cite": "Lasry et al. The use of intravenous Milrinone to treat cerebral vasospasm following traumatic subarachnoid hemorrhage. Springerplus 2014. PMC4216821",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4216821/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 198854969,
+     "csize": 30832,
+     "method": 8,
+     "bytes": 30822,
+     "sha256": "862e287606fb160f9afeb39d26601100f27e9172185fa05c8d6591eea049c748",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-76d23d05db",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "The CT shows widespread hyperdense subarachnoid hemorrhage, within the left frontal sulci and left Sylvian fissure.",
+   "licence": "CC BY",
+   "cite": "Thanabalasundaram et al. Cortical non-aneurysmal subarachnoid hemorrhage post-carotid endarterectomy: a case report and literature review. Springerplus 2013. PMC3824702",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3824702/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 24842038,
+     "csize": 12059,
+     "method": 8,
+     "bytes": 12054,
+     "sha256": "1613775dd4c6c6ed1d6c58c8b31b57d1267445df076d3086f71a1f4659a42355",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-3700b1664e",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Non-contrast computed tomography scan with a diffuse cisternal subarachnoid hemorrhage.",
+   "licence": "CC BY",
+   "cite": "Atchley et al. Endovascular Thrombectomy for Radial Artery Occlusion in Neuro-Interventional Procedures: A Report of Two Cases. Cureus 2024. PMC10907135",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10907135/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 109790446,
+     "csize": 27104,
+     "method": 8,
+     "bytes": 27094,
+     "sha256": "2d7bd198f57a4f46d926e178f68b385de1a1a5baa1958f9ac131d6a6fb3905e0",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-a03aa2ffac",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "(B) The red arrow indicates subarachnoid hemorrhage.",
+   "licence": "CC BY",
+   "cite": "Yang et al. Abiotrophia defectiva causing infective endocarditis with brain infarction and subarachnoid hemorrhage: a case report. Front Med (Lausanne) 2023. PMC10188988",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10188988/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 413068852,
+     "csize": 13679,
+     "method": 8,
+     "bytes": 13674,
+     "sha256": "92f5bd13b279946f32cb602d23645a7413a10fd0648c04445669c99ec963bf24",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-707fd0eb53",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Unenhanced CT axial image shows subarachnoid blood with intra-ventricular extension and peripheral hemorrhage outlining the cerebral sulci.",
+   "licence": "CC BY",
+   "cite": "Naidoo et al. Non-referral of potential organ donors in South Africa: insights, challenges and ethical dilemmas. Pan Afr Med J 2018. PMC6080966",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6080966/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 1140315,
+     "csize": 17748,
+     "method": 8,
+     "bytes": 17738,
+     "sha256": "16cf5815ef0e55f19974da6a6dd80d3f61b98735f55c3b17c6856e9fac4e80be",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-7ccf86504c",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Assessment of initial injury from intracranial nail. (B) Axial image from head CT demonstrating basilar traumatic subarachnoid hemorrhage.",
+   "licence": "CC BY",
+   "cite": "Rennert et al. Ventricular Tract Hemorrhage Following Intracranial Nail Removal: Utility of Real-time Endovascular Assistance. Front Neurol 2016. PMC4943964",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4943964/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 76875667,
+     "csize": 13945,
+     "method": 8,
+     "bytes": 13940,
+     "sha256": "b66f53a447f719e23afaa6574523978082a1f55bc6ce19eeaae657be0f29ca3b",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d127f5a66c",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Head CT scan, axial view showing small saccular aneurysm in the M1 segment of the left middle cerebral artery and also an acute-subacute subarachnoid hemorrhage, with modified Fischer grade 1.",
+   "licence": "CC BY",
+   "cite": "Abbasher et al. Large Posterior Communicating Artery Aneurysm Presenting as Hemiparesis: A Case Report. Cureus 2025. PMC11810143",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11810143/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 459263528,
+     "csize": 30392,
+     "method": 8,
+     "bytes": 30382,
+     "sha256": "a3ced72185f1db559bb6759759c754870aa4ac17b4685bce015b69bcca6187ff",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-f48d26988d",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Unenhanced computed tomography scan of her brain showing diffuse subarachnoid hemorrhage in the basal cisterns. Abnormal hyperdense signals in the prepontine cistern indicate an underlying vascular lesion.",
+   "licence": "CC BY",
+   "cite": "Siddiqui et al. Bilateral hypoplasia of the internal carotid artery, presenting as a subarachnoid hemorrhage secondary to intracranial aneurysmal formation: a case report. J Med Case Rep 2012. PMC3284869",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3284869/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 229785670,
+     "csize": 34569,
+     "method": 8,
+     "bytes": 34554,
+     "sha256": "db0e7da7b4886c72c2e3c34128250ab7bfaf38e4c4ad15f4d7322e91cc314408",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-f01922b716",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Head computed tomography on admission shows subarachnoid hemorrhage (Fisher group 3).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Kimura et al. Ruptured small cerebral aneurysm occurring at the fenestration of the A1 portion of the anterior cerebral artery, combined with accessory middle cerebral artery branching from the crus: A case report. Surg Neurol Int 2023. PMC10559372",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10559372/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 94451530,
+     "csize": 28454,
+     "method": 8,
+     "bytes": 28444,
+     "sha256": "8feced20b0db98d3997c6b10c839f6754a8ac2f10f73695ccb6218192dee8901",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-fa8c199325",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Computed tomography upon admission showing subarachnoid hemorrhage (a).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Miyashita et al. Blister-like aneurysm of the anterior communicating artery treated with only Low-profile Visualized Intraluminal Support Junior stent. Surg Neurol Int 2021. PMC8645464",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8645464/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 105260052,
+     "csize": 10285,
+     "method": 8,
+     "bytes": 10280,
+     "sha256": "439161ed426b1029f7582fa8df6d067a7fa746c9e0bab8f194bc17efd0ba2e05",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-751c68f458",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "CT scans on admission demonstrating subarachnoid hemorrhage, with a thick hematoma in the right sylvian cistern (a and b).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Ono et al. Middle cerebral artery dissection causing subarachnoid hemorrhage and cerebral infarction: Trapping with high-flow bypass preserving the lenticulostriate artery. Surg Neurol Int 2017. PMC5535565",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5535565/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 148801311,
+     "csize": 6137,
+     "method": 8,
+     "bytes": 6132,
+     "sha256": "efc0181cb87a4a6a8aba2255dbb0c689a2c596f8351ef7d9ca529b4203e8276f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-c9453811d5",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Initial imaging findings. (a) Axial computed tomography image showing thick traumatic subarachnoid hemorrhage.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Somiya et al. Ruptured proximal middle cerebral artery traumatic pseudoaneurysm treated with bypass-assisted trapping surgery: A case report. Surg Neurol Int 2023. PMC10408648",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10408648/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 267368330,
+     "csize": 7903,
+     "method": 8,
+     "bytes": 7898,
+     "sha256": "d58d08ffa6217f29e19eaa880348b71192dcdcd813a24610c5e2a123e5e7e1a0",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-60406328c4",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Brain computed tomography scan revealed subarachnoid hemorrhage in basal cisterns and both sylvian fissures and anterior interhemispheric region. Dilated lateral ventricles and interstitial edema due to acute hydrocephalus is obvious.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Sharifi et al. An aneurysm at the site of the fenestration of the middle cerebral artery in a patient with multiple aneurysms: A case report. Surg Neurol Int 2015. PMC4597291",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4597291/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 309318803,
+     "csize": 27582,
+     "method": 8,
+     "bytes": 27572,
+     "sha256": "1d3c7b30c520a984cd717d8320e5556b2af64143b06679761804c941f8f3c55c",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-64b78d91b6",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "(a,c,d) Brain CT scan showing subarachnoid hemorrhage (SAH) due to middle cerebral artery (MCA) aneurysm rupture.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Marrone et al. Atypical Terson syndrome after subarachnoid hemorrhage from middle cerebral artery aneurysm rupture during coitus. Surg Neurol Int 2024. PMC11380884",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11380884/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 651971054,
+     "csize": 15035,
+     "method": 8,
+     "bytes": 15030,
+     "sha256": "745ef31d69e93ca99381c1aa0adbe388fd92445cdc7acfac7852b412aa07bbaa",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-2fe01693e1",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "CT on admission showing diffuse subarachnoid hemorrhage in the basal cistern (a).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Mitsuhara et al. Endovascular coil embolization for ruptured kissing aneurysms associated with A1 fenestration. Surg Neurol Int 2011. PMC3130439",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3130439/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 122688561,
+     "csize": 10113,
+     "method": 8,
+     "bytes": 10108,
+     "sha256": "5f160268b4b7880b9119d4ff2d21483932ae7bd97b026ece6e55db20144f86ea",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-a94d5cff29",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "(a) Axial CT scan showing the Fisher Grade 3 aneurysmal subarachnoid hemorrhage.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Fish et al. Cerebral abscesses after endovascular coiling of a paraophthalmic aneurysm: Case report and review of the literature. Surg Neurol Int 2018. PMC6302554",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6302554/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 240024622,
+     "csize": 10073,
+     "method": 8,
+     "bytes": 10068,
+     "sha256": "bbf3a6b1facb6be862b4e13008625ef8ab997b3c80ce1e54f0e1bb303486abe3",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b7dc892d0b",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Computed tomography shows subarachnoid hemorrhage in the posterior cranial fossa (a).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Wada et al. Unique vascular structures of a radicular arteriovenous fistula at the craniocervical junction along the first cervical spinal nerve: A case report. Surg Neurol Int 2023. PMC10070252",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10070252/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 69237783,
+     "csize": 8583,
+     "method": 8,
+     "bytes": 8578,
+     "sha256": "6b5b8e861982ff4685d84f6404aec74ee8aa965abd40fcdc2b37fe4b7c6feaa5",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-05296dc385",
+   "kind": "image",
+   "label": "sah",
+   "answer": "Subarachnoid haemorrhage",
+   "caption": "Non-contrast computed tomography showing convexity subarachnoid hemorrhage on the axial image (black arrow).",
+   "licence": "CC BY-NC",
+   "cite": "Yesuf et al. Post-Traumatic IVH and Left Thalamic Edema After Non-Penetrating Head Injury in a 25-Year-Old Male Patient Treated With Nonsurgical Management: Illustrative Case. Korean J Neurotrauma 2025. PMC12877343",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12877343/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 791590909,
+     "csize": 28495,
+     "method": 8,
+     "bytes": 28500,
+     "sha256": "0ee1d40dc6aea02f623f90d7f1ecb9e4b50f7fc1b57c82b6691cca9113acbcb2",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-35c2360dae",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Initial CT revealing acute left-sided intraparenchymal haemorrhage with intraventricular extension and mass effect.",
+   "licence": "CC BY",
+   "cite": "Smith et al. Periventricular cyst as a complication of ventriculoperitoneal shunting in the context of intracranial haemorrhage: a case report and review of the literature. J Surg Case Rep 2024. PMC10806387",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10806387/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 227281278,
+     "csize": 12326,
+     "method": 8,
+     "bytes": 12328,
+     "sha256": "dde86c174d84c20aec6c32d7562d5abeb5ca870ed61f048a1d18652970957178",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-85b12952d5",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "(A) Computed tomography (CT) scan at diagnosis demonstrating acute intracerebral hemorrhage (ICH) in the right frontal lobe.",
+   "licence": "CC BY",
+   "cite": "Wang et al. Intracerebral Hemorrhage as the Initial Presentation of Chronic Myeloid Leukemia: A Case Report and Review of the Literature. Front Neurol 2020. PMC7642366",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7642366/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 22707141,
+     "csize": 10071,
+     "method": 8,
+     "bytes": 10066,
+     "sha256": "46ce77cf36c73237de594611cb4793a7ea865064f6227ad57647f57cd7002407",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-34d360650e",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "From NCCT-brain scan of the patient, intracerebral hemorrhage in the left occipital region (arrow1), to the left lateral ventricle (arrow2), and cerebral edema are evident.",
+   "licence": "CC BY",
+   "cite": "Ehelepola et al. Multisystem failure and death due to extensive hemorrhaging and brain herniation subsequent to a bite by an unidentified snake. Trop Med Health 2016. PMC5022210",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5022210/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 9022742,
+     "csize": 14981,
+     "method": 8,
+     "bytes": 14976,
+     "sha256": "683b4fc411567ad61ff6beba60a937321c8df1f6f51eb6542849d09669e467cc",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-4bd948178c",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Preoperative head CT (D) shows an intraparenchymal hematoma centered in the right medial frontal lobe extending to the callosal sulcus.",
+   "licence": "CC BY",
+   "cite": "Rojas-Nieves et al. Case report: A combination of nitroglycerin and adenosine proves effective in repairing a cerebral arteriovenous malformation. Front Neurol 2023. PMC10481525",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10481525/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 414196479,
+     "csize": 9773,
+     "method": 8,
+     "bytes": 9768,
+     "sha256": "0474d0ce06f866de9410f73ba87f396c05b52e9e582733a74cd4e687dee0b5bf",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-956b1bce0a",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "(a) Axial CT reveals intraparenchymal haemorrhage in the left gangliocapsular region with intraventricular extension.",
+   "licence": "CC BY",
+   "cite": "Mann et al. Intrasphenoidal cephalocoeles: Knowing the less known. SA J Radiol 2024. PMC11151402",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11151402/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 757025500,
+     "csize": 6039,
+     "method": 8,
+     "bytes": 6034,
+     "sha256": "b5b0613129eda994c06e2d8ba16c3538c96288e3977674e41712767959d7af96",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-c6cb57b1ad",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "18-year-old male with atypical developmental venous anomaly. . A. Initial precontrast brain CT image showing large intracerebral hemorrhage in right parietal lobe and intraventricular hemorrhage in bilateral lateral ventricles.",
+   "licence": "CC BY-NC",
+   "cite": "Roh et al. Atypical developmental venous anomaly associated with single arteriovenous fistula and intracerebral hemorrhage: a case demonstrated by superselective angiography. Korean J Radiol 2012. PMC3253395",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3253395/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 209082943,
+     "csize": 24124,
+     "method": 8,
+     "bytes": 24114,
+     "sha256": "328a1928c23c5ede6b7d6f9f68c75be6906f10700eb3f6c53db48ba1ecfc47ec",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-e3724c93f5",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "(a) Noncontrast computed tomography (CT) scan demonstrating left putaminal hemorrhage. White arrow indicates slightly high dense round mass adjacent to the falx cerebri.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Koyanagi et al. Dural arteriovenous fistula in the falx cerebri treated with transarterial embolization using n-butyl cyanoacrylate. Surg Neurol Int 2016. PMC5234292",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5234292/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 131702778,
+     "csize": 12751,
+     "method": 8,
+     "bytes": 12746,
+     "sha256": "bf11468957cedc6a9b36abaf9d8ac624046e2d065344930a3079dcd8ed78ceb3",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-83b8df4193",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Imaging findings of patients who developed hypothermia with intracranial hemorrhage. (a) Axial non-contrast head computed tomography (CT) demonstrating a large acute intracerebral hematoma in the right putamen with imminent cerebral herniation.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Shinohara et al. Surgical strategy for intracranial hemorrhage with accidental hypothermia in elderly individuals. Surg Neurol Int 2024. PMC10858778",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10858778/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 212401379,
+     "csize": 13525,
+     "method": 8,
+     "bytes": 13520,
+     "sha256": "87fc72dcd958edd811c87dc62f47f6df4dcf9aa04d6c7ed084dfd3ac563dd5c6",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-2665f397c3",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "(c) Computed tomography revealed an intracerebral hemorrhage in the left frontal lobe.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Dai et al. Intracranial mycotic aneurysm rupture following cupping therapy. Surg Neurol Int 2024. PMC11090582",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11090582/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 483802325,
+     "csize": 10429,
+     "method": 8,
+     "bytes": 10424,
+     "sha256": "1174234fdd31d95e229b572e4ec384f13bf87a2e66f11fab9608c54f03979379",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d5ee2f70b3",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Non-contrast computed tomography of the head 2 days later, which reveals an acute intraparenchymal hemorrhage in the left occipital lobe without associated mass effect or interventricular hemorrhage.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Lee et al. Euglycemic diabetic ketoacidosis in the setting of acute intracerebral hemorrhage. Surg Neurol Int 2024. PMC11380825",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11380825/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 650698751,
+     "csize": 13251,
+     "method": 8,
+     "bytes": 13262,
+     "sha256": "76105df84aecd1aba536ea75e404564a8b2103f7d39e1e5ec4ffd7d61708c6a4",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-7823e7419a",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Brain computed tomographic image shows cerebellar hemorrhage within vermis.",
+   "licence": "CC BY-NC",
+   "cite": "Yang et al. Cerebellar hemorrhage after spine fixation misdiagnosed as a complication of narcotics use -A case report-. Korean J Anesthesiol 2011. PMC3040434",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3040434/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 105497092,
+     "csize": 15847,
+     "method": 8,
+     "bytes": 15842,
+     "sha256": "bb644510e4738bc278dec7e18fe92196188125d79cf2c5b69ed40098539ecb00",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-979c509b0b",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "CT of the brain on admission, showing left putaminal hemorrhage.",
+   "licence": "CC BY-NC",
+   "cite": "Satow et al. Combination of Transcranial Direct Current Stimulation and Neuromuscular Electrical Stimulation Improves Gait Ability in a Patient in Chronic Stage of Stroke. Case Rep Neurol 2016. PMC4899658",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4899658/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 29917759,
+     "csize": 20234,
+     "method": 8,
+     "bytes": 20224,
+     "sha256": "30ae5eb41972ff764e726259d71a4c5b45c114670922e4263ff4233bee38d67e",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-59c8a24e41",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Noncontrast computed tomography, axial view showing. Right parietal intraparenchymal hemorrhage along tract of the right parietal ventriculostomy catheter.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Verhey et al. Iatrogenic cortical pseudoaneurysm following ventriculoperitoneal shunt insertion presenting with intraventricular hemorrhage. Surg Neurol Int 2019. PMC6763671",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6763671/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 83096468,
+     "csize": 10169,
+     "method": 8,
+     "bytes": 10164,
+     "sha256": "40624b3e4fc33a030ed9d78cbc58d64e21967dfa1ef3c88559081963de0ad25f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b01ed0b6d4",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Initial presentation of a left occipital lobe intraparenchymal hemorrhage. (a) Head computed tomography without contrast.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Melguizo-Gavilanes et al. Therapeutic options for primary meningeal angiosarcoma: A case report. Surg Neurol Int 2020. PMC7451178",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7451178/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 185295680,
+     "csize": 9691,
+     "method": 8,
+     "bytes": 9686,
+     "sha256": "b6c23f81c57dbfa9eaea0733525fd9028cb2a0e3fb2157c907653aa158a19a33",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-5835b56ba3",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Computed tomography scans. (a) Axial plane view of the brain 10 h before initial surgical evacuation of the intracerebral hemorrhage (ICH).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Shah et al. Cerebral microdialysis demonstrates improvements in brain metabolism with cerebrospinal fluid diversion in spontaneous intracerebral hemorrhage. Surg Neurol Int 2023. PMC10695458",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10695458/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 363693800,
+     "csize": 5191,
+     "method": 8,
+     "bytes": 5186,
+     "sha256": "0eb14c04f3604ff5580853bbef8fc634dff1bde88923717723466749e3326141",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-8a7d04b921",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Noncontrast computed tomography head showing 5.2 cmx3.3 cm intraparenchymal hemorrhage.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Parr et al. Arteriovenous malformation presenting as traumatic subdural hematoma: A case report. Surg Neurol Int 2020. PMC7451141",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7451141/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 189151244,
+     "csize": 22590,
+     "method": 8,
+     "bytes": 22580,
+     "sha256": "f9dcdeae7ec991b1dc70693fb0a1e7d01986319846b2d7b75887085091edd3fd",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-60352f966f",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Preoperative axial computed tomography. Large basal ganglia-putamenal intracerebral hemorrhage.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Kozyrev et al. Total temporary occlusion of blood flow for several hours to treat a giant deep arteriovenous malformation: A series of multiple operations to save a young life. Surg Neurol Int 2016. PMC5009574",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5009574/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 46407,
+     "csize": 7123,
+     "method": 8,
+     "bytes": 7118,
+     "sha256": "336b161899db75a6ffa79c4513dce9328a03397595cfc40e4dd0d57c8e875c8a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-10c3f53f9c",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Image of a right pontine hemorrhage near the red nucleus. (A and B) Preoperative computed tomography image showing acute intracerebral hemorrhage in the right pons near the red nucleus.",
+   "licence": "CC BY-NC",
+   "cite": "Chong et al. Vim-PSA Double-Target DBS for the Treatment of Holmes Tremor Secondary to Brainstem Hemorrhage: A Case Report. Int Med Case Rep J 2024. PMC11283782",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11283782/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 755115046,
+     "csize": 11473,
+     "method": 8,
+     "bytes": 11468,
+     "sha256": "e56c6b81ed553f532e728f452be46c89be19cc7230e48ae9559a9ed735b481a7",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-7163bf68d9",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Noncontrast CT scan of head shows increased intracerebral hemorrhage with midline shift associated with the ruptured mycotic aneurysm.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Sorkin et al. Ruptured mycotic cerebral aneurysm development from pseudoocclusion due to septic embolism. Surg Neurol Int 2013. PMC3841922",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3841922/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 33795490,
+     "csize": 23874,
+     "method": 8,
+     "bytes": 23864,
+     "sha256": "bca40c77dfc033428e71bc86741671830bc6e819c74a473c565d7157f5583b1e",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-49377ad557",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "(a and b) Computed tomography revealing thalamic hemorrhage.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Maruyama et al. Coil embolization for post-bypass aneurysm of middle meningeal artery for moyamoya disease - preservation of transdural anastomosis. Surg Neurol Int 2023. PMC10159324",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10159324/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 277607788,
+     "csize": 8239,
+     "method": 8,
+     "bytes": 8234,
+     "sha256": "450aa39ca3fccba1b898c8cbf4295d01a3e388e9e2ca8506601c66de87ba1de2",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b025c386e2",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Intracerebral hematoma in left frontal lobe which causes 6 mm shifting of midline.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Solomiichuk et al. Contralateral delayed epidural hematoma following intracerebral hematoma surgery. Surg Neurol Int 2013. PMC3815043",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3815043/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 35533434,
+     "csize": 23628,
+     "method": 8,
+     "bytes": 23618,
+     "sha256": "14c52d76a5c25cb2a4262d15accdb26095d764a5efbf78273a1a51ad33d22b6a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d0163dc7c2",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "(a) Demonstrates right-sided frontal parietal intraparenchymal hemorrhage on initial presentation.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Arciniega et al. Epidural hematoma secondary to a ruptured occipital artery. Surg Neurol Int 2026. PMC13054308",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13054308/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 890746568,
+     "csize": 8245,
+     "method": 8,
+     "bytes": 8240,
+     "sha256": "da9cf7d1bc4cb400360894b6d120a2fa24d3ac7e9240212d6de57d6131388440",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-9a580417c2",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "(a) Non-contrast computed tomography (CT) shows a massive cerebellar hematoma with slightly obstructive hydrocephalus.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Teshigawara et al. Critical cerebellar hemorrhage due to pilocytic astrocytoma in a child: A case report. Surg Neurol Int 2021. PMC8492438",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8492438/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 159430163,
+     "csize": 16812,
+     "method": 8,
+     "bytes": 16802,
+     "sha256": "7ee1b3c6128cdc765cdf1f73ce479986fdc6b9423078daf93c83173633d8ece1",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-89f77471ee",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Cerebral computed tomography scan on day 1 after occurrence of aphasia and right hemiplegia revealing a left rolandic intraparenchymal hematoma.",
+   "licence": "CC BY-NC",
+   "cite": "Mrozek et al. Reversible Cerebral Vasoconstriction Syndrome with Intracranial Hypertension: Should Decompressive Craniectomy Be Considered?. Case Rep Neurol 2017. PMC5301123",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5301123/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 30543990,
+     "csize": 16780,
+     "method": 8,
+     "bytes": 16770,
+     "sha256": "95ac4a360b0a5acfdac6fb79637ab63d9bdb2d4f1593fa54a0966bc41baa5e64",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-5da7e4cd98",
+   "kind": "image",
+   "label": "ich",
+   "answer": "Intracerebral haemorrhage",
+   "caption": "Axial slices of CT brain demonstrating (A) intraparenchymal haematoma within right temporal lobe extending into the occipital lobe with extra-axial haematoma adjacent to frontal, temporal and parietal lobes.",
+   "licence": "CC BY-NC",
+   "cite": "Chatterton et al. Arterial thrombosis following first-dose ChAdOx1 vaccination: a case series. BMJ Neurol Open 2022. PMC9082725",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9082725/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC9.zip/content",
+     "offset": 22880519,
+     "csize": 6797,
+     "method": 8,
+     "bytes": 6792,
+     "sha256": "080ab84ab1f44f35dea49d2f2a34e6f4fd177ee21fb9bcf93390568d6c06af07",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-9092c48c65",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Head CT of the patient (A) the red arrow indicates infarction of the right basal ganglia.",
+   "licence": "CC BY",
+   "cite": "Yang et al. Abiotrophia defectiva causing infective endocarditis with brain infarction and subarachnoid hemorrhage: a case report. Front Med (Lausanne) 2023. PMC10188988",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10188988/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 104182141,
+     "csize": 13405,
+     "method": 8,
+     "bytes": 13400,
+     "sha256": "fdf8cab8701f2037d2bfa020f3ebc5bbec373dc4a2c29b8d626dcc80adca082d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-4459af69a3",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "CT brain. The rectangle demarcates the acute left-sided MCA infarct in the left frontoparietal-temporal region and left insular cortex. . MCA: Middle cerebral artery.",
+   "licence": "CC BY",
+   "cite": "Deshmukh et al. Comprehensive Rehabilitation of a Patient With Right Hemiplegia: A Case Report. Cureus 2024. PMC10858301",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10858301/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 334907386,
+     "csize": 19034,
+     "method": 8,
+     "bytes": 19024,
+     "sha256": "e06d39039dd2011d86801be66650a959316704bb2dd75773925dd1f64253bd21",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-bb7390c0f4",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Twenty-four-hour repeat head CT scan. . Axial view showing the right lenticuloradial hypodensity, consistent with recent ischemic stroke.",
+   "licence": "CC BY",
+   "cite": "Lagarteira et al. Ischemic Stroke as an Initial Manifestation of Silent, Evolved Myocardial Infarction: A Case Report. Cureus 2026. PMC12861334",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12861334/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 873156027,
+     "csize": 24508,
+     "method": 8,
+     "bytes": 24498,
+     "sha256": "49f45da71d665dcdec72e29bc87813ca7ee2a3e51232c692e0f3b4f5e06b8594",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-80e85d52b2",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Non-contrast CT Head demonstrates left middle cerebral artery territory infarct with pressure effect effacing cortical sulci, and ,ipsilateral lateral ventricle anterior horn.",
+   "licence": "CC BY",
+   "cite": "Adebayo et al. COVID-19 and stroke in sub-Saharan Africa: case series from Dar es Salaam. Pan Afr Med J 2020. PMC7880116",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7880116/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 158086863,
+     "csize": 19384,
+     "method": 8,
+     "bytes": 19374,
+     "sha256": "bcaa10a325fa0833850d662447ae22c6e924915e13ae04abf29703e5fd1c29cf",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ac2d0f6e2e",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Brain computed tomography (CT) after the patient's third stroke. infarction of the medial right occipital lobe, and.",
+   "licence": "CC BY",
+   "cite": "Kasuya-Ueba et al. Musical neglect training for chronic persistent left hemispatial neglect with right hemiplegia post-stroke: a case report. Front Rehabil Sci 2025. PMC11747466",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11747466/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 595146922,
+     "csize": 7715,
+     "method": 8,
+     "bytes": 7710,
+     "sha256": "7915bd2e7e729b12b25e3560e32fa8a734e4b8133ed0cec88a3c6715e936a5b5",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-4669d02faa",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Hypodense defect indicates acute left cerebellar infarction (white arrow).",
+   "licence": "CC BY",
+   "cite": "Huang et al. Levitronix bilateral ventricular assist device, a bridge to recovery in a patient with acute fulminant myocarditis and concomitant cerebellar infarction. Cardiovasc J Afr 2018. PMC6282109",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6282109/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 114088730,
+     "csize": 21368,
+     "method": 8,
+     "bytes": 21358,
+     "sha256": "7d957b4d5aab5830677b9fb4a2e28075a1709192bb3c3c4cf5e68e57b7be148a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-4222b859e2",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Hypodensities seen on right frontal, temporal, and parietal regions (arrow) suggestive of infarcts.",
+   "licence": "CC BY",
+   "cite": "Hussain et al. Late Presentation of β-Thalassemia Major Patient With Left Hemiparesis: A Case Report. Cureus 2024. PMC10864937",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10864937/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 86574817,
+     "csize": 66213,
+     "method": 8,
+     "bytes": 66218,
+     "sha256": "31168fc45791fe2cf89117281ef40247e76c6bb39c3ff4a0bca2bc287903a22f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-bf7fd0e4cf",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Axial noncontrast computerized tomography of the brain showing infarcts in the right caudate nucleus, internal capsule and parietooccipital cortex.",
+   "licence": "CC BY",
+   "cite": "Kumar et al. Contralateral diaphragmatic palsy in acute stroke: an interesting observation. Indian J Crit Care Med 2009. PMC2772256",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2772256/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC2.zip/content",
+     "offset": 26275800,
+     "csize": 39779,
+     "method": 8,
+     "bytes": 39764,
+     "sha256": "7773d91ffd1662c2fddf2a0eae054f7ce5ab5aa23731761dab52f097846cb9ba",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-8db78f713a",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Axial head computed tomography (CT). Symmetric low attenuation lesions involving bilateral cerebellum measuring 5cm by 3cm are suspicious for acute to subacute infarct.",
+   "licence": "CC BY",
+   "cite": "Ramawad et al. Cerebellar Leukoencephalopathy following Fentanyl Intoxication. A case report and review of the literature. Qatar Med J 2024. PMC10770733",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770733/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 258289849,
+     "csize": 15897,
+     "method": 8,
+     "bytes": 15892,
+     "sha256": "e95650f41748027ec8087ba604ffd8b070d94188a8141d2fed0f9a98ba2afa13",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-05d87a8fca",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "An axial view of a non-contrast computed tomography scan showing multiple areas of acute and subacute ischemic strokes in different territories.",
+   "licence": "CC BY-NC",
+   "cite": "Alhashim et al. Management of Free-Floating Thrombus in the Vertebral Artery in a Middle-Aged Smoker with Secondary Polycythemia Vera. Int Med Case Rep J 2021. PMC8473712",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8473712/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 167883611,
+     "csize": 31694,
+     "method": 8,
+     "bytes": 31684,
+     "sha256": "aba73f4f7c95434d8326ddb82e985f1f8f20a058bce13f13dc4d0facb1df063a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-76352b5937",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "A native CT scan of the brain on day six showed a hypodensity indicating the infarction in the territory of the right ACA.",
+   "licence": "CC BY-NC",
+   "cite": "Zibold et al. Case Report: Treatment of Akinetic Mutism after Unilateral Anterior Cerebral Artery Infarction with Methylphenidate and Levodopa/Benserazide. Case Rep Neurol 2024. PMC11250274",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11250274/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 620965847,
+     "csize": 42679,
+     "method": 8,
+     "bytes": 42664,
+     "sha256": "23bcbd4bc25af8c7bbcaa54bdbb373fbc0adaead24071eba6d602c043f75374d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-7739033e7e",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "The patient's CT head scan. Arrow denotes an old left occipital lobe infarction.",
+   "licence": "CC BY-NC",
+   "cite": "Gulsin et al. The curious case of an invisible dog: a patient with non-psychiatric visual hallucinations. Oxf Med Case Reports 2016. PMC4731739",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4731739/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 267537421,
+     "csize": 31738,
+     "method": 8,
+     "bytes": 31728,
+     "sha256": "112397f8e1798d4c1f309e1cf7b6d10ffa3b9bbc96b563b438e0cba1657aae8d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-6d7cc45df7",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Computed tomography brain plain - showing bilateral infarcts involving the cerebellum, there is patchy infarct involving the right temporal lobe. The temporal horns of the lateral ventricle as well as the fourth ventricle are dilated.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Kutty et al. Burden of Dengue-related Neurosurgical Emergencies during an Epidemic: A Tertiary Care Experience. Asian J Neurosurg 2019. PMC6417330",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417330/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 46874325,
+     "csize": 13923,
+     "method": 8,
+     "bytes": 13918,
+     "sha256": "aa8bcad1dc6693aa9edc2e61db30d87d34ddc350913226f16a360ded81debd0e",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d441756fd2",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "CT of brain showing infarcts in middle cerebral artery infarcts.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Babu et al. Cerebral infarction in patient with minimal change nephrotic syndrome. Indian J Nephrol 2013. PMC3621240",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3621240/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 278811233,
+     "csize": 15927,
+     "method": 8,
+     "bytes": 15922,
+     "sha256": "24b53e89da4545afdbd37686e061f3c407689ca032f7e241c821bfd3765b55df",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-08cb3a51af",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "CT Brain shows subacute infarct of right corona radiata.",
+   "licence": "CC BY-NC",
+   "cite": "Loong et al. Atypical Presentation of Takotsubo Cardiomyopathy: Stroke as a Predisposing Factor. Medeni Med J 2020. PMC7584272",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7584272/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 209980010,
+     "csize": 13137,
+     "method": 8,
+     "bytes": 13132,
+     "sha256": "dd73961ff207152c58a29a6ccac7048d56620cfd6261593508909642df9cfc77",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-f7396b278a",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Emergency computed tomography (CT) scan showed cerebral infarction (D).",
+   "licence": "CC BY-NC",
+   "cite": "Fu et al. Vascular Thrombosis and Anti-PD-1 Therapy: A Series of Cases. Cancer Manag Res 2021. PMC8629915",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8629915/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 108013150,
+     "csize": 11131,
+     "method": 8,
+     "bytes": 11126,
+     "sha256": "a6378d0267cef1d8fe0059e162ea62ea18cc02e2980b9cd64ff81214b42d6beb",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-2f74a82033",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Right malignant middle cerebral artery/posterior cerebral artery territory infarction on CT.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Moughal et al. Malignant middle cerebral artery infarction following subacute subdural hematoma: A case report and literature review. Surg Neurol Int 2021. PMC8053464",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8053464/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 16923610,
+     "csize": 9521,
+     "method": 8,
+     "bytes": 9516,
+     "sha256": "4688f64d8556ee4d12bdb79242db4bdfe96e2d05bfd1f404943626ff8fb189fd",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-e74d8a9c9c",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "CT head without contrast shows evolving lacunar infarcts in the right basal ganglia and caudate nucleus without significant mass effect.",
+   "licence": "CC BY-NC",
+   "cite": "Abdelazeem et al. A Case Report of Thromboembolic Stroke in a Patient with Holt-Oram Syndrome. J Community Hosp Intern Med Perspect 2022. PMC9195078",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9195078/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC9.zip/content",
+     "offset": 29792029,
+     "csize": 20468,
+     "method": 8,
+     "bytes": 20458,
+     "sha256": "9a7fe675a3f1d3f5dbab15d5533a3f394dda1a190d6b86b77bac678ef215bd83",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-eeea286d4c",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Noncontrast computed tomographic scan of the head. Show completed infarct.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Sorkin et al. Ruptured mycotic cerebral aneurysm development from pseudoocclusion due to septic embolism. Surg Neurol Int 2013. PMC3841922",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3841922/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 27574005,
+     "csize": 10445,
+     "method": 8,
+     "bytes": 10440,
+     "sha256": "047a43b3576bbd82c3ad322547043936f2f797de1c4d2955aab8822d10616d35",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-97c7eee7fa",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "B. CT scan from patient 2 showing infarcts in branches of left anterior and middle cerebral arteries.",
+   "licence": "CC BY-NC",
+   "cite": "Santos-Pontelli et al. Persistent pusher behavior after a stroke. Clinics (Sao Paulo) 2011. PMC3226615",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3226615/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 218236615,
+     "csize": 38835,
+     "method": 8,
+     "bytes": 38820,
+     "sha256": "1f9c74a26f315c09909837357175a2c87d70a1e3814c95bda483a5017e6acb57",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-5cd868b98a",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Left sided occipital cerebral infarction.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Rasiah et al. A case of fatal disseminated Apophysomyces elegans infection in a renal allograft recipient. Indian J Nephrol 2014. PMC3927195",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3927195/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 173589625,
+     "csize": 20738,
+     "method": 8,
+     "bytes": 20728,
+     "sha256": "1cbf66d1fc72790aa7a6dffd672096358d99f5f53cc9984222e782308f1468c7",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-07b5e9c829",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Head computed tomography revealing an extensive hypodense lesion in the right parieto-occipital lobe, indicative of an extensive ischemic infarction.",
+   "licence": "CC BY-NC",
+   "cite": "Ekmektzoglou et al. When in Trouble Think of the Bubble: Paradoxical Cerebral Arterial Gas Embolism after Endoscopic Retrograde Cholangiopancreatography. Case Rep Gastroenterol 2021. PMC8138231",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8138231/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 204164063,
+     "csize": 24280,
+     "method": 8,
+     "bytes": 24270,
+     "sha256": "52f829720bf64f715561746f04799a990d34cc3303ae2ad1d5a925fd53aa64ee",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-46c7a8e635",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Non-contrast CT scan of the head showing large right sided hypoattenuation in the temporoparietal region, consistent with large right temporoparietal infarction with associated mass effect and mild subfalcine shift.",
+   "licence": "CC BY-NC",
+   "cite": "Din et al. Amidst COVID-19 pandemic: the catastrophic sequelae of an inadvertent carotid artery insertion during central venous catheter placement - a case report. J Community Hosp Intern Med Perspect 2021. PMC8462841",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8462841/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 158290116,
+     "csize": 83196,
+     "method": 8,
+     "bytes": 83166,
+     "sha256": "4f44715461eab6edcaeb0a8c218216b0a5d45935a9e2f53738769325b51c7752",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-d9eab4284a",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "Patient 1. CT scan shows infarct in the left PCA territory (arrow).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Alurkar et al. Idiopathic thrombus in the common carotid artery on digital subtraction angiography. J Clin Imaging Sci 2012. PMC3352616",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3352616/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 286184130,
+     "csize": 7599,
+     "method": 8,
+     "bytes": 7594,
+     "sha256": "e21047abf5c90104f2a19602487751017b7d91143cd78dd93d2f33252112e319",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ad2c514146",
+   "kind": "image",
+   "label": "infarct",
+   "answer": "Ischaemic stroke (infarct)",
+   "caption": "CT of the brain showing evidence of right basal ganglia infarct on 14.07.2020 (day of admission).",
+   "licence": "CC BY-NC",
+   "cite": "Abdelhadi et al. Candida Pneumonia with Lung Abscess as a Complication of Severe COVID-19 Pneumonia. Int Med Case Rep J 2021. PMC8711636",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8711636/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 232709983,
+     "csize": 15773,
+     "method": 8,
+     "bytes": 15818,
+     "sha256": "7145bc020aae7b78da487c81eb162c32899fdcb447bf41925c6226540a0ba116",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-97098ed8e3",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Preoperative CT scan demonstrating hydrocephalus.",
+   "licence": "CC BY",
+   "cite": "Evangelos et al. Percutaneous placement of the peripheral catheter to the subclavian vein for a VA shunt. Pan Afr Med J 2017. PMC5516673",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5516673/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 147129176,
+     "csize": 22048,
+     "method": 8,
+     "bytes": 22038,
+     "sha256": "d5206b6325dd2f1603265e96146bdc60e4f87d95e8cbd6567ab412a36f7720ee",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-246d92d6de",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Cranial computed tomography reveals marked hydrocephalus and hipodensity around ventricles.",
+   "licence": "CC BY",
+   "cite": "Fernandez-Alvarez et al. Lymphomatoid granulomatosis of central nervous system and lung driven by epstein barr virus proliferation: successful treatment with rituximab-containing chemotherapy. Mediterr J Hematol Infect Dis 2014. PMC3965717",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3965717/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 191007633,
+     "csize": 13585,
+     "method": 8,
+     "bytes": 13580,
+     "sha256": "180fa57eee67465fd8bb4e8c0bd589749eea582d45f6c6dd44cbc485d04efc1a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b52caa1f3b",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Axial CT head with hydrocephalus / third ventricle dilatation secondary to the aqueduct of Sylvius obstruction by the pineal region mass.",
+   "licence": "CC BY",
+   "cite": "Royal-Preyra et al. Papillary Tumor of the Pineal Region Treated With Surgery and Postoperative Radiotherapy: A Case Report. Cureus 2025. PMC11763826",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11763826/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 712381280,
+     "csize": 28266,
+     "method": 8,
+     "bytes": 28256,
+     "sha256": "a344ac5eef1f8236c2f8236ff24f68c238268dadc33060d290d4c516727ef950",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-1ece3a21cc",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "(A) Non-contrast CT Head demonstrates a lesion at the Foramen of Monro causing obstructive hydrocephalus.",
+   "licence": "CC BY",
+   "cite": "Rai et al. Horner's Syndrome as Initial Manifestation of Possible Brachial Plexopathy Neurolymphomatosis. Front Neurol 2019. PMC6350275",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6350275/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 268846472,
+     "csize": 5223,
+     "method": 8,
+     "bytes": 5218,
+     "sha256": "244aefebf610bf59ec8eb771a94bc32585554a99b7586d393e61ba1e4ecea55f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-434a8aee2d",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Brain CT: Lateral ventriculomegaly and periventricular hypointensities.",
+   "licence": "CC BY",
+   "cite": "Saleh et al. Hakim-Adams Syndrome: An Unusual Cause of Reversible Postoperative Coma. Front Med (Lausanne) 2016. PMC5116640",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5116640/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 220856808,
+     "csize": 25408,
+     "method": 8,
+     "bytes": 25398,
+     "sha256": "006e62aafd4b05a8d7d2e11e94ab415a2665358a9dc587c4de47110dc224683d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-28c3fc2283",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Brain CT scans after defect repair via endoscopic endonasal approach. Ventricular dilation (hydrocephalus) is indicated by arrows. Axial section;.",
+   "licence": "CC BY-NC",
+   "cite": "Yavuz et al. Pneumocephalus and delayed hydrocephalus following endoscopic endonasal biopsy of skull base lesion: diagnostic pitfalls and the role of immunohistochemistry. Arch Clin Cases 2026. PMC13142664",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13142664/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 900489703,
+     "csize": 6029,
+     "method": 8,
+     "bytes": 6024,
+     "sha256": "23132b06bc186fefcac52321273ad3ff1a5bf2fd1c0853f38679d32bb4e3d76b",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-eea5ff398f",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Computed tomography showing hydrocephalus.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Maqsud et al. Rare presentation of Klüver-Bucy syndrome following subarachnoid hemorrhage. Surg Neurol Int 2024. PMC11225519",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11225519/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 695076147,
+     "csize": 23566,
+     "method": 8,
+     "bytes": 23556,
+     "sha256": "054812d453a67df730c1e267592c921a203f043d8f5401e6beb5417de0f650e0",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-71b445785b",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Regression of hydrocephalus.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Dlaka et al. Bilateral posterior fossa chronic subdural hematoma as a cause of hydrocephalus. Surg Neurol Int 2023. PMC10783685",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10783685/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 265695857,
+     "csize": 9709,
+     "method": 8,
+     "bytes": 9704,
+     "sha256": "6aa95df67a4e07f798fb35cbf2f3b925e2937342dc63e829190b6a08efe5080a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-5b6a6b6748",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "(b) Axial CT image of the same patient shows significant dilatation of the ventricular system consistent with hydrocephalus. Minimal intraventricular hemorrhage (arrowhead) is also noted layering in the occipital horns of the right lateral ventricles, which are significantly dilated.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Gulino et al. Multiple Abdominal abscesses following ventriculoperitoneal shunt placement in an immunosuppressed patient: An illustrative case. Surg Neurol Int 2024. PMC11090531",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11090531/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 639565604,
+     "csize": 11459,
+     "method": 8,
+     "bytes": 11454,
+     "sha256": "4ad669e4f2094039d1bd30cd82a827cf2744f465b0211f04701b47de1a5daa1c",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-c5d364fa41",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Repeat computed tomography scan showing evidence of progressive hydrocephalus.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Munakomi et al. Posttraumatic Cervicovertebral Junction Acute Subdural Hematoma and Cisterna Magna Subarachnoid Hemorrhage Presenting with Progressive Hydrocephalus. Asian J Neurosurg 2018. PMC5820898",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5820898/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 228032755,
+     "csize": 18420,
+     "method": 8,
+     "bytes": 18410,
+     "sha256": "8b257b6cf27aba1fdc853df7f83c2a4267f6d14394c22a9c9f4c4fc43dd0ef54",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-27f80b7aab",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Brain CT showed ventriculomegaly on admission.",
+   "licence": "CC BY-NC",
+   "cite": "Wu et al. Intrathecal Injection of Polymyxin B in a Child with Meningitis Caused by Carbapenem-Resistant Pseudomonas aeruginosa: A Case Report and Literature Review. Infect Drug Resist 2024. PMC10822138",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10822138/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 387764468,
+     "csize": 15009,
+     "method": 8,
+     "bytes": 15004,
+     "sha256": "51b8d8e468359c116e1889f2a9eb784be4ae30fac83ec83a9ae8535948e58db4",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ac82bffbcd",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Non-contrast axial computed tomography. Demonstrating prominent lateral ventricles out of proportion to degree of cortical sulcal markings suggestive of hydrocephalus.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Sprau et al. Using smartphone-based accelerometers to gauge postoperative outcomes in patients with NPH: Implications for ambulatory monitoring. Surg Neurol Int 2021. PMC8492411",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8492411/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 178975786,
+     "csize": 14617,
+     "method": 8,
+     "bytes": 14612,
+     "sha256": "f363c4cf341945efdeb00a928d1bd079c17c027c93c9bf9853d843f209f44234",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-8ead9a1d9f",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Computed tomography brain plain - showing rounding of the third ventricle and dilatation of the frontal and temporal horns of the lateral ventricle due to obstructive hydrocephalus.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Kutty et al. Burden of Dengue-related Neurosurgical Emergencies during an Epidemic: A Tertiary Care Experience. Asian J Neurosurg 2019. PMC6417330",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6417330/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 68464767,
+     "csize": 13741,
+     "method": 8,
+     "bytes": 13736,
+     "sha256": "95de3d2852f0f9a0c41dc840a5d0dc7746b661344eb21e7e9fc52e5cc3482f29",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-6d46b924e8",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Computed tomography brain taken at the 8-month review showing features suggestive of noncommunicating hydrocephalus. There is dilation of the fourth ventricle, aqueduct, third ventricle, and bilateral lateral ventricles with transependymal cerebrospinal fluid seepage. There is no dilation of the foramina of Luschka or Magendie. We believe that this was caused as a result of tubercular meningitis or arachnoiditis.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Lavadi et al. Spinal intramedullary tuberculoma in a 3-year-old girl. Surg Neurol Int 2021. PMC8720442",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720442/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 232387157,
+     "csize": 21076,
+     "method": 8,
+     "bytes": 21066,
+     "sha256": "496ff5145aa224cdaab70e04bb53f4682580b0e49ae62d4d93ff3d92fd9206b7",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-ab24ee0561",
+   "kind": "image",
+   "label": "hydro",
+   "answer": "Hydrocephalus",
+   "caption": "Computed tomography (CT) image of the skull shows moderate degree of hydrocephalus with diffuse indentation of inner table of skull (black arrow).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Mohan et al. Crouzon syndrome: clinico-radiological illustration of a case. J Clin Imaging Sci 2012. PMC3551519",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3551519/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 89631762,
+     "csize": 20292,
+     "method": 8,
+     "bytes": 20282,
+     "sha256": "b620de7a0d578909ce9685d1363be2709151d47b5ffc69ca0b9bb16c1c6c6870",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-3ec188ee17",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "(A) Intracranial lesion spreading and cerebral hernia were detected.",
+   "licence": "CC BY",
+   "cite": "Han et al. Non-leukemic myeloid sarcomas involving only the central nervous system: a case report and literature review. Front Oncol 2026. PMC13070748",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13070748/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 904725073,
+     "csize": 27064,
+     "method": 8,
+     "bytes": 27054,
+     "sha256": "d929a8df95502d29e59f46d4e58d0df05595b0e20f279851d01c93579ed3a9b9",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-27f36de64d",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "- High-resolution computed tomography scan of the brain showing a\nring-enhancing lesion in the splenium of the left corpus\ncallosum.",
+   "licence": "CC BY",
+   "cite": "Souza et al. Can COVID-19 impact the natural history of paracoccidioidomycosis? Insights from an atypical chronic form of the mycosis. Rev Inst Med Trop Sao Paulo 2023. PMC10691805",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10691805/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 304781688,
+     "csize": 27422,
+     "method": 8,
+     "bytes": 27412,
+     "sha256": "671a24683a4c7d964c34f87ef207e1425cb13ab6198ab2ec206ac835eb59b15f",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-a2e4608042",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "Axial Post enhanced CT scan shows left temporal lobe complex mass with peripheral thick nodular enhancement.",
+   "licence": "CC BY",
+   "cite": "AlBatly et al. An atypical case of intracerebral schwannoma. Pan Afr Med J 2014. PMC4282800",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4282800/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 210723494,
+     "csize": 19070,
+     "method": 8,
+     "bytes": 19060,
+     "sha256": "139a0e82235a3d91c99a5b56794fe113b4729e4992d754e2f84f3f163d1cc03b",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-4af0a72acb",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "Brain Computed Tomography-scan with nodular, right insular lesion with cocoon enhancement and peri-lesional edema.",
+   "licence": "CC BY",
+   "cite": "Bouillé et al. Case Report: Invasive Cryptococcosis in French Guiana: Immune and Genetic Investigation in Six Non-HIV Patients. Front Immunol 2022. PMC9088011",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9088011/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC9.zip/content",
+     "offset": 6685848,
+     "csize": 34103,
+     "method": 8,
+     "bytes": 34094,
+     "sha256": "e797eb60b17f5ed1ccfb9d22f2432d89123ebc5e7ae99d5cc2ca721bfc9917b5",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-71727ab29c",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "(c) Post-contrast axial image shows the extent of the intracranial component (black arrow) of the tumour compressing the midbrain (orange arrow) and extending into the suprasellar cistern (yellow arrow). No cerebral oedema.",
+   "licence": "CC BY",
+   "cite": "Lesar et al. Multiple myeloma in a young female presenting as an aggressive skull-base tumour. SA J Radiol 2024. PMC11304403",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11304403/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 595733960,
+     "csize": 12367,
+     "method": 8,
+     "bytes": 12362,
+     "sha256": "daa70b2cb439e801d67ccc8d74b596701f159275c4f448f8a4b33424541deb96",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-115defa777",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "Parietal lobe with mass effect.",
+   "licence": "CC BY",
+   "cite": "Hlophe et al. Pulmonary arteriovenous malformation in a child with multiple brain abscesses: A case report. Afr J Thorac Crit Care Med 2021. PMC8203070",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8203070/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC8.zip/content",
+     "offset": 140426674,
+     "csize": 6009,
+     "method": 8,
+     "bytes": 6004,
+     "sha256": "e52c8554e0306e22375d382f7e74dbed49aba9be1142b1f60fb01bed8d60ab8d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-c71e8c5699",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "Contrast-enhanced brain CT scan showing an intense enhancible paraventricular mass.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Tayari et al. Case report of the extramedullary hematopoiesis presented as a hypervascular intracranial mass. Adv Biomed Res 2013. PMC3748640",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3748640/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC3.zip/content",
+     "offset": 17101437,
+     "csize": 15723,
+     "method": 8,
+     "bytes": 15718,
+     "sha256": "ce49e1cf15f960e4bcb4bd7a33568a6239a6fa84fb6ba4473ea39584ca71b32c",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-7bf7478023",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "A; Computed tomography image of the brain showing a brain tumor of 35 mm.",
+   "licence": "CC BY-NC",
+   "cite": "Lee et al. Brain-Only Metastasis and 10-Year Survival after Curative Gastric Cancer Resection: A Case Report. Case Rep Oncol 2023. PMC10091231",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10091231/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 254249559,
+     "csize": 12223,
+     "method": 8,
+     "bytes": 12218,
+     "sha256": "aa65c3b9c4955664260e310230e7aa8ed628c4e112da860a613b4b5419b892b0",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-c108f3b586",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "Axial non-contrasted brain CT showing a hyperdense well-defined pineal region mass extended to the posterior third ventricle with a central calcification.",
+   "licence": "CC BY-NC",
+   "cite": "Mahboob et al. An Unusual Presentation of Hearing Impairment in an Adult with Pineal Region Germinoma: A Case Report. Case Rep Oncol 2023. PMC10601833",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10601833/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 73134639,
+     "csize": 23476,
+     "method": 8,
+     "bytes": 23466,
+     "sha256": "11551ba9db68f3e8a86e6d63c8c74c8b71d3f54d0e042de967de23161cbba57b",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-da2c64d355",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "(a and b) Cranial computed tomography in axial acquisitions showing an expansive lesion in the topography of the left posterior cerebral artery, with an important mass effect. In b, one can observe the partial opacification by means of a venous contrast.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Aguiar et al. Spontaneous thrombosis of giant intracranial aneurysm and posterior cerebral artery followed by also spontaneous recanalization. Surg Neurol Int 2016. PMC4766803",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4766803/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 243666164,
+     "csize": 7013,
+     "method": 8,
+     "bytes": 7008,
+     "sha256": "33b36450ca03cebdcfcc1edc56ec79e6e3d3007767a25be1c41e58f2553a1fdc",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-1a1dcd607b",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "(a) Noncontrast CT scan of brain in axial plane reveal mass lesion in the left parieto- occipital region with dense calcification.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Ghanta et al. Primary intracranial Parachordoma: An unusual tumor in brain. Surg Neurol Int 2014. PMC4258724",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4258724/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC4.zip/content",
+     "offset": 195468963,
+     "csize": 13901,
+     "method": 8,
+     "bytes": 13896,
+     "sha256": "ed9366c3d6cac4b3fce92994d286a461868893c2806b862aa65dc88926ec3a6a",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-6ab060380b",
+   "kind": "image",
+   "label": "tumour",
+   "answer": "Brain tumour (mass with oedema)",
+   "caption": "(a) Initial head CT showing a 5.7 cm left frontal hypervascular tumor with significant edema.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Choi et al. A rare case of solitary, isolated dural metastasis from hepatocellular carcinoma mimicking a meningioma. Surg Neurol Int 2023. PMC10695471",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10695471/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 424201765,
+     "csize": 12791,
+     "method": 8,
+     "bytes": 12786,
+     "sha256": "ead2b2ec441efaccd71c523f092f05eea2ef4fab13bcb123ff8b53b79fc36c51",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-8db712eabe",
+   "kind": "image",
+   "label": "abscess",
+   "answer": "Brain abscess",
+   "caption": "CECT of case #2 with enhancing rim of cerebral abscess and further enhancement of vasculature.",
+   "licence": "CC BY",
+   "cite": "Gayathri et al. Unique features of polycythemia observed on plain non contrast CT scan of head. J Pediatr Neurosci 2010. PMC2964806",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2964806/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC2.zip/content",
+     "offset": 5361983,
+     "csize": 23660,
+     "method": 8,
+     "bytes": 23650,
+     "sha256": "7c7793cb284ba11fd976e6cd4573b6481caa770d4626367f89016ba0314952ed",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-247d32c3b8",
+   "kind": "image",
+   "label": "abscess",
+   "answer": "Brain abscess",
+   "caption": "Initial contrast-enhanced cranial computed tomography showing a cerebral abscess. Axial contrast-enhanced cranial computed tomography demonstrates a large left frontotemporal hypodense lesion with peripheral ring enhancement, consistent with a cerebral abscess. Extensive surrounding vasogenic edema is observed, associated with subfalcine herniation and significant midline shift toward the right hemisphere. Compression of the ipsilateral lateral ventricle is also evident.",
+   "licence": "CC BY",
+   "cite": "Ortiz-Hernández et al. Cerebral abscess secondary to post-esophageal dilation bacteremia: A case report with a pathophysiological association to consider. Front Pediatr 2026. PMC13158208",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13158208/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 910666682,
+     "csize": 18482,
+     "method": 8,
+     "bytes": 18472,
+     "sha256": "f1acab29803844719f6c2c44af42304430910168697e6ff5b24e6ae7ae571164",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-f31c4ba555",
+   "kind": "image",
+   "label": "abscess",
+   "answer": "Brain abscess",
+   "caption": "Non-contrast CT scan of brain at presentation demonstrates large left cavitary abscess with inflammatory sediment, left hemispheric edema, ventricular compression, severe mass effect, and midline shift.",
+   "licence": "CC BY",
+   "cite": "Leszcynska et al. Brain Abscess as Severe Presentation of Specific Granule Deficiency. Front Pediatr 2020. PMC7188777",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7188777/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 21089143,
+     "csize": 18638,
+     "method": 8,
+     "bytes": 18654,
+     "sha256": "8ba07fefaa5252040689fba14b7144633ef9a89dfdaf59972977afb8a1b4417b",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b0a977761c",
+   "kind": "image",
+   "label": "abscess",
+   "answer": "Brain abscess",
+   "caption": "Hypodense extra axial lesion with peripheral rim enhancement measuring approximately 4.4 x 3.5 x 3.0 cm suggestive of abscess.",
+   "licence": "CC BY",
+   "cite": "Sonavane et al. Enterococcal Cerebellopontine Angle Abscess in a 12-year-old Female. J Glob Infect Dis 2010. PMC2840972",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2840972/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC2.zip/content",
+     "offset": 42699742,
+     "csize": 13073,
+     "method": 8,
+     "bytes": 13068,
+     "sha256": "ef87bac14a9ab047069629d7973f246b683e9e61a1921bdbc8df780fbd3a3c5d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-0d0bc0bf26",
+   "kind": "image",
+   "label": "abscess",
+   "answer": "Brain abscess",
+   "caption": "Computed tomography (CT) scan of the brain (axial images) revealing a large intracranial abscess-associated mass effect. After the second aspiration.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Elmi et al. Brain abscess caused by Morganella morganii: A case report and review of the literature. Surg Neurol Int 2024. PMC10858772",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10858772/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 143037968,
+     "csize": 12595,
+     "method": 8,
+     "bytes": 12590,
+     "sha256": "8a1340d9407f5d34977c4306341249b3201d52db6c827112757292a82513d53c",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-5d87185547",
+   "kind": "image",
+   "label": "frac",
+   "answer": "Skull fracture",
+   "caption": "Computed tomography 3-D reconstruction showing bilateral parietal skull fractures including additional lucency on the right that crosses the lambdoid suture and communicates with a small occipital bone defect.",
+   "licence": "CC BY",
+   "cite": "O'Hara The infant with bilateral skull fractures: diagnostic considerations in consultation with a child abuse pediatrician. J Inj Violence Res 2019. PMC6420920",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6420920/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC6.zip/content",
+     "offset": 54812409,
+     "csize": 19802,
+     "method": 8,
+     "bytes": 19792,
+     "sha256": "39e91ae00bf67c0e4a5c8d8106b86dc937c92b652504fd6addbdadcf771e45a4",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-65fb4c960d",
+   "kind": "image",
+   "label": "frac",
+   "answer": "Skull fracture",
+   "caption": "Multiple non-displaced skull fractures are seen with a small bony defect at the superior aspect body of sphenoid bone on the left side.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Al-Jehani et al. Traumatic intracranial internal carotid artery pseudoaneurysm presenting as epistaxis treated by endovascular coiling. Neurosciences (Riyadh) 2016. PMC5224415",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5224415/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 123131473,
+     "csize": 19592,
+     "method": 8,
+     "bytes": 19582,
+     "sha256": "2d0f8a89e561e88a9ede018f3d7e2b137d4f861a5130b22a7e71767e2727d278",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-8d91cb151f",
+   "kind": "image",
+   "label": "frac",
+   "answer": "Skull fracture",
+   "caption": "The skull fractures involve the right frontal bone, right pyramidal bone, clivus, left anterior clinoid process, and left mastoid process (c and d; orange arrow).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Takeda et al. Repeated coil embolization of traumatic basilar artery pseudoaneurysm accompanied by bilateral traumatic internal carotid artery stenosis following severe head injury in a pediatric patient: A case report and literature review. Surg Neurol Int 2023. PMC10316180",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10316180/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 117443483,
+     "csize": 7721,
+     "method": 8,
+     "bytes": 7716,
+     "sha256": "40f110d24af6e42204f7fb38e67d2cd961ce8f5ccb198a3e7cfd6282969c7af5",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-eddffd1d44",
+   "kind": "image",
+   "label": "frac",
+   "answer": "Skull fracture",
+   "caption": "Three-dimensional CT revealing a right temporal skull fracture (c, arrow).",
+   "licence": "CC BY-NC-SA",
+   "cite": "Tanaka et al. Endoscopic-assisted removal of bilateral traumatic intracerebral hemorrhage: A case report. Surg Neurol Int 2023. PMC10481816",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10481816/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 289429021,
+     "csize": 5857,
+     "method": 8,
+     "bytes": 5852,
+     "sha256": "bb6600f1358ada2c292bf0fdab33a8e62a0aefb20830cd2476f236b8631022fe",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-b9a7c985a2",
+   "kind": "image",
+   "label": "frac",
+   "answer": "Skull fracture",
+   "caption": "Computed tomography scan showing midline depressed fracture compressing the SSS, and ,causing bilateral posterior frontal venous infarctions.",
+   "licence": "CC BY-NC-SA",
+   "cite": "Mathew et al. Midline depressed skull fracture presenting with quadriplegia: A rare phenomenon. Surg Neurol Int 2017. PMC5369256",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5369256/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC5.zip/content",
+     "offset": 21870860,
+     "csize": 8907,
+     "method": 8,
+     "bytes": 8902,
+     "sha256": "cdc92d3b0004c277f0a585cf1b2b50044df4fa02480e26181f3787180fdf5c5d",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-00cbc789ce",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Normal head tomography.",
+   "licence": "CC BY",
+   "cite": "Anjos et al. Nonfebrile Seizures in Pediatrics: Key Points to Remember. Cureus 2024. PMC10902737",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10902737/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 203292422,
+     "csize": 28811,
+     "method": 8,
+     "bytes": 28814,
+     "sha256": "cb2d65d8bc720aa1bfa382d296bcdd6a2e6b7591f4ac0ece9fcc3ace6c37b54e",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-884f5b5818",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Normal brain CT scan at the entrance.",
+   "licence": "CC BY",
+   "cite": "Spuntarelli et al. COVID-19: is it just a lung disease? A case-based review. SN Compr Clin Med 2020. PMC7386162",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7386162/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC7.zip/content",
+     "offset": 52502042,
+     "csize": 28631,
+     "method": 8,
+     "bytes": 28698,
+     "sha256": "e776956ad92d632852d70fd0bd62668c522f1d03ceaa3a36210adf5504f583d3",
+     "mime": "image/webp"
+    }
+   }
+  },
+  {
+   "id": "mc-e0da479d1c",
+   "kind": "image",
+   "label": "norm",
+   "answer": "Normal CT head",
+   "caption": "Axial cut of CT scan of the head was unremarkable.",
+   "licence": "CC BY-NC",
+   "cite": "Alrumaihi et al. Hidden Triplets: Coexisting Spinal Epidural and Dural Arteriovenous Fistulae - A Rare Case Report and Literature Review. Vasc Health Risk Manag 2026. PMC12967041",
+   "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12967041/",
+   "files": {
+    "img": {
+     "zip": "https://zenodo.org/api/records/20416562/files/PMC1.zip/content",
+     "offset": 787546479,
+     "csize": 22905,
+     "method": 8,
+     "bytes": 22906,
+     "sha256": "4e53713f9b53e2c2714d8ca3d75187a2869bdbfbcbdca99234fa3ab54c431f39",
+     "mime": "image/webp"
+    }
+   }
+  }
+ ]
+}
