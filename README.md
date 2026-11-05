@@ -10,6 +10,24 @@ Finalist there and sign in. They use this computer's power over the internet, wi
 
 ## Get it
 
+Paste one line into a terminal. It fetches the latest release for your computer, installs it, gets it past the
+"unsigned app" warning and opens it. Run the same line again any time to **update** or **uninstall** (keeping your
+data, or removing everything): it asks with a little menu.
+
+- **Mac or Linux** (Terminal):
+  ```
+  curl -fsSL https://raw.githubusercontent.com/Syncrose1/Finalist-releases/main/desktop/install/install.sh | bash
+  ```
+- **Windows** (PowerShell):
+  ```
+  irm https://raw.githubusercontent.com/Syncrose1/Finalist-releases/main/desktop/install/install.ps1 | iex
+  ```
+
+No password or administrator needed. To skip the menu, say what to do: `... | bash -s -- install`, `uninstall`
+or `purge` on a Mac or Linux; on Windows, `& ([scriptblock]::Create((irm <the address above>))) uninstall`.
+
+### Or download it yourself
+
 From [Releases](../../releases/latest), download the one for your computer:
 
 | Computer | Download | Then |
