@@ -92,16 +92,19 @@ do_install() {
       latest_version > "$dest/VERSION" || true
       # in the app launcher, with its icon
       curl -fsSL -o "$dest/icon.png" "$RAW/desktop/icon.png" || true
+      # Unpack once, here, and run the app directly. AppImage's own "extract and run" (its fallback without FUSE 2)
+      # left the renderers unable to create shared memory ("No such process"), so the window stayed white
+      # (CachyOS laptop, 6 Nov 2026); the unpacked binary run directly is clean, and needs no FUSE at all.
+      say "Unpacking"
+      rm -rf "$dest/app" "$tmp/squashfs-root"
+      (cd "$tmp" && "$dest/Finalist.AppImage" --appimage-extract >/dev/null) || { echo "Couldn't unpack the AppImage." >&2; exit 1; }
+      mv "$tmp/squashfs-root" "$dest/app"
+      run="$dest/app/finalist"
       mkdir -p "$apps"
-      printf '[Desktop Entry]\nType=Application\nName=Finalist\nComment=Finals revision, with its node\nExec="%s" %%U\nIcon=%s\nCategories=Education;\nStartupWMClass=finalist\nTerminal=false\n' "$app" "$dest/icon.png" > "$apps/finalist.desktop"
+      # APPIMAGE tells the app it's the packaged build (no setuid sandbox; see desktop/main.js)
+      printf '[Desktop Entry]\nType=Application\nName=Finalist\nComment=Finals revision, with its node\nExec=env APPIMAGE="%s" "%s" %%U\nIcon=%s\nCategories=Education;\nStartupWMClass=finalist\nTerminal=false\n' "$app" "$run" "$dest/icon.png" > "$apps/finalist.desktop"
       if command -v update-desktop-database >/dev/null; then update-desktop-database "$apps" >/dev/null 2>&1 || true; fi
-      # AppImages need FUSE 2; without it, run unpacked instead
-      fuse="$(ldconfig -p 2>/dev/null || true)"
-      if ! grep 'libfuse\.so\.2' <<<"$fuse" >/dev/null && ! ls /usr/lib*/libfuse.so.2 /usr/lib/*/libfuse.so.2 >/dev/null 2>&1; then
-        say "Note: libfuse2 isn't installed, so the app runs unpacked each time (slower to open)."
-        sed -i "s|^Exec=|Exec=env APPIMAGE_EXTRACT_AND_RUN=1 |" "$apps/finalist.desktop"
-        export APPIMAGE_EXTRACT_AND_RUN=1
-      fi
+      export APPIMAGE="$app"; app="$run"
       [ -n "${FINALIST_NO_OPEN:-}" ] || (nohup "$app" >/dev/null 2>&1 &)
       ;;
     *) echo "On Windows, run this in PowerShell instead:  irm $RAW/desktop/install/install.ps1 | iex" >&2; exit 1 ;;
