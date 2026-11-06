@@ -18,6 +18,18 @@ Bearer token; the node checks it with Supabase (auth.py) before anything else. P
 """
 import json
 import os
+import ssl
+
+# A frozen node (PyInstaller, built on Ubuntu in CI) carries its own OpenSSL, which looks for CA certificates where
+# Ubuntu keeps them. On Arch/CachyOS (and others) that path doesn't exist, so every HTTPS call failed with
+# CERTIFICATE_VERIFY_FAILED and the app showed the node's error instead of Finalist (6 Nov 2026, laptop). Point it
+# at the system bundle. It lives here, not in __main__.py, because the frozen build starts from finalist-node.py.
+if not os.environ.get("SSL_CERT_FILE") and not os.path.exists(ssl.get_default_verify_paths().cafile or ""):
+    for _ca in ("/etc/ssl/certs/ca-certificates.crt", "/etc/pki/tls/certs/ca-bundle.crt", "/etc/ssl/ca-bundle.pem",
+                "/etc/ssl/cert.pem", "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem"):
+        if os.path.exists(_ca):
+            os.environ["SSL_CERT_FILE"] = _ca
+            break
 import shutil
 import socket
 import subprocess
