@@ -19,6 +19,8 @@ const SLOTS = ['qqm', 'passmed', 'anki', 'workout', 'osce', 'akt', 'psa', 'fy1']
 app.commandLine.appendSwitch('ozone-platform-hint', 'auto')
 // an AppImage can't use Chromium's setuid sandbox, and Ubuntu 24.04's AppArmor blocks the namespace one, so
 // it wouldn't start at all; the window only ever loads Finalist itself through the node
+// Note: this alone is too late for the renderers (the zygote starts before this file runs), so the Linux launcher
+// also passes --no-sandbox on the command line (desktop/install/install.sh).
 if (process.env.APPIMAGE) app.commandLine.appendSwitch('no-sandbox')
 app.commandLine.appendSwitch('enable-features', 'WaylandWindowDecorations')
 app.setName('Finalist')

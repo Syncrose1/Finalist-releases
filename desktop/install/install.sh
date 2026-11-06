@@ -101,11 +101,13 @@ do_install() {
       mv "$tmp/squashfs-root" "$dest/app"
       run="$dest/app/finalist"
       mkdir -p "$apps"
-      # APPIMAGE tells the app it's the packaged build (no setuid sandbox; see desktop/main.js)
-      printf '[Desktop Entry]\nType=Application\nName=Finalist\nComment=Finals revision, with its node\nExec=env APPIMAGE="%s" "%s" %%U\nIcon=%s\nCategories=Education;\nStartupWMClass=finalist\nTerminal=false\n' "$app" "$run" "$dest/icon.png" > "$apps/finalist.desktop"
+      # APPIMAGE tells the app it's the packaged build. --no-sandbox must be on the COMMAND LINE: Chromium starts its
+      # zygote before main.js runs, so appendSwitch('no-sandbox') there comes too late for the renderers, which then
+      # can't create shared memory inside the sandbox ("No such process") and the window stays white (CachyOS, 6 Nov).
+      printf '[Desktop Entry]\nType=Application\nName=Finalist\nComment=Finals revision, with its node\nExec=env APPIMAGE="%s" "%s" --no-sandbox %%U\nIcon=%s\nCategories=Education;\nStartupWMClass=finalist\nTerminal=false\n' "$app" "$run" "$dest/icon.png" > "$apps/finalist.desktop"
       if command -v update-desktop-database >/dev/null; then update-desktop-database "$apps" >/dev/null 2>&1 || true; fi
       export APPIMAGE="$app"; app="$run"
-      [ -n "${FINALIST_NO_OPEN:-}" ] || (nohup "$app" >/dev/null 2>&1 &)
+      [ -n "${FINALIST_NO_OPEN:-}" ] || (nohup "$app" --no-sandbox >/dev/null 2>&1 &)
       ;;
     *) echo "On Windows, run this in PowerShell instead:  irm $RAW/desktop/install/install.ps1 | iex" >&2; exit 1 ;;
   esac

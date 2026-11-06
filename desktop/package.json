@@ -24,7 +24,7 @@
     "files": ["main.js", "main-preload.js", "timer.html", "timer-preload.js", "splash.html", "icon.png", "package.json"],
     "extraResources": [{ "from": "../node/dist/finalist-node", "to": "node" }],
     "publish": null,
-    "linux": { "target": "AppImage", "category": "Education", "executableName": "finalist", "desktop": { "entry": { "StartupWMClass": "finalist" } } },
+    "linux": { "target": "AppImage", "category": "Education", "executableName": "finalist", "executableArgs": ["--no-sandbox"], "desktop": { "entry": { "StartupWMClass": "finalist" } } },
     "mac": { "target": "dir", "identity": null, "category": "public.app-category.education" },
     "win": { "target": "nsis" },
     "nsis": { "oneClick": true, "perMachine": false, "shortcutName": "Finalist" }
