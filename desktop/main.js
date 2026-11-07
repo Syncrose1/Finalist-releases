@@ -86,7 +86,17 @@ function createMain() {
   main.webContents.on('zoom-changed', (_e, dir) => zoomBy(dir === 'in' ? 0.5 : -0.5))
   // testing: run a snippet in the page once it's up (FINALIST_PROBE_JS)
   if (process.env.FINALIST_PROBE_JS) main.webContents.on('did-finish-load', () => { if (main.webContents.getURL().startsWith('http')) setTimeout(() => main.webContents.executeJavaScript(process.env.FINALIST_PROBE_JS).catch(() => {}), 4000) })
+  // Closing the window while a timer floats only hides it (7 Nov 2026): the overlay's buttons are carried out by
+  // this page, so with the window gone a Stop was silently dropped and the overlay kept ticking. Once no timer is
+  // showing, a hidden window closes for real (and the app quits as before).
+  main.on('close', (e) => { if (!quitting && Object.values(timers).some((v) => v.shown)) { e.preventDefault(); hiddenByClose = true; main.hide() } })
+  main.on('show', () => { hiddenByClose = false })
   main.on('closed', () => { main = null })
+}
+let quitting = false, hiddenByClose = false
+app.on('before-quit', () => { quitting = true })
+function closeIfIdle() {
+  if (hiddenByClose && main && !main.isDestroyed() && !Object.values(timers).some((v) => v.shown)) { hiddenByClose = false; main.close() }
 }
 
 // ---- floating timers ----------------------------------------------------------------------------------
@@ -142,6 +152,7 @@ function syncTimers() {
 }
 // the page's timer, as the page reports it (any account): one timer, shown while it's timing an activity
 let got = 0, emptySince = 0
+const pendingOps = []
 ipcMain.on('page_timer', (_e, st) => {
   got = Date.now()
   const l = st && st.locked
@@ -152,10 +163,12 @@ ipcMain.on('page_timer', (_e, st) => {
   } else {
     // a page loading reports nothing for a moment: only take the timer away if it stays gone
     if (!emptySince) emptySince = Date.now()
-    if (Date.now() - emptySince < 2500) { setTimeout(() => { if (emptySince && Date.now() - emptySince >= 2500) { timers = {}; syncTimers(); tellPage() } }, 2600); return }
+    if (Date.now() - emptySince < 2500) { setTimeout(() => { if (emptySince && Date.now() - emptySince >= 2500) { timers = {}; syncTimers(); tellPage(); closeIfIdle() } }, 2600); return }
     timers = {}
   }
   syncTimers(); tellPage()
+  if (pendingOps.length && main && !main.isDestroyed()) { for (const op of pendingOps.splice(0)) main.webContents.send('timer_op', op) }
+  closeIfIdle()
 })
 ipcMain.handle('timer_state', (_e, block) => {
   const t = timers[block]
@@ -163,7 +176,9 @@ ipcMain.handle('timer_state', (_e, block) => {
 })
 ipcMain.handle('timer_act', async (_e, block, op) => {
   // the overlay's buttons: carried out by the page's timer (pause, resume, stop)
-  if (main && !main.isDestroyed()) main.webContents.send('timer_op', op === 'start' ? 'resume' : op === 'stop' ? 'unlock' : op)
+  const pageOp = op === 'start' ? 'resume' : op === 'stop' ? 'unlock' : op
+  if (main && !main.isDestroyed()) main.webContents.send('timer_op', pageOp)
+  else { pendingOps.push(pageOp); createMain(); main.hide(); hiddenByClose = true }   // delivered on its page's first report
   await new Promise((r) => setTimeout(r, 350))
   const t = timers[block]
   return { timer: t ? { ...t, ms: t.ms + (t.running ? Date.now() - got : 0) } : null, conflict: null }
