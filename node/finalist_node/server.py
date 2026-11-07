@@ -106,6 +106,25 @@ def revise_allowed(w):
     return bool(w and w.owner and (w.email or "").lower() == REVISE_EMAIL)
 
 
+_revise_seen = [0.0, False]
+
+
+def revise_up():
+    """Does this node front a reachable revise.py? (7 Nov 2026) A laptop's node has none behind it, so Revise must not
+    route to it: the hello says so, and Finalist's Revise uses the account's recorded node instead. A quick local
+    connect, cached for 20 s, so the public hello stays fast."""
+    now = time.time()
+    if now - _revise_seen[0] < 20:
+        return _revise_seen[1]
+    try:
+        with socket.create_connection(("127.0.0.1", int(CFG.get("revise_port", 47613))), timeout=0.3):
+            up = True
+    except OSError:
+        up = False
+    _revise_seen[:] = [now, up]
+    return up
+
+
 def revise_request(method, path, body=None, phone=True, headers=None, timeout=30):
     import http.client
     c = http.client.HTTPConnection("127.0.0.1", int(CFG.get("revise_port", 47613)), timeout=timeout)
@@ -506,7 +525,7 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(200, {"node": VERSION, "supabase_url": CFG["supabase_url"], "supabase_anon_key": CFG["supabase_anon_key"],
                                         "voice": bool(voice_setup.installed(CFG)), "paired": bool(CFG["owner_id"]), "public": public_on(),
                                         "url": reach_url(),
-                                        "ranking": circuit() is not None})
+                                        "ranking": circuit() is not None, "revise": revise_up()})
         w = self.who()
         if not w:
             return self.send_json(401, {"error": "Sign in with your Finalist account."})
