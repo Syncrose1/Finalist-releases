@@ -3,6 +3,7 @@ One WebSocket per station, on 127.0.0.1 only (the node passes /v1/voice through 
 sign-in checks).
   in   binary   the microphone: 16 kHz mono int16, any frame size
        json     {"type": "hello", "patient": {"sex", "age"}}   picks the voices, answered with "ready"
+                (optional "station": an id in --drills, or "terms": [...] given directly, steer the ear)
                 {"type": "speak", "id": n, "text": "...", "role": "patient"|"examiner"}
                 {"type": "stop"}                                stop talking now (the candidate cut in)
   out  json     {"type": "loading"|"ready"|"speech_start"|"heard"|"spoken"|"error", ...}
@@ -626,7 +627,9 @@ async def handle(ws):
                 if "hang" in m:
                     c.HANG_MS = max(250, min(1500, int(m["hang"])))
                 c.ptt = m.get("mode") == "ptt"
-                terms = station_terms(m.get("station") or "")
+                # a drill sends its own terms (its items and aliases, 7 Nov 2026); a station is looked up by id
+                given = m.get("terms") if isinstance(m.get("terms"), list) else []
+                terms = [str(t).strip()[:80] for t in given if str(t).strip()][:40] or station_terms(m.get("station") or "")
                 # the specific spellings carry it (92-term test: none 83%, a generic medical sentence 85%, the
                 # terms 95%); the sentence frames them, and covers a station with no list
                 c.prompt = "A medical conversation that contains medical and scientific terminology." + \
