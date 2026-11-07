@@ -106,28 +106,48 @@ def revise_allowed(w):
     return bool(w and w.owner and (w.email or "").lower() == REVISE_EMAIL)
 
 
-_revise_seen = [0.0, False]
+_revise_seen = [0.0, None]
+# Raahat's laptop (7 Nov 2026, "this will be replaced soon anyways"): with no revise.py on this machine, reach the
+# PC's over Tailscale. revise.py on the PC also listens on its tailnet address; the tailnet is the trust barrier,
+# and this node still checks the owner. Requests through it are always marked as the phone (nothing launches on
+# the PC). Override or disable with config "revise_remote" ("" turns it off).
+REVISE_REMOTE = "100.109.171.51"
 
 
-def revise_up():
-    """Does this node front a reachable revise.py? (7 Nov 2026) A laptop's node has none behind it, so Revise must not
-    route to it: the hello says so, and Finalist's Revise uses the account's recorded node instead. A quick local
-    connect, cached for 20 s, so the public hello stays fast."""
+def _revise_port():
+    return int(CFG.get("revise_port", 47613))
+
+
+def revise_host():
+    """Which revise.py this node fronts: this machine's, else the PC's over Tailscale, else none. Cached 20 s."""
     now = time.time()
     if now - _revise_seen[0] < 20:
         return _revise_seen[1]
-    try:
-        with socket.create_connection(("127.0.0.1", int(CFG.get("revise_port", 47613))), timeout=0.3):
-            up = True
-    except OSError:
-        up = False
-    _revise_seen[:] = [now, up]
-    return up
+    found = None
+    for host in ("127.0.0.1", CFG.get("revise_remote", REVISE_REMOTE)):
+        if not host:
+            continue
+        try:
+            with socket.create_connection((host, _revise_port()), timeout=0.3 if host == "127.0.0.1" else 1.5):
+                found = host
+                break
+        except OSError:
+            pass
+    _revise_seen[:] = [now, found]
+    return found
+
+
+def revise_up():
+    """Does this node front a reachable revise.py, local or the PC's over Tailscale? (7 Nov 2026) The hello says so,
+    and Finalist's Revise uses the account's recorded node when it doesn't."""
+    return revise_host() is not None
 
 
 def revise_request(method, path, body=None, phone=True, headers=None, timeout=30):
     import http.client
-    c = http.client.HTTPConnection("127.0.0.1", int(CFG.get("revise_port", 47613)), timeout=timeout)
+    host = revise_host() or "127.0.0.1"
+    c = http.client.HTTPConnection(host, _revise_port(), timeout=timeout)
+    phone = phone or host != "127.0.0.1"          # another machine's revise.py: never launch anything there
     h = {"X-Revise": "1", **({"X-Revise-As": "phone"} if phone else {}), **(headers or {})}
     if body is not None:
         h["Content-Type"] = "application/json"
