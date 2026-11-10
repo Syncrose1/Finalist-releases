@@ -6,6 +6,7 @@ sign-in checks).
                 (optional "station": an id in --drills, or "terms": [...] given directly, steer the ear)
                 {"type": "speak", "id": n, "text": "...", "role": "patient"|"examiner"}
                 {"type": "stop"}                                stop talking now (the candidate cut in)
+                {"type": "discard"}                             muted: drop anything half-heard or being transcribed
   out  json     {"type": "loading"|"ready"|"speech_start"|"heard"|"spoken"|"error", ...}
                 "ready" carries "rate", the sample rate of the audio that follows (default 24000)
        binary   4-byte little-endian speak id, then mono int16 audio at that rate
@@ -499,6 +500,7 @@ class Conn:
         self.rest = np.zeros(0, dtype=np.int16)
         self.pre = collections.deque(maxlen=10)             # 320 ms before the speech was noticed
         self.buf, self.speaking, self.run, self.quiet = [], False, 0, 0
+        self.gen = 0                                         # bumped by 'discard' (mute): older results are dropped
         self.talking_until = 0.0                             # when the audio sent so far finishes playing
         self.lock = threading.Lock()
         self.utt = 0                                         # which utterance (a peek's answer must still be about it)
@@ -552,12 +554,12 @@ class Conn:
         sooner than waiting out the whole silence."""
         self.peeked, self.since_peek = True, 0
         self.peek_n += 1
-        n, utt, pcm, t = self.peek_n, self.utt, np.concatenate(self.buf), time.perf_counter()
+        n, utt, pcm, t, g = self.peek_n, self.utt, np.concatenate(self.buf), time.perf_counter(), self.gen
 
         def back(d):
             text = (d.get("text") or "").strip()
             with self.lock:
-                if self.utt != utt or self.peek_n != n or not self.speaking or self.since_peek or not finished(text):
+                if self.utt != utt or self.peek_n != n or not self.speaking or self.since_peek or not finished(text) or self.gen != g:
                     return
                 self.speaking, self.buf, self.run = False, [], 0
                 self.utt += 1
@@ -575,7 +577,8 @@ class Conn:
             self.send({"type": "heard", "text": ""})
             return
         t = time.perf_counter()
-        hear(pcm, lambda d: self.send({"type": "heard", "text": d.get("text", ""), "ms": round(1000 * (time.perf_counter() - t))}), self.prompt)
+        g = self.gen
+        hear(pcm, lambda d: self.gen == g and self.send({"type": "heard", "text": d.get("text", ""), "ms": round(1000 * (time.perf_counter() - t))}), self.prompt)
 
     def speak(self, m):
         v = ENGINE.voices.get(self.voices.get(m.get("role", "patient")))
@@ -648,6 +651,14 @@ async def handle(ws):
                     else:
                         c.speaking = False
                         await ws.send(json.dumps({"type": "heard", "text": ""}))
+            elif m.get("type") == "discard":
+                # muted (10 Nov 2026): whatever was half-heard when the mic went off is thrown away, and anything still
+                # being transcribed is dropped, so nothing said around the mute reaches the station on unmute
+                with c.lock:
+                    c.gen += 1
+                    c.speaking, c.buf, c.run, c.quiet, c.peeked, c.holding = False, [], 0, 0, False, False
+                    c.utt += 1
+                    c.vad.reset_states()
             elif m.get("type") == "stop":
                 c.stopped = time.monotonic()
                 c.talking_until = 0.0
