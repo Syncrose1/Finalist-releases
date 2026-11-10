@@ -309,7 +309,31 @@ CORE["exam"] = [
 # A miss here fails the station whatever the score: patient safety only, never communication. None are fixed: allergies are always on the
 # checklist, and become pass/fail only where the case makes them matter, as travel does (Raahat,
 # 25 Oct). The case names its own, and the examiner can judge one the case didn't foresee.
-CRITICAL = {"history": [], "comms": [], "exam": []}
+# Procedures and management (10 Nov 2026, peer-run stations only: Claude doesn't run these as a room). The standard
+# content every procedure or management mark sheet looks for; the case adds the steps of this one.
+CORE["procedure"] = [
+    ("Introduces self, confirms the patient's identity (name, date of birth, wristband) and gains consent", "safety", 1),
+    ("Explains the procedure and why it's needed, in plain words", "communication", 1),
+    ("Asks about allergies and anything that rules out or changes the procedure", "safety", 1),
+    ("Hand hygiene and appropriate PPE", "safety", 1),
+    ("Prepares and checks the equipment (expiry dates, packaging intact)", "data", 1),
+    ("Positions the patient comfortably and keeps their dignity", "professionalism", 1),
+    ("Disposes of waste, and any sharps at the point of use, safely", "safety", 2),
+    ("Explains the result or the aftercare and what happens next, and thanks the patient", "communication", 1),
+    ("Documents the procedure (and labels any samples at the bedside)", "professionalism", 1),
+]
+CORE["management"] = [
+    ("Introduces self, confirms the patient's identity and gains consent where possible", "professionalism", 1),
+    ("Hand hygiene and appropriate PPE", "safety", 1),
+    ("Gathers the information needed: the history, observations, charts and results", "data", 2),
+    ("Uses a systematic approach (A to E when the patient is unwell)", "data", 2),
+    ("Recognises how unwell the patient is and escalates early to a senior (SBAR)", "safety", 2),
+    ("Gives clear, safe, prioritised management", "reasoning", 2),
+    ("Reassesses after each intervention and plans monitoring", "safety", 1),
+    ("Explains to the patient what is happening and checks their understanding", "communication", 1),
+    ("Documents and hands over clearly", "professionalism", 1),
+]
+CRITICAL = {"history": [], "comms": [], "exam": [], "procedure": [], "management": []}
 CONSULTATION = ["Balance of open, closed and reflective questions", "Structure: an effective, organised interview",
                 "Understandable language, no jargon", "Recognises and responds to cues",
                 "Rapport: empathy, invites the patient's contribution, collaborates"]
@@ -338,9 +362,9 @@ def _core(kind):
 
 
 def _past(data, station_id):
-    d = data / "sims"
     seen = []
-    for f in sorted(d.glob(f"*-{station_id}-*.json"))[-6:] if d.is_dir() else []:
+    files = [f for d in (data / "sims", data / "peer") if d.is_dir() for f in d.glob(f"*-{station_id}-*.json")]
+    for f in sorted(files, key=lambda f: f.name)[-6:]:
         try:
             seen.append(json.loads(f.read_text())["case"]["diagnosis"])
         except (OSError, ValueError, KeyError):
@@ -1137,3 +1161,136 @@ def drills_with_aliases(web, data):
             for it in g["items"]:
                 it["aliases"] = it["aliases"] + [a for a in items.get(it["answer"], []) if a not in it["aliases"]]
     return d
+
+
+# ---- peer-run stations (10 Nov 2026) -------------------------------------------------------------------
+# Two or three students run the station together, in person: one is the candidate, one plays the patient from notes
+# on their phone, one examines with the mark scheme as ticks. Student-marked: no Claude in the room. The case is the
+# same shape as a Claude station's, plus what humans need that Claude doesn't: notes a fellow student can act from,
+# and an expected answer for each examiner question. Kept in DATA/peer, so it can be run again without a new call.
+
+PEER_KINDS = ("history", "comms", "exam", "procedure", "management")
+
+PEER_SCHEMA = {**CASE_SCHEMA, "properties": {
+    **CASE_SCHEMA["properties"],
+    "actor": _obj({"first_words": _str, "story": _strs, "only_if_asked": _strs, "cue": _str, "cue_when": _str,
+                   "feelings": _str, "never_volunteer": _strs, "asks": _strs}),
+    "examiner_answers": _strs,
+}, "required": [*CASE_SCHEMA["required"], "actor", "examiner_answers"]}
+
+# Procedures and management: the candidate does the task (on a model or a part-task trainer, with the patient beside
+# it); the examiner hands over whatever the task produces, when it's asked for or the step is done. As with a narrated
+# exam, the case keeps its fields, read differently: "script" is what the examiner gives.
+CASE_PROMPT_TASK = """Write one fresh case for this {what} station: the candidate does the task on a manikin or part-task trainer, with the patient sitting beside it to talk to, explaining as they go; the examiner gives any information the candidate asks for.
+
+STATION: {title} ({kind})
+WHAT IT TESTS (the student's revision notes, including the steps):
+{notes}
+
+{variety}
+Return exactly this JSON:
+{{
+  "brief": "The door note: setting, who the patient is and why the task is needed (one or two lines of history), the task, and what the examiner will ask at the end. Second person. Under 90 words.",
+  "person": {{"name": "", "age": 0, "sex": "female|male", "who": "the patient", "manner": "how they come across, in a line"}},
+  "opening": "How the patient greets the candidate, and anything they say unprompted (one line).",
+  "script": "WHAT THE EXAMINER GIVES, only when the candidate asks for it or does the step that reveals it: the patient's details for the identity check, their allergies, the readings or results the task produces (e.g. the capillary glucose, the peak flow, the observations), and for an unwell patient the findings at each step of A to E and how they change with each treatment. Specific and quantified, in UK units. 100-300 words.",
+  "cue": "What the patient says or does that a good candidate responds to (e.g. anxious about needles, a faint last time, pain), in a line.",
+  "diagnosis": "The point of the station: why the task is needed, what the result means, and the safety issue that matters most.",
+  "critical": ["Usually none; at most one pass/fail item: a patient-safety miss in THIS case (e.g. the wrong patient's sample, a sharp left out, a drug given despite the allergy, not escalating a peri-arrest patient); else empty"],
+  "examiner_questions": ["2-3 questions the examiner asks at the end: what the result means, what to do next, a complication or a safety point"],
+  "mark_scheme": [{{"item": "a specific, observable thing the candidate should do or say", "domain": "data|reasoning|communication|professionalism|safety", "weight": 1}}]
+}}
+The mark scheme must contain these core items, exactly as written, then 8-14 items specific to this task and case: the steps that matter, in UK practice (as the notes give them), the safety checks, and acting on the result. Order the whole scheme as the candidate would do it (preparation first, the core disposal and documentation items last), so an examiner can follow along. Weights 1-3.
+CORE:
+{core}"""
+
+PEER_ADDENDUM = """
+
+THIS CASE IS FOR STUDENTS PRACTISING TOGETHER, IN PERSON: one is the candidate, one plays {who} from notes on a phone, one examines with the mark scheme and asks the questions. None of them is a trained actor or examiner. So also return:
+"actor": the notes for the student playing {who}, in the second person ("You are..."), in short plain lines they can glance at mid-station:
+  "first_words": what they say first, word for word;
+  "story": {story};
+  "only_if_asked": 4-10 facts they give only when asked directly, each starting with what the question is about (e.g. "Smoking: 20 a day for 30 years");
+  "cue": the cue, word for word as they say or show it (the same as "cue" above);
+  "cue_when": when to drop it, and what to do if the candidate picks it up, or ignores it;
+  "feelings": how to play the emotion: how they look and sound, and how that changes if the candidate is kind or rushes them;
+  "never_volunteer": what they must not say unless asked (the clinching facts);
+  "asks": 1-3 questions they ask the candidate, and when (e.g. "Near the end: 'Is it cancer?'").
+"examiner_answers": one expected answer for each examiner question, in the same order: what a well-prepared final-year student should say, as short points the examiner can check against at a glance, separated by "; ". UK practice only (NICE, BNF, Resuscitation Council UK, the relevant UK societies), with the exact threshold, drug or dose where the question turns on it. Where more than one answer is acceptable, say so. Never guess a number: give the principle instead."""
+
+STORY = {
+    "history": "the story as 5-10 short lines, in the order they'd tell it to open questions, each with its details (when it started, what makes it better or worse, how it affects them)",
+    "comms": "who they are and what has happened so far, as 4-8 short lines: what they know, what they want to know, and what they're afraid of",
+    "exam": "4-6 short lines: who they are, the one line of history they give if asked, and how to behave while being examined (where it hurts, what to do when touched there, what position they can't lie in)",
+    "procedure": "4-6 short lines: who they are, why they're having it done, what they know about it, and how they feel about it",
+    "management": "4-6 short lines: who they are, how unwell they feel and how to show it (and how it changes as they're treated), and what they say when asked",
+}
+
+
+def _peer_prompt(station, entry, variety):
+    kind = station["kind"]
+    if kind == "exam":
+        p = CASE_PROMPT_EXAM.format(title=station["title"], notes=_notes(entry), variety=variety, core=_core("exam"))
+    elif kind in ("procedure", "management"):
+        p = CASE_PROMPT_TASK.format(what="practical procedure" if kind == "procedure" else "clinical management",
+                                    title=station["title"], kind=kind, notes=_notes(entry), variety=variety, core=_core(kind))
+    else:
+        p = CASE_PROMPT.format(title=station["title"], kind=kind, notes=_notes(entry), variety=variety, core=_core(kind))
+    return p + PEER_ADDENDUM.format(who="the patient (or the person in the room)", story=STORY[kind])
+
+
+def peer_case(model, data, station, entry, emit):
+    """Writes a case for a peer-run station (one Claude call on this node's account), streaming the brief as soon as
+    it's written, and keeps it in DATA/peer. Emits {"case", "name"} at the end."""
+    if station["kind"] not in PEER_KINDS:
+        raise KeyError("This kind of station can't be run with friends.")
+    seen = _past(data, station["id"])
+    variety = f"Make the patient {random.choice(TWISTS)}."
+    if seen:
+        variety += " Don't repeat these earlier cases for this station: " + " | ".join(seen)
+    prompt = _peer_prompt(station, entry, variety)
+    try:
+        case = ask(model, CASE_SYSTEM, prompt, on_text=_streaming_fields(["brief"], emit), effort="low", schema=PEER_SCHEMA, timeout=240)
+    except (ValueError, RuntimeError):
+        case = ask(model, CASE_SYSTEM, prompt, effort="low", schema=PEER_SCHEMA, timeout=240)     # once more, quietly
+    sid = secrets.token_urlsafe(9)
+    name = f"{date.today().isoformat()}-{station['id']}-{sid}"
+    d = data / "peer"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / f"{name}.json").write_text(json.dumps({"id": sid, "station": station["id"], "title": station["title"],
+                                                "kind": station["kind"], "model": model, "started": time.time(), "case": case}, indent=1))
+    emit({"case": case, "name": "peer/" + name})
+    return case
+
+
+def peer_cases(data, station_id, limit=20):
+    """Cases this account already has for a station, newest first: those written for friends, and those from its own
+    Claude runs (which lack the actor's notes and the expected answers; the app fills the notes from the script). Never
+    the diagnosis: whoever starts the room may be the candidate."""
+    out = []
+    for src, folder in (("peer", "peer"), ("run", "sims")):
+        d = data / folder
+        for f in d.glob(f"*-{station_id}-*.json") if d.is_dir() else []:
+            try:
+                s = json.loads(f.read_text())
+            except (OSError, ValueError):
+                continue
+            c = s.get("case") or {}
+            if s.get("station") != station_id or not c.get("brief") or not c.get("mark_scheme"):
+                continue
+            p = c.get("person") or {}
+            out.append({"name": f"{src}/{f.stem}", "source": src, "at": s.get("started"),
+                        "person": {"name": p.get("name"), "age": p.get("age")}})
+    return sorted(out, key=lambda r: r["at"] or 0, reverse=True)[:limit]
+
+
+def peer_case_get(data, name):
+    """One kept case, by the name peer_cases gave it."""
+    m = re.fullmatch(r"(peer|run)/([\w-]+)", name or "")
+    if not m:
+        return None
+    f = data / ("peer" if m[1] == "peer" else "sims") / f"{m[2]}.json"
+    if not f.is_file():
+        return None
+    s = json.loads(f.read_text())
+    return {"station": s.get("station"), "title": s.get("title"), "kind": s.get("kind"), "case": s.get("case")}
