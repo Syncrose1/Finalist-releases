@@ -221,7 +221,7 @@ Return exactly this JSON:
   "mark_scheme": [{{"item": "a specific, observable thing the candidate should do", "domain": "data|reasoning|communication|professionalism|safety", "weight": 1}}]
 }}
 If the task is to give the patient information (breaking news, explaining results, a diagnosis, a procedure or a medicine), the brief must hand the candidate everything they are expected to give, exactly as a real door note does: the result or report itself, with its figures or wording (e.g. "The biopsy report: moderately differentiated adenocarcinoma of the sigmoid colon. The staging CT shows two liver metastases."), the diagnosis, and the plan already agreed (the MDT date, the drug and dose, the follow-up). Never write a brief that says "discuss the results" without giving the results: the candidate can't invent them, and the patient's script must match them.
-The mark scheme must start with these core items, exactly as written, in this order, then add 10-16 items specific to this case (the key questions or explanations, the red flags, the reasoning). Weights 1-3 by clinical importance (a weight multiplies the item's 0/1/2); communication items 1-2 at most, since ICE already has its own core item. Keep it to what a well-prepared final-year student could cover in 9 spoken minutes.
+The mark scheme must start with these core items, exactly as written, in this order, then add 10-16 items specific to this case (the key questions or explanations, the red flags, the reasoning). Weights 1-3 (a weight multiplies the item's 0/1/2). In a history station weight by clinical importance, with communication items 1-2 at most, since ICE already has its own core item. In a COMMUNICATION station (breaking news, explaining, consent, an angry or worried person) the weighting is the other way round, as in real UK finals: the process carries the station, so the communication steps (setting, what they know and want to know, the warning shot, saying it plainly, silence, responding to emotion and the cue, honest framing without false promises, chunk-and-check, a shared plan and safety net) are weighted 2-3; specific clinical knowledge (exact prognosis figures, named tests, named side effects or referrals) is weight 1 each, at most three such items, domain 'reasoning', and the rest of the knowledge belongs in the examiner's questions. Write an honesty item as communication ('gives an honest, hopeful picture without promising'), not as a fact to recite. Keep it to what a well-prepared final-year student could cover in 9 spoken minutes.
 CORE:
 {core}"""
 
@@ -811,6 +811,13 @@ def mark(sim_id, data, emit, ended_early=False, draft=""):
                  "elicits the signs; presenting and interpreting them is a minority. A candidate who examines well and finds the key signs can still "
                  "pass without naming the diagnosis (a C, or a D if the presentation is also weak): a missing diagnosis alone never takes the grade "
                  "below D. If the examiner gave a sign the candidate hadn't asked for, don't mark the candidate down for not eliciting it.\n")
+    if sim.get("kind") == "comms":
+        note += ("This was a COMMUNICATION station. Weigh the grade as real UK finals communication stations are weighted: most of the "
+                 "credit is for the process (structure, the warning shot, saying it plainly, responding to emotion and the cue, honesty "
+                 "without false promises, checking understanding, a shared plan). Specific clinical knowledge, in the conversation or in "
+                 "answer to your questions, is extra credit: few candidates recall exact figures or named referrals in the moment. A "
+                 "candidate who handles the conversation well passes without it (a C, or a D if the process is also uneven): missing "
+                 "knowledge alone never takes the grade below D, unless what they said was wrong in a way that would harm the patient.\n")
     if sim.get("voice"):
         note += ("The candidate SPOKE this station and their words were transcribed by speech recognition: ignore mistranscribed words, "
                  "missing punctuation and odd spellings (a drug name heard as a near-miss is the drug name, 'scar' for 'scan'), and mark what they evidently said. "
@@ -841,6 +848,17 @@ def _finish(sim, data, emit, out, patient):
     # the consultation domain (1-5) and the patient's mark (1-3). The grade is separate.
     items = out.get("items") or []
     w = lambda i: max(1, int(i.get("weight") or 1))
+    if sim.get("kind") == "comms":
+        # communication stations score the process; a knowledge item counts once (weight 1), even in a case written before
+        # this rule (10 Nov 2026). The scheme's own domains say which items are knowledge.
+        dom = {(x.get("item") or "").strip().lower(): x.get("domain") for x in (c.get("mark_scheme") or [])}
+        # (older cases sometimes filed a communication step under reasoning: one about the cue, a fear, emotion, silence or
+        # honesty keeps its weight)
+        talk = re.compile(r"\b(cue|fear|worr|concern|feel|emotion|silence|honest|empath|listen)", re.I)
+        knowledge = lambda i: dom.get((i.get("item") or "").strip().lower()) == "reasoning" and not talk.search(i.get("item") or "")
+        w = lambda i: 1 if knowledge(i) else max(1, int(i.get("weight") or 1))
+        for i in items:
+            i["weight"] = w(i)
     cm = min(5, max(1, int((out.get("consultation") or {}).get("mark") or 1)))
     pm = min(3, max(1, int(patient.get("mark") or 1))) if "mark" in patient else None
     said = any(x["who"] == "you" for x in sim["turns"])
