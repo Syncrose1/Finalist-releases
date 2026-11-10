@@ -487,12 +487,18 @@ def finished(text):
     """A transcript that reads as a finished turn: a sentence or a question, not a trailing 'and' or 'um'."""
     t = text.strip()
     words = re.findall(r"[A-Za-z']+", t.lower())
-    return len(words) >= 3 and t[-1:] in ".?!" and words[-1] not in FILLERS
+    return len(words) >= 5 and t[-1:] in ".?!" and words[-1] not in FILLERS   # 5, not 3 (10 Nov 2026): short phrases are often mid-thought
 
 
 class Conn:
-    START_P, END_P, HANG_MS = 0.5, 0.35, 550
-    PEEK_MS = 250       # a first look at the words after this much quiet: a finished sentence ends the turn there
+    START_P, END_P = 0.5, 0.35
+    # How long a pause ends a turn LEARNS each speaker (10 Nov 2026, Raahat: people's pauses differ by a large margin, and
+    # some who wanted hands-free paused for long stretches mid-sentence, so their sentences were cut and marked as
+    # 'fragmented'). It starts at HANG_MS (the page sends the speaker's last learned value), stretches to cover the
+    # pauses they take and then carry on from, and grows quickly when they start talking again just after a turn ended
+    # (a turn we cut short). Bounded so the patient never waits forever.
+    HANG_MS, HANG_MIN, HANG_MAX = 900, 650, 2400
+    MIN_WORDS_EARLY = 5  # a 'finished sentence' ends the turn early only if it has at least this many words
 
     def __init__(self, ws, loop):
         self.ws, self.loop = ws, loop
@@ -507,6 +513,8 @@ class Conn:
         self.peeked, self.since_peek, self.peek_n = False, 0, 0
         self.ptt, self.holding = False, False      # push to talk: the button, not the silence, decides the turn
         self.stopped = 0.0
+        self.pauses = collections.deque(maxlen=24)          # mid-turn pauses (ms) the speaker took and then carried on
+        self.ended_at = 0.0                                  # when the last turn ended (a quick restart means it was cut)
         self.voices = {}
         self.prompt = None                  # the station's terms, for the ear
 
@@ -532,6 +540,8 @@ class Conn:
                 self.pre.append(f)
                 self.run = self.run + 1 if p > (0.8 if ours else self.START_P) else 0
                 if self.run >= (4 if ours else 2):
+                    if self.ended_at and time.monotonic() - self.ended_at < 1.2 and not ours:
+                        self.HANG_MS = min(self.HANG_MAX, int(self.HANG_MS * 1.3))      # we cut them off: wait longer
                     self.speaking, self.buf, self.quiet, self.peeked = True, list(self.pre), 0, False
                     self.send({"type": "speech_start"})
             else:
@@ -539,11 +549,16 @@ class Conn:
                     if not self.speaking:                    # a peek ended the turn meanwhile
                         continue
                     self.buf.append(f)
+                    if p >= self.END_P and self.quiet >= 200:   # a pause they carried on from: learn its length
+                        self.pauses.append(self.quiet)
+                        if len(self.pauses) >= 3:
+                            long = sorted(self.pauses)[int(0.9 * (len(self.pauses) - 1))]
+                            self.HANG_MS = max(self.HANG_MS, min(self.HANG_MAX, int(long * 1.25) + 150))
                     self.quiet = self.quiet + 32 if p < self.END_P else 0
                     if p >= self.END_P:                     # talking again: a later pause gets its own look
                         self.since_peek += 1
                         self.peeked = False
-                    if self.quiet >= self.PEEK_MS and not self.peeked:
+                    if self.quiet >= max(250, self.HANG_MS // 2) and not self.peeked:
                         self.peek()
                     if self.quiet >= self.HANG_MS or len(self.buf) > 30 * 16000 // 512:
                         self.end()
@@ -564,10 +579,12 @@ class Conn:
                 self.speaking, self.buf, self.run = False, [], 0
                 self.utt += 1
                 self.vad.reset_states()
-            self.send({"type": "heard", "text": text, "ms": round(1000 * (time.perf_counter() - t)), "early": True})
+            self.ended_at = time.monotonic()
+            self.send({"type": "heard", "text": text, "ms": round(1000 * (time.perf_counter() - t)), "early": True, "hang": self.HANG_MS})
         hear(pcm, back, self.prompt)
 
     def end(self):
+        self.ended_at = time.monotonic()
         pcm = np.concatenate(self.buf)
         self.speaking, self.buf, self.run = False, [], 0
         self.utt += 1
@@ -578,7 +595,7 @@ class Conn:
             return
         t = time.perf_counter()
         g = self.gen
-        hear(pcm, lambda d: self.gen == g and self.send({"type": "heard", "text": d.get("text", ""), "ms": round(1000 * (time.perf_counter() - t))}), self.prompt)
+        hear(pcm, lambda d: self.gen == g and self.send({"type": "heard", "text": d.get("text", ""), "ms": round(1000 * (time.perf_counter() - t)), "hang": self.HANG_MS}), self.prompt)
 
     def speak(self, m):
         v = ENGINE.voices.get(self.voices.get(m.get("role", "patient")))
@@ -628,7 +645,7 @@ async def handle(ws):
                     await ws.send(json.dumps({"type": "error", "text": STATE["error"]}))
                     continue
                 if "hang" in m:
-                    c.HANG_MS = max(250, min(1500, int(m["hang"])))
+                    c.HANG_MS = max(c.HANG_MIN, min(c.HANG_MAX, int(m["hang"])))
                 c.ptt = m.get("mode") == "ptt"
                 # a drill sends its own terms (its items and aliases, 7 Nov 2026); a station is looked up by id
                 given = m.get("terms") if isinstance(m.get("terms"), list) else []

@@ -6,7 +6,9 @@ Bearer token; the node checks it with Supabase (auth.py) before anything else. P
 
   GET  /v1/hello                      public: the Supabase project to sign in to, and what this node has
   GET  /v1/me                         who you are to this node
-  POST /v1/station/<what>             start · say · whistle · mark · cut · mark_run · review (lines of JSON, streamed)
+  POST /v1/station/<what>             start · say · whistle · mark · cut · mark_run · review · peer (lines of JSON, streamed)
+  GET  /v1/peer/cases?station=        cases you already have for a station, to run with friends again (no diagnosis)
+  GET  /v1/peer/case/<src>/<name>     one of them, whole
   GET  /v1/station/runs?station=      your runs of a station
   GET  /v1/station/run/<name>         one run
   GET  /v1/review?station=            your evaluation and the A guide
@@ -57,7 +59,7 @@ ACTIVITY = []          # the last lines of the log, for the node's own screen
 
 
 # what the node's screen says for the calls worth a line there; every call still goes to the terminal
-SCREEN = {"/v1/station/start": "A Claude station started", "/v1/station/mark": "Examiner Claude marked a run",
+SCREEN = {"/v1/station/start": "A Claude station started", "/v1/station/peer": "Claude wrote a case to run with friends", "/v1/station/mark": "Examiner Claude marked a run",
           "/v1/drill/check": "Checked a recall drill's answers", "/v1/pair": None}
 
 
@@ -593,6 +595,11 @@ class Handler(BaseHTTPRequestHandler):
             return self.send_json(200 if r else 404, r or {"error": "not found"})
         if path == "/v1/review":
             return self.send_json(200, sim.get_review(d, q.get("station", ""), shared=shared()))
+        if path == "/v1/peer/cases":            # peer-run stations (10 Nov 2026): your kept cases, to run again
+            return self.send_json(200, {"cases": sim.peer_cases(d, q.get("station", ""))})
+        if path.startswith("/v1/peer/case/"):
+            r = sim.peer_case_get(d, path[len("/v1/peer/case/"):])
+            return self.send_json(200 if r else 404, r or {"error": "not found"})
         if path == "/v1/drills":
             return self.send_json(200, {"rounds": sim.drills(d, q.get("station", ""), 10), "primed": sim.primed(d, q.get("station", ""))})
         return self.send_json(404, {"error": "not found"})
@@ -659,7 +666,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json(404, {"error": "unknown station"})
             sim.log_drill(d, x["id"], b.get("found", 0), b.get("total", 0), b.get("missed"), b.get("seconds"), b.get("guesses"))
             return self.send_json(200, {"primed": sim.primed(d, x["id"])})
-        if not may_use_claude(w, starting=path == "/v1/station/start"):
+        if not may_use_claude(w, starting=path in ("/v1/station/start", "/v1/station/peer")):
             if is_guest(w):
                 return self.send_json(403, {"error": "Your session on this node has ended. Your runs are saved; ask for another to carry on."})
             return self.send_json(403, {"error": "Claude on this node is its owner's. A friend can use it when the owner shares it with their Finalist account."})
@@ -884,6 +891,13 @@ class Handler(BaseHTTPRequestHandler):
                         sim.SIMS[o["sim"]]["account"] = w.id
                     emit(o)
                 sim.start(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first, voice=bool(b.get("voice")))
+            elif what == "peer":                   # a case to run with friends (10 Nov 2026): one call, nothing live after
+                x = by_id.get(b.get("id"))
+                if not x or x["kind"] not in sim.PEER_KINDS:
+                    raise KeyError("This kind of station can't be run with friends.")
+                if w.owner and share_live():
+                    raise KeyError("A friend's link is live, so your own Claude cases wait until it ends (or stop sharing).")
+                sim.peer_case(model, d, x, content().get(x["id"], {}), emit)
             elif what == "teach":                  # Teach me this (3 Nov 2026): a tutor, untimed, never marked
                 x = by_id.get(b.get("id"))
                 if not x or x["kind"] not in KINDS:
