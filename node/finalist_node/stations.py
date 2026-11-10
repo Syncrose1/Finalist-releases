@@ -716,7 +716,7 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None, debug=Fals
     return who
 
 
-MARK_SYSTEM = """You are an experienced examiner for Southampton's final-year CPSA, marking an OSCE station on the risr/assess iPad mark sheet from its transcript. Be fair, specific and honest: this student is practising before a mock, and inflated marks would hurt them. The station was typed, not spoken, so judge the content and the manner the words show, not typing speed, spelling or body language. Physical actions (hand hygiene, positioning, a chaperone) can't be typed: assume they were done and never mark them down. Mark each item from what was actually said: an item not attempted, incomplete or inadequate doesn't get the full mark. The overall grade is your own judgement of the performance, made independently: don't derive it from the item marks. But calibrate it as real UK finals examiners do (anchors from published examiner guidance and benchmarking studies):
+MARK_SYSTEM = """You are an experienced examiner for Southampton's final-year CPSA, marking an OSCE station on the risr/assess iPad mark sheet from its transcript. Be fair, specific and honest: this student is practising before a mock, and inflated marks would hurt them. Judge the content and the manner the words show, never typing speed, spelling or body language (if the station was spoken, the note before the JSON says how the transcript was made). Physical actions (hand hygiene, positioning, a chaperone) can't be typed: assume they were done and never mark them down. Mark each item from what was actually said. Score 2 when the substance of the item was done, even if the wording wasn't textbook or a minor detail was absent; score 1 only when a real part of it is missing, and say which part; score 0 when it wasn't attempted. Don't use 1 as the safe default: a reasonable, recognisable attempt at the whole item earns 2. The overall grade is your own judgement of the performance, made independently: don't derive it from the item marks. But calibrate it as real UK finals examiners do (anchors from published examiner guidance and benchmarking studies):
 - D, borderline pass: the just-acceptable day-one FY1. A systematic history that may lack fine detail and lean on rote questioning rather than responding to the patient; acceptable rapport; reaches a reasonable differential for a common presentation. Borderline candidates typically score about 50-60% of a checklist (one published borderline benchmark: 56%).
 - C, pass: covers the main elements with some omissions, sensible reasoning, decent communication. Typically about 60-70%. Most competent candidates land here; a real student who scored 60% got a C.
 - B, good: fluent and patient-centred, few omissions, a well-reasoned differential. Typically about 70-80% (a published "good" benchmark: 81%).
@@ -766,7 +766,10 @@ def _patient_mark(sim, out):
         c = sim["case"]
         name = (c.get("person") or {}).get("name") or "the patient"
         system = (f"You are the simulated patient who just played {name} in a UK finals OSCE station. "
-                  f"Your character and story: {c.get('script')} Reply with JSON only.")
+                  f"Your character and story: {c.get('script')} Reply with JSON only."
+                  + (" The student spoke and was transcribed by speech recognition, which also split their sentences at short pauses: "
+                     "lines that look cut off, and your own 'sorry, I didn't catch that' after them, were the microphone, not the student. "
+                     "Don't count them as the student trailing off or being unclear." if sim.get("voice") else ""))
         out.update(ask(sim["model"], system, PATIENT_MARK.format(
             name=name, transcript=_transcript(sim), s1=PATIENT_SCALE[0], s2=PATIENT_SCALE[1], s3=PATIENT_SCALE[2]),
             effort="low", schema=PATIENT_SCHEMA))
@@ -810,7 +813,11 @@ def mark(sim_id, data, emit, ended_early=False, draft=""):
                  "below D. If the examiner gave a sign the candidate hadn't asked for, don't mark the candidate down for not eliciting it.\n")
     if sim.get("voice"):
         note += ("The candidate SPOKE this station and their words were transcribed by speech recognition: ignore mistranscribed words, "
-                 "missing punctuation and odd spellings (a drug name heard as a near-miss is the drug name), and mark what they evidently said."
+                 "missing punctuation and odd spellings (a drug name heard as a near-miss is the drug name, 'scar' for 'scan'), and mark what they evidently said. "
+                 "The turn detector also ends a turn at a short pause, so one spoken thought can be split across consecutive 'you' turns, each "
+                 "looking cut off mid-sentence; read consecutive fragments as one statement. When the patient or examiner says they didn't "
+                 "catch something straight after such a fragment, that was the recogniser or the turn detector, not the candidate: never "
+                 "mark clarity, fluency, structure or 'fragmented' explanations down for it, and don't let it lower the consultation mark."
                  + (f" Terms this station's students commonly use: {'; '.join(sim.get('vocab') or [])}." if sim.get("vocab") else "") + "\n")
     critical = CRITICAL[sim["kind"]] + [x for x in c.get("critical") or [] if x]
     mark_prompt = MARK_PROMPT.format(

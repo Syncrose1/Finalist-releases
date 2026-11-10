@@ -62,7 +62,9 @@ def who(token, cfg):
         return None
     w = Who(user, cfg.get("owner_id"))
     with _LOCK:
-        _CACHE[key] = (min(_expiry(token), now + 3600), w)
+        # 5 minutes, not the token's life: a privileged grant (or its removal) reaches the node within minutes (10 Nov 2026,
+        # Yousif's grant didn't show for up to an hour)
+        _CACHE[key] = (min(_expiry(token), now + 300), w)
         if len(_CACHE) > 500:
             for k in [k for k, (exp, _) in _CACHE.items() if exp <= now]:
                 _CACHE.pop(k, None)
