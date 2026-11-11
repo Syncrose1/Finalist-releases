@@ -26,6 +26,7 @@ from datetime import date
 from pathlib import Path
 
 from . import body_map
+from . import moderation
 
 KINDS = ("history", "comms", "exam")
 CLAUDE = shutil.which("claude") or "claude"      # its full path: on Windows it is claude.cmd
@@ -361,6 +362,19 @@ def _core(kind):
     return "\n".join(json.dumps({"item": i, "domain": d, "weight": w}) for i, d, w in CORE[kind])
 
 
+def _settle_scheme(case, station_id, kind, spoken):
+    """A new case's mark scheme with the station's moderated overrides applied and the lint's safe fixes made; the
+    flags are kept on the case (owner only: the case is hidden from the candidate; the debug panel shows it)."""
+    try:
+        scheme = moderation.apply_scheme(case.get("mark_scheme"), moderation.overrides(station_id))
+        r = moderation.lint(scheme, kind, spoken=spoken)
+        case["mark_scheme"] = r["scheme"]
+        if spoken:
+            case["lint"] = r["flags"]
+    except Exception:            # a lint must never stop a station
+        pass
+
+
 def _past(data, station_id):
     seen = []
     files = [f for d in (data / "sims", data / "peer") if d.is_dir() for f in d.glob(f"*-{station_id}-*.json")]
@@ -416,6 +430,7 @@ def start(model, data, station, entry, emit, voice=False):
     else:
         prompt = CASE_PROMPT.format(title=station["title"], kind=station["kind"], notes=_notes(entry),
                                     variety=variety, core=_core(station["kind"]))
+    prompt += moderation.case_note(station["id"])      # what moderating real runs taught (11 Nov 2026)
     shown = {}
 
     def keep(o):                     # what the candidate has already seen
@@ -435,6 +450,7 @@ def start(model, data, station, entry, emit, voice=False):
     except Exception as e:
         sim["error"] = str(e)
         raise
+        _settle_scheme(sim["case"], station["id"], station["kind"], spoken=True)
     finally:
         sim["ready"].set()
     emit({"ready": True, "brief": sim["case"]["brief"], "person": sim["case"].get("person") or {}})
@@ -578,7 +594,7 @@ How to play it:
 - Your worry is real but not a puzzle: drop the cue once, and tell your concern plainly the moment they ask what you're worried about, what you think it is, or pick up the cue. Don't make them dig past jokes or deflection.
 {_manner_rule(sim)}
 - React like a person: if they're kind, warm up; if they rush or ignore your worry, become a little less forthcoming.
-- Never coach, never mark, never step out of role, never mention the script or the exam. If the student speaks to the examiner, stay quiet: reply with nothing but "*waits*".{body_map.patient_rules(sim)}
+- Never coach, never mark, never step out of role, never mention the script or the exam. If the student speaks to the examiner, stay quiet: reply with nothing but "*waits*".{moderation.patient_note(sim.get('station'))}{body_map.patient_rules(sim)}
 Reply with only your next words."""
 
 
@@ -813,7 +829,7 @@ def _blank(sim, data, emit):
     return _finish(sim, data, emit, out, {})
 
 
-def mark(sim_id, data, emit, ended_early=False, draft=""):
+def mark(sim_id, data, emit, ended_early=False, draft="", with_patient=True, exclude_benchmark=None):
     """Marks the transcript, streaming the grade and verdict first. The patient
     gives their own mark in a separate call, alongside, so it's independent.
     A draft is what was still being typed when the bell went: it counts."""
@@ -825,7 +841,8 @@ def mark(sim_id, data, emit, ended_early=False, draft=""):
         return _blank(sim, data, emit)
     patient = {}
     pt = threading.Thread(target=_patient_mark, args=(sim, patient), daemon=True)
-    pt.start()
+    if with_patient:
+        pt.start()
     note = "The candidate stopped the station early; mark what happened.\n" if ended_early else ""
     if sim.get("kind") == "exam":
         note += ("This was a NARRATED examination: the candidate said each step aloud as they performed it, and the examiner gave the findings. "
@@ -860,9 +877,16 @@ def mark(sim_id, data, emit, ended_early=False, draft=""):
                  "mark clarity, fluency, structure or 'fragmented' explanations down for it, and don't let it lower the consultation mark."
                  + (f" Terms this station's students commonly use: {'; '.join(sim.get('vocab') or [])}." if sim.get("vocab") else "") + "\n")
     critical = CRITICAL[sim["kind"]] + [x for x in c.get("critical") or [] if x]
+    # moderation (11 Nov 2026): the station's accepted answers and notes, and one or two moderated runs as worked
+    # examples, kept short; a scheme item the moderator removed or rewrote is marked as they left it
+    try:
+        note += moderation.marking_note(sim.get("station"), sim.get("kind"), exclude=exclude_benchmark)
+        scheme = moderation.apply_scheme(c.get("mark_scheme") or [], moderation.overrides(sim.get("station")))
+    except Exception:
+        scheme = c.get("mark_scheme") or []
     mark_prompt = MARK_PROMPT.format(
         title=sim["title"], brief=c.get("brief"), diagnosis=c.get("diagnosis"), script=c.get("script"),
-        cue=c.get("cue"), scheme=json.dumps(c.get("mark_scheme") or []), critical=json.dumps(critical),
+        cue=c.get("cue"), scheme=json.dumps(scheme), critical=json.dumps(critical),
         cscale=", ".join(f"{i + 1} {s}" for i, s in enumerate(CONSULTATION_SCALE)),
         consultation="; ".join(CONSULTATION), transcript=_transcript(sim), note=note)
     try:
@@ -870,7 +894,8 @@ def mark(sim_id, data, emit, ended_early=False, draft=""):
                   effort="medium", schema=MARK_SCHEMA)
     except (ValueError, RuntimeError):     # once more, quietly
         out = ask(sim["model"], MARK_SYSTEM, mark_prompt, effort="medium", schema=MARK_SCHEMA)
-    pt.join(120)
+    if with_patient:
+        pt.join(120)
     return _finish(sim, data, emit, out, patient)
 
 
@@ -909,6 +934,7 @@ def _finish(sim, data, emit, out, patient):
     d.mkdir(parents=True, exist_ok=True)
     keep = {k: v for k, v in sim.items() if k not in ("ready", "file")}
     f = Path(sim.get("file") or d / f"{date.today().isoformat()}-{sim['station']}-{sim['id']}.json")
+    out["run"] = f.stem                 # the run's name on the node: what a report of it points at
     if said:                            # a run with nothing said isn't worth keeping
         f.write_text(json.dumps(keep, indent=1))
     emit({"feedback": out})
@@ -1248,11 +1274,12 @@ def peer_case(model, data, station, entry, emit):
     variety = f"Make the patient {random.choice(TWISTS)}."
     if seen:
         variety += " Don't repeat these earlier cases for this station: " + " | ".join(seen)
-    prompt = _peer_prompt(station, entry, variety)
+    prompt = _peer_prompt(station, entry, variety) + moderation.case_note(station["id"])
     try:
         case = ask(model, CASE_SYSTEM, prompt, on_text=_streaming_fields(["brief"], emit), effort="low", schema=PEER_SCHEMA, timeout=240)
     except (ValueError, RuntimeError):
         case = ask(model, CASE_SYSTEM, prompt, effort="low", schema=PEER_SCHEMA, timeout=240)     # once more, quietly
+    _settle_scheme(case, station["id"], station["kind"], spoken=False)     # in person: only the overrides and duplicates
     sid = secrets.token_urlsafe(9)
     name = f"{date.today().isoformat()}-{station['id']}-{sid}"
     d = data / "peer"

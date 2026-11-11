@@ -45,8 +45,10 @@ from pathlib import Path
 from . import auth, config, dfs
 from . import voice_setup, tunnel
 from . import stations as sim
+from . import moderation
 
 CFG = config.load()
+moderation.ROOT = Path(CFG["data"]).expanduser() / "moderation"     # reports, benchmarks, station overrides: every account's, on the owner's node
 NODE = Path(__file__).resolve().parents[1]
 VERSION = 1
 KINDS = sim.KINDS
@@ -587,6 +589,11 @@ class Handler(BaseHTTPRequestHandler):
             if rel not in names:
                 return self.send_json(404, {"error": "not found"})
             return self.send_file(Path(CFG["school"]).expanduser() / rel)
+        if path == "/v1/moderation":            # the owner's queue of reported runs (11 Nov 2026)
+            if not w.owner:
+                return self.send_json(403, {"error": "Moderation is for the node's owner."})
+            return self.send_json(200, {"queue": moderation.queue(include_done=q.get("all") == "1"),
+                                        "benchmarks": [{k: b.get(k) for k in ("id", "station", "title", "grade", "examiner_grade", "reason", "at")} for b in moderation.benchmarks()]})
         d = data_for(w)
         if path == "/v1/station/runs":
             return self.send_json(200, sim.runs(d, q.get("station", "")))
@@ -666,6 +673,23 @@ class Handler(BaseHTTPRequestHandler):
                 return self.send_json(404, {"error": "unknown station"})
             sim.log_drill(d, x["id"], b.get("found", 0), b.get("total", 0), b.get("missed"), b.get("seconds"), b.get("guesses"))
             return self.send_json(200, {"primed": sim.primed(d, x["id"])})
+        if path == "/v1/report":                # report a marked run for review: any account, even after its share ends
+            f = moderation.find_run(d, b.get("run"), b.get("station"), b.get("at"))
+            if not f:
+                return self.send_json(404, {"error": "This node doesn't have that run, so it can't be reported from here."})
+            try:
+                return self.send_json(200, {"report": moderation.report(f, w.id, w.email, b.get("reason") or "", b.get("tags") or [])})
+            except ValueError as e:
+                return self.send_json(400, {"error": str(e)})
+        if path in ("/v1/moderation/save", "/v1/moderation/dismiss"):
+            if not w.owner:
+                return self.send_json(403, {"error": "Moderation is for the node's owner."})
+            try:
+                if path.endswith("/dismiss"):
+                    return self.send_json(200, {"report": moderation.dismiss(b.get("id") or "", b.get("reason") or "")})
+                return self.send_json(200, moderation.moderate(b.get("id") or "", b, by=w.email or "the owner"))
+            except (KeyError, ValueError) as e:
+                return self.send_json(400, {"error": str(e).strip("'\"")})
         if not may_use_claude(w, starting=path in ("/v1/station/start", "/v1/station/peer")):
             if is_guest(w):
                 return self.send_json(403, {"error": "Your session on this node has ended. Your runs are saved; ask for another to carry on."})
