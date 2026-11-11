@@ -14,7 +14,7 @@ const { WebContentsView, session, shell, app } = require('electron')
 const path = require('path')
 const fs = require('fs')
 
-const SEARCH = 'https://duckduckgo.com/?q='   // the search engine; for Google: 'https://www.google.com/search?q='
+const SEARCH = 'https://www.google.com/search?q='   // Google (11 Nov 2026, Raahat: its AI overview helps); DuckDuckGo: 'https://duckduckgo.com/?q='
 const PARTITION = 'persist:finalist-web'
 const RADIUS = 14                              // matches the frame's rounded corners in the page (CSS px)
 const ALLOWED = new Set(['fullscreen', 'clipboard-sanitized-write'])
@@ -38,6 +38,9 @@ function uniquePath(dir, name) {
 let sessionReady = false
 function webSession(send) {
   const ses = session.fromPartition(PARTITION)
+  // a plain Chrome user agent, without Electron's and this app's tokens: Google serves its full results page, AI
+  // overview included, to Chrome, and sometimes a reduced one to an unknown embedder
+  ses.setUserAgent(ses.getUserAgent().replace(/\s?(Electron|finalist|Finalist|FinalistDesktop)\/[^\s]+/g, ''))
   if (sessionReady) return ses
   sessionReady = true
   ses.setPermissionRequestHandler((_wc, perm, cb) => cb(ALLOWED.has(perm)))
