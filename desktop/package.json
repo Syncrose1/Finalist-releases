@@ -21,7 +21,7 @@
     "productName": "Finalist",
     "artifactName": "Finalist-${os}-${arch}.${ext}",
     "directories": { "buildResources": "build", "output": "dist" },
-    "files": ["main.js", "main-preload.js", "timer.html", "timer-preload.js", "splash.html", "icon.png", "package.json"],
+    "files": ["main.js", "main-preload.js", "web-panel.js", "timer.html", "timer-preload.js", "splash.html", "icon.png", "package.json"],
     "extraResources": [{ "from": "../node/dist/finalist-node", "to": "node" }],
     "publish": null,
     "linux": { "target": "AppImage", "category": "Education", "executableName": "finalist", "executableArgs": ["--no-sandbox"], "desktop": { "entry": { "StartupWMClass": "finalist" } } },

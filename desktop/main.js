@@ -9,6 +9,7 @@ const { spawn } = require('child_process')
 const path = require('path')
 const fs = require('fs')
 const os = require('os')
+const { webPanel } = require('./web-panel')
 
 const NODE = 'http://127.0.0.1:47620'
 const BASE = process.env.FINALIST_BASE || NODE
@@ -26,6 +27,7 @@ app.commandLine.appendSwitch('enable-features', 'WaylandWindowDecorations')
 app.setName('Finalist')
 
 let main = null, node = null, timers = {}, subject = ''
+const web = webPanel(() => main)   // the web panel over the main window (web-panel.js)
 const timerWins = new Map()
 
 async function get(url, ms = 1500) {
@@ -79,11 +81,18 @@ function createMain() {
   main.webContents.on('before-input-event', (e, i) => {
     if (i.type !== 'keyDown' || !(i.control || i.meta) || i.alt) return
     const k = i.key, c = i.code
+    // Ctrl+T opens the spotlight from anywhere (taken here, so no page can swallow it); Ctrl+W closes the web panel
+    // when it's open and otherwise does nothing: it never closes the app (11 Nov 2026)
+    if ((k === 't' || k === 'T') && !i.shift) { if (web.isOpen()) web.close(); main.webContents.send('spotlight'); e.preventDefault(); return }
+    if ((k === 'w' || k === 'W') && !i.shift) { if (web.isOpen()) web.close(); e.preventDefault(); return }
     if (k === '=' || k === '+' || c === 'NumpadAdd' || c === 'Equal') { zoomBy(0.5); e.preventDefault() }
     else if (k === '-' || k === '_' || c === 'NumpadSubtract' || c === 'Minus') { zoomBy(-0.5); e.preventDefault() }
     else if (k === '0' || c === 'Numpad0' || c === 'Digit0') { zoomBy(0); e.preventDefault() }
   })
   main.webContents.on('zoom-changed', (_e, dir) => zoomBy(dir === 'in' ? 0.5 : -0.5))
+  // the web panel follows the page: refit on a resize or zoom, gone if the page itself reloads or leaves
+  main.on('resize', () => web.refit())
+  main.webContents.on('did-start-navigation', (d) => { if (d.isMainFrame && !d.isSameDocument && web.isOpen()) web.close(false) })
   // testing: run a snippet in the page once it's up (FINALIST_PROBE_JS)
   if (process.env.FINALIST_PROBE_JS) main.webContents.on('did-finish-load', () => { if (main.webContents.getURL().startsWith('http')) setTimeout(() => main.webContents.executeJavaScript(process.env.FINALIST_PROBE_JS).catch(() => {}), 4000) })
   // Closing the window while a timer floats only hides it (7 Nov 2026): the overlay's buttons are carried out by
@@ -190,6 +199,13 @@ ipcMain.handle('timer_open', (_e, block) => {
   if (page && main) main.loadURL(`${BASE}${page}`)
   if (main) { main.show(); main.focus() }
 })
+
+// the web panel's requests from the page (the spotlight's web row, the panel's bar)
+const fromMain = (e) => main && !main.isDestroyed() && e.sender === main.webContents
+ipcMain.on('web_open', (e, q) => { if (fromMain(e) && typeof q === 'string') web.open(q.slice(0, 2000)) })
+ipcMain.on('web_bounds', (e, r) => { if (fromMain(e) && r && [r.x, r.y, r.width, r.height].every(Number.isFinite)) web.bounds(r) })
+ipcMain.on('web_close', (e) => { if (fromMain(e)) web.close() })
+ipcMain.on('web_act', (e, op, arg) => { if (fromMain(e) && typeof op === 'string') web.act(op, arg) })
 
 // one Finalist at a time: opening it again (or Super+Y's --revise) brings the open one forward
 const solo = app.requestSingleInstanceLock()
