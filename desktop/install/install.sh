@@ -59,6 +59,28 @@ do_uninstall() {   # $1 = purge to remove the data too
   fi
 }
 
+# Raahat's Revision System, on a computer that has it (14 Nov 2026: "make the installer update Revise too"): pull it and
+# restart it, so the one line updates both. Nothing happens on a computer without ~/RevisionSystem.
+update_revise() {
+  local repo="$HOME/RevisionSystem" log="$HOME/.local/share/revise/serve.log"
+  [ -d "$repo/.git" ] || return 0
+  say "Updating the Revision System"
+  if ! git -C "$repo" pull --ff-only -q 2>/dev/null; then echo "  Couldn't update $repo (local changes?): left as it was."; return 0; fi
+  echo "  Now at $(git -C "$repo" log -1 --format='%h %s' | cut -c1-72)"
+  if command -v systemctl >/dev/null 2>&1 && systemctl --user is-active -q revise.socket 2>/dev/null; then
+    systemctl --user stop revise.service 2>/dev/null || true
+    systemctl --user restart revise.socket 2>/dev/null || true
+    echo "  Restarted its service."
+  elif pgrep -f "revise.py serve" >/dev/null 2>&1; then
+    pkill -f "revise.py serve" 2>/dev/null || true
+    sleep 1
+    mkdir -p "$(dirname "$log")"
+    if command -v setsid >/dev/null 2>&1; then (cd "$repo" && setsid -f nohup python3 revise.py serve > "$log" 2>&1 < /dev/null) || true
+    else (cd "$repo" && nohup python3 revise.py serve > "$log" 2>&1 < /dev/null &) || true; fi
+    echo "  Restarted it (its log: $log)."
+  fi
+}
+
 do_install() {
   local app dest asset
   case "$OS" in
@@ -111,6 +133,7 @@ do_install() {
       ;;
     *) echo "On Windows, run this in PowerShell instead:  irm $RAW/desktop/install/install.ps1 | iex" >&2; exit 1 ;;
   esac
+  update_revise || true
   say "${G}Finalist is installed:${R}${B} $app"
   echo "Run the same line again any time to update it or uninstall it."
   if ! command -v claude >/dev/null 2>&1; then
