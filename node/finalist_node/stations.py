@@ -28,7 +28,9 @@ from pathlib import Path
 from . import body_map
 from . import moderation
 
-KINDS = ("history", "comms", "exam")
+KINDS = ("history", "comms", "exam", "data")
+# a data-interpretation station on a real film (14 Nov 2026): the circuit's station id -> the node's dataset
+FILM_SETS = {"cxr": "cxr", "axr": "axr", "ct-head": "cthead", "msk-xr": "msk"}
 CLAUDE = shutil.which("claude") or "claude"      # its full path: on Windows it is claude.cmd
 CWD = Path(tempfile.gettempdir()) / "revise-sim"      # empty, outside home: no CLAUDE.md for Claude to find (any OS)
 SIMS, LOCK = {}, threading.Lock()
@@ -60,7 +62,8 @@ class Live:
         self.lock = threading.Lock()
 
     def turn(self, text, on_text, timeout=120):
-        """Sends the words in; streams the reply out; returns it. Raises if the process has gone."""
+        """Sends the words in (or a list of content blocks: a film and its words, 14 Nov 2026); streams the reply out;
+        returns it. Raises if the process has gone."""
         with self.lock:
             if self.p.poll() is not None:
                 raise RuntimeError("Claude's process has ended")
@@ -334,10 +337,33 @@ CORE["management"] = [
     ("Explains to the patient what is happening and checks their understanding", "communication", 1),
     ("Documents and hands over clearly", "professionalism", 1),
 ]
-CRITICAL = {"history": [], "comms": [], "exam": [], "procedure": [], "management": []}
+# Data interpretation on a real film (14 Nov 2026). Raahat: mark as these stations are really marked, not on his say-so.
+# No UK school publishes its mark scheme for a film station, so the core is the consensus of UK undergraduate teaching,
+# each item traceable: check the film is the right patient's and readable before reading it (RIPE: TalkOSCE's and the
+# Queen's Belfast finals notes' method); read it in a fixed, systematic order (the RCR undergraduate curriculum's core
+# competence; Oscemed: a systematic read earns marks even when the diagnosis isn't obvious); describe a finding before
+# naming it, placing it by zone and side, because a plain film shows zones that don't match the lobes (an open
+# undergraduate imaging text; Radiology Cafe: describe the zone when you can't be sure of the lobe); present in a
+# structure, then give a likely diagnosis or differential and the next step (Oscemed). Marked as the other stations
+# are, a weighted checklist plus a global grade: the evidence supports using both (Cunnington et al. 1996; a systematic
+# review of checklists against global ratings).
+CORE["data"] = [
+    ("Confirms the film is the right patient's, the date and the type of film (or says they'd check them)", "safety", 1),
+    ("Comments on whether the film is adequate before reading it (for a chest film: rotation, inspiration, projection, exposure)", "data", 1),
+    ("Reads the film in a fixed, systematic order", "data", 2),
+    ("Describes the abnormality before naming it: what it looks like, where (side and zone), and its features", "data", 2),
+    ("Uses accurate descriptive terms (zones rather than lobes on a plain film; opacity or lucency before a diagnosis)", "communication", 1),
+    ("Gives a sensible most likely diagnosis and differential", "reasoning", 2),
+    ("Suggests appropriate next steps: urgency, further imaging or tests, management", "reasoning", 2),
+    ("Presents in a clear, organised structure: film, findings, interpretation, plan", "communication", 1),
+]
+CRITICAL = {"history": [], "comms": [], "exam": [], "procedure": [], "management": [], "data": []}
 CONSULTATION = ["Balance of open, closed and reflective questions", "Structure: an effective, organised interview",
                 "Understandable language, no jargon", "Recognises and responds to cues",
                 "Rapport: empathy, invites the patient's contribution, collaborates"]
+# a film station's presentation to the examiner, in place of the consultation skills (14 Nov 2026)
+DATA_PRESENTATION = ["A clear, organised structure: film, findings, interpretation, plan", "Precise, accurate descriptive terms",
+                     "Concise and confident: commits to an interpretation", "Answers the examiner's questions directly"]
 CONSULTATION_SCALE = ["Well below the expected standard", "Borderline", "Satisfactory", "Good", "Excellent"]
 PATIENT_SCALE = ["Below expectations", "Satisfactory", "Highly satisfactory"]
 
@@ -468,11 +494,138 @@ def start(model, data, station, entry, emit, voice=False):
     threading.Thread(target=warm, daemon=True).start()
 
 
+# ---- a data interpretation station on a real film (14 Nov 2026) -----------------------------------------------------
+# Raahat: the examiner reads the film's label as the truth, and its own view of the image as weaker evidence ("underrate
+# the visual encoder's accuracy somewhat, but not entirely"); no medical imaging model on people's machines. The film is
+# a vetted dataset item: its label, any other findings and the radiologists' boxes come from the node's own manifest,
+# never from the browser. The browser sends only which film, and the atlas's teaching for its finding.
+
+FILM_NAME = {"cxr": "chest radiograph", "axr": "abdominal radiograph", "cthead": "non-contrast CT head", "msk": "radiograph"}
+FILMS = {}      # sim id -> {"mime", "data"}: the image itself, kept out of the saved run
+
+
+def film_facts(set_name, it, labels, box_space=1024):
+    """The ground truth an examiner gets: the labelled finding, any others, and (from the radiologists' boxes, on a
+    frontal chest film) the side, which the boxes give reliably, and the third of the film, which is only approximate."""
+    facts = {"finding": it.get("answer") or labels.get(it.get("label"), it.get("label")), "label": it.get("label"),
+             "others": [labels.get(x, x) for x in (it.get("also") or []) if x != it.get("label")]}
+    boxes = [b for b in (it.get("boxes") or []) if b.get("finding") == it.get("label")]
+    if set_name == "cxr" and boxes:
+        sp = it.get("box_space") or box_space
+        sides, thirds = set(), set()
+        for b in boxes:
+            x, y, w, h = b["box"]
+            cx, cy = (x + w / 2) / sp, (y + h / 2) / sp
+            # a frontal film is viewed as if facing the patient: the image's left is the patient's right
+            sides.add("right" if cx < 0.45 else "left" if cx > 0.55 else "central")
+            thirds.add("upper" if cy < 0.4 else "middle" if cy < 0.6 else "lower")
+        facts["side"] = "both sides" if {"right", "left"} <= sides else ", ".join(sorted(sides))
+        facts["third"] = ", ".join(t for t in ("upper", "middle", "lower") if t in thirds)
+    return facts
+
+
+def _facts_text(f, film_name):
+    t = f"The labelled finding on this {film_name}: {f['finding']}."
+    if f.get("others"):
+        t += f" Also labelled: {', '.join(f['others'])}."
+    if f.get("side"):
+        t += (f" From the radiologists' boxes, it lies on the patient's {f['side']}, roughly in the {f['third']} part of the film"
+              " (the side is reliable; the zone is approximate, as boxes don't follow the anterior ribs).")
+    return t
+
+
+DATA_CASE_SCHEMA = _obj({"brief": _str, "diagnosis": _str, "critical": _strs, "examiner_questions": _strs,
+                         "mark_scheme": CASE_SCHEMA["properties"]["mark_scheme"]})
+DATA_CASE_PROMPT = """Write the hidden case for a DATA INTERPRETATION station on a real film: the candidate is shown the film and presents it to the examiner, as in UK finals.
+STATION: {title}
+THE FILM (the truth, never shown to the candidate): {facts}
+WHAT FINALIST'S ATLAS TEACHES FOR THIS FINDING (use it for the case items, the questions and the next steps): {teach}
+The station's own notes: {notes}
+
+Write:
+- brief: 40-70 words, second person. You are an FY1; say who asks you to present this film and why it was taken, in a way that fits the finding without giving it away (for a normal film, a reason a film is commonly requested). The film's identifying details have been removed for teaching: say so in one short sentence.
+- diagnosis: the finding in one line, with its side and location where known.
+- examiner_questions: 2-3 questions an examiner asks after the presentation, each one plain question of at most 15 words, as real examiners ask them ("What would you do next?"): one on what to do next, and one about a feature, cause or complication of this finding.
+- critical: usually empty; at most one patient-safety item where missing it would plausibly cause harm in THIS case (e.g. not recognising a tension or large pneumothorax as urgent).
+- mark_scheme: start with these core items, exactly as written, in this order, then add 4-8 items specific to this film (identifying the finding; locating it by side and zone; the features that describe it; associated signs; a sensible differential; the specific next steps). Weights 1-3.
+{core}
+Reply with JSON only."""
+
+
+def _data_examiner_system(sim):
+    c, f = sim["case"], sim.get("film_facts") or {}
+    name = FILM_NAME.get(sim.get("film_set"), "film")
+    return f"""You are the examiner in a DATA INTERPRETATION station in a UK medical finals OSCE (Southampton CPSA). The candidate has been shown a {name} and presents it to you. Brief, neutral and professional, as a real examiner is: no teaching, no hints, no praise or criticism during the station.
+The brief the candidate read: {c.get('brief')}
+{_facts_text(f, name)}
+You also see the film itself (attached to the first message). Your own reading of medical images is markedly less reliable than a radiologist's: treat what you see as supporting evidence only. Where your view and the label disagree, the label is right. Never reveal the finding.
+How to run it:
+- While the candidate presents, reply only with a brief, neutral prompt ("Go on." "Thank you.") or nothing more than a few words. Don't ask leading questions, don't correct them, don't add findings.
+- If they ask for clinical details, give only what the brief says; otherwise "Just the film, please."
+- When they say they've finished, or when the whistle goes, ask your questions one at a time, each in a single short sentence, moving on once they've answered: {json.dumps(c.get('examiner_questions') or [])}
+- When you've asked them all, or time is clearly up, say "Thank you, that's the end of the station."
+Reply with only what you say next.""" + ("\nYou're speaking out loud: words only, no stage directions." + heard_note(sim, "you") if sim.get("voice") else "")
+
+
+def _film_block(sim_id, text):
+    """The first message an examiner gets: the film, then the words."""
+    img = FILMS.get(sim_id)
+    if not img:
+        return text
+    return [{"type": "image", "source": {"type": "base64", "media_type": img["mime"], "data": img["data"]}}, {"type": "text", "text": text}]
+
+
+def start_data(model, data, station, entry, emit, film, voice=False):
+    """A film station: the case is written around a vetted dataset film, the brief streamed as soon as it's written;
+    the examiner's Claude starts during the reading time and is shown the film."""
+    sid = secrets.token_urlsafe(9)
+    sim = {"id": sid, "station": station["id"], "title": station["title"], "kind": "data", "model": model,
+           "case": None, "turns": [], "phase": "examiner", "started": time.time(), "ready": threading.Event(),
+           "primed": primed(data, station["id"]), "voice": bool(voice), "vocab": list(station.get("vocab") or [])[:40],
+           "film_set": film["set"], "film_id": film["id"], "film_facts": film["facts"],
+           "file": str(data / "sims" / f"{date.today().isoformat()}-{station['id']}-{sid}.json")}
+    FILMS[sid] = {"mime": film["mime"], "data": film["data"]}
+    with LOCK:
+        SIMS[sid] = sim
+    emit({"sim": sid, "film": {"set": film["set"], "id": film["id"]}})
+    name = FILM_NAME.get(film["set"], "film")
+    prompt = DATA_CASE_PROMPT.format(title=station["title"], facts=_facts_text(film["facts"], name), teach=(film.get("teach") or "")[:3000],
+                                     notes=_notes(entry), core=_core("data")) + moderation.case_note(station["id"])
+    try:
+        try:
+            sim["case"] = ask(model, CASE_SYSTEM, prompt, on_text=_streaming_fields(["brief"], emit), effort="low", schema=DATA_CASE_SCHEMA)
+        except (ValueError, RuntimeError):
+            sim["case"] = ask(model, CASE_SYSTEM, prompt, effort="low", schema=DATA_CASE_SCHEMA)
+        sim["case"]["person"] = {}
+        sim["case"]["script"], sim["case"]["cue"] = "No patient: the candidate presents a film to the examiner.", ""
+        _settle_scheme(sim["case"], station["id"], "data", spoken=True)
+    except Exception as e:
+        sim["error"] = str(e)
+        raise
+    finally:
+        sim["ready"].set()
+    emit({"ready": True, "brief": sim["case"]["brief"], "person": {}})
+
+    def warm():                     # the examiner starts now and is shown the film, so the first reply doesn't wait
+        try:
+            live = Live(model, _data_examiner_system(sim))
+            live.turn(_film_block(sid, "This is the film the candidate is about to present. Reply with only: Ready."), lambda t: None)
+            with LOCK:
+                if sid in SIMS and "examiner" not in LIVE.get(sid, {}):
+                    LIVE.setdefault(sid, {})["examiner"] = live
+                    return
+            live.close()
+        except Exception:
+            pass
+    threading.Thread(target=warm, daemon=True).start()
+
+
 # ---- teach me this (3 Nov 2026) ---------------------------------------------------------------------
 # Untimed and unmarked: Claude as a tutor for one station. Learn it step by step, run it informally
 # with pauses to teach, be quizzed, or ask what examiners reward. Kept in its own folder, never a run.
 
-TEACH_KIND = {"history": "a history-taking station", "comms": "a communication station", "exam": "a narrated physical examination station"}
+TEACH_KIND = {"history": "a history-taking station", "comms": "a communication station", "exam": "a narrated physical examination station",
+              "data": "a data interpretation station: presenting a film to the examiner"}
 
 
 def teach(model, data, station, entry, emit, voice=False):
@@ -677,7 +830,11 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None, debug=Fals
         _persist(sim)
     who = sim["phase"]
     room = sim.get("kind") == "exam" and who == "patient"     # a narrated exam: patient or examiner, per turn
-    system = _tutor_system(sim) if who == "tutor" else _examiner_system(sim) if who == "examiner" else _room_system(sim)
+    film = sim.get("kind") == "data"                          # a film station: the examiner throughout (14 Nov 2026)
+    system = (_tutor_system(sim) if who == "tutor" else _data_examiner_system(sim) if film and who == "examiner"
+              else _examiner_system(sim) if who == "examiner" else _room_system(sim))
+    if film and on_role:
+        on_role("examiner")
     ask_for = ("Your next words, as the tutor:" if who == "tutor" else "Your next words, as the examiner:" if who == "examiner"
                else "Your reply, starting with PATIENT: or EXAMINER:" if room else "Your next words, in character:")
     prompt = (f"{'The session' if who == 'tutor' else 'The station'} so far:\n{_transcript(sim)}\n\n"
@@ -734,7 +891,7 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None, debug=Fals
             with LOCK:
                 LIVE.setdefault(sim_id, {})[who] = live
             sim.pop("cut_note", None)               # the transcript it gets already holds only what was heard
-            reply = live.turn(prompt, stream)       # the first turn carries everything so far
+            reply = live.turn(_film_block(sim_id, prompt) if film else prompt, stream)   # the first turn carries everything so far
         else:
             note = sim.pop("cut_note", "")
             said_by = "The student: " if who == "tutor" else "The candidate: "
@@ -839,6 +996,8 @@ def mark(sim_id, data, emit, ended_early=False, draft="", with_patient=True, exc
         sim["turns"].append({"who": "you", "text": draft.strip()[:4000] + " [cut off by the bell]", "at": time.time()})
     if not any(x["who"] == "you" for x in sim["turns"]):
         return _blank(sim, data, emit)
+    if sim.get("kind") == "data":
+        with_patient = False                      # a film station has no patient to mark it
     patient = {}
     pt = threading.Thread(target=_patient_mark, args=(sim, patient), daemon=True)
     if with_patient:
@@ -868,6 +1027,19 @@ def mark(sim_id, data, emit, ended_early=False, draft="", with_patient=True, exc
                  "harmfully, or the person left unsupported. Count misses as an experienced examiner would: a missed cue and unexplored ICE about "
                  "the same fear are ONE miss, not two; honest uncertainty without much hope is a minor point, not an important miss; and "
                  "knowledge items (fertility, named contacts, staging) never count as misses for the grade.\n")
+    if sim.get("kind") == "data":
+        f = sim.get("film_facts") or {}
+        note += ("This was a DATA INTERPRETATION station: there was no patient; the candidate presented a real film to the examiner and answered "
+                 "the examiner's questions. " + _facts_text(f, FILM_NAME.get(sim.get("film_set"), "film")) + " The film is attached; your own "
+                 "reading of medical images is markedly less reliable than a radiologist's, so the label is the truth and what you see is "
+                 "supporting evidence only: never mark a description down because you can't see it yourself when it fits the label, and credit a "
+                 "reasonable location or feature you can't verify. Mark what was SAID: the order, the description, the interpretation and the "
+                 "plan. Weigh the grade as these stations are marked: most credit for a systematic read and correctly finding and describing "
+                 "the key abnormality; a candidate who reads systematically, describes the abnormality accurately and gives a safe next step "
+                 "can pass without the exact diagnosis (a C, or a D if the description is also weak). Missing the key abnormality entirely is "
+                 "at best a D, and an E or F if the next step would be unsafe. Saying they would check the patient's details and the date "
+                 "counts for the identity item (the film's details were removed). For the consultation mark, read it as the presentation to "
+                 "the examiner: structure, precise terms, concise and confident delivery.\n")
     if sim.get("voice"):
         note += ("The candidate SPOKE this station and their words were transcribed by speech recognition: ignore mistranscribed words, "
                  "missing punctuation and odd spellings (a drug name heard as a near-miss is the drug name, 'scar' for 'scan'), and mark what they evidently said. "
@@ -888,12 +1060,25 @@ def mark(sim_id, data, emit, ended_early=False, draft="", with_patient=True, exc
         title=sim["title"], brief=c.get("brief"), diagnosis=c.get("diagnosis"), script=c.get("script"),
         cue=c.get("cue"), scheme=json.dumps(scheme), critical=json.dumps(critical),
         cscale=", ".join(f"{i + 1} {s}" for i, s in enumerate(CONSULTATION_SCALE)),
-        consultation="; ".join(CONSULTATION), transcript=_transcript(sim), note=note)
-    try:
-        out = ask(sim["model"], MARK_SYSTEM, mark_prompt, on_text=_streaming_fields(["grade", "verdict"], emit),
-                  effort="medium", schema=MARK_SCHEMA)
-    except (ValueError, RuntimeError):     # once more, quietly
-        out = ask(sim["model"], MARK_SYSTEM, mark_prompt, effort="medium", schema=MARK_SCHEMA)
+        consultation="; ".join(DATA_PRESENTATION if sim.get("kind") == "data" else CONSULTATION), transcript=_transcript(sim), note=note)
+    out = None
+    if sim.get("kind") == "data" and FILMS.get(sim_id):
+        # the marker sees the film too (weighed below the label): a one-turn Claude with the image, JSON asked for in words
+        live = None
+        try:
+            live = Live(sim["model"], MARK_SYSTEM)
+            out = _json(live.turn(_film_block(sim_id, mark_prompt), _streaming_fields(["grade", "verdict"], emit), timeout=240))
+        except (ValueError, RuntimeError):
+            out = None
+        finally:
+            if live:
+                live.close()
+    if out is None:
+        try:
+            out = ask(sim["model"], MARK_SYSTEM, mark_prompt, on_text=_streaming_fields(["grade", "verdict"], emit),
+                      effort="medium", schema=MARK_SCHEMA)
+        except (ValueError, RuntimeError):     # once more, quietly
+            out = ask(sim["model"], MARK_SYSTEM, mark_prompt, effort="medium", schema=MARK_SCHEMA)
     if with_patient:
         pt.join(120)
     return _finish(sim, data, emit, out, patient)
@@ -901,6 +1086,7 @@ def mark(sim_id, data, emit, ended_early=False, draft="", with_patient=True, exc
 
 def _finish(sim, data, emit, out, patient):
     _close_live(sim.get("id"))
+    FILMS.pop(sim.get("id"), None)
     c = sim["case"]
     # The station score as risr/assess totals it: each item's 0-2 times its weight, plus
     # the consultation domain (1-5) and the patient's mark (1-3). The grade is separate.

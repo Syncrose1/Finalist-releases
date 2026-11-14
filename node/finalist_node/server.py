@@ -20,6 +20,7 @@ Bearer token; the node checks it with Supabase (auth.py) before anything else. P
 """
 import json
 import os
+import random
 import ssl
 
 # A frozen node (PyInstaller, built on Ubuntu in CI) carries its own OpenSSL, which looks for CA certificates where
@@ -905,7 +906,7 @@ class Handler(BaseHTTPRequestHandler):
             if what == "start":
                 x = by_id.get(b.get("id"))
                 if not x or x["kind"] not in KINDS:
-                    raise KeyError("Claude can only run history and communication stations.")
+                    raise KeyError("Claude can only run history, communication, examination and film stations.")
                 # one of you at a time on the owner's Claude: a friend's live share comes first (27 Oct)
                 if w.owner and share_live():
                     raise KeyError("A friend's link is live, so your own Claude stations wait until it ends (or stop sharing).")
@@ -914,7 +915,24 @@ class Handler(BaseHTTPRequestHandler):
                     if "sim" in o:                     # tag the new station with its account before anything else
                         sim.SIMS[o["sim"]]["account"] = w.id
                     emit(o)
-                sim.start(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first, voice=bool(b.get("voice")))
+                if x["kind"] == "data":            # a film station (14 Nov 2026): a vetted film from this node's own dataset
+                    set_name = sim.FILM_SETS.get(x["id"])
+                    if not set_name:
+                        raise KeyError("Claude can run this kind of data station only with a film: chest, abdominal, CT head or MSK.")
+                    if not dfs.may_use(w, CFG, guest=may_use_claude(w)):
+                        raise KeyError("The films on this node aren't shared with your account.")
+                    m = dfs.manifest(set_name) or {}
+                    items = m.get("items") or []
+                    want = (b.get("film") or {}).get("id")
+                    it = next((i for i in items if i["id"] == want), None) or (random.choice(items) if items else None)
+                    if not it:
+                        raise KeyError("This node has no films for that station yet.")
+                    img = dfs.item(CFG, set_name, it["id"])
+                    film = {"set": set_name, "id": it["id"], "mime": img.get("mime", "image/png"), "data": img["data"],
+                            "facts": sim.film_facts(set_name, it, m.get("labels") or {}), "teach": str(b.get("teach") or "")[:3000]}
+                    sim.start_data(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first, film, voice=bool(b.get("voice")))
+                else:
+                    sim.start(model, d, {**x, "vocab": station_vocab(x["id"])}, content().get(x["id"], {}), first, voice=bool(b.get("voice")))
             elif what == "peer":                   # a case to run with friends (10 Nov 2026): one call, nothing live after
                 x = by_id.get(b.get("id"))
                 if not x or x["kind"] not in sim.PEER_KINDS:
