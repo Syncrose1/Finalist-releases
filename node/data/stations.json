@@ -848,6 +848,27 @@
 "**Postnatal depression** (came up 2023): onset within the year after birth; ask about bonding, feeding and sleep beyond the baby's, and **thoughts of harming herself or the baby**. Baby blues (days 3 to 10, settles within 2 weeks) is not depression; confusion, hallucinations or delusions in the first weeks = **postpartum psychosis**, a psychiatric emergency (NICE CG192)",
 "**Anxiety, or a psychiatric history from scratch** (came up 2025): presenting complaint, then past psychiatric history, forensic history, substances, personal history, premorbid personality, and the risk assessment every time"
 ]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"**Ask directly about suicidal ideation and intent**; considerable immediate risk to themselves or others: **urgent referral** to specialist mental health services (NICE NG222 1.2.8–1.2.9)",
+"After self-harm: **establish the means** and discuss removing it; a psychosocial assessment by a mental health professional as soon as possible, not delayed by medical treatment or by alcohol levels (NICE NG225 1.7.1, 1.5.1–1.5.2, 1.5.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"**No risk assessment tools or low/medium/high risk stratification** to predict suicide or decide who gets treatment; a risk formulation within the psychosocial assessment instead (NICE NG225 1.6.1–1.6.4, 1.6.6)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Less severe depression: **no antidepressant first-line** unless that's their informed preference; match treatment to their needs and choice (NICE NG222 1.5.2–1.5.3)",
+"Starting treatment: warn about early **agitation, anxiety and suicidal thoughts**, and **review within 2 to 4 weeks** (NICE NG222 1.2.10, 1.4.3)",
+"After self-harm with ongoing safety concerns: a **safety plan** made together, and **aftercare within 48 hours** (NICE NG225 1.11.7, 1.10.2)"
+]
 }
 ],
 "pairs": {
@@ -1089,6 +1110,20 @@
 "items": [
 "**HIV seroconversion** (came up 2025, as a sore throat after a fever): 2 to 6 weeks after exposure, a flu-like illness: **fever, sore throat, rash, swollen glands**, mouth ulcers. Take the exposure history (partners, condoms, PrEP, needles), test with a 4th-generation HIV test, and PEP if the exposure was within 72 hours (BASHH)"
 ]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Suspected chlamydia: **NAAT**; in women a **vulvo-vaginal swab** is the sample of choice (CKS Chlamydia, uncomplicated genital)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Chlamydia: **doxycycline 100 mg twice daily for 7 days** (not in pregnancy or breastfeeding); screen for other STIs and arrange **partner notification**; no sex until they and their partners have finished treatment (CKS Chlamydia, uncomplicated genital)",
+"Refer to **GUM** urgently if first-line treatment fails, or if PID is suspected (CKS Chlamydia, uncomplicated genital)",
+"Aged 13 to 15 with gonorrhoea, chlamydia, syphilis, genital herpes, hepatitis C, HIV or trichomonas: **consider sexual abuse** unless there's clear evidence otherwise (NICE CG89 1.1.28)"
+]
 }
 ],
 "pairs": {
@@ -1154,6 +1189,21 @@
 "**Crying or vomiting baby** (came up repeatedly): feeding (amount, frequency, technique), the vomit (**green = bilious = obstruction**; projectile at 2 to 8 weeks = pyloric stenosis), stools, wet nappies, weight on the red book, fever, and how the parent is coping",
 "**ADHD or autism, from a parent** (came up 2023): what worries them, since when (before 12 for ADHD), at home and at school (reports from both), development, sleep, family history; their support",
 "**Abdominal pain, collateral from a parent** (came up 2025): where, how long, vomiting, bowels (constipation is common), urine, fever, school and home (stress, bullying, safeguarding); see an older child alone (HEADSSS)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"Concern about growth: **weigh**, measure length (under 2) or height, and **plot on the UK-WHO charts** with earlier measurements (NICE NG75 1.2.2)",
+"Worry thresholds: a fall across **1 or more weight centile spaces** if born below the 9th centile, **2 or more** if born between the 9th and 91st, **3 or more** if above the 91st (NICE NG75 1.2.1)",
+"Short for the family: more than **2 centile spaces below the mid-parental centile** suggests undernutrition or a growth disorder (NICE NG75 1.2.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Infants who lose **over 10% of birth weight** early, or aren't back to it by **3 weeks**: assess, support feeding, and consider paediatric referral (NICE NG75 1.1.2–1.1.4)",
+"Keep **safeguarding** in mind: for example, bruising in the shape of a hand, ligature, stick, teeth mark, grip or implement is a reason to suspect maltreatment (NICE CG89 1.1.1)"
 ]
 }
 ],
@@ -1450,6 +1500,38 @@
 "PMH (hypertension, diabetes, clotting); drugs (aspirin, folic acid, anything teratogenic) · allergies",
 "Social: smoking, alcohol, **drugs (cocaine)**, support, and **domestic abuse: ask when she is alone** (abdominal trauma causes abruption)",
 "ICE: what she is most worried about (usually the baby)"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Major or massive bleeding (over 50 mL, or shock): resuscitate the mother first; the **fetal heart** is checked once she is stable or resuscitation has begun (RCOG GTG63)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"Possible **placenta praevia** (a low placenta on a previous scan, a high presenting part, painless bleeding): **no digital vaginal examination** until an ultrasound has excluded it (RCOG GTG63)",
+"**CTG** to assess the fetal heart and guide the mode of delivery (RCOG GTG63)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"Major or massive bleeding: **FBC, coagulation screen, 4 units cross-matched**, U&Es and LFTs; the first haemoglobin may not reflect the loss (RCOG GTG63)",
+"RhD-negative: a **Kleihauer test** to size the fetomaternal haemorrhage and the anti-D dose (RCOG GTG63)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"**Ultrasound** to confirm or exclude placenta praevia if the placental site isn't known; it is poor at showing an abruption (RCOG GTG63)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"24+0 to 34+6 weeks and at risk of preterm birth: a single course of **antenatal corticosteroids** (RCOG GTG63)"
 ]
 }
 ],
@@ -1982,6 +2064,29 @@
 "items": [
 "**Cancer back pain** (came up 2024): a cancer history (breast, lung, prostate, kidney, thyroid, myeloma), **night pain, thoracic pain**, weight loss, and any weakness, numbness or bladder change. Spinal metastases without neurology: MRI within a week; **with neurological symptoms (MSCC): MRI within 24 hours** and dexamethasone (NICE NG234)"
 ]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Suspected **cauda equina**, deteriorating cord signs or spinal infection: emergency referral to the spinal surgery service, usually through the emergency department for an emergency MRI (CKS Sciatica)",
+"Neurological symptoms or signs of **spinal cord compression** in cancer: **dexamethasone 16 mg** as soon as possible (NICE NG234 1.8.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Suspected **MSCC**: MRI as soon as possible, always within 24 hours; suspected spinal metastases without cord compression: MRI within a week (NICE NG234 1.5.2–1.5.3)",
+"Mechanical low back pain: **no routine imaging** outside specialist settings, and only when it would change management (NICE NG59 1.1.4, 1.1.6)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"**Risk-stratify** each new episode, for example with the STarT Back tool, to match the intensity of support (NICE NG59 1.1.2–1.1.3)",
+"**Self-management advice** and a **group exercise programme**; help them back to work and normal activities (NICE NG59 1.2.1–1.2.2, 1.2.15)",
+"**Oral NSAIDs** for low back pain, weighing gastrointestinal, liver and cardio-renal risk, with gastroprotection (NICE NG59 1.2.22–1.2.23); **no opioids** for chronic sciatica (NICE NG59 1.2.17)",
+"Not offered: acupuncture, therapeutic ultrasound or PENS (NICE NG59 1.2.8–1.2.10)"
+]
 }
 ],
 "pairs": {
@@ -2289,6 +2394,44 @@
 "items": [
 "**Menopause symptoms** (came up 2024, as \"difficulty sleeping, forgetful\"): hot flushes and sweats, sleep, mood, memory and concentration, vaginal dryness and sex, urinary symptoms; last period. Diagnosed **without tests at 45 or over** (perimenopause: new vasomotor symptoms with a changed cycle; menopause: 12 months without a period); FSH only at 40 to 45, or under 40 (NICE NG23). Then the HRT conversation: VTE, breast cancer, stroke",
 "**Bloating** (came up 2024): persistent or frequent (more than 12 times a month) bloating, early satiety, pelvic pain, urinary urgency = **ovarian cancer** until tested. At 40 or over: CA125 with **age-based thresholds** (35 at 40 to 49, 31 at 50 to 59, 24 at 60 to 69, 25 at 70 to 79, 31 at 80+) then urgent ultrasound; under 40: straight to urgent ultrasound. Ascites or a mass: suspected cancer referral (NICE NG12, 2026)"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Pregnant (or could be) and haemodynamically unstable, or with worrying pain or bleeding: **straight to A&E** (NICE NG126 1.4.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Pregnancy test** in every woman who could be pregnant (NICE NG126 1.4.5); positive with pain or tenderness: **refer immediately** to the early pregnancy assessment service (NICE NG126 1.4.7)",
+"**Examine** before any investigation or LNG-IUS fitting (NICE NG88 1.2.5)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"Heavy menstrual bleeding: a **full blood count** for everyone, alongside treatment; **coagulation tests** (von Willebrand's) if heavy since menarche with a suggestive personal or family history; **no thyroid tests** without other thyroid features (NICE NG88 1.2.6–1.2.7, 1.2.10)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"**Pelvic ultrasound** if the uterus is palpable abdominally, a mass is suspected, or the examination is inconclusive (NICE NG88 1.3.12)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"History suggesting fibroids, polyps or endometrial pathology (persistent intermenstrual bleeding, risk factors): **outpatient hysteroscopy**, with an **endometrial biopsy** if high risk; never a blind biopsy (NICE NG88 1.3.4, 1.3.10–1.3.11)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Aged 55+ with unexplained post-menopausal bleeding not due to HRT: **suspected cancer pathway** for endometrial cancer (NICE NG12 1.5.12)",
+"Heavy menstrual bleeding with no pathology, small fibroids under 3 cm or adenomyosis: consider an **LNG-IUS** first (NICE NG88 1.5.2)"
 ]
 }
 ],
@@ -2820,6 +2963,27 @@
 "Pint of 5% lager — ≈ 2.8 units",
 "750 mL bottle of 13% wine — ≈ 9.75 units",
 "70 cL bottle of 40% spirit — 28 units"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Dependent and not being admitted: **don't stop suddenly** (it can cause severe withdrawal); give the local alcohol service's details (NICE CG100 1.1.1.4)",
+"Acute withdrawal: a **benzodiazepine** or carbamazepine; withdrawal seizures: a quick-acting benzodiazepine such as lorazepam (NICE CG100 1.1.3.1, 1.1.5.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Score it with named tools: **AUDIT** for identification, SADQ or LDQ for dependence, **CIWA-Ar** for withdrawal (NICE CG115 1.2.1.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"**Thiamine**: oral prophylaxis for harmful or dependent drinkers who are malnourished, have decompensated liver disease, or are in or about to undergo withdrawal; higher doses for suspected Wernicke's (NICE CG100 1.2.1.1–1.2.1.2)",
+"Over 15 units a day or AUDIT 20+: consider **assisted withdrawal**, usually community-based (NICE CG115 1.3.4.1–1.3.4.2); AUDIT over 15 in specialist services: a comprehensive assessment (NICE CG115 1.2.2.6)",
+"Smoking: **ask every time**, advise stopping in one go, and offer stop-smoking support or **refer** (NICE NG209 1.11.1–1.11.2, 1.13.1); NRT, varenicline, cytisinicline, bupropion and e-cigarettes should all be available (NICE NG209 1.12.2)"
 ]
 }
 ],
@@ -4063,6 +4227,19 @@
 "items": [
 "**Cystic fibrosis, counselling a parent** (came up 2023 and often before): autosomal recessive; two carrier parents have a **1 in 4** chance of an affected child each pregnancy (1 in 2 carrier); found on the newborn blood spot, confirmed with a sweat test; what it means day to day, and testing for siblings and future pregnancies"
 ]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Family history of breast cancer: record each relative's **age at diagnosis**, the tumour sites, multiple or bilateral cancers and Jewish ancestry; take a **third-degree** history in secondary care (NICE CG164 1.1.9, 1.1.11)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"One first-degree or second-degree relative with breast cancer over 40: **primary care** with written information (NICE CG164 1.3.1–1.3.2)",
+"A first-degree female relative under 40, or a male relative at any age, and the other listed criteria: **refer to secondary care**; a known BRCA1, BRCA2 or TP53 mutation in the family: **straight to clinical genetics** (NICE CG164 1.3.3, 1.3.6)"
+]
 }
 ],
 "pairs": {
@@ -4887,6 +5064,37 @@
 "items": [
 "**Nephrotic syndrome** (came up 2025, with U&E and a urine dip): **frothy urine**, swelling (puffy eyes in the morning, ankles later), weight gain, recent infection, NSAIDs, autoimmune symptoms, diabetes. The triad: heavy proteinuria, low albumin, oedema; ask about clots (VTE risk) and infections"
 ]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"**Acute urinary retention**: refer urgently for catheterisation and to find the cause (CKS LUTS in men)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Urine dipstick** for blood, glucose, protein, leucocytes and nitrites; a **frequency-volume chart** for at least 3 days if the symptoms are bothersome (CKS LUTS in men)",
+"**Digital rectal examination** with a PSA in men with LUTS, erectile dysfunction or visible haematuria; a prostate that feels malignant goes on the suspected cancer pathway (NICE NG12 1.6.1–1.6.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"**PSA** (above the age threshold: suspected cancer pathway), and **creatinine and eGFR** when clinically indicated (NICE NG12 1.6.3; CKS LUTS in men)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Aged 45+ with unexplained visible haematuria, or haematuria that persists after treating a UTI: **suspected cancer pathway** for bladder and kidney cancer; 60+ with unexplained non-visible haematuria plus dysuria or a raised white count, the same (NICE NG12 1.6.4, 1.6.6)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Moderate to severe LUTS (IPSS 8 or more): an **alpha-blocker** (tamsulosin, alfuzosin, doxazosin); a **5-alpha reductase inhibitor** if the prostate is over 30 g or PSA over 1.4 ng/mL with a high risk of progression; an **antimuscarinic** for overactive bladder symptoms (CKS LUTS in men)"
+]
 }
 ],
 "pairs": {
@@ -5086,6 +5294,35 @@
 "items": [
 "Mechanism; able to weight-bear (Ottawa rules); numbness or weakness"
 ]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"Suspected RA with synovitis: **rheumatoid factor**, then **anti-CCP** if RF is negative (NICE NG100 1.1.2–1.1.3)",
+"Suspected gout: **serum urate** (360 micromol/L or more supports it; if lower during a flare and gout is still likely, repeat it at least 2 weeks after) (NICE NG219 1.1.7)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Suspected RA with persistent synovitis: **X-ray the hands and feet** (NICE NG100 1.1.4)",
+"Osteoarthritis: a **clinical diagnosis** at 45+ with activity-related pain and no or under 30 minutes of morning stiffness; no routine imaging (NICE NG226 1.1.1–1.1.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Gout still uncertain: **joint aspiration and synovial fluid microscopy**; if that isn't possible, X-ray, ultrasound or dual-energy CT (NICE NG219 1.1.8–1.1.9)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Persistent synovitis: **refer**, urgently if the small joints of hands or feet, more than one joint, or 3 months or more before seeking help, even with normal bloods (NICE NG100 1.1.1)",
+"New active RA: **methotrexate**, leflunomide or sulfasalazine as soon as possible, ideally within 3 months of persistent symptoms (NICE NG100 1.4.1)",
+"Gout flare: an **NSAID** (with a PPI), **colchicine** or a short course of **oral steroid** (NICE NG219 1.3.1–1.3.2)",
+"Osteoarthritis: **therapeutic exercise** and weight loss if overweight, **topical NSAIDs**; refer for joint replacement if it's seriously affecting life despite non-surgical care (NICE NG226 1.3.1, 1.3.5, 1.4.2–1.4.3, 1.6.1)"
+]
 }
 ],
 "pairs": {
@@ -5204,6 +5441,27 @@
 "title": "Context",
 "items": [
 "Recent travel, contacts, antibiotics (C. diff), diet, alcohol; systemic (fever); thyroid symptoms; medications"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"**FBC, ESR (or plasma viscosity), CRP** and **coeliac antibodies** (EMA or tTG) to exclude other diagnoses when it looks like IBS (NICE CG61 1.1.2.1)",
+"Coeliac serology is only accurate while they're **eating gluten**: no gluten-free diet until it's confirmed (NICE NG20 1.1.1, 1.1.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"**Quantitative FIT** for a change in bowel habit, iron-deficiency anaemia, an abdominal mass, 40+ with unexplained weight loss and abdominal pain, or under 50 with rectal bleeding plus pain or weight loss (NICE NG12 1.3.1)",
+"FIT of **10 micrograms Hb per gram** or more: **suspected cancer pathway**; below that but strong ongoing concern (a mass, say): don't delay referral (NICE NG12 1.3.2–1.3.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Possible IBS with red flags (signs of cancer, or inflammatory markers suggesting IBD): **refer to secondary care** (NICE CG61 1.1.1.2)",
+"Meets the IBS criteria: no need for colonoscopy, ultrasound, thyroid tests, stool ova and parasites or a breath test to confirm it (NICE CG61 1.1.2.2)"
 ]
 }
 ],
@@ -6960,6 +7218,13 @@
 "items": [
 "Patient, GP record or Summary Care Record, community pharmacy, their own medicines; reconcile within 24 hours of admission"
 ]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"On admission: list every medicine (prescribed, over the counter, complementary) and complete **medicines reconciliation within 24 hours**, sooner if clinically needed (NICE NG5 1.3.1)",
+"After discharge, in primary care: reconcile before any new prescription is issued, within **1 week** of the practice getting the information (NICE NG5 1.3.3)"
+]
 }
 ],
 "pairs": {
@@ -7270,6 +7535,26 @@
 "title": "Risks",
 "items": [
 "Smoking, diabetes, hypertension, cholesterol, family history, other vascular disease (MI, stroke)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Examine the legs and feet** for critical limb ischaemia and measure the **ankle brachial pressure index**, resting and supine (NICE CG147 1.3.2–1.3.3); a normal or raised ABPI doesn't exclude PAD in diabetes (NICE CG147 1.3.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Revascularisation being considered: **duplex ultrasound** first; then **contrast MR angiography**, or CT angiography if MRA isn't possible (NICE CG147 1.4.1–1.4.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"**Secondary prevention** of cardiovascular disease: stopping smoking, diet, weight and exercise, statins, and control of diabetes and blood pressure (NICE CG147 1.2.1)",
+"Intermittent claudication: a **supervised exercise programme**, 2 hours a week for 3 months, to the point of maximal pain (NICE CG147 1.5.1–1.5.2); **naftidrofuryl** only if exercise hasn't helped and they don't want revascularisation (NICE CG147 1.5.9)",
+"Critical limb ischaemia: assessment by the **vascular MDT**, then angioplasty or bypass; no major amputation until revascularisation has been considered (NICE CG147 1.6.1–1.6.2, 1.6.11)"
 ]
 }
 ],
@@ -7780,6 +8065,13 @@
 "Aged 30+ with an unexplained breast lump — Suspected cancer pathway",
 "Aged 50+ with one-sided nipple discharge, retraction or other concerning change — Suspected cancer pathway"
 ]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Aged 30+ with an unexplained breast lump, or 50+ with discharge, retraction or other worrying change in one nipple: **suspected cancer pathway** (NICE NG12 1.4.1)",
+"Skin changes suggesting cancer, or 30+ with an unexplained axillary lump: consider the **suspected cancer pathway** (NICE NG12 1.4.2); under 30 with an unexplained lump: consider a **non-urgent referral** (NICE NG12 1.4.3)"
+]
 }
 ],
 "pairs": {
@@ -7840,6 +8132,28 @@
 "title": "Background",
 "items": [
 "Autoimmune disease; **drugs** (amiodarone, lithium, levothyroxine, carbimazole); family history; pregnancy or recent delivery; neck radiation"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"**TSH** first; if high, free T4 on the same sample; if low, free T4 and T3 (NICE NG145 1.2.8)",
+"High TSH: **TPO antibodies** once (NICE NG145 1.3.1); thyrotoxicosis: **TSH receptor antibodies** to confirm Graves', with technetium scanning if they're negative (NICE NG145 1.6.1)",
+"Before antithyroid drugs: **FBC and LFTs** (NICE NG145 1.6.21)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"A palpable goitre or nodule with normal thyroid function and possible cancer: **ultrasound**, graded with an established system, then **ultrasound-guided FNA** if it qualifies (NICE NG145 1.9.1, 1.9.3, 1.9.5); thyrotoxicosis: ultrasound only for a palpable nodule (NICE NG145 1.6.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Primary hypothyroidism: **levothyroxine**, 1.6 micrograms/kg/day under 65 without heart disease, 25–50 micrograms and titrate if 65+ or cardiac (NICE NG145 1.3.3, 1.3.6–1.3.7)",
+"Graves': **radioactive iodine** first-line unless antithyroid drugs are likely to bring remission or it's unsuitable; otherwise **carbimazole** for 12–18 months (NICE NG145 1.6.10–1.6.12)",
+"Agranulocytosis on an antithyroid drug: **stop and never restart** it (NICE NG145 1.6.26)"
 ]
 }
 ],
@@ -7950,6 +8264,14 @@
 "Function: washing, dressing, cooking, shopping; mobility aids; carers or package of care",
 "Driving; finances; dependants; support network",
 "Smoking, alcohol, recreational drugs; diet, exercise; travel; pets"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Adults with social care needs at risk of admission: a **care plan with contingency planning**, used if they're admitted (NICE NG27 1.2.1)",
+"On admission: tell the person why they're in, how long they might stay and what care to expect, and give the admitting team the advance care plan and other relevant information (NICE NG27 1.3.3, 1.3.5)",
+"Falls risk found in the history: a **comprehensive falls assessment** (NICE NG249 1.2.1)"
 ]
 }
 ],
