@@ -815,7 +815,8 @@
 "fainting",
 "dizzy",
 "syncope",
-"collapse"
+"collapse",
+"positional hypotension"
 ]
 },
 {
@@ -861,7 +862,8 @@
 "aliases": [
 "being sick",
 "throwing up",
-"bilious vomiting"
+"bilious vomiting",
+"vomitting"
 ]
 },
 {
@@ -871,7 +873,8 @@
 "not opened bowels",
 "can't pass stool or wind",
 "no flatus",
-"absouilte coniisptroons"
+"absouilte coniisptroons",
+"inability to pass wind"
 ]
 },
 {
@@ -879,7 +882,8 @@
 "aliases": [
 "bloating",
 "swollen tummy",
-"distended"
+"distended",
+"abdominal distensino"
 ]
 },
 {
@@ -896,7 +900,8 @@
 "adhesions",
 "hernia",
 "previous operations",
-"abdominal surgery"
+"abdominal surgery",
+"recent surgery"
 ]
 }
 ],
@@ -967,6 +972,41 @@
 ]
 },
 {
+"name": "Testicular torsion",
+"items": [
+{
+"answer": "Testicular pain or swelling",
+"aliases": [
+"testicular pain",
+"pain in the testicles",
+"scrotal pain",
+"swollen testicle",
+"testicles",
+"scrotum",
+"torsion"
+]
+},
+{
+"answer": "Sudden onset",
+"aliases": [
+"came on suddenly",
+"sudden",
+"abrupt onset"
+]
+},
+{
+"answer": "Previous episodes that settled",
+"aliases": [
+"had this before",
+"previous episodes",
+"came and went",
+"intermittent torsion"
+]
+}
+],
+"standard": true
+},
+{
 "name": "Associated symptoms",
 "items": [
 {
@@ -974,14 +1014,16 @@
 "aliases": [
 "feeling sick",
 "vomited",
-"N&V"
+"N&V",
+"nv"
 ]
 },
 {
 "answer": "Bowel habit change",
 "aliases": [
 "diarrhoea or constipation",
-"change in stool pattern"
+"change in stool pattern",
+"constripation"
 ]
 },
 {
@@ -1043,7 +1085,8 @@
 "alcohol history",
 "units per week",
 "heavy drinking",
-"alcohol"
+"alcohol",
+"alcohol histry"
 ]
 },
 {
@@ -1870,7 +1913,8 @@
 "answer": "Tongue biting",
 "aliases": [
 "bit tongue",
-"lateral tongue bite"
+"lateral tongue bite",
+"trongue vitinbg incontience"
 ]
 },
 {
@@ -1878,7 +1922,9 @@
 "aliases": [
 "wet himself",
 "wet herself",
-"lost bladder control"
+"lost bladder control",
+"trongue vitinbg incontience",
+"urine"
 ]
 },
 {
@@ -1894,7 +1940,9 @@
 "aliases": [
 "confused afterwards",
 "post-ictal",
-"drowsy after"
+"drowsy after",
+"postdrome phase time",
+"postdrome"
 ]
 },
 {

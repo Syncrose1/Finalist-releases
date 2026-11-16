@@ -786,6 +786,7 @@
 },
 "tips": [
 "Say RIPE out loud.",
+"Describe, then name: \"a patchy opacity in the right lower zone\", not \"right lower lobe consolidation\". A plain film shows zones, not lobes, and the examiner wants what you see before what you think it is.",
 "Tension pneumothorax is a clinical diagnosis: don't wait for the film."
 ]
 },
@@ -890,7 +891,8 @@
 "**Perforation or peritonitis**: Worse on moving or coughing, so you lie still?",
 "**Bowel obstruction**: Vomiting? Have your bowels or wind stopped? Swollen tummy, colicky pain? Previous surgery or a hernia?",
 "**Upper GI bleed**: Vomited blood or coffee grounds? Black, tarry stools? On NSAIDs, steroids or blood thinners? Alcohol or liver disease?",
-"**Mesenteric ischaemia**: Pain far worse than it looks, after meals? An irregular heartbeat (AF)?"
+"**Mesenteric ischaemia**: Pain far worse than it looks, after meals? An irregular heartbeat (AF)?",
+"**Testicular torsion**: Any pain or swelling in your testicles? Did it come on suddenly? Had pain like this before that settled?"
 ]
 },
 {
@@ -899,6 +901,7 @@
 "GI: nausea/vomiting, bowel habit change, blood/melaena, appetite/weight",
 "Urinary: dysuria, frequency, haematuria",
 "Gynae: LMP, discharge, pregnancy possibility (β-hCG)",
+"Males: testicular pain or swelling (torsion can present as lower abdominal pain)",
 "Systemic: fever, jaundice"
 ]
 },
@@ -3160,9 +3163,9 @@
 {
 "title": "Read",
 "items": [
-"**Obstructive**: FEV₁/FVC <0.7 (asthma, COPD, bronchiectasis)",
-"**Restrictive**: FEV₁/FVC normal or high, FVC <80% predicted (ILD, neuromuscular, chest wall, obesity)",
-"Reversibility (after bronchodilator) supports asthma",
+"**Obstructive**: FEV₁/FVC <0.7 (NICE, for COPD), or below its lower limit of normal on the lab report (GLI Global, the UK standard since 2025): asthma, COPD, bronchiectasis",
+"**Restrictive**: FEV₁/FVC normal or high, FVC below its lower limit of normal (ILD, neuromuscular, chest wall, obesity); confirm with a low TLC",
+"**Reversibility**: FEV₁ up 12% and 200 mL, or by 10% of predicted, diagnoses asthma with the history (BTS/NICE/SIGN NG245)",
 "TLCO (gas transfer): low in emphysema and ILD"
 ]
 }
@@ -3187,8 +3190,8 @@
 "Very severe"
 ],
 [
-"FeNO ≥50 ppb in adults",
-"Supports asthma (BTS/NICE/SIGN 2024)"
+"FeNO ≥50 ppb in adults (≥35 in children)",
+"Diagnoses asthma with the history (BTS/NICE/SIGN NG245)"
 ]
 ]
 },
@@ -5240,8 +5243,10 @@
 {
 "title": "Plotting",
 "items": [
-"Right chart for sex; dot at the exact age; **correct for gestation** if born before 37 weeks, until age 2",
-"Weight, length or height, head circumference; mid-parental height for context"
+"Right chart for sex; dot at the exact age; **correct for gestation** if born before 37 weeks: plot at the actual age, draw a line back the weeks born early, and mark the corrected point with an arrow, until at least 1 year (RCPCH UK-WHO chart); under 32 weeks, use the low birthweight chart",
+"**Centile terminology**: within a quarter of a centile space of a line, the child is on it (\"on the 25th\"); otherwise between two (\"between the 9th and 25th\") (RCPCH)",
+"Length until 2 years, height from 2 (a child is usually slightly shorter standing than lying)",
+"Weight, length or height, head circumference; mid-parental height for context (more than 2 centile spaces below the mid-parental centile: think undernutrition or a growth disorder, NICE NG75)"
 ]
 }
 ],
@@ -5259,6 +5264,10 @@
 [
 "Fall across 3+ centile spaces",
 "If birthweight was above the 91st"
+],
+[
+"Current weight below the 2nd centile",
+"Whatever the birthweight"
 ],
 [
 "Newborn weight loss ≥10%",
@@ -7161,29 +7170,46 @@
 "title": "Limit ages (refer)",
 "rows": [
 [
-"No social smile",
+"No responsive smile",
 "by 8 weeks"
 ],
 [
-"Not sitting",
-"by 9 months"
+"Not fixing and following",
+"by 3 months"
+],
+[
+"Not sitting unsupported",
+"by 9 months (NICE NG62 lists not sitting by 8 months, corrected, as the commonest delayed milestone in cerebral palsy)"
+],
+[
+"No pincer grip",
+"by 12 months"
 ],
 [
 "Not walking",
 "by 18 months"
 ],
 [
-"No words",
+"No clear words",
 "by 18 months"
 ],
 [
+"Not joining two words",
+"by 2 years"
+],
+[
 "Hand preference",
-"before 12 months (possible hemiplegia)"
+"before 12 months: possible hemiplegia (NICE NG62)"
+],
+[
+"Any loss of skills",
+"at any age: urgent"
 ]
 ]
 },
 "tips": [
-"The CSE child-development paper (Izzy) tests exactly this — practise it."
+"The CSE child-development paper (Izzy) tests exactly this — practise it.",
+"Limit ages: Lissauer and Clayden, Illustrated Textbook of Paediatrics, cross-checked with the Children’s Health Queensland Red Flags guide; motor referral for cerebral palsy: NICE NG62. Correct for prematurity until 2 years (NICE NG72)."
 ]
 },
 "breast-hx": {

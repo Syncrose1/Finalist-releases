@@ -226,6 +226,7 @@ Return exactly this JSON:
 }}
 If the task is to give the patient information (breaking news, explaining results, a diagnosis, a procedure or a medicine), the brief must hand the candidate everything they are expected to give, exactly as a real door note does: the result or report itself, with its figures or wording (e.g. "The biopsy report: moderately differentiated adenocarcinoma of the sigmoid colon. The staging CT shows two liver metastases."), the diagnosis, and the plan already agreed (the MDT date, the drug and dose, the follow-up). Never write a brief that says "discuss the results" without giving the results: the candidate can't invent them, and the patient's script must match them.
 The mark scheme must start with these core items, exactly as written, in this order, then add 10-16 items specific to this case (the key questions or explanations, the red flags, the reasoning). Weights 1-3 (a weight multiplies the item's 0/1/2). In a history station weight by clinical importance, with communication items 1-2 at most, since ICE already has its own core item. In a COMMUNICATION station (breaking news, explaining, consent, an angry or worried person) the weighting is the other way round, as in real UK finals: the process carries the station, so the communication steps (setting, what they know and want to know, the warning shot, saying it plainly, silence, responding to emotion and the cue, honest framing without false promises, chunk-and-check, a shared plan and safety net) are weighted 2-3; specific clinical knowledge (exact prognosis figures, named tests, named side effects or referrals) is weight 1 each, at most three such items, domain 'reasoning', and the rest of the knowledge belongs in the examiner's questions. Write an honesty item as communication ('gives an honest, hopeful picture without promising'), not as a fact to recite. Keep it to what a well-prepared final-year student could cover in 9 spoken minutes.
+Every case-specific item must be something WHAT IT TESTS above teaches (its questions, killers, associated symptoms, differentials, management): the student revises from that card, so a question it never mentions can't be fairly marked (16 Nov 2026, Raahat: marked on testicular pain the card didn't teach). If the case genuinely needs one it doesn't teach, weight it 1.
 In a HISTORY station (16 Nov 2026, from how UK history stations are marked): the case-specific items are the history that changes the diagnosis or the urgency, and the reasoning; at most two of them communication, and none for a practical side-plot (arranging childcare, telling work, being honest about the length of stay): acknowledging the patient's situation is part of the core rapport and ICE items. Never write an item that needs the candidate to carry out or detail an arrangement in the room ('arranges analgesia', 'offers practical help'): in a station a stated plan ('I'll get you something for the pain') is the whole of it.
 CORE:
 {core}"""
@@ -947,7 +948,7 @@ TRANSCRIPT:
   "concern": "Anything dangerous or unprofessional outside the checklist that would worry you, or empty",
   "domains": [{{"key": "data|reasoning|communication|professionalism|safety", "comment": "one line"}}],
   "missed": ["what in the script they never found out, briefly"],
-  "next_time": ["the three things that would most raise the mark, concrete"],
+  "next_time": ["exactly three takeaways, the genuinely most important for this student, each one short concrete sentence (under 20 words) that says what to do, not what went wrong"],
   "model_lines": ["2-3 lines a strong candidate might have said at the key moments"]
 }}"""
 
@@ -1165,9 +1166,13 @@ def run(data, name):
 
 # ---- the station review: your evaluation across runs, and what gets an A -------------------------
 
+# 16 Nov 2026, Raahat: "what gets an A here" was a block of text nobody read. In its place the examiner keeps a checklist,
+# "What you can do better": the few things that matter most for this student on this station, carried from run to run,
+# reworded as they change, ticked off once a run shows them fixed, and added to when something new recurs.
+BETTER_OPEN = 3
 REVIEW_SCHEMA = _obj({
     "evaluation": _obj({"trend": _str, "strengths": _strs, "weaknesses": _strs, "improve": _strs}),
-    "a_grade": _obj({"summary": _str, "must": _strs, "polish": _strs, "timing": _str, "lines": _strs}),
+    "better": {"type": "array", "items": _obj({"id": _str, "text": _str, "done": {"type": "boolean"}})},
 })
 
 REVIEW_SYSTEM = """You are a senior OSCE examiner and coach for Southampton's final-year CPSA (UK finals: 2 minutes reading, 9 minutes in the station, a whistle at 8; marked on a weighted checklist, consultation skills and an A-F grade where D is the just-acceptable day-one FY1 and A is excellent). You write short, specific, practical coaching for one student on one station. Plain British English, no padding, no generic advice that would fit any station. Address the student as "you".
@@ -1180,12 +1185,13 @@ THE STATION'S LEARNING POINTS:
 {runs}
 Return:
 - "evaluation": {evaluation}
-- "a_grade": what separates an A from a C on THIS station, for a student who already knows the basics:
-  "summary": one or two sentences;
-  "must": the 5-8 things an A candidate always does here (the specific questions, explanations, red flags and reasoning, in the order they'd come){tailor};
-  "polish": 3-5 things that lift a pass to an A (structure, signposting, cue handling, the presentation to the examiner);
-  "timing": how an A candidate spends {time} here, in one line (e.g. "0-1 opening, 1-4 the complaint and killers, ...");
-  "lines": 2-4 short lines an A candidate might actually say at the key moments."""
+- "better": "What you can do better", the checklist you keep for this student on this station. Its current state:
+{better}
+  Return the whole list. Keep each item's id. Tick an item ("done": true) once the latest runs show it fixed; reword one when what's
+  wrong has changed; drop one that turns out not to matter. Add an item (id "") only for something genuinely important that recurs
+  or cost real marks, judged by today's rules and what the station's learning points teach. At most {open} items not done, the most
+  important first; each one short, concrete sentence (under 20 words) saying what to do. Keep done items (at most 6, newest first)
+  so the student sees progress. With no runs, return an empty list."""
 
 
 def _runs_digest(data, station_id, limit=6):
@@ -1224,16 +1230,41 @@ def review(model, data, station, entry):
         when = f"the paper's {station.get('minutes') or 30} minutes (a written CSE paper: video or notes once, then the answer by hand)"
     else:
         when = "the 9 minutes"
+    d = data / "sims" / "review"
+    try:
+        before = json.loads((d / f"{station['id']}.json").read_text()).get("better") or []
+    except (OSError, ValueError):
+        before = []
     out = ask(model, REVIEW_SYSTEM, REVIEW_PROMPT.format(title=station["title"], kind=station["kind"], notes=_notes(entry),
-                                                         runs=runs_text, evaluation=evaluation, tailor=tailor, time=when),
+                                                         runs=runs_text, evaluation=evaluation, time=when, open=BETTER_OPEN,
+                                                         better=json.dumps(before, indent=1) if before else "  (empty: this is its first version)"),
               effort="medium", schema=REVIEW_SCHEMA, timeout=200)
     if not digest:
-        out["evaluation"] = None
+        out["evaluation"], out["better"] = None, []
+    out["better"] = _better(before, out.get("better") or [])
     out.update({"station": station["id"], "runs": len(digest), "at": time.time()})
-    d = data / "sims" / "review"
     d.mkdir(parents=True, exist_ok=True)
     (d / f"{station['id']}.json").write_text(json.dumps(out, indent=1))
     return out
+
+
+def _better(before, after):
+    """The examiner's new checklist, kept honest: ids it knew stay, new items get one, dates are kept, at most
+    BETTER_OPEN open and 6 done."""
+    old, today = {b["id"]: b for b in before if b.get("id")}, date.today().isoformat()
+    out = []
+    for b in after:
+        text = str(b.get("text") or "").strip()
+        if not text:
+            continue
+        prev = old.get(b.get("id") or "")
+        item = {"id": prev["id"] if prev else secrets.token_hex(4), "text": text[:200], "done": bool(b.get("done")),
+                "since": (prev or {}).get("since") or today}
+        if item["done"]:
+            item["done_on"] = (prev or {}).get("done_on") if (prev or {}).get("done") else today
+        out.append(item)
+    open_, done = [b for b in out if not b["done"]][:BETTER_OPEN], [b for b in out if b["done"]][:6]
+    return open_ + done
 
 
 def get_review(data, station_id, shared=None):
@@ -1242,17 +1273,7 @@ def get_review(data, station_id, shared=None):
     if not re.fullmatch(r"[\w-]+", station_id or ""):
         return None
     f = data / "sims" / "review" / f"{station_id}.json"
-    if not f.is_file() and shared is not None:
-        g = shared / "sims" / "review" / f"{station_id}.json"
-        if g.is_file():
-            out = json.loads(g.read_text())
-            a = dict(out.get("a_grade") or {})
-            if out.get("runs", 0):      # written against someone's runs: keep the station, drop the person
-                untag = lambda s: re.sub(r"\s*\(you\b[^)]*\)", "", s)
-                a["must"] = [untag(x) for x in a.get("must") or []]
-            return {**out, "a_grade": a, "evaluation": None, "runs": 0, "stale": bool(runs(data, station_id))}
-        return None
-    if not f.is_file():
+    if not f.is_file():                 # the checklist is about one student: no shared copy (the A guide had one)
         return None
     out = json.loads(f.read_text())
     out["stale"] = station_id and len(runs(data, station_id)) > out.get("runs", 0)
