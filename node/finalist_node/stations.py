@@ -826,6 +826,9 @@ def say(sim_id, text, on_text, event=None, on_role=None, on_map=None, debug=Fals
                 f"Follow this instruction exactly in your next reply, using any tags it asks for, then carry on as before:] {(text or '').strip()[:2000]}")
         sim["debugged"] = True
     if event == "whistle":
+        # the sentence they were finishing as the bell went (16 Nov 2026): said to the patient, then the examiner turns
+        if text and not debug:
+            sim["turns"].append({"who": "you", "text": text.strip()[:4000], "at": time.time()})
         sim["phase"] = "examiner"
     elif text and not debug:
         sim["turns"].append({"who": "you", "text": text.strip()[:4000], "at": time.time()})
