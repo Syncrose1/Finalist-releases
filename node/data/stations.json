@@ -940,6 +940,53 @@
 "Loin-to-groin colic: renal stone",
 "Central→RIF migrating: appendicitis"
 ]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Unwell or shocked: ABCDE, observations, senior help. New abdominal or back pain with collapse: think **ruptured AAA** (NICE NG156 1.1.7); unstable with pain or bleeding in early pregnancy: straight to A&E (NICE NG126 1.4.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Urine pregnancy test** in every woman who could be pregnant, even when the symptoms are non-specific (NICE NG126 1.4.5; CKS Appendicitis)",
+"**Urine dipstick** for a UTI, but up to 40% of appendicitis has leucocytes in the urine (CKS Appendicitis)",
+"Suspected symptomatic or ruptured AAA: **immediate bedside aortic ultrasound**, and discuss at once with the regional vascular service (NICE NG156 1.1.9)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"**FBC and CRP**: WCC over 10 or neutrophils over 75% with CRP over 7 mg/L suggests appendicitis, but normal values don't exclude it (CKS Appendicitis)",
+"**LFTs** for suspected gallstones (NICE CG188 1.1.1); **amylase or lipase**, liver and renal function for pancreatitis (CKS Pancreatitis, acute)",
+"Upper GI bleed: the **Blatchford score** at first assessment (NICE CG141 1.1.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Appendicitis: **ultrasound first** in children and pregnant or breastfeeding women; CT or MRI are the most definitive (CKS Appendicitis)",
+"Gallstones: **abdominal ultrasound** with the LFTs; MRCP if the duct is dilated or the LFTs are abnormal and no duct stones were seen (NICE CG188 1.1.1–1.1.2)",
+"Renal colic: **low-dose non-contrast CT within 24 hours** in adults; ultrasound if pregnant, and first-line in children (NICE NG118 1.1.1–1.1.2)",
+"Positive pregnancy test with pain or tenderness: **refer immediately** to the early pregnancy assessment service for a transvaginal ultrasound (NICE NG126 1.4.7, 1.5.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Upper GI bleed: **endoscopy** straight after resuscitation if unstable, otherwise within 24 hours of admission (NICE CG141 1.3.1–1.3.2)",
+"Suspected **testicular torsion**: emergency admission to urology; an ultrasound must not delay surgery, ideally within 6 hours (CKS Scrotal pain and swelling)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Suspected appendicitis: **emergency surgical admission**; appendicectomy, or IV fluids and antibiotics for selected uncomplicated cases (up to 39% recur within 5 years) (CKS Appendicitis)",
+"Renal colic: an **NSAID** first, IV paracetamol if NSAIDs can't be used, then opioids; no antispasmodics (NICE NG118 1.2.1–1.2.4)",
+"Acute cholecystitis: **early laparoscopic cholecystectomy**, within a week of diagnosis (NICE CG188 1.2.4)",
+"Suspected ruptured AAA accepted for transfer: out of the referring unit **within 30 minutes** of the decision (NICE NG156 1.3.4)"
+]
 }
 ],
 "pairs": {
@@ -5525,6 +5572,49 @@
 "Cardiac: smoking, diabetes, hypertension, cholesterol, family history",
 "VTE: recent surgery/immobility, malignancy, COCP, prior DVT/PE"
 ]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Suspected ACS: start management at once and take an ECG; in pain now, or pain in the last 12 hours with an abnormal or unavailable ECG, is an **emergency** (NICE CG95 1.2.1.7, 1.2.1.12)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**12-lead ECG** as soon as possible: ST elevation or presumed new LBBB, the STEMI pathway; ST depression or deep T inversion, NSTEMI or unstable angina (NICE CG95 1.2.2.1–1.2.2.3)",
+"**Pulse oximetry**: no routine oxygen; offer it if SpO₂ is under 94% and they aren't at risk of hypercapnic failure (NICE CG95 1.2.3.3)",
+"Monitor the pain, pulse, blood pressure, rhythm and saturations until there's a firm diagnosis (NICE CG95 1.2.3.4)",
+"Never use the response to GTN to make the diagnosis (NICE CG95 1.2.1.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"**High-sensitivity troponin** on arrival with the ECG, but only when ACS is suspected (NICE CG95 1.2.4.1, 1.2.5.1)",
+"Suspected PE: the **2-level PE Wells score**; 4 or less, a **D-dimer** (result within 4 hours if possible); low suspicion with other diagnoses feasible, consider PERC (NICE NG158 1.1.16–1.1.17, 1.1.21)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"PE Wells over 4, or a positive D-dimer: **CTPA** immediately; V/Q instead if contrast allergy, severe renal impairment (creatinine clearance under 30 mL/min) or a high radiation risk (NICE NG158 1.1.18, 1.1.21)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"STEMI within 12 hours: **coronary angiography with primary PCI** if it can be done within 120 minutes of when fibrinolysis could be given; otherwise **fibrinolysis** (NICE NG185 1.1.6, 1.1.19)",
+"NSTEMI or unstable angina: a formal risk score such as **GRACE** once aspirin and an antithrombin are given (NICE NG185 1.2.7)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"**Aspirin 300 mg** loading dose as soon as possible unless clearly allergic (NICE CG95 1.2.3.2)",
+"**Pain relief**: GTN, or IV opioids such as morphine, particularly if MI is suspected (NICE CG95 1.2.3.1)",
+"PE confirmed on CTPA or V/Q: **anticoagulation**, or a mechanical intervention if anticoagulation is contraindicated (NICE NG158 1.1.19)"
+]
 }
 ],
 "pairs": {
@@ -5717,6 +5807,49 @@
 "Heart failure: orthopnoea, PND, oedema",
 "PE: sudden onset, pleuritic, VTE risk",
 "Pneumonia: fever, productive cough; anaemia; anxiety"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Unwell: ABCDE, observations, senior help; treat at once if acutely unwell or very symptomatic, and test afterwards (NICE NG245 1.1.5)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"Suspected asthma: **FeNO** or a blood eosinophil count, then spirometry with bronchodilator reversibility or peak flow variability (NICE NG245 1.1.5, 1.2.1)",
+"Suspected COPD: **post-bronchodilator spirometry** to confirm it; an FEV1/FVC under 0.7 without typical symptoms in an older person needs another explanation (NICE NG115 1.1.5–1.1.6)",
+"Suspected PE: the **2-level PE Wells score** (NICE NG158 1.1.17)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"Suspected heart failure: **NT-proBNP**; under 400 ng/L makes it less likely (NICE NG106 1.2.2, 1.2.5)",
+"PE Wells 4 or less: **D-dimer**, result within 4 hours if possible (NICE NG158 1.1.21)",
+"COPD at diagnosis: a **full blood count** with the chest X-ray (NICE NG115 1.1.15)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"**Chest X-ray**: pneumonia diagnosed (with the X-ray) within 4 hours of arriving at hospital (NICE NG250 1.4.1); part of the first COPD work-up (NICE NG115 1.1.15)",
+"Aged 40+ with 2 unexplained symptoms (cough, fatigue, breathlessness, chest pain, weight or appetite loss), or 1 if they have ever smoked: an **urgent chest X-ray** for lung cancer; X-ray findings that suggest it, or unexplained haemoptysis at 40+: the **suspected cancer pathway** (NICE NG12 1.1.1–1.1.2)",
+"PE Wells over 4, or a positive D-dimer: **CTPA** (NICE NG158 1.1.18, 1.1.21)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Heart failure: NT-proBNP over 2,000 ng/L, **specialist assessment and echocardiography within 2 weeks**; 400 to 2,000, within 6 weeks (NICE NG106 1.2.3–1.2.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Pneumonia: severity by **CURB65** in hospital (CRB65 in the community) with clinical judgement, then **antibiotics within 4 hours** of arriving (NICE NG250 1.2.7–1.2.8, 1.5.1)",
+"PE confirmed: **anticoagulation** (NICE NG158 1.1.19)"
 ]
 }
 ],
