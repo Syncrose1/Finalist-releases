@@ -2379,6 +2379,44 @@
 "items": [
 "**TIA** (came up 2024, with a carotid result): sudden focal symptoms that resolved (face, arm, speech, vision, balance), how long, any still there, vascular risk factors and AF. **Aspirin 300 mg at once** and specialist review **within 24 hours**; no ABCD2 scoring (NICE NG128); carotid imaging, and endarterectomy for a symptomatic 50 to 99% stenosis"
 ]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Suspected SAH: to the emergency department at once, then **urgent senior review** (NICE NG228 1.1.5–1.1.6)",
+"Strongly suspected meningococcal disease outside hospital: **IV or IM ceftriaxone or benzylpenicillin** as soon as possible, unless it would delay transfer (NICE NG240 1.2.5)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"Suspected bacterial meningitis: **blood cultures**, white cell count with neutrophils, CRP (or procalcitonin), glucose (NICE NG240 1.4.4)",
+"Suspected GCA: **FBC, ESR and CRP**; the ESR is often over 50 mm/hour but can be normal at presentation (CKS Giant cell arteritis)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Unexplained thunderclap headache confirmed by a senior: **urgent non-contrast CT head**, most accurate within 6 hours of onset; blood in the subarachnoid space makes the diagnosis (NICE NG228 1.1.7, 1.1.10)",
+"Migraine, tension-type, cluster or medication overuse headache: **no imaging just for reassurance** (NICE CG150 1.3.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"A radiologist-reported CT within 6 hours showing no SAH: **don't routinely do a lumbar puncture**; think again and seek specialist advice (NICE NG228 1.1.11)",
+"Suspected bacterial meningitis: **lumbar puncture before antibiotics**, unless unsafe or it would delay them; CSF results within 4 hours (NICE NG240 1.4.9, 1.4.16)",
+"GCA: temporal artery **ultrasound and/or biopsy** by the specialist, who should see every suspected case within 3 working days (CKS Giant cell arteritis)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Bacterial meningitis: **antibiotics within 1 hour** of arriving at hospital (NICE NG240 1.4.1)",
+"SAH: effective **pain relief**, opioids if needed; consider **enteral nimodipine** once confirmed (NICE NG228 1.1.8, 1.2.1)",
+"GCA with new vision loss or double vision: **same-day ophthalmology**; without visual symptoms and strongly suspected: **prednisolone 40–60 mg** once daily at once, and fast-track referral (CKS Giant cell arteritis)",
+"Headache that began or worsened on triptans, opioids, ergots or combination analgesics for 3 months or more: think **medication overuse headache** (NICE CG150 1.2.7)"
+]
 }
 ],
 "pairs": {
@@ -4298,6 +4336,36 @@
 "items": [
 "**Osteoporosis** (came up 2024, with counselling): fragility fractures (from standing height or less), **steroids**, early menopause, low BMI, smoking, alcohol, a parent's hip fracture, RA; then FRAX or QFracture and DEXA, and how to take a bisphosphonate (empty stomach, upright for 30 minutes, a full glass of water)"
 ]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Vital signs** and **lying and standing blood pressure** (NICE CG109 1.1.2.1; NG249 1.2.2)",
+"**12-lead ECG** with automated interpretation: a conduction abnormality (bundle branch or any heart block), a long or short QT, or any ST or T-wave abnormality is a red flag (NICE CG109 1.1.2.2)",
+"**Capillary glucose** if hypoglycaemia is suspected (NICE CG109 1.1.2.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"**Haemoglobin** if anaemia or bleeding is suspected (NICE CG109 1.1.2.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Loss of consciousness with an ECG abnormality, heart failure, collapse on exertion, a family history of sudden cardiac death under 40, new breathlessness or a murmur: **urgent cardiovascular assessment within 24 hours** (NICE CG109 1.1.4.2)",
+"A **comprehensive falls assessment**: gait, balance and strength, cognition, vision, continence, feet and footwear, osteoporosis risk, a medication review, and a Dix–Hallpike if it sounds like rotational vertigo (NICE NG249 1.2.1–1.2.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"A **structured medication review** to cut medicines that raise the risk of falls (NICE NG249 1.3.2)",
+"A **home hazard assessment** with a validated tool, ideally by an occupational therapist (NICE NG249 1.3.5–1.3.6)",
+"A **falls prevention exercise programme**: progressive strength and balance work (NICE NG249 1.3.9–1.3.10)",
+"Postural hypotension suspected from a typical history: measure and manage it as NICE's hypertension guideline sets out (NICE CG109 1.2.1.1)"
+]
 }
 ],
 "pairs": {
@@ -4906,6 +4974,27 @@
 "title": "Variants that have come up in finals",
 "items": [
 "**TB** (came up 2025, with a chest X-ray): cough over 3 weeks, **night sweats, weight loss, haemoptysis**; born in or travel to a high-incidence country, contacts, HIV, homelessness, prison, alcohol. Then sputum for AFB, the X-ray, isolation, and contact tracing"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"**Chest X-ray**: pneumonia diagnosed with it within 4 hours of arriving at hospital (NICE NG250 1.4.1); TB suspected, X-ray first, and further tests if it looks like TB (NICE NG33 1.3.2.1)",
+"Aged 40+ with 2 unexplained symptoms (cough, fatigue, breathlessness, chest pain, weight or appetite loss), or 1 if they have ever smoked: an **urgent chest X-ray**; findings that suggest lung cancer, or unexplained haemoptysis at 40+: the **suspected cancer pathway** (NICE NG12 1.1.1–1.1.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Suspected TB: **3 deep-cough sputum samples**, one early morning, for microscopy and culture, before treatment if possible (NICE NG33 1.3.2.2); rapid **nucleic acid amplification** tests if they have HIV or it would change care (NICE NG33 1.3.3.1)",
+"Suspected COPD: **post-bronchodilator spirometry**; asthma: **FeNO** or eosinophils, then spirometry or peak flow variability (NICE NG115 1.1.5; NG245 1.2.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Pneumonia: severity by **CURB65** in hospital (CRB65 in the community), then **antibiotics within 4 hours** of arriving (NICE NG250 1.2.1, 1.2.7, 1.5.1)",
+"TB with consistent signs and symptoms: **start treatment without waiting** for the culture (NICE NG33 1.3.1.2)"
 ]
 }
 ],
@@ -6001,6 +6090,40 @@
 "title": "Causes to screen",
 "items": [
 "Thyrotoxicosis (heat intolerance, weight loss, tremor), anaemia, anxiety, drugs (salbutamol, stimulants), alcohol, caffeine"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"New-onset AF with life-threatening haemodynamic instability: **emergency electrical cardioversion**, without waiting for anticoagulation (NICE NG196 1.8.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Manual pulse** for an irregular pulse, then a **12-lead ECG** to diagnose AF (NICE NG196 1.1.1–1.1.2)",
+"Palpitations with blackouts: an ECG abnormality is a **red flag** for urgent cardiovascular assessment within 24 hours (NICE CG109 1.1.2.2, 1.1.4.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"**TSH** first, with free T4 and T3 on the same sample if it's suppressed (CKS Hyperthyroidism)",
+"**Full blood count** for anaemia (CKS Anaemia, iron deficiency)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Paroxysmal AF the ECG missed: a **24-hour ambulatory ECG** if episodes are under 24 hours apart, an event recorder or longer monitoring if further apart (NICE NG196 1.1.3)",
+"**Transthoracic echo** in AF when a baseline matters for long-term care, or before rhythm control (NICE NG196 1.3.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"AF: stroke risk by **CHA₂DS₂-VASc**, bleeding risk by **ORBIT** before anticoagulating (NICE NG196 1.2.1–1.2.2)",
+"Acute AF, stable: rate or rhythm control if under 48 hours; **rate control** if over 48 hours or unsure (NICE NG196 1.8.2); rate control is first-line long term, with listed exceptions (NICE NG196 1.7.1)"
 ]
 }
 ],
