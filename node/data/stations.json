@@ -794,6 +794,19 @@
 "summary": "Assess the core and biological symptoms of depression, screen the differentials (bipolar, organic, substance) and — critically — perform a risk assessment.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: Core: low mood, loss of interest or pleasure, low energy: for 2 weeks or more?; Biological: sleep (early waking), appetite, weight, concentration, libido; Cognitive: guilt, worthlessness, hopelessness",
+"**Killers**: **Suicide**: Have you felt life isn't worth living? Thought of ending it? Any plans or preparations? What stops you?; **Risk to others and safeguarding**: Are there children at home, or anyone who depends on you? Any thoughts of harming someone else?; **Psychosis**: Hearing or seeing things others don't? Feeling watched or controlled?; **Bipolar (changes the treatment)**: Ever had spells of feeling high, full of energy, needing little sleep?; **Self-neglect**: Are you eating, drinking, looking after yourself?",
+"**PDFS**: P: episodes before, ever high (mania), thyroid, long-term illness; D: antidepressants tried, steroids, isotretinoin, β-blockers · allergies; F: depression, bipolar, suicide; S: alcohol and drugs, work and money, relationships, support, who's at home",
+"**SAWTEMA**: Mostly covered by the biological symptoms: just ask what's left",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Thyroid, anaemia (tiredness)",
+"**ETDSN**: Next steps: a risk assessment and safety plan, PHQ-9, bloods (TFT, FBC), follow-up within 2 weeks"
+]
+},
+{
 "title": "Core symptoms (≥2 weeks)",
 "items": [
 "Low mood, **anhedonia** (loss of interest/pleasure), low energy/fatigue"
@@ -878,6 +891,19 @@
 "summary": "Location + character + associated GI/urinary/gynae symptoms localise the cause. Always consider the surgical abdomen and, in women, an ectopic pregnancy.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**SOCRATES**: Which quadrant · onset · colicky or constant · radiation (back, loin to groin, shoulder tip) · food and movement · severity; GI: nausea, vomiting, bowels, blood or black stools, appetite, jaundice; Urinary: dysuria, frequency, haematuria · Gynae: LMP and **pregnancy** in every woman who could be, discharge",
+"**Killers**: **AAA**: Pain through to the back? Did you collapse or faint? A pulsing in the tummy? Over 65, a smoker, a known aneurysm?; **Ectopic pregnancy**: Could you be pregnant? When was your last period? Bleeding, pain on one side, shoulder-tip pain, feeling faint? A previous ectopic, PID or a coil?; **Perforation or peritonitis**: Worse on moving or coughing, so you lie still?; **Bowel obstruction**: Vomiting? Have your bowels or wind stopped? Swollen tummy, colicky pain? Previous surgery or a hernia?; **Upper GI bleed**: Vomited blood or coffee grounds? Black, tarry stools? On NSAIDs, steroids or blood thinners? Alcohol or liver disease?; **Mesenteric ischaemia**: Pain far worse than it looks, after meals? An irregular heartbeat (AF)?; **Testicular torsion**: Any pain or swelling in your testicles? Did it come on suddenly? Had pain like this before that settled?",
+"**PDFS**: P: gallstones, previous surgery (adhesions), IBD, an aneurysm; D: NSAIDs and steroids (ulcers), anticoagulants · allergies; F: bowel cancer, IBD; S: alcohol (pancreatitis), smoking",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Next steps: obs, urine dip and β-hCG, bloods (FBC, U&E, LFT, amylase, CRP), imaging"
+]
+},
+{
 "title": "Characterise (SOCRATES)",
 "items": [
 "Site (which quadrant), onset, character (colicky vs constant), radiation (loin-to-groin, to back, to shoulder tip), timing, relation to food/movement, severity"
@@ -957,6 +983,19 @@
 "summary": "Private, confidential, non-judgemental — “I ask everyone these questions”. Symptoms, the last sexual contact and partners, protection, previous STIs and testing, contraception, and safeguarding.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Privacy · confidentiality and its limits · \"I ask everyone these questions\"",
+"**The complaint**: Discharge, dysuria, ulcers, lumps, a rash, pelvic pain, pain during sex, testicular pain, bleeding after sex or between periods",
+"**Killers**: **Safeguarding and exploitation**: How old are your partners? Under 16? Ever felt pressured, or had sex you didn't want?; **Ectopic pregnancy**: Could you be pregnant? When was your last period? Bleeding, pain on one side, shoulder-tip pain, feeling faint? A previous ectopic, PID or a coil?; **PEP window**: Any unprotected sex in the last 72 hours?; **PID**: Pelvic pain, fever, pain during sex?; **HIV seroconversion**: A flu-like illness or rash a few weeks after a risk?",
+"**Partners and background**: Last sex · partner's gender · regular or casual · how many in 3 months; Type of sex (oral, vaginal, anal) · condoms · partner's symptoms · a partner from a high-prevalence country; STIs before · HIV and hepatitis tests · vaccines (HPV, hep B) · contraception, LMP; Risks: sex work, MSM, injecting, chemsex",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Next steps: tests and window periods; partner notification"
+]
+},
+{
 "title": "Set up",
 "items": [
 "Privacy; explain confidentiality and its limits; normalise the questions"
@@ -1017,6 +1056,19 @@
 "paeds-hx": {
 "summary": "From a parent: the presenting complaint, then the paediatric frame — birth, feeding, growth, development, immunisations — and the social picture, with safeguarding in mind.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Introduce yourself to the parent and the child; use the child's name",
+"**The complaint, from the parent**: What's happened, in the parent's words · how long · feeding, wet nappies, behaviour, fever",
+"**Killers**: **Sepsis or meningitis**: Fever, floppy or hard to wake, a rash that doesn't fade under a glass, not feeding?; **Dehydration**: How many wet nappies today? Drinking? Sunken eyes, no tears?; **Bilious vomiting (malrotation)**: Is the vomit green?; **Developmental regression**: Has your child lost any skills they used to have?; **Safeguarding**: Who looks after them? Any injuries, and how did they happen? Any delay in coming?",
+"**The paediatric frame**: Birth: gestation, delivery, weight, any neonatal unit stay; Feeding: breast or bottle, volumes, weaning · wet nappies (about 6 a day); Growth (the red book), development (four domains), immunisations; Past illness, medicines, allergies · Family: consanguinity; Social: who lives at home, nursery or school, smoking at home, a social worker",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ask what the parent is most worried about",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Thank the parent; next steps"
+]
+},
 {
 "title": "The frame",
 "items": [
@@ -1299,6 +1351,19 @@
 "obstetric-hx": {
 "summary": "A pregnant woman with a problem, most often **bleeding after 24 weeks**: place the pregnancy (gestation, booking, scans, the placenta), characterise the bleed, and screen the two that kill, **placental abruption and placenta praevia**, and pre-eclampsia, before the obstetric and gynaecological background. Never a digital vaginal examination until a scan has excluded praevia (RCOG GTG 63).",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The pregnancy, then the bleed**: How many weeks; booking; blood group (rhesus?); **where the placenta was on the 20-week scan**; The bleed: how much, still bleeding, **painful or painless**, after sex or a knock, fluid too, contractions · **baby moving as usual?**",
+"**Killers**: **Placental abruption**: Is it painful? Is your tummy hard or tender? Any knock or fall? Do you smoke, or use any drugs?; **Placenta praevia**: Was it painless? Where did the 20-week scan say the placenta was? Any caesareans before?; **Major haemorrhage and shock**: How much blood: soaking pads, clots? Still bleeding? Dizzy or faint?; **Fetal compromise**: Is the baby moving as usual?; **Pre-eclampsia**: Any headache, problems with your vision, pain under the ribs, or sudden swelling of the face or hands?",
+"**PDFS**: P: previous pregnancies and how each was delivered (**caesareans**), abruption or praevia before, PPH, pre-eclampsia · smear history; D: aspirin, folic acid · allergies; F: clotting disorders, pre-eclampsia; S: smoking, alcohol, **cocaine** · support at home · **domestic abuse, asked when she is alone**",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Pre-eclampsia: headache, vision, upper abdominal pain, swelling",
+"**ETDSN**: Next steps: obs, CTG, FBC, clotting, group and save, Kleihauer if RhD-negative (and anti-D), an ultrasound for the placenta; **no digital VE until praevia is excluded**"
+]
+},
 {
 "title": "This pregnancy",
 "items": [
@@ -1822,6 +1887,19 @@
 "summary": "Most back pain is mechanical, but the job of the history is to exclude the serious causes — cauda equina, malignancy, infection and fracture — via the red flags.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**SOCRATES**: Where · onset (an injury, lifting?) · radiation down the leg (below the knee: sciatica) · severity; Night pain, pain at rest · morning stiffness over 30 minutes, better with exercise (inflammatory)",
+"**Killers**: **Cauda equina**: Numb between the legs or around the bottom? Any change in your bladder, bowels or sexual function? Both legs?; **Spinal metastases**: Ever had cancer? Weight loss? Pain at night or at rest?; **Spinal infection**: Fever? Injecting drugs, immunosuppressed, a recent procedure?; **Fracture**: A fall or injury? Osteoporosis, long-term steroids?; **AAA**: Pain through to the back? Did you collapse or faint? A pulsing in the tummy? Over 65, a smoker, a known aneurysm?",
+"**PDFS**: P: cancer (breast, lung, prostate, kidney, thyroid go to bone), osteoporosis, a recent infection or procedure; D: steroids, anticoagulants, painkillers so far · allergies; F: ankylosing spondylitis, psoriasis; S: job and lifting, injecting drugs, function at home, mood (yellow flags)",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Bladder, bowels, both legs: the cauda equina questions, every time",
+"**ETDSN**: Next steps: a neuro exam with perianal sensation; an urgent MRI if cauda equina is possible"
+]
+},
+{
 "title": "Characterise (SOCRATES)",
 "items": [
 "Site, onset (trauma?), character, radiation (down the leg = sciatica), timing (worse at night?), aggravating/relieving, severity"
@@ -2109,6 +2187,19 @@
 "summary": "Characterise the bleeding and place it in the reproductive context. The first split is pregnant vs not — always establish pregnancy status (β-hCG) and exclude an ectopic.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: **Pregnancy first**: LMP, could you be pregnant, contraception; How much (pads, flooding, clots) · when (between periods, after sex, after the menopause) · how long · pain · discharge",
+"**Killers**: **Ectopic pregnancy**: Could you be pregnant? When was your last period? Bleeding, pain on one side, shoulder-tip pain, feeling faint? A previous ectopic, PID or a coil?; **Heavy loss and shock**: How many pads, soaking through, clots? Dizzy or faint?; **Cancer**: Any bleeding after the menopause, after sex, or between periods? When was your last smear?; **Miscarriage with infection**: Fever, smelly discharge, pain?",
+"**PDFS**: P: fibroids, PCOS, bleeding disorders · pregnancies and outcomes · smear history; D: the pill, HRT, tamoxifen, anticoagulants · allergies; F: bleeding disorders, gynae cancers; S: sexual history (partners, STI risk), smoking",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Urinary and bowel symptoms · anaemia (tired, breathless)",
+"**ETDSN**: Next steps: obs, β-hCG, FBC, a speculum; bleeding after the menopause at 55+ → suspected cancer pathway"
+]
+},
+{
 "title": "Characterise",
 "items": [
 "Amount (clots, flooding, pads/hour), timing (intermenstrual, postcoital, postmenopausal), duration, pain, associated discharge"
@@ -2194,6 +2285,19 @@
 "neuro-hx": {
 "summary": "Distinguish primary headaches (migraine, tension, cluster) from the sinister secondary causes (SAH, meningitis, raised ICP, GCA). Onset and red flags are everything.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**SOCRATES**: SOCRATES, plus: worse lying down, in the morning, coughing or bending (raised pressure)?; Aura, nausea, light and sound (migraine) · round one eye, watering (cluster) · a tight band (tension); Any collapse: before, during, after; a witness",
+"**Killers**: **Subarachnoid haemorrhage**: Was it sudden, the worst ever, at full strength within a minute?; **Meningitis**: Fever, stiff neck, light hurting your eyes, a rash that doesn't fade, drowsy or confused?; **Raised pressure (tumour, bleed)**: Worse lying down, coughing or straining? Vomiting in the morning? Weakness, vision change, a fit?; **Giant cell arteritis**: Over 50 with a new headache: tender scalp, jaw pain when chewing, any change in vision?; **Carbon monoxide**: Does anyone at home have it too? Is it better away from home?; **Acute glaucoma**: A red, painful eye, haloes round lights?",
+"**PDFS**: P: migraine, cancer, immunosuppression, a recent head injury; D: painkillers (how many days a month: overuse), anticoagulants, the pill (not with migraine with aura) · allergies; F: migraine, aneurysms; S: screens and stress, alcohol, caffeine, and always **driving**",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Neuro: weakness, numbness, vision, speech, fits · Eyes: red, painful, haloes",
+"**ETDSN**: Next steps: neuro exam and fundoscopy, BP, CRP and ESR if over 50, CT if anything sinister"
+]
+},
 {
 "title": "Characterise",
 "items": [
@@ -2595,6 +2699,19 @@
 "alcohol-hx": {
 "summary": "Quantify (units, pack-years), screen with a named tool, look for dependence and withdrawal, and offer help without lecturing.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**SOCRATES**: Site · Onset · Character · Radiation · Associated · Timing · Exacerbating/relieving · Severity",
+"**Killers**: The dangerous causes of this complaint, ruled in or out as one block",
+"**PDFS**: Past medical and surgical · Drugs, with allergies · Family · Social (LOST: living, occupation, substances, travel)",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Summarise back, anything missed? · thank them · next steps · present: one-liner, differential, plan"
+]
+},
 {
 "title": "Alcohol",
 "items": [
@@ -3822,6 +3939,19 @@
 "summary": "Draw a three-generation pedigree, identify the likely pattern of inheritance, and talk about what it means for the patient and their relatives.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**SOCRATES**: Site · Onset · Character · Radiation · Associated · Timing · Exacerbating/relieving · Severity",
+"**Killers**: The dangerous causes of this complaint, ruled in or out as one block",
+"**PDFS**: Past medical and surgical · Drugs, with allergies · Family · Social (LOST: living, occupation, substances, travel)",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Summarise back, anything missed? · thank them · next steps · present: one-liner, differential, plan"
+]
+},
+{
 "title": "Drawing",
 "items": [
 "Square = male, circle = female, diamond = unknown; filled = affected; a line through = deceased",
@@ -4067,6 +4197,19 @@
 "falls-hx": {
 "summary": "A “falls” history is really about the cause of the collapse (cardiac, neurological, mechanical) plus the multifactorial risk assessment in the older patient. Get a before/during/after account.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**Before · during · after**: Before: what were you doing, standing up? Any warning: dizzy, palpitations, chest pain, an aura?; During: a witness? Out cold, how long? Colour, jerking, tongue-biting, wet yourself? Injured?; After: back to normal how quickly? Confused? Any weakness?",
+"**Killers**: **Cardiac syncope (arrhythmia, aortic stenosis)**: Any warning? On exertion? Palpitations or chest pain first? Anyone in the family die suddenly young?; **Seizure**: Did you bite your tongue, wet yourself, jerk? Confused afterwards?; **Head injury on a blood thinner**: Did you hit your head? Are you on a blood thinner?; **Long lie and hip fracture**: Could you get up? How long were you on the floor? Can you bear weight?; **Stroke or TIA**: Any weakness, numbness, trouble speaking, face drooping?; **Hypoglycaemia**: Diabetic, on insulin or a sulfonylurea? Any warning: sweaty, shaky, hungry?; **Upper GI bleed**: Vomited blood or coffee grounds? Black, tarry stools? On NSAIDs, steroids or blood thinners? Alcohol or liver disease?",
+"**PDFS**: P: heart disease, epilepsy, diabetes, Parkinson's, falls before, osteoporosis; D: antihypertensives, diuretics, sedatives, hypoglycaemics, anticoagulants: count them (polypharmacy) · allergies; F: sudden death young, epilepsy; S: living (stairs, carers, an alarm), walking aids, alcohol, footwear, hazards at home · **driving**",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Vision, memory, continence, feet",
+"**ETDSN**: Next steps: lying and standing BP, ECG, glucose, bloods; a falls assessment"
+]
+},
 {
 "title": "Before",
 "items": [
@@ -4584,6 +4727,19 @@
 "summary": "Separate storage (frequency, urgency, nocturia) from voiding (hesitancy, poor stream, dribbling) symptoms, and screen the red flags — haematuria, retention and infection.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: Storage: frequency, urgency, nocturia, incontinence (stress, urge); Voiding: hesitancy, poor stream, straining, dribbling, not emptying; Haematuria: painless? when in the stream?",
+"**Killers**: **Retention**: Can you pass urine at all? Painful, swollen lower tummy?; **Cancer (bladder, prostate)**: Blood in the urine? Bone pain, weight loss?; **Cauda equina**: Numb between the legs or around the bottom? Any change in your bladder, bowels or sexual function? Both legs?; **Urosepsis**: Fever, shivers, pain in the side or back?",
+"**PDFS**: P: diabetes, prostate, stones, neuro disease, a catheter before; D: diuretics, anticholinergics (retention), NSAIDs (AKI) · allergies; F: prostate cancer; S: smoking, dye and rubber work, **ketamine**, fluids and caffeine",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Fever, loin pain · back pain, weak legs, saddle numbness",
+"**ETDSN**: Next steps: urine dip, U&E, PSA (after counselling), a bladder scan, a frequency-volume chart"
+]
+},
+{
 "title": "Storage symptoms",
 "items": [
 "Frequency, urgency, nocturia, urge incontinence"
@@ -4659,6 +4815,19 @@
 "summary": "Duration separates acute (usually infective) from chronic cough, and the associated symptoms point to the cause. Always screen for the red flags of malignancy and TB.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: How long (acute under 3 weeks, chronic over 8), dry or wet, sputum colour and amount, **haemoptysis**; Worse at night or in the morning, triggers · breathless, wheeze, chest pain, fever",
+"**Killers**: **Lung cancer**: Coughing blood? Weight loss? A hoarse voice? Do you or did you smoke?; **TB**: Night sweats, weight loss? Contact with TB, time in a country where it's common?; **PE**: Sudden breathlessness? Sharp pain breathing in? Coughed blood? A swollen calf? A long journey, surgery or being immobile, the pill or HRT, cancer, a clot before?; **Pneumonia with sepsis**: Fever, shivers, confusion, breathless at rest?; **Heart failure**: How many pillows do you sleep on? Ever woken up gasping? Ankles swollen by the evening?",
+"**PDFS**: P: asthma, COPD, reflux, TB before; D: an ACE inhibitor (a dry cough), inhalers · allergies; F: asthma or eczema, TB; S: smoking (pack-years), occupation (asbestos, dust), pets and birds, travel and TB contacts",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: GI: reflux, heartburn · ENT: postnasal drip, a blocked nose",
+"**ETDSN**: Next steps: obs, chest X-ray (within 2 weeks at 40+ with an unexplained cough and ever smoked), sputum, spirometry"
+]
+},
+{
 "title": "Characterise",
 "items": [
 "Duration (acute <3 wk vs chronic >8 wk), dry vs productive, sputum colour/volume, **haemoptysis**, diurnal/nocturnal, triggers"
@@ -4733,6 +4902,19 @@
 "msk-hx": {
 "summary": "Which joints, how they started, and whether the pattern is **inflammatory** or **mechanical** — then function and the hot joint that can't be missed.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: Which joints, symmetrical? How it started (overnight: gout); Inflammatory (morning stiffness over 30 minutes, better with use) or mechanical (worse with use)?; Swelling, locking, giving way · function (grip, walking, dressing)",
+"**Killers**: **Septic arthritis**: One hot, swollen joint you can barely move? Fever? A joint replacement?; **Compartment syndrome**: After an injury or a cast: pain out of proportion, worse on stretching, tight?; **Malignancy**: Pain at night or at rest? Weight loss? Ever had cancer?; **Giant cell arteritis**: Over 50 with a new headache: tender scalp, jaw pain when chewing, any change in vision?",
+"**PDFS**: P: gout, psoriasis, IBD, a recent infection (reactive), injuries; D: diuretics (gout), steroids, DMARDs · allergies; F: inflammatory arthritis, psoriasis; S: job, hobbies, function at home, driving",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Skin (psoriasis), eyes (uveitis), bowels (IBD), urethritis",
+"**ETDSN**: Next steps: examine the joint above and below; CRP, ESR, urate, RF, anti-CCP; aspirate a hot joint"
+]
+},
 {
 "title": "The joints",
 "items": [
@@ -4846,6 +5028,19 @@
 "bowel-hx": {
 "summary": "Characterise the change, distinguish acute (usually infective) from chronic, and screen the lower-GI cancer and IBD red flags. Ask specifically about blood and weight loss.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: What's changed: frequency, consistency (Bristol), how long (acute under 2 weeks); Blood (mixed in, or on the paper), mucus, urgency, tenesmus, at night",
+"**Killers**: **Colorectal cancer**: Blood mixed in? Weight loss, tiredness? Family history? Over 50?; **Bowel obstruction**: Vomiting? Have your bowels or wind stopped? Swollen tummy, colicky pain? Previous surgery or a hernia?; **Severe colitis**: How many times a day, at night, with blood? Fever, tummy pain?; **Dehydration and AKI**: Keeping fluids down? Passing urine? Dizzy on standing?; **C. difficile**: Antibiotics or a hospital stay recently?",
+"**PDFS**: P: IBD, coeliac, thyroid, bowel surgery; D: antibiotics (C. diff), laxatives, metformin, PPIs · allergies; F: bowel cancer, IBD, coeliac; S: travel, contacts, diet, alcohol, smoking",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Abdominal pain, a mass · thyroid symptoms",
+"**ETDSN**: Next steps: stool culture (if acute), FIT, FBC and ferritin, coeliac serology, CRP"
+]
+},
 {
 "title": "Characterise",
 "items": [
@@ -5287,6 +5482,19 @@
 "summary": "The priority is to separate the immediately life-threatening causes (ACS, PE, aortic dissection) from benign ones. Characterise the pain (SOCRATES) and screen the killers.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**SOCRATES**: Site · onset (sudden? on exertion?) · character (crushing, tearing, pleuritic) · radiation (jaw, arm, back) · timing · worse or better (exertion, GTN, breathing, leaning forward) · severity; Associated: breathless, sweaty, sick, palpitations, faint, cough, haemoptysis",
+"**Killers**: **ACS**: Heavy or crushing? Spreading to the jaw or arm? Sweaty, sick, worse on exertion?; **PE**: Sudden breathlessness? Sharp pain breathing in? Coughed blood? A swollen calf? A long journey, surgery or being immobile, the pill or HRT, cancer, a clot before?; **Aortic dissection**: Did it come on suddenly, tearing, through to the back?; **Pneumothorax**: Sudden, sharp pain on one side? Tall and thin, or asthma or COPD?; **Oesophageal rupture**: Did it start after forceful vomiting?",
+"**PDFS**: P: MI, angina, stents, a clot before; D: GTN, antiplatelets, the pill · allergies; F: heart disease under 60, sudden death, clots; S: smoking (pack-years), alcohol, cocaine, job, driving",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: GI: reflux, food, swallowing · MSK: tender, worse on moving",
+"**ETDSN**: Next steps: ECG within 10 minutes, troponin, chest X-ray"
+]
+},
+{
 "title": "Characterise (SOCRATES)",
 "items": [
 "Site, Onset (sudden/exertional), Character (crushing/tearing/pleuritic), Radiation (jaw/arm/back), Associated (sweating, nausea, breathlessness), Timing, Exacerbating/relieving (exertion, GTN, movement, food), Severity"
@@ -5466,6 +5674,19 @@
 "summary": "Breathlessness spans cardiac, respiratory and other causes. Time course, associated symptoms and the cardiac/respiratory screen point to the diagnosis.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: Sudden or gradual, how long, getting worse?; How far can you walk, how many stairs, at rest?; Cough (wet or dry), sputum (colour, amount), **haemoptysis**, wheeze, chest pain, fever",
+"**Killers**: **Heart failure**: How many pillows do you sleep on? Ever woken up gasping? Ankles swollen by the evening?; **PE**: Sudden breathlessness? Sharp pain breathing in? Coughed blood? A swollen calf? A long journey, surgery or being immobile, the pill or HRT, cancer, a clot before?; **Pneumothorax**: Sudden, sharp pain on one side? Tall and thin, or asthma or COPD?; **ACS**: Heavy or crushing? Spreading to the jaw or arm? Sweaty, sick, worse on exertion?; **Severe asthma or anaphylaxis**: Can you finish a sentence? Wheeze? Lips or tongue swelling, a new food or drug?; **Lung cancer**: Coughing blood? Weight loss? A hoarse voice? Do you or did you smoke?",
+"**PDFS**: P: asthma, COPD, heart disease, a clot before; D: inhalers (and technique), ACE inhibitor (cough), β-blockers and NSAIDs (bronchospasm), amiodarone and methotrexate (lung disease) · allergies; F: asthma or eczema, clots, heart disease; S: smoking (pack-years), occupation (dust, asbestos), pets and birds, travel and TB contacts",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Next steps: obs and sats, ECG, chest X-ray, bloods (FBC, BNP; D-dimer only if PE is unlikely on Wells)"
+]
+},
+{
 "title": "Characterise",
 "items": [
 "Onset (sudden vs gradual), duration, exertional tolerance (how far can you walk?), diurnal variation, positional (orthopnoea, PND)"
@@ -5606,6 +5827,19 @@
 "palp-hx": {
 "summary": "Characterise the awareness of the heartbeat and screen for a dangerous arrhythmia. The pattern (regular/irregular, fast/slow) and associated syncope guide urgency.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: Fast or slow, regular or irregular (tap it out), sudden or gradual start and stop; How long, how often, triggers (caffeine, alcohol, exercise, stress), what stops it",
+"**Killers**: **Ventricular arrhythmia**: Have you fainted or nearly? Chest pain or breathless with it? Known heart disease?; **Inherited heart disease**: Has anyone in the family died suddenly under 40?; **AF and stroke**: Is it irregular? Any weakness, numbness or trouble speaking?; **Thyrotoxicosis**: Weight loss, heat intolerance, shaky hands?; **Drugs**: Stimulants, caffeine, alcohol? Any medicine that lengthens the QT?",
+"**PDFS**: P: heart disease, thyroid, anaemia, anxiety; D: salbutamol, thyroxine, QT-prolonging drugs, stimulants · allergies; F: sudden death under 40, cardiomyopathy; S: caffeine, alcohol, drugs, **driving**",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Thyroid: heat, weight loss, tremor · Anaemia: tired, pale, breathless",
+"**ETDSN**: Next steps: ECG (during an episode if you can), bloods (TFT, FBC, U&E with K and Mg), ambulatory monitoring"
+]
+},
 {
 "title": "Characterise",
 "items": [
@@ -6433,6 +6667,19 @@
 "summary": "Every medicine, how it's actually taken, and every allergy with its reaction. The ones people forget are the ones that matter.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**SOCRATES**: Site · Onset · Character · Radiation · Associated · Timing · Exacerbating/relieving · Severity",
+"**Killers**: The dangerous causes of this complaint, ruled in or out as one block",
+"**PDFS**: Past medical and surgical · Drugs, with allergies · Family · Social (LOST: living, occupation, substances, travel)",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Summarise back, anything missed? · thank them · next steps · present: one-liner, differential, plan"
+]
+},
+{
 "title": "What",
 "items": [
 "Prescribed: name, dose, frequency, route, indication, how long, who prescribes",
@@ -6721,6 +6968,19 @@
 "vasc-hx": {
 "summary": "Separate claudication from rest pain and tissue loss, catch acute ischaemia, and take the cardiovascular risk factors.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: Claudication: cramping calf, thigh or buttock pain on walking, eased by rest: how far?; Rest pain at night, eased by hanging the leg out of bed · ulcers, black toes",
+"**Killers**: **Acute limb ischaemia**: Did the leg suddenly go cold, pale, painful, numb or weak? An irregular heartbeat?; **Chronic limb-threatening ischaemia**: Pain at night, eased by hanging the leg out of bed? Ulcers, black toes?; **AAA**: Pain through to the back? Did you collapse or faint? A pulsing in the tummy? Over 65, a smoker, a known aneurysm?; **Infected diabetic foot**: Fever, spreading redness, a smell, a wound that won't heal?",
+"**PDFS**: P: MI, stroke, diabetes, hypertension, cholesterol, an aneurysm; D: antiplatelets, statins, β-blockers · allergies; F: vascular disease; S: **smoking** (pack-years) above all, exercise, job, function",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: Buttock pain with erectile dysfunction (Leriche) · leg pain eased by bending forward (spinal stenosis)",
+"**ETDSN**: Next steps: pulses and ABPI, a Doppler; risk factors, and stopping smoking"
+]
+},
 {
 "title": "Claudication",
 "items": [
@@ -7216,6 +7476,19 @@
 "summary": "Characterise the lump or symptom, ask about the nipple and the skin, and take the risk factors and family history. Most women are afraid of cancer: ask about that.",
 "sections": [
 {
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: The lump: when found, an injury, breastfeeding, hard or soft, painful, mobile, changes with the cycle; The nipple: discharge (bloody?), inversion, eczema · skin changes · armpit lumps",
+"**Killers**: **Breast cancer**: Hard, fixed, growing? Skin dimpling, an inverted nipple, bloody discharge, a lump in the armpit?; **Inflammatory breast cancer**: Red, swollen, orange-peel skin without a fever?; **Spread**: Bone pain, breathlessness, headaches, weight loss?; **Abscess**: Hot, red, painful, with a fever? Breastfeeding?",
+"**PDFS**: P: breast disease before, chest radiation; D: HRT, the pill · allergies; F: **both sides**: breast, ovarian, male breast cancer, and their ages at diagnosis; S: alcohol, smoking",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ask what they're afraid it is",
+"**Systems**: Spread: bone pain, breathless, headaches, weight loss",
+"**ETDSN**: Next steps: triple assessment (examination, imaging, biopsy); a suspected cancer referral at 30+ with an unexplained lump"
+]
+},
+{
 "title": "The symptom",
 "items": [
 "Lump: when noticed, size change, relation to the cycle, pain",
@@ -7265,6 +7538,19 @@
 "thyroid-hx": {
 "summary": "Symptoms of thyroid status (hyper or hypo), the neck itself, and the eyes; then the background that points to a cause.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**The complaint**: Hyper: weight loss, heat, palpitations, tremor, anxiety, loose stools · Hypo: weight gain, cold, tired, constipated, low; The neck: a lump, pain, swallowing, voice, breathing · The eyes: gritty, bulging, double or blurred",
+"**Killers**: **Airway compression**: Any trouble breathing or swallowing, noisy breathing, worse lying flat?; **Thyroid cancer**: Is the lump growing fast? A hoarse voice? Radiation to the neck in the past?; **Agranulocytosis on carbimazole**: On carbimazole or PTU: any sore throat, mouth ulcers, fever?; **Sight-threatening eye disease**: Blurred vision, colours looking washed out, double vision?; **Thyroid storm**: Fever, racing heart, agitation or confusion?",
+"**PDFS**: P: autoimmune disease, AF, neck surgery or radiation, a recent pregnancy (postpartum), a recent virus (De Quervain's); D: amiodarone (either way), lithium (hypo), levothyroxine, carbimazole (sore throat = agranulocytosis), iodine, kelp; biotin skews the tests · allergies; F: thyroid and autoimmune disease; S: smoking (worsens Graves' eyes)",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Next steps: TFTs, antibodies, an ultrasound of any lump"
+]
+},
 {
 "title": "Hyperthyroid",
 "items": [
@@ -7388,6 +7674,19 @@
 "social-hx": {
 "summary": "Who the patient is outside hospital, and what they'll need to go home: work, home, function, support, habits.",
 "sections": [
+{
+"title": "The history frame (every history, as the card shows it)",
+"items": [
+"**WIND**: Wash · Introduce (name, role) · Name and DOB · explain and consent → an open question, then let them talk",
+"**SOCRATES**: Site · Onset · Character · Radiation · Associated · Timing · Exacerbating/relieving · Severity",
+"**Killers**: The dangerous causes of this complaint, ruled in or out as one block",
+"**PDFS**: Past medical and surgical · Drugs, with allergies · Family · Social (LOST: living, occupation, substances, travel)",
+"**SAWTEMA**: Sleep · Appetite · Weight · Temperature · Energy · Mood · Allergies (if PDFS missed them)",
+"**ICE**: Ideas · Concerns · Expectations: ask, then respond to what they say",
+"**Systems**: A quick screen of the other systems: the first thing to cut if time is short",
+"**ETDSN**: Summarise back, anything missed? · thank them · next steps · present: one-liner, differential, plan"
+]
+},
 {
 "title": "Ask about",
 "items": [
