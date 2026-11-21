@@ -1223,6 +1223,14 @@
 "summary": "A focused precordial exam — inspect, palpate, auscultate the four valve areas, then look for heart failure. The commonest OSCE examination; a slick routine scores across every domain.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "General inspection",
 "items": [
 "End of the bed: comfortable at rest? breathless, cyanosed, cachectic?",
@@ -1277,6 +1285,40 @@
 "Ankle and sacral oedema",
 "Saphenous vein harvest scars (CABG)"
 ]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Observations** and a **12-lead ECG**; an ECG is part of evaluating suspected heart failure (NICE NG106 1.2.12)"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"Suspected heart failure: **NT-proBNP**, with renal, thyroid, liver and lipid profiles, HbA1c and FBC to look for aggravating causes (NICE NG106 1.2.2, 1.2.12)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"A murmur with suspected valve disease and symptoms, signs or an abnormal ECG: **echocardiogram** (NICE NG208 1.1.2); a systolic murmur with **exertional syncope**: urgent specialist assessment with echo **within 2 weeks** (NICE NG208 1.1.3)",
+"**Chest X-ray** for alternative diagnoses in suspected heart failure (NICE NG106 1.2.12)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"HFrEF: an **ACE inhibitor, a beta-blocker, an MRA and an SGLT2 inhibitor** (NICE NG106 1.4.1)",
+"NT-proBNP over 2,000 ng/L: specialist assessment and echo **within 2 weeks**; 400 to 2,000: within 6 weeks (NICE NG106 1.2.3–1.2.4)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Examine the peripheral vascular system and for peripheral/sacral oedema",
+"Check the observations, an ECG, and a urine dip",
+"Perform fundoscopy if endocarditis/hypertension suspected"
+]
 }
 ],
 "pairs": {
@@ -1317,6 +1359,13 @@
 "bbn": {
 "summary": "Use the **SPIKES** framework: deliver serious news honestly, at the patient’s pace, responding to emotion. The single most tested comms scenario.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "S — Setting",
 "items": [
@@ -1370,6 +1419,14 @@
 "summary": "Inspect → palpate → percuss → auscultate the chest front and back, comparing sides. The pattern of findings localises the pathology (consolidation vs effusion vs pneumothorax vs fibrosis).",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "General inspection",
 "items": [
 "At rest: respiratory rate, work of breathing, accessory muscles, pursed lips, audible wheeze/stridor",
@@ -1407,6 +1464,40 @@
 "Percussion: **dull** = consolidation/collapse; **stony dull** = effusion; **hyper-resonant** = pneumothorax/COPD",
 "Auscultate breath sounds + added sounds; compare sides, front and back",
 "Vocal resonance to confirm the percussion pattern"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"Suspected asthma: **FeNO** or eosinophils, then spirometry or peak flow variability (NICE NG245 1.2.1); suspected COPD: **post-bronchodilator spirometry** (NICE NG115 1.1.5)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"**Chest X-ray**: pneumonia confirmed within 4 hours of arriving at hospital (NICE NG250 1.4.1); 40+ with clubbing, supraclavicular or persistent cervical lymphadenopathy, or recurrent infection: consider an **urgent chest X-ray** for lung cancer (NICE NG12 1.1.3)",
+"A pleural effusion: **thoracic ultrasound** helps, and CT assesses the whole thorax if malignancy is suspected (BTS pleural disease 2023)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"**Pleural aspiration**: fluid for cytology if malignancy is suspected, and in plain and blood-culture bottles if infection is; a **pH of 7.2 or less** suggests complicated infection needing a drain (BTS pleural disease 2023)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Primary spontaneous pneumothorax with few symptoms: **conservative** management regardless of size; otherwise ambulatory care, needle aspiration or a drain (BTS pleural disease 2023)",
+"Pneumonia: severity by **CURB65**, antibiotics **within 4 hours** of arriving (NICE NG250 1.2.7, 1.5.1)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Check observations incl. SpO₂, peak flow, and a sputum sample",
+"Request a chest X-ray",
+"Examine for lymphadenopathy and peripheral oedema (cor pulmonale)"
 ]
 }
 ],
@@ -1578,6 +1669,14 @@
 "summary": "Inspect → palpate (light then deep) → the organs → percuss → auscultate. Southampton flags this as a common weak point — drill the organ palpation technique until fluent.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "General inspection",
 "items": [
 "At rest: cachexia, jaundice, distension, discomfort",
@@ -1621,6 +1720,33 @@
 "items": [
 "Bowel sounds (absent = ileus/peritonitis; tinkling = obstruction)",
 "Bruits — aortic and renal"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"A suspected AAA on palpation: **aortic ultrasound** (NICE NG156 1.1.6); suspected rupture: an immediate bedside scan and the regional vascular service at once (NICE NG156 1.1.9)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"An upper abdominal mass like an enlarged **liver** or **gallbladder**: consider an urgent direct-access **ultrasound** for cancer (NICE NG12 1.2.10–1.2.11); one consistent with **stomach** cancer: consider the suspected cancer pathway (NICE NG12 1.2.6)",
+"Suspected cirrhosis from alcohol (over 50 units a week for men, 35 for women) or hepatitis C: **transient elastography** (NICE NG50 1.1.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Cirrhosis: **ultrasound every 6 months** for hepatocellular carcinoma (NICE NG50 1.3.1), and an **upper GI endoscopy** for varices unless starting carvedilol or propranolol (NICE NG50 1.4.1)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Examine the hernial orifices, external genitalia and perform a DRE",
+"Dip the urine; check observations",
+"Review the drug chart and relevant bloods (LFTs, FBC)"
 ]
 }
 ],
@@ -1785,6 +1911,14 @@
 "summary": "Look for ulcers and deformity, feel the pulses and temperature, test protective sensation with a 10 g monofilament and vibration, then give the NICE risk category. The foot check that prevents amputations.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Look",
 "items": [
 "Ulcers: between the toes, under the metatarsal heads, the heels",
@@ -1817,6 +1951,32 @@
 "High: previous ulcer or amputation, dialysis, or two of the above",
 "**Active**: ulcer, spreading infection, critical ischaemia, gangrene or suspected Charcot — refer to the foot service within 1 working day"
 ]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"Both feet bare: **10 g monofilament** for neuropathy, pulses for ischaemia, and ulcers, deformity, gangrene and Charcot signs (NICE NG19 1.3.4); grade the risk **low, moderate or high** (NICE NG19 1.3.6)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Suspected infection with a wound: **soft tissue or bone from the base of the debrided wound**, or a deep swab (NICE NG19 1.6.1); osteomyelitis can be present despite normal inflammatory markers, X-ray and probe-to-bone test (NICE NG19 1.6.3–1.6.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"A limb- or life-threatening problem: **refer immediately** to acute services and tell the foot team; any other active problem: the multidisciplinary foot service **within 1 working day** (NICE NG19 1.4.1–1.4.2)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"ABPI (may read falsely high from calcified vessels: consider toe pressures)",
+"Capillary glucose and HbA1c",
+"Footwear and education: daily checks, never barefoot"
+]
 }
 ],
 "pairs": {
@@ -1845,6 +2005,13 @@
 "explain-dx": {
 "summary": "Pitch the explanation at the patient, using chunking and checking. Elicit and address their ideas, concerns and expectations, and make a shared plan.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Prepare",
 "items": [
@@ -1947,6 +2114,13 @@
 "inhaler": {
 "summary": "Explain to a patient how to use an inhaler correctly, including spacers, and check their technique is correct.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Why",
 "items": [
@@ -2201,6 +2375,13 @@
 "eol": {
 "summary": "A clinical decision about ONE intervention, but one that must be **discussed** — failing to consult was unlawful in *Tracey*. The commonest error is letting the patient believe it means abandonment.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Prepare",
 "items": [
@@ -2604,6 +2785,14 @@
 "summary": "Systematically test the 12 cranial nerves in order. The pattern of deficits localises the lesion — a single nerve, a brainstem level, or a supranuclear cause.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "I — Olfactory",
 "items": [
 "Ask about any change in smell/taste (formal testing rarely required)"
@@ -2662,6 +2851,32 @@
 "items": [
 "Inspect the tongue for wasting/fasciculation; protrude — deviates **towards** the side of the lesion"
 ]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Sudden weakness, even in one hand, may be a **stroke or TIA** (NICE NG127 1.7.1): suspected acute stroke gets a **non-enhanced CT immediately** if thrombolysis or thrombectomy is possible, they're anticoagulated or GCS is under 13, otherwise within 24 hours (NICE NG128 1.3.2–1.3.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Facial pain with persistent facial numbness or abnormal neurological signs: **neuroimaging** on the suspected cancer pathway (NICE NG127 1.3.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Uncomplicated **Bell's palsy** (lower motor neurone, forehead included, eye closure weak) with no other cause such as middle ear disease: **no routine referral**; advise on **eye care** and that recovery can take months (NICE NG127 1.7.11–1.7.12)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Perform a full peripheral neurological examination",
+"Assess cerebellar function and gait",
+"Check blood pressure and glucose"
+]
 }
 ],
 "pairs": {
@@ -2699,6 +2914,14 @@
 "summary": "Look → feel → move → special tests for the ligaments and menisci. A focused MSK exam following the look/feel/move framework.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Look",
 "items": [
 "Standing: valgus/varus, swelling, muscle (quadriceps) wasting; gait (antalgic)",
@@ -2723,6 +2946,38 @@
 "**Anterior/posterior draw & Lachman** (cruciate ligaments)",
 "**Valgus/varus stress** (collateral ligaments)",
 "McMurray’s (meniscus)"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Unable to bear weight for four steps straight after an injury: **X-ray** to exclude a fracture (the **Ottawa knee rule**) (CKS Knee pain, assessment)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Osteoarthritis at 45+ with activity-related pain and little morning stiffness is a **clinical diagnosis**: no routine imaging (NICE NG226 1.1.1–1.1.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"A hot, swollen joint: think **septic arthritis** first, a red flag along with tumour and inflammatory arthritis (CKS Knee pain, assessment)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Osteoarthritis: **therapeutic exercise**, weight loss if overweight, **topical NSAIDs**; refer for joint replacement if it seriously affects quality of life despite non-surgical care (NICE NG226 1.3.1, 1.3.5, 1.4.2, 1.6.1)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Examine the joint above (hip) and below (ankle)",
+"Assess neurovascular status",
+"Request weight-bearing X-rays ± MRI"
 ]
 }
 ],
@@ -2868,6 +3123,14 @@
 "summary": "Observe and present the mental state in a fixed order, then a **risk assessment** — always. The MSE is what you see now; the psychiatric history is the background.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "The MSE, in order",
 "items": [
 "**Appearance and behaviour** — self-care, dress, psychomotor activity, eye contact, rapport",
@@ -2885,6 +3148,19 @@
 "To self: thoughts of self-harm or suicide — **ideation → plan → intent → means**, previous attempts; self-neglect",
 "To others, and from others (exploitation, safeguarding)",
 "Protective factors. Asking directly does not increase risk"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"**Ask about suicidal ideation and intent**; considerable immediate risk to themselves or others: **urgent referral** to specialist mental health services (NICE NG222 1.2.8–1.2.9)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"A first episode of **psychosis**: **early intervention in psychosis** services, assessed without delay, or the **crisis team** if they can't act urgently (NICE CG178 1.3.1.1–1.3.1.2)",
+"First-episode psychosis: an **oral antipsychotic** with family intervention and individual **CBT** (NICE CG178 1.3.4.1)"
 ]
 }
 ],
@@ -3000,6 +3276,13 @@
 "summary": "Explain what the vaccines are, when they're given, their side effects and the myths, and answer the parent's real worry.",
 "sections": [
 {
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
+{
 "title": "The schedule (England)",
 "items": [
 "Primary course at **8, 12 and 16 weeks** (6-in-1 and others); boosters around 1 year, including MMR; preschool boosters; teenage HPV, 3-in-1 and MenACWY",
@@ -3033,6 +3316,13 @@
 "sensitive": {
 "summary": "Stay calm, acknowledge the anger explicitly, and find the underlying concern. Don’t get defensive — listen, empathise, and offer a constructive way forward.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Set up safely",
 "items": [
@@ -3141,6 +3431,14 @@
 "summary": "Inspect → palpate pulses & temperature → auscultate for bruits → special tests (Buerger’s). Localises the level of arterial disease in the limb.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Inspect",
 "items": [
 "Colour (pallor), trophic changes (hair loss, shiny skin), **ulcers** (arterial: punched-out, painful, pressure points), gangrene, scars, missing toes",
@@ -3160,6 +3458,34 @@
 "items": [
 "Bruits over the femoral and abdominal aorta",
 "**Buerger’s test**: lift the leg to the angle of pallor, then hang down (reactive hyperaemia = sunset foot)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Ankle brachial pressure index**, resting and supine; a normal or high ABPI doesn't exclude PAD in diabetes (NICE CG147 1.3.3–1.3.4)",
+"An expansile abdominal mass: **aortic ultrasound** (NICE NG156 1.1.6)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Revascularisation being considered: **duplex ultrasound** first, then contrast MR or CT angiography (NICE CG147 1.4.1–1.4.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Intermittent claudication: a **supervised exercise programme** (NICE CG147 1.5.1); cardiovascular **secondary prevention** (NICE CG147 1.2.1)",
+"Critical limb ischaemia: **vascular MDT** assessment, then angioplasty or bypass (NICE CG147 1.6.1–1.6.2)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Measure the ankle-brachial pressure index (ABPI)",
+"Examine the venous system and the abdomen (aorta)",
+"Assess cardiovascular risk factors"
 ]
 }
 ],
@@ -3468,6 +3794,14 @@
 "summary": "Look → feel → move → function → special tests. The pattern of joint involvement separates rheumatoid arthritis, osteoarthritis and psoriatic/gout.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Look",
 "items": [
 "Dorsum: swelling, deformity (ulnar deviation, swan-neck, boutonnière, Z-thumb), muscle wasting, skin/nails (psoriasis, nail pitting)",
@@ -3493,6 +3827,32 @@
 "title": "Special tests",
 "items": [
 "Tinel’s / Phalen’s for carpal tunnel; test median (thumb abduction) and ulnar (finger abduction) motor function"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"Synovitis: **rheumatoid factor**, then **anti-CCP** if RF is negative (NICE NG100 1.1.2–1.1.3); suspected gout: **serum urate** (NICE NG219 1.1.7)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Suspected RA with persistent synovitis: **X-ray the hands and feet** (NICE NG100 1.1.4)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Persistent synovitis: **urgent referral** if the small joints of hands or feet, more than one joint, or 3 months or more of symptoms (NICE NG100 1.1.1); new active RA: **methotrexate**, leflunomide or sulfasalazine within 3 months (NICE NG100 1.4.1)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Examine other joints (a screening GALS)",
+"Assess function and ask about impact on daily life",
+"Request hand X-rays and relevant bloods (RF, anti-CCP, urate)"
 ]
 }
 ],
@@ -3642,6 +4002,14 @@
 "summary": "Assess the neck lump (inspect → palpate → percuss → auscultate → swallow/tongue) AND the thyroid status (signs of hyper- or hypothyroidism), then state your clinical impression.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Neck lump",
 "items": [
 "Inspect from the front; ask to **swallow** (thyroid moves up) and **protrude the tongue** (thyroglossal cyst moves up)",
@@ -3662,6 +4030,33 @@
 "items": [
 "Reflexes: brisk (hyper) vs slow-relaxing (hypo)",
 "Pretibial myxoedema (Graves’), proximal myopathy"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"**TSH** first, then free T4 (and T3 if TSH is low) (NICE NG145 1.2.8); thyrotoxicosis: **TSH receptor antibodies** for Graves' (NICE NG145 1.6.1); high TSH: **TPO antibodies** once (NICE NG145 1.3.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"A goitre or nodule with normal thyroid function and possible cancer: **ultrasound**, graded, then ultrasound-guided **FNA** if it qualifies (NICE NG145 1.9.1, 1.9.3, 1.9.5); thyrotoxicosis: ultrasound only for a palpable nodule (NICE NG145 1.6.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Hypothyroidism: **levothyroxine** (NICE NG145 1.3.3); Graves': **radioactive iodine** first-line unless antithyroid drugs are likely to bring remission or it's unsuitable (NICE NG145 1.6.10–1.6.11)",
+"A nodule suspicious of cancer: refer on the suspected cancer pathway, as NG12 sets out (NICE NG145 1.9.6)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Request thyroid function tests (TSH, free T4) and thyroid autoantibodies",
+"Ultrasound the neck ± fine-needle aspiration for a nodule",
+"ECG if arrhythmia suspected"
 ]
 }
 ],
@@ -3699,6 +4094,14 @@
 "fundoscopy": {
 "summary": "Perform basic ophthalmoscopy and identify common abnormalities.",
 "sections": [
+{
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
 {
 "title": "Why",
 "items": [
@@ -3750,6 +4153,13 @@
 "early-preg": {
 "summary": "Telling someone about a miscarriage or an ectopic pregnancy: bad news skills, clear options, and the emotional support. It is not their fault — say so.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "The news",
 "items": [
@@ -3819,6 +4229,13 @@
 "summary": "Patient first, then candour, then the system. You are not required to be certain — only to act. The trap is loyalty, or a conversation that becomes about blame.",
 "sections": [
 {
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
+{
 "title": "Patient first",
 "items": [
 "Address the clinical consequence before anything else. Tell a senior immediately."
@@ -3857,6 +4274,14 @@
 "summary": "Acuity, colour, fields, movements, pupils, then fundoscopy. The visual field defect tells you where the lesion is.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Acuity and colour",
 "items": [
 "**Snellen** at 6 m, each eye, with glasses; record as e.g. 6/9; pinhole if reduced",
@@ -3880,6 +4305,18 @@
 "title": "Pupils",
 "items": [
 "Size and shape; direct and consensual reflexes; **swinging light** for an RAPD; accommodation"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"A sudden **homonymous** field defect may be a **stroke**: non-enhanced CT immediately if the criteria are met, otherwise within 24 hours (NICE NG128 1.3.2–1.3.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Progressive, sub-acute loss of central neurological function (such as an evolving field defect): consider an **urgent direct-access MRI brain** (NICE NG12 1.9.1)"
 ]
 }
 ],
@@ -3956,6 +4393,14 @@
 "summary": "Look → feel → move → special tests (Trendelenburg, Thomas). Gait and leg-length assessment localise the problem.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Look",
 "items": [
 "Gait (antalgic, Trendelenburg); standing posture, pelvic tilt, muscle wasting",
@@ -3979,6 +4424,28 @@
 "items": [
 "**Trendelenburg** (abductor weakness — pelvis drops on the *opposite* side)",
 "**Thomas test** (fixed flexion deformity)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Suspected **hip fracture** with normal X-rays of adequate quality: **MRI**, or CT if MRI isn't available within 24 hours (NICE CG124 1.1.1)",
+"Osteoarthritis at 45+: a **clinical diagnosis**, no routine imaging (NICE NG226 1.1.1–1.1.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Hip fracture: **pain assessed** on arrival and within 30 minutes of first analgesia (NICE CG124 1.3.1); **surgery on the day of admission or the next** (NICE CG124 1.2.1)",
+"Osteoarthritis: exercise and weight loss; refer for **joint replacement** when it seriously affects quality of life despite non-surgical care (NICE NG226 1.3.1, 1.3.5, 1.6.1)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Examine the joint above (spine) and below (knee)",
+"Assess neurovascular status",
+"Request pelvic/hip X-rays"
 ]
 }
 ],
@@ -4012,6 +4479,13 @@
 "consent": {
 "summary": "Valid consent = capacity + information + voluntariness. Explain the procedure, its benefits, risks and alternatives (incl. doing nothing), and check understanding — per Montgomery, tailored to what matters to this patient.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Confirm the basics",
 "items": [
@@ -4096,6 +4570,14 @@
 "summary": "Screen cognition with a named tool, decide between **delirium** and **dementia** (or both), and look for reversible causes. A collateral history is essential.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Tools",
 "items": [
 "**AMTS** (10 items; a score under 8 suggests impairment): age, time to the nearest hour, an address to recall at the end, year, place, recognise two people, date of birth, the year WW1 or WW2 started, the monarch, count down from 20 to 1",
@@ -4116,6 +4598,18 @@
 "Infection, drugs (anticholinergics, opioids, benzodiazepines), retention, constipation, pain, dehydration, hypoxia, electrolytes",
 "Bloods: FBC, U&E, calcium, glucose, LFT, TFT, B12 and folate; CT head if indicated"
 ]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"Suspected dementia: a physical examination with **blood and urine tests** to exclude reversible causes, and a **validated brief cognitive test** (6CIT, 10-CS, MIS or similar) (NICE NG97 1.2.2–1.2.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Refer to a **specialist dementia diagnostic service** (memory clinic) once reversible causes (delirium, depression, sensory impairment) are addressed (NICE NG97 1.2.6); suspected Alzheimer's: include a test of **verbal episodic memory** (NICE NG97 1.2.10)"
+]
 }
 ],
 "pairs": {
@@ -4131,6 +4625,14 @@
 "shoulder-exam": {
 "summary": "Look → feel → move (active/passive) → special tests for the rotator cuff and impingement.",
 "sections": [
+{
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
 {
 "title": "Look",
 "items": [
@@ -4154,6 +4656,27 @@
 "items": [
 "Supraspinatus (empty-can/Jobe), infraspinatus (resisted ER), subscapularis (Gerber lift-off)",
 "Impingement (Hawkins-Kennedy, Neer)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"**X-ray** after trauma, after 4 weeks without improvement, for severe pain or restriction, or suspected arthritis (CKS Shoulder pain)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Any **red flag**: sudden loss of active elevation (acute **cuff tear**), a mass (**malignancy**), a red hot joint or fever (**septic arthritis**), trauma with lost rotation (**dislocation**), or several inflamed joints: **urgent** secondary care referral, and emergency orthopaedics for septic arthritis or dislocation; a suspected rotator cuff tear after dislocation: urgently to a shoulder surgeon (CKS Shoulder pain)",
+"Frozen shoulder: analgesia, **physiotherapy** and intra-articular **steroid injection**, in primary care; consider **testing for diabetes** (CKS Shoulder pain)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Examine the neck (cervical spine) and the elbow",
+"Assess neurovascular status (axillary nerve)",
+"Request X-ray ± ultrasound/MRI of the cuff"
 ]
 }
 ],
@@ -4253,6 +4776,13 @@
 "explain-med": {
 "summary": "Explain a new medication so the patient can take it safely — what it’s for, how to take it, key side effects and safety-critical points, and monitoring. Tailor to the drug’s must-know message.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Set up",
 "items": [
@@ -4697,6 +5227,13 @@
 "summary": "A new diagnosis of diabetes, asthma, epilepsy or hypertension is not bad news in the SPIKES sense — it is a **handover of self-management**. The marks are in what the patient will do differently tomorrow.",
 "sections": [
 {
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
+{
 "title": "Establish the starting point",
 "items": [
 "What do they already know or believe about the condition? Correct specific misconceptions rather than lecturing generally.",
@@ -4833,6 +5370,14 @@
 "summary": "Perform basic otoscopy and identify common abnormalities.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Why",
 "items": [
 "Examination of the external canal and tympanic membrane, often paired with **hearing tests** (whisper test + Rinne & Weber tuning-fork tests). GMC-required. **No dedicated Southampton resource folder was archived** — a materials gap (likely taught within ENT/clinical-skills teaching)."
@@ -4948,6 +5493,14 @@
 "summary": "The same inspect → tone → power → reflexes → sensation → coordination → gait sequence for the legs. Gait and Romberg add localising value.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Inspection",
 "items": [
 "Wasting, fasciculations, scars, deformity, walking aids"
@@ -4981,6 +5534,27 @@
 "title": "Coordination & gait",
 "items": [
 "Heel-to-shin; observe gait (spastic, ataxic, high-stepping, waddling); **Romberg’s** test (sensory ataxia)"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Severe back pain into the leg with new bladder, bowel or sexual dysfunction or perineal numbness: refer **immediately** for assessment for **cauda equina** (NICE NG127 1.7.3)",
+"Cancer with neurological signs of **cord compression**: **dexamethasone 16 mg** as soon as possible, and **MRI within 24 hours** (NICE NG234 1.8.1, 1.5.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Rapidly progressive symmetrical weakness: **immediate** neurological referral with bulbar and respiratory assessment (NICE NG127 1.7.2); slowly progressive weakness: **neuromuscular assessment** (NICE NG127 1.7.5)",
+"Leg claudication with good pulses may be **lumbar canal stenosis**: specialist assessment and imaging (NICE NG127 1.7.6)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Examine the upper limbs, cranial nerves and cerebellum",
+"Examine the back and consider urgent MRI if cord compression is suspected"
 ]
 }
 ],
@@ -5624,6 +6198,13 @@
 "summary": "The Mental Capacity Act 2005: presume capacity, assess it for **this decision**, support the person to decide, and if they lack it, act in their best interests.",
 "sections": [
 {
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
+{
 "title": "Principles",
 "items": [
 "Presume capacity; help them decide; an unwise decision isn't incapacity; best interests; least restrictive option"
@@ -5661,6 +6242,13 @@
 "safeguarding": {
 "summary": "Listen, believe, do not investigate. Your job is to hear it, keep them safe, record it verbatim and refer — and to be honest that you cannot promise secrecy.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Create the conditions",
 "items": [
@@ -5721,6 +6309,13 @@
 "explain-proc": {
 "summary": "Distinct from consent: here the task is comprehension, not authorisation. Structure it as before, during, after — and say what it will feel like, which is what patients actually want to know.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Check the starting point",
 "items": [
@@ -6028,6 +6623,13 @@
 "summary": "Find what matters to her, explain the options by effectiveness, check medical eligibility (**UKMEC**), and teach the method properly — including what to do when it goes wrong.",
 "sections": [
 {
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
+{
 "title": "Options",
 "items": [
 "**LARC** (most effective, >99%): implant, IUS, copper IUD, injection",
@@ -6075,6 +6677,14 @@
 "summary": "Examine standing: the distribution of the varicosities, the skin changes of chronic venous insufficiency, and the ulcer. Duplex scanning has replaced most bedside tests.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Inspect (standing)",
 "items": [
 "Varicosities: great saphenous (medial leg and thigh) or small saphenous (posterior calf)",
@@ -6095,6 +6705,18 @@
 "**Duplex ultrasound** (reflux and its level)",
 "**ABPI** before compression (compression is safe at ABPI ≥0.8)",
 "Arterial and abdominal examination"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"**Bleeding** varicose veins: refer to a vascular service **immediately** (NICE CG168 1.2.1)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"**Duplex ultrasound** to confirm varicose veins, map truncal reflux and plan treatment (NICE CG168 1.3.1)"
 ]
 }
 ],
@@ -6241,6 +6863,14 @@
 "summary": "Inspection → tone → power → reflexes → sensation → coordination. The distribution of weakness (pyramidal, root, nerve) plus the reflex/tone pattern separates UMN from LMN.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Inspection",
 "items": [
 "Wasting, fasciculations, tremor, posture (pronator drift), scars"
@@ -6274,6 +6904,27 @@
 "title": "Coordination",
 "items": [
 "Finger-to-nose (past-pointing/intention tremor), dysdiadochokinesia"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Sudden weakness, even in one hand, may be a **stroke or TIA** (NICE NG127 1.7.1): suspected acute stroke gets a **non-enhanced CT immediately** if thrombolysis or thrombectomy is possible, they're anticoagulated or GCS is under 13, otherwise within 24 hours (NICE NG128 1.3.2–1.3.3)",
+"Rapidly progressive **symmetrical** limb weakness (within 4 weeks): refer **immediately**, with bulbar and respiratory function assessed (NICE NG127 1.7.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Weakness of one limb or a hemiparesis progressing over hours to days: **neuroimaging** on the suspected cancer pathway (NICE NG127 1.7.4)",
+"Slowly progressive limb or neck weakness (weeks to months): refer for **neuromuscular assessment**, urgently if swallowing is impaired, immediately if breathless at rest or lying flat (NICE NG127 1.7.5)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Examine the lower limbs, cranial nerves and cerebellar function",
+"Assess the neck and consider imaging"
 ]
 }
 ],
@@ -6425,6 +7076,13 @@
 "sbar": {
 "summary": "A performance station in disguise. Use **SBAR** and state the ask explicitly — the commonest failure is giving a narrative and leaving the listener to work out what you want.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Prepare before dialling",
 "items": [
@@ -6670,6 +7328,13 @@
 "summary": "Very brief advice plus a **referral** beats a lecture every time. The mark is for eliciting motivation and offering a route, not for listing harms the patient already knows.",
 "sections": [
 {
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
+{
 "title": "Ask and assess",
 "items": [
 "Ask permission to discuss it. Establish current use, previous attempts and what happened.",
@@ -6804,6 +7469,14 @@
 "summary": "Screen for cerebellar dysfunction — the mnemonic **DANISH**: Dysdiadochokinesia, Ataxia, Nystagmus, Intention tremor, Slurred (staccato) speech, Hypotonia/Heel-shin.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Speech & eyes",
 "items": [
 "Ask a phrase to elicit **staccato/scanning** dysarthria",
@@ -6824,6 +7497,26 @@
 "Heel-to-shin ataxia",
 "Gait: **broad-based, unsteady**, veering to the side of the lesion",
 "Romberg negative (distinguishes from sensory ataxia)"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Sudden-onset unsteadiness: assess as a possible **stroke** (NICE NG127 1.4.1), with a **non-enhanced CT immediately** when the criteria are met (NICE NG128 1.3.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"Gait ataxia progressing over **days to weeks**: neurological assessment on the **suspected cancer pathway** (NICE NG127 1.4.2)",
+"Gradually progressive ataxia: neurological assessment, with an **alcohol history** (NICE NG127 1.4.3)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Full neurological examination",
+"Check for causes: alcohol history, drug levels, consider MRI brain"
 ]
 }
 ],
@@ -6925,6 +7618,14 @@
 "summary": "Inspect (at rest and with manoeuvres) → palpate all quadrants + tail + nodes → characterise any lump. Always chaperoned; any discrete lump needs triple assessment (NICE NG12: aged 30+ with an unexplained lump → suspected cancer pathway).",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Inspect",
 "items": [
 "At rest, arms raised, and hands pressing on hips: asymmetry, skin changes (**peau d’orange**, dimpling/tethering), nipple inversion/discharge, scars",
@@ -6943,6 +7644,21 @@
 "title": "Lymph nodes",
 "items": [
 "Axillary nodes (support the arm), supraclavicular and infraclavicular nodes"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Aged 30+ with an unexplained breast lump, or 50+ with discharge, retraction or other worrying change in one nipple: **suspected cancer pathway** (NICE NG12 1.4.1)",
+"Skin changes suggesting cancer, or 30+ with an unexplained axillary lump: consider the suspected cancer pathway; under 30 with an unexplained lump: consider a **non-urgent referral** (NICE NG12 1.4.2–1.4.3)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Refer any discrete lump for **triple assessment** (clinical, imaging — mammogram/USS, biopsy)",
+"Take a full breast and family history (BRCA)",
+"Examine for hepatomegaly and spinal tenderness if metastatic disease suspected"
 ]
 }
 ],
@@ -6977,6 +7693,14 @@
 "summary": "Paediatric A to E with age-appropriate normal values, and the NICE fever **traffic light**. Shout early for the paediatric team.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "A to E",
 "items": [
 "As in adults, with child-sized equipment and normal values for age",
@@ -6991,6 +7715,26 @@
 "Reduced skin turgor",
 "Age **under 3 months with a temperature ≥38 °C**",
 "Non-blanching rash, bulging fontanelle, neck stiffness, status epilepticus, focal signs, bile-stained vomiting"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Look for immediately life-threatening features (airway, breathing, circulation, consciousness) first, and ask \"**could this be sepsis?**\" (NICE NG143 1.2.1–1.2.2)",
+"Suspected **meningococcal disease**: parenteral antibiotics at the earliest opportunity (NICE NG143 1.4.10); shocked, unrousable or with meningococcal signs: **immediate** parenteral antibiotics (NICE NG143 1.5.17)"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"Fever: the **traffic light** table for the risk of serious illness (NICE NG143 1.2.3); under 3 months with 38°C or more is **high risk** (NICE NG143 1.2.12)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Under 1 month with fever, or 1 to 3 months and unwell: **parenteral antibiotics** (NICE NG143 1.5.6), a third-generation cephalosporin plus cover for **listeria** (NICE NG143 1.5.7)",
+"Amber features and no diagnosis: a **safety net** or referral to paediatrics (NICE NG143 1.4.4)"
 ]
 }
 ],
@@ -7031,6 +7775,13 @@
 "dvla": {
 "summary": "The duty to notify is the **patient’s**. Yours is to tell them clearly, document it, and act if they will not — a station that is really about confidentiality and its limits.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Know the rule",
 "items": [
@@ -7100,6 +7851,13 @@
 "adherence": {
 "summary": "Non-adherence is usually rational from where the patient is standing. Find the actual reason — cost, side effects, belief, complexity, or never having understood why — before doing anything else.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Ask without judgement",
 "items": [
@@ -7384,6 +8142,14 @@
 "summary": "A rapid MSK screen to detect abnormality and decide which regional exam to do next. Three screening questions + look at Gait, Arms, Legs and Spine.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Screening questions",
 "items": [
 "Any pain or stiffness in muscles, joints or back?",
@@ -7414,6 +8180,25 @@
 "items": [
 "Inspect from behind (scoliosis) and the side (kyphosis/lordosis); lateral neck flexion (ear to shoulder); “touch your toes” (lumbar flexion)"
 ]
+},
+{
+"title": "Next steps after the whistle: Special tests",
+"items": [
+"An abnormal region: the full **regional examination** of that joint (the card's own completion step)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"Synovitis of undetermined cause: **refer**, urgently if hands or feet, several joints or 3 months or more, even with normal bloods (NICE NG100 1.1.1)"
+]
+},
+{
+"title": "To complete the examination",
+"items": [
+"Perform the appropriate regional examination for any abnormality",
+"Take a full MSK history"
+]
 }
 ],
 "pairs": {
@@ -7442,6 +8227,14 @@
 "spine-exam": {
 "summary": "Look, feel, move, then the special tests and a neurological screen. The point of the station is usually to show you'd catch the red flags.",
 "sections": [
+{
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
 {
 "title": "Look",
 "items": [
@@ -7474,6 +8267,25 @@
 "title": "Complete",
 "items": [
 "Ask about cauda equina symptoms; examine perianal sensation and anal tone if suspected"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Back pain into the leg with new bladder, bowel or sexual dysfunction or perineal numbness: **immediate** assessment for **cauda equina** (NICE NG127 1.7.3)",
+"Known cancer and signs of **cord compression**: **dexamethasone 16 mg** and **MRI within 24 hours** (NICE NG234 1.8.1, 1.5.2)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Mechanical back pain: **no routine imaging** outside specialist settings (NICE NG59 1.1.4); suspected spinal metastases without cord compression: **MRI within a week** (NICE NG234 1.5.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"**Risk-stratify** (for example STarT Back), self-management, exercise, NSAIDs with care; **no opioids** for chronic sciatica (NICE NG59 1.1.2, 1.2.1–1.2.2, 1.2.22, 1.2.17)"
 ]
 }
 ],
@@ -7576,6 +8388,14 @@
 "summary": "Inspect standing and lying, palpate each testis, epididymis and cord, and answer the three questions about any lump: can you get above it, is it separate from the testis, does it transilluminate? **Chaperone.**",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Set up",
 "items": [
 "Consent, chaperone, privacy; expose from umbilicus to knees; examine standing, then lying"
@@ -7600,6 +8420,24 @@
 "items": [
 "Inguinal lymph nodes (scrotal skin drains here; the testis drains to the para-aortic nodes)",
 "Hernia examination; abdominal examination"
+]
+},
+{
+"title": "Next steps after the whistle: Immediately",
+"items": [
+"Suspected **torsion**: emergency admission to urology; an ultrasound must not delay surgery, ideally within 6 hours (CKS Scrotal pain and swelling)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Unexplained or persistent testicular symptoms: consider an **urgent direct-access ultrasound** (NICE NG12 1.6.8)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"A non-painful enlargement or change in shape or texture of the testis: consider the **suspected cancer pathway** (NICE NG12 1.6.7)"
 ]
 }
 ],
@@ -7641,6 +8479,13 @@
 "interpreter": {
 "summary": "A professional interpreter, not a family member, and you speak to the **patient** throughout. Doubling the time and halving the sentence length is most of the technique.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Before",
 "items": [
@@ -7716,6 +8561,13 @@
 "uncertainty": {
 "summary": "Telling someone you do not know what is wrong, without either alarming them or dismissing them. “Your tests are all normal” alone is heard as “I do not believe you”.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Name it positively",
 "items": [
@@ -7877,6 +8729,13 @@
 "summary": "Breaking news that changes someone's life (an amputation, a stoma, a disability). The SPIKES structure, then the practical future: what life will look like, and who will help.",
 "sections": [
 {
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
+{
 "title": "Prepare",
 "items": [
 "Know the facts: why, what the operation means, rehabilitation, prosthetics, prognosis",
@@ -7915,6 +8774,13 @@
 "parent-results": {
 "summary": "Explaining a result or a diagnosis to a parent, and to the child, at the level each can use — honest, concrete, checked back.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "The parent",
 "items": [
@@ -8287,6 +9153,14 @@
 "summary": "On a manikin in the OSCE. Consent and chaperone, left lateral position, inspect, then a gloved lubricated finger: tone, the rectal wall all round, the prostate, and the glove afterwards.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Set up",
 "items": [
 "Explain, consent, **chaperone**; left lateral, knees to chest; cover the patient"
@@ -8312,6 +9186,19 @@
 "title": "Finish",
 "items": [
 "Clean the patient, allow them to dress; thank them; document with the chaperone's name"
+]
+},
+{
+"title": "Next steps after the whistle: Bloods",
+"items": [
+"LUTS, erectile dysfunction or visible haematuria: consider a **PSA** with the DRE (NICE NG12 1.6.2); above the age threshold: consider the suspected cancer pathway (NICE NG12 1.6.3)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"A prostate that **feels malignant**: **suspected cancer pathway** (NICE NG12 1.6.1)",
+"Reduced anal tone with saddle anaesthesia and back pain: refer **immediately** for **cauda equina** assessment (NICE NG127 1.7.3)"
 ]
 }
 ],
@@ -8349,6 +9236,14 @@
 "summary": "On a manikin. Consent and chaperone, inspect the vulva, insert a warmed, lubricated speculum, visualise the cervix, take samples if needed, then the bimanual examination.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Set up",
 "items": [
 "Consent, **chaperone**, privacy, empty bladder; supine, heels together, knees apart; cover"
@@ -8369,6 +9264,12 @@
 "Two fingers in the vagina, the other hand on the abdomen",
 "Uterus: size, position (anteverted or retroverted), mobility, tenderness",
 "Adnexae both sides; **cervical excitation** (PID, ectopic)"
+]
+},
+{
+"title": "Next steps after the whistle: Management",
+"items": [
+"A cervix that looks like **cervical cancer**: consider the **suspected cancer pathway** (NICE NG12 1.5.16); ascites or a pelvic or abdominal mass that isn't obviously fibroids: the suspected cancer pathway (NICE NG12 1.5.1)"
 ]
 }
 ],
@@ -8394,6 +9295,14 @@
 "summary": "Antenatal: inspect, measure the symphysis–fundal height, find the lie, presentation and engagement, listen to the fetal heart. Postnatal: the 6–8 week check of mother as well as baby.",
 "sections": [
 {
+"title": "The examination frame (every examination, as the card shows it)",
+"items": [
+"**WIND PACES 45**: **W**ash hands, PPE · **I**ntroduce (name, role) · **N**ame and **D**OB of the patient · explain the **P**rocedure · **A**sk consent · **C**heck for pain · **E**xpose only what's needed · **S**et the bed to **45°**",
+"**OPPA**: **O**bservation · **P**alpation · **P**ercussion · **A**uscultation — end of the bed, then hands → face → neck → the system",
+"**ETDSN — End The Diagnostics Sooner Next-time**: **E**xplain it's finished · **T**hank them · **D**ispose of PPE, wash hands · **S**ummarise the findings · **N**ext steps (investigations and exams to complete)"
+]
+},
+{
 "title": "Antenatal palpation",
 "items": [
 "Consent, chaperone, semi-recumbent (left tilt if uncomfortable)",
@@ -8408,6 +9317,20 @@
 "items": [
 "Mood (baby blues vs postnatal depression vs psychosis), BP, bleeding (lochia), perineum or wound",
 "Feeding, contraception, pelvic floor, cervical screening if due"
+]
+},
+{
+"title": "Next steps after the whistle: Bedside",
+"items": [
+"**Blood pressure** and a **urine dipstick** for protein at every routine visit (NICE NG201 1.2.24, 1.2.28); a first BP of 140/90 or more after 20 weeks: seen in secondary care **within 24 hours**; 160/110 or more: **the same day** (NICE NG201 1.2.26–1.2.27)",
+"**Symphysis fundal height** from 24 weeks, plotted on a growth chart (NICE NG201 1.2.30)"
+]
+},
+{
+"title": "Next steps after the whistle: Imaging",
+"items": [
+"Fundal height small for dates: an **ultrasound for growth and wellbeing**, its urgency set by other findings such as reduced movements; large for dates: consider one (NICE NG201 1.2.31–1.2.32)",
+"Suspected **breech** after 36 weeks: **ultrasound** to confirm, then discuss options including external cephalic version (NICE NG201 1.2.36–1.2.38)"
 ]
 }
 ],
@@ -8762,6 +9685,13 @@
 "summary": "Advice for the weeks after birth: mood, feeding, contraception, recovery, safe sleep — and the red flags that mean come back.",
 "sections": [
 {
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
+{
 "title": "Mother",
 "items": [
 "Mood: baby blues (days, settles), postnatal depression, puerperal psychosis (emergency)",
@@ -8792,6 +9722,13 @@
 "formula": {
 "summary": "Teach a parent to make up formula safely, step by step, then have them tell it back.",
 "sections": [
+{
+"title": "The explanation frame (every explanation, as the card shows it)",
+"items": [
+"**BUCES**: **B**rief history (1–2 min) · **U**nderstanding (what do you know?) · **C**oncerns (ICE) · **E**xplanation · **S**ummarise (safety-net, leaflet, follow-up)",
+"**Normally We Can Probably Manage**: The explanation itself: **N**ormal anatomy · **W**hat the disease is · **C**auses · **P**roblems and complications · **M**anagement — signpost it first, chunk and check as you go"
+]
+},
 {
 "title": "Steps (NHS)",
 "items": [
