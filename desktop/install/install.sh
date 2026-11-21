@@ -81,6 +81,34 @@ update_revise() {
   fi
 }
 
+# Unified V4 (21 Nov 2026, Raahat): the deck and its revision PDFs live in the UnifiedMedicine repo. Pull it if
+# it's on this machine; if the newest deck there hasn't been imported here yet, offer to open it in Anki (Anki
+# updates the cards in place, keeping review history). "Later" asks again next time.
+update_unified() {
+  local repo="$HOME/UnifiedMedicine" seen="$HOME/.local/share/finalist/unified-imported" apkg sum name
+  [ -d "$repo/.git" ] || return 0
+  say "Updating Unified V4"
+  if git -C "$repo" pull --ff-only -q 2>/dev/null; then echo "  Now at $(git -C "$repo" log -1 --format='%h %s' | cut -c1-72)"
+  else echo "  Couldn't update $repo (local changes, or no access to the repo?): left as it was."; fi
+  apkg="$(ls -t "$repo"/anki/*.apkg 2>/dev/null | head -n 1)"
+  [ -n "$apkg" ] || return 0
+  sum="$( (sha256sum "$apkg" 2>/dev/null || shasum -a 256 "$apkg") | cut -c1-16)"
+  [ "$(cat "$seen" 2>/dev/null)" = "$sum" ] && { echo "  The deck ($(basename "$apkg")) is already imported here."; return 0; }
+  name="$(basename "$apkg" .apkg | tr '_' ' ')"
+  echo "  ${G}${B}$name is new on this machine.${R} The revision PDFs are updated in $repo/revision_pages."
+  if ! { : >/dev/tty; } 2>/dev/null; then echo "  Import it into Anki when you're ready: open $apkg"; return 0; fi
+  menu "Import $name into Anki now? (your review history is kept)" "Import now" "Later"
+  if [ "$CHOICE" = 0 ]; then
+    if [ "$OS" = Darwin ]; then open -a Anki "$apkg" 2>/dev/null || open "$apkg"
+    elif command -v anki >/dev/null 2>&1; then (setsid -f nohup anki "$apkg" >/dev/null 2>&1 < /dev/null || nohup anki "$apkg" >/dev/null 2>&1 &)
+    else xdg-open "$apkg" >/dev/null 2>&1 || true; fi
+    mkdir -p "$(dirname "$seen")"; echo "$sum" > "$seen"
+    echo "  Opening it in Anki: confirm the import there."
+  else
+    echo "  Later, then: you'll be asked again next time, or open $apkg yourself."
+  fi
+}
+
 do_install() {
   local app dest asset
   case "$OS" in
@@ -134,6 +162,7 @@ do_install() {
     *) echo "On Windows, run this in PowerShell instead:  irm $RAW/desktop/install/install.ps1 | iex" >&2; exit 1 ;;
   esac
   update_revise || true
+  update_unified || true
   say "${G}Finalist is installed:${R}${B} $app"
   echo "Run the same line again any time to update it or uninstall it."
   if ! command -v claude >/dev/null 2>&1; then
